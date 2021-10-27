@@ -16,7 +16,7 @@
     <meta name="renderer" content="webkit">
     <meta name="copyright" content="xiabee">
     
-        <meta name="keywords" content="hexo,hexo-theme,hexo-blog">
+        <meta name="keywords" content="xiabee,hexo-theme,xiabee-blog">
     
     <meta name="description" content="">
     <meta name="description" content="Hello你好世界！Hello World 1echo &quot;Hello World!&quot;    Goodnight">
@@ -300,7 +300,7 @@
     <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
+    <div class="site-intro-img" style="background-image: url(https://tva1.sinaimg.cn/large/0084b03xly1gvu2k4tchnj31z413jgra.jpg)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
@@ -536,6 +536,28 @@
             
 
             
+    <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.css">
+    <script src="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js"></script>
+    <script>
+        let idOption = '1635145590000'
+        
+            idOption = location.pathname
+        
+        const gitalk = new Gitalk({
+            clientID: 'd889bcfe2f136657e9f6',
+            clientSecret: 'f7289d8dd4f2cb8b2518225f802a9a348dd0700c',
+            repo: 'https://github.com/xiabee/xiabee.github.io',
+            owner: 'xiabee',
+            admin: ["xiabee"],
+            id: idOption,
+            distractionFreeMode: false,
+            createIssueManually: false,
+        })
+        gitalk.render('gitalk-container')
+    </script>
+    <noscript>为正常使用 Gitalk 评论功能，您需要激活 JavaScript</noscript>
+
 
             <!-- utteranc评论 -->
 
@@ -703,6 +725,8 @@
         
         
         
+        
+        
     
     
     
@@ -761,11 +785,6 @@
                 friends
             </span>
         
-            <span class="sidebar-tag-name" data-tags="碎碎念">
-                <span class="iconfont-archer">&#xe606;</span>
-                碎碎念
-            </span>
-        
             <span class="sidebar-tag-name" data-tags="git">
                 <span class="iconfont-archer">&#xe606;</span>
                 git
@@ -774,6 +793,11 @@
             <span class="sidebar-tag-name" data-tags="ssh">
                 <span class="iconfont-archer">&#xe606;</span>
                 ssh
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="碎碎念">
+                <span class="iconfont-archer">&#xe606;</span>
+                碎碎念
             </span>
         
     </div>
@@ -792,14 +816,14 @@
             friends
         </span>
     
-        <span class="sidebar-category-name" data-categories="informal-essay">
-            <span class="iconfont-archer">&#xe60a;</span>
-            informal-essay
-        </span>
-    
         <span class="sidebar-category-name" data-categories="coding">
             <span class="iconfont-archer">&#xe60a;</span>
             coding
+        </span>
+    
+        <span class="sidebar-category-name" data-categories="informal-essay">
+            <span class="iconfont-archer">&#xe60a;</span>
+            informal-essay
         </span>
     
     </div>
