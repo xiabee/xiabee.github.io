@@ -21,7 +21,7 @@
     <meta name="description" content="">
     <meta property="og:type" content="website">
 <meta property="og:title" content="xiabee-瞎哔哔">
-<meta property="og:url" content="http://xiabee.github.io/tags/git/index.html">
+<meta property="og:url" content="http://xiabee.github.io/tags/linux/index.html">
 <meta property="og:site_name" content="xiabee-瞎哔哔">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:author" content="xiabee">
@@ -428,35 +428,32 @@
             
         
         <article class="index-post">
-            <a class="abstract-title" href="/posts/github-ssh/">
+            <a class="abstract-title" href="/posts/linux-sources/">
                 
-                <span class="abstract-title-text">GitHub配置SSH Key</span>
+                <span class="abstract-title-text">Ubuntu / kali 国内各大更新源</span>
             </a>
             <div class="abstract-content">
-                在Github上提交代码，每次 push 都需要输入一次密码，特别麻烦，所以现在就记录一下用SSH登陆GitHub的过程
-先来康康这两个登陆方式有啥区别：
-1234https://github.com/xiabee/fucking-views.git# use httpsgit@github.com:xiabee/fucking-views.git# use ssh
+                修改sources.list: vim /etc/apt/sources.list 
+改完记得 apt update 一下
+kali：官方源12deb http://http.kali.org/kali kali-rolling main non-free contribdeb-src http://http.kali.org/kali kali-rolling main non-free contrib
 
-第一种直接使用https，可以直接浏览器访问，方便查阅，但是每次push都要输入密码
-第二种使用ssh，不能直接访问，但是在push的时候可以保留密钥文件
-个人感觉，在开发的时候，还是使用ssh比较方便。
-那就康康如何配置...
+
+
+中科大123# 中科大deb http://mirrors.ustc.edu.cn/kali kali-rolling main non-free contribdeb-src ...
             </div>
             <!-- read more -->
             
             <div class="abstract-post-meta">
                 <!-- date -->
                 <div class="abstract-date" title="Last updated: 2021/10/27">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/08/27</span>
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/03/10</span>
                 </div>
                 <!-- tags -->
                 
                     <div class= abstract-tags >
     
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="git">git</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="ssh">ssh</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="linux">linux</a>
     
 </div>
 
