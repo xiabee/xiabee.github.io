@@ -561,8 +561,8 @@
         <div class="license-wrapper">
             <p>原文作者：<a href="http://xiabee.github.io">xiabee</a>
             <p>原文链接：<a href="http://xiabee.github.io/posts/docker-commands/">http://xiabee.github.io/posts/docker-commands/</a>
-            <p>发表日期：<a href="http://xiabee.github.io/posts/docker-commands/">三月 18日 2020, 8:00:23 晚上</a>
-            <p>更新日期：<a href="http://xiabee.github.io/posts/docker-commands/">十月 27日 2021, 11:49:33 晚上</a>
+            <p>发表日期：<a href="http://xiabee.github.io/posts/docker-commands/">March 18th 2020, 8:00:23 pm</a>
+            <p>更新日期：<a href="http://xiabee.github.io/posts/docker-commands/">October 27th 2021, 11:49:33 pm</a>
             <p>版权声明：本文采用<a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
@@ -596,30 +596,17 @@
             
 
             
-    <div id="gitalk-container"></div>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.css">
-    <script src="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js"></script>
-    <script>
-        let idOption = '1584532823000'
-        
-            idOption = location.pathname
-        
-        const gitalk = new Gitalk({
-            clientID: 'd889bcfe2f136657e9f6',
-            clientSecret: 'f7289d8dd4f2cb8b2518225f802a9a348dd0700c',
-            repo: 'gitalk-comment',
-            owner: 'xiabee',
-            admin: ["xiabee"],
-            id: idOption,
-            distractionFreeMode: false,
-            createIssueManually: false,
-        })
-        gitalk.render('gitalk-container')
-    </script>
-    <noscript>为正常使用 Gitalk 评论功能，您需要激活 JavaScript</noscript>
-
 
             <!-- utteranc评论 -->
+
+    <script src='https://utteranc.es/client.js'
+        repo='xiabee/blog-comment'
+        issue-term='title'
+        label='Comment'
+        theme='github-light'
+        crossorigin='anonymous'
+        async>
+    </script>
 
 
             <!-- partial('_partial/comment/changyan') -->
@@ -834,10 +821,6 @@
         
         
         
-        
-        
-        
-        
     
     
     
@@ -921,6 +904,11 @@
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
         
+            <span class="sidebar-tag-name" data-tags="碎碎念">
+                <span class="iconfont-archer">&#xe606;</span>
+                碎碎念
+            </span>
+        
             <span class="sidebar-tag-name" data-tags="friends">
                 <span class="iconfont-archer">&#xe606;</span>
                 friends
@@ -936,19 +924,14 @@
                 ssh
             </span>
         
-            <span class="sidebar-tag-name" data-tags="碎碎念">
+            <span class="sidebar-tag-name" data-tags="docker">
                 <span class="iconfont-archer">&#xe606;</span>
-                碎碎念
+                docker
             </span>
         
             <span class="sidebar-tag-name" data-tags="linux">
                 <span class="iconfont-archer">&#xe606;</span>
                 linux
-            </span>
-        
-            <span class="sidebar-tag-name" data-tags="docker">
-                <span class="iconfont-archer">&#xe606;</span>
-                docker
             </span>
         
     </div>
@@ -962,6 +945,11 @@
         <div class="sidebar-panel-categories">
     <div class="sidebar-categories-name">
     
+        <span class="sidebar-category-name" data-categories="informal-essay">
+            <span class="iconfont-archer">&#xe60a;</span>
+            informal-essay
+        </span>
+    
         <span class="sidebar-category-name" data-categories="friends">
             <span class="iconfont-archer">&#xe60a;</span>
             friends
@@ -970,11 +958,6 @@
         <span class="sidebar-category-name" data-categories="coding">
             <span class="iconfont-archer">&#xe60a;</span>
             coding
-        </span>
-    
-        <span class="sidebar-category-name" data-categories="informal-essay">
-            <span class="iconfont-archer">&#xe60a;</span>
-            informal-essay
         </span>
     
     </div>
