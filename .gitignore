@@ -8,3 +8,4 @@ public/
 .git*/
 themes/
 !themes/archer/_config.yml
+.vscode/
