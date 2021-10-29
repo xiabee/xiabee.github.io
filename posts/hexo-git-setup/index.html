@@ -19,30 +19,31 @@
         <meta name="keywords" content="xiabee,hexo-theme,xiabee-blog">
     
     <meta name="description" content="">
-    <meta name="description" content="问题描述博客搭建环境：hexo+gitpage，本地编写·markdown文件，通过hexo g -d渲染后上传至github repo。 相较于wordpress，hexo框架的博客编写基本是在本地完成，在其他机器写博客时需要备份并重新配置环境。但是nodejs环境文件很多，备份起来相当麻烦。 解决方案大致有两种方案：  创建新仓库，备份源文件 创建新分支，备份源文件  创建备份这里我们主要介绍">
+    <meta name="description" content="前言之前一段时间都是用wordpress做个人博客，后来发现Git Page + hexo可以免费做静态页面……尝试了一下，后面就真香了（x） 关于wordpress和hexo孰优孰劣的问题这里不做详细讨论，只是介绍一下如何用Git Page+hexo搭建一个个人博客。二者具体的比较可以参考知乎的激(you)烈(hao)讨论。 简介What’s GitHub Page 官方文档  简而言之就是 白">
 <meta property="og:type" content="article">
-<meta property="og:title" content="利用git分支进行Hexo备份">
-<meta property="og:url" content="http://xiabee.github.io/posts/hexo-git/index.html">
+<meta property="og:title" content="Hexo+GitPage搭建个人博客">
+<meta property="og:url" content="http://xiabee.github.io/posts/hexo-git-setup/index.html">
 <meta property="og:site_name" content="xiabee-瞎哔哔">
-<meta property="og:description" content="问题描述博客搭建环境：hexo+gitpage，本地编写·markdown文件，通过hexo g -d渲染后上传至github repo。 相较于wordpress，hexo框架的博客编写基本是在本地完成，在其他机器写博客时需要备份并重新配置环境。但是nodejs环境文件很多，备份起来相当麻烦。 解决方案大致有两种方案：  创建新仓库，备份源文件 创建新分支，备份源文件  创建备份这里我们主要介绍">
+<meta property="og:description" content="前言之前一段时间都是用wordpress做个人博客，后来发现Git Page + hexo可以免费做静态页面……尝试了一下，后面就真香了（x） 关于wordpress和hexo孰优孰劣的问题这里不做详细讨论，只是介绍一下如何用Git Page+hexo搭建一个个人博客。二者具体的比较可以参考知乎的激(you)烈(hao)讨论。 简介What’s GitHub Page 官方文档  简而言之就是 白">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://tva1.sinaimg.cn/large/0084b03xly1gvvhwdb12oj30ay0913zq.jpg">
-<meta property="og:image" content="https://tva1.sinaimg.cn/large/0084b03xly1gvvhx5uhi3j30ly0cqdm6.jpg">
-<meta property="og:image" content="https://tva1.sinaimg.cn/large/0084b03xly1gvvi0lcpq3j30qh08m0zg.jpg">
-<meta property="og:image" content="https://tva1.sinaimg.cn/large/0084b03xly1gvvi1iy2zmj30w60koqah.jpg">
-<meta property="og:image" content="https://tva1.sinaimg.cn/large/0084b03xly1gvvi31gsgmj30iq0bhwmp.jpg">
-<meta property="article:published_time" content="2021-10-28T15:46:18.000Z">
-<meta property="article:modified_time" content="2021-10-29T03:05:59.616Z">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/0084b03xly1gvwe3g2y4pj30px0c8ade.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/0084b03xly1gvwe8mpskbj31720n0wot.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/0084b03xly1gvwdzcr2n8j31hc0n4aw0.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/0084b03xgy1gvwerqrvzfj30is07hmzf.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/0084b03xly1gvweyd9xbzj31hl0sv1kx.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/0084b03xly1gvwf1noz1nj30mb08tafh.jpg">
+<meta property="article:published_time" content="2021-10-27T15:46:18.000Z">
+<meta property="article:modified_time" content="2021-10-29T11:42:41.536Z">
 <meta property="article:author" content="xiabee">
 <meta property="article:tag" content="git">
 <meta property="article:tag" content="hexo">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://tva1.sinaimg.cn/large/0084b03xly1gvvhwdb12oj30ay0913zq.jpg">
+<meta name="twitter:image" content="https://tva1.sinaimg.cn/large/0084b03xly1gvwe3g2y4pj30px0c8ade.jpg">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <link rel="icon" href="https://tva1.sinaimg.cn/thumbnail/0084b03xly1gvsjbyp2w8j30qo0qognu.jpg">
     
-    <title>利用git分支进行Hexo备份 · xiabee-瞎哔哔</title>
+    <title>Hexo+GitPage搭建个人博客 · xiabee-瞎哔哔</title>
     <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
 /* This file is meant as a standalone workflow for
 - testing support for link[rel=preload]
@@ -280,7 +281,7 @@
                 <a href="/">XiaBee&#39;s Studio.</a>
             </div>
             <div class="post-title header-element">
-                <a href="#" class="post-name">利用git分支进行Hexo备份</a>
+                <a href="#" class="post-name">Hexo+GitPage搭建个人博客</a>
             </div>
         </div>
     
@@ -326,7 +327,7 @@
         <h1 class="intro-title">
             <!-- 主页  -->
             
-                利用git分支进行Hexo备份
+                Hexo+GitPage搭建个人博客
             <!-- 404 -->
             
         </h1>
@@ -355,13 +356,13 @@
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">729</span>阅读时长: <span class="post-count reading-time">2 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">1.1k</span>阅读时长: <span class="post-count reading-time">4 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
                     <!-- 撰写日期 -->
                     <span class="iconfont-archer post-intro-calander">&#xe676;</span>
-                    <span class="post-intro-time">2021/10/28</span>
+                    <span class="post-intro-time">2021/10/27</span>
                     <!-- busuanzi -->
                     
                         <span id="busuanzi_container_page_pv" class="busuanzi-pv">
@@ -516,75 +517,125 @@
             <div class="container container-unloaded">
                 <main class="main post-page">
     <article class="article-entry">
-        <h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>博客搭建环境：<code>hexo</code>+<code>gitpage</code>，本地编写·<code>markdown</code>文件，通过<code>hexo g -d</code>渲染后上传至<code>github repo</code>。</p>
-<p>相较于<code>wordpress</code>，<code>hexo</code>框架的博客编写基本是在本地完成，在其他机器写博客时需要备份并重新配置环境。但是<code>nodejs</code>环境文件很多，备份起来相当麻烦。</p>
-<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>大致有两种方案：</p>
-<ul>
-<li>创建新仓库，备份源文件</li>
-<li>创建新分支，备份源文件</li>
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>之前一段时间都是用<code>wordpress</code>做<a target="_blank" rel="noopener" href="https://xiabee.cn/">个人博客</a>，后来发现<code>Git Page + hexo</code>可以免费做静态页面……尝试了一下，后面就真香了（x）</p>
+<p>关于<code>wordpress</code>和<code>hexo</code>孰优孰劣的问题这里不做详细讨论，只是介绍一下如何用<code>Git Page</code>+<code>hexo</code>搭建一个个人博客。二者具体的比较可以参考<a target="_blank" rel="noopener" href="https://www.zhihu.com/question/53068081">知乎</a>的激(you)烈(hao)讨论。</p>
+<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><h3 id="What’s-GitHub-Page"><a href="#What’s-GitHub-Page" class="headerlink" title="What’s GitHub Page"></a>What’s GitHub Page</h3><ul>
+<li><p><a target="_blank" rel="noopener" href="https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages">官方文档</a></p>
+</li>
+<li><p>简而言之就是 <em>白嫖</em> <code>GitHub</code>的服务器，通过仓库挂一个自己的静态网站。</p>
+</li>
 </ul>
-<h2 id="创建备份"><a href="#创建备份" class="headerlink" title="创建备份"></a>创建备份</h2><p>这里我们主要介绍<code>github</code>分支的方式：主分支用于渲染<code>github page</code>，分分支用于备份重要源文件。</p>
-<p><img src="https://tva1.sinaimg.cn/large/0084b03xly1gvvhwdb12oj30ay0913zq.jpg" alt="image.png"></p>
-<p>创建新仓库的方式同理，就不介绍了（x）</p>
-<h3 id="在hexo根目录下创建git"><a href="#在hexo根目录下创建git" class="headerlink" title="在hexo根目录下创建git"></a>在hexo根目录下创建git</h3><p>最新版的<code>hexo</code>在初始化之后是没有<code>.git</code>目录的，通过<code>_config.yml</code>里面的<code>deploy</code>参数生成<code>.deploy_git</code>目录，并在通过该目录进行<code>push</code>操作。因此，我们直接在<code>hexo</code>根目录下创建<code>.git</code>目录和<code>.gitignore</code>并不会冲突。</p>
-<p><img src="https://tva1.sinaimg.cn/large/0084b03xly1gvvhx5uhi3j30ly0cqdm6.jpg" alt="image.png"></p>
-<p>创建本地<code>git</code>的方式有很多种，只需要将<code>git</code>的指向我们<code>xxx.github.io</code>的<code>repo</code>就行。</p>
-<p>比如可以直接将<code>xxx.github.io</code>的整个<code>repo</code>克隆下来，然后复制其中的<code>.git</code>目录到<code>hexo</code>的根目录下。</p>
-<h3 id="创建-gitignore"><a href="#创建-gitignore" class="headerlink" title="创建.gitignore"></a>创建.gitignore</h3><p>常见的需要备份的文件大致有：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">scaffolds/</span><br><span class="line"><span class="built_in">source</span>/</span><br><span class="line">themes/</span><br><span class="line">.git/</span><br><span class="line">.gitignore</span><br><span class="line">_config.yml</span><br><span class="line">package.json</span><br></pre></td></tr></table></figure>
+<h3 id="What’s-Hexo"><a href="#What’s-Hexo" class="headerlink" title="What’s Hexo"></a>What’s Hexo</h3><ul>
+<li><p><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/">官方文档</a></p>
+</li>
+<li><p>一个渲染静态博客的框架，基于<code>Node.js</code>，将<code>markdown</code>文件渲染成<code>html</code>文件</p>
+</li>
+</ul>
+<h3 id="Hexo-Github-Page"><a href="#Hexo-Github-Page" class="headerlink" title="Hexo + Github Page"></a>Hexo + Github Page</h3><ul>
+<li>利用<code>hexo</code>快速生成需要的页面，利用<code>github</code>在公网展示出来</li>
+</ul>
+<h2 id="创建Github-Pages"><a href="#创建Github-Pages" class="headerlink" title="创建Github Pages"></a>创建Github Pages</h2><p>创建一个公网能访问的<code>page</code>，让大家能看到你的博客，这里利用<code>Github page</code></p>
+<h3 id="创建repo"><a href="#创建repo" class="headerlink" title="创建repo"></a>创建repo</h3><p>创建一个名为<code>xxx.github.io</code>的仓库，且允许公网访问：</p>
+<p><img src="https://tva1.sinaimg.cn/large/0084b03xly1gvwe3g2y4pj30px0c8ade.jpg" alt="image.png"></p>
+<h3 id="创建Pages"><a href="#创建Pages" class="headerlink" title="创建Pages"></a>创建Pages</h3><p>在里面随便新建一个文件，确保<code>main</code>分支有东西。</p>
+<p>然后在<code>Settings -&gt; Pages</code>里面设置分支和网站根目录：这里直接设置为<code>main</code>和<code>/(root)</code>。如果网页上传在其他分支上可以在这里修改。</p>
+<p><img src="https://tva1.sinaimg.cn/large/0084b03xly1gvwe8mpskbj31720n0wot.jpg" alt="image.png"></p>
+<p>此时访问<code>https://test.github.io</code>应该就能看到刚刚的网页了。<del>（因为我已经开了一个<code>xiabee.github.io</code>，而免费版只能开一个网页，所以<code>test.github.io</code>就暂时无法展示）</del></p>
+<h2 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h2><h3 id="Node-js"><a href="#Node-js" class="headerlink" title="Node.js"></a>Node.js</h3><ul>
+<li><p><code>Linux</code>用户：直接包管理器安装即可</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 例如Ubuntu</span></span><br><span class="line">apt update</span><br><span class="line">apt install nodejs</span><br></pre></td></tr></table></figure>
+
+<p>包管理器找不到<code>nodejs</code>的可以和<code>Windows</code>用户一样取官网安装。</p>
+</li>
+<li><p><code>Windows</code>用户：<a target="_blank" rel="noopener" href="https://nodejs.org/zh-cn/">官网</a>下载并安装</p>
+</li>
+</ul>
+<h3 id="NPM"><a href="#NPM" class="headerlink" title="NPM"></a>NPM</h3><ul>
+<li><p><code>node.js</code>一般自带<code>npm</code>，但是可能不是最新版的<code>npm</code>，直接更新即可</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">apt-get install nodejs-legacy</span><br><span class="line">apt-get install npm</span><br><span class="line">npm install -g n</span><br><span class="line"><span class="comment"># 安装n模块</span></span><br><span class="line"></span><br><span class="line">n stable</span><br><span class="line"><span class="comment"># 升级nodejs到最新stable版本</span></span><br><span class="line"></span><br><span class="line">npm install npm@latest -g</span><br><span class="line"><span class="comment"># 升级最新npm</span></span><br></pre></td></tr></table></figure></li>
+<li><p>如果没有自带<code>npm</code>可以去<a target="_blank" rel="noopener" href="https://docs.npmjs.com/">官网</a>看看，手动安装<code>npm</code></p>
+</li>
+</ul>
+<h3 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h3><ul>
+<li><p><code>Linux</code>：直接包管理器安装</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># ubuntu</span></span><br><span class="line">apt update</span><br><span class="line">apt install git</span><br></pre></td></tr></table></figure></li>
+<li><p><code>Windows</code>：<a target="_blank" rel="noopener" href="https://git-scm.com/downloads">官网</a>下载安装</p>
+</li>
+<li><p>配置<code>ssh</code>登录可以参考<a href="https://xiabee.github.io/posts/github-ssh/">这篇博客</a></p>
+</li>
+</ul>
+<h3 id="HEXO"><a href="#HEXO" class="headerlink" title="HEXO"></a>HEXO</h3><p>先装<code>hexo-cli</code>：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo npm install -g hexo-cli</span><br><span class="line"><span class="comment"># 全局安装hexo</span></span><br></pre></td></tr></table></figure>
 
 
 
-<p>然而，每次筛选很麻烦，这里我们直接在<code>hexo</code>根目录下创建<code>.gitignore</code>排除剩下的不需要备份的文件。</p>
-<p>示例如下：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># .gitignore</span></span><br><span class="line">.DS_Store</span><br><span class="line">Thumbs.db</span><br><span class="line">db.json</span><br><span class="line">*.<span class="built_in">log</span></span><br><span class="line">node_modules/</span><br><span class="line">public/</span><br><span class="line">.deploy*/</span><br><span class="line">.git*/</span><br><span class="line">themes/</span><br><span class="line">!themes/archer/_config.yml</span><br><span class="line"><span class="comment"># 这里只备份主题的配置文件</span></span><br><span class="line">.vscode/</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="本地调试"><a href="#本地调试" class="headerlink" title="本地调试"></a>本地调试</h2><h3 id="hexo根目录"><a href="#hexo根目录" class="headerlink" title="hexo根目录"></a>hexo根目录</h3><p>选择一个空目录做为<code>hexo</code>的根目录，初始化并安装相关依赖：</p>
+<p>这里建议把刚刚创建的<code>Github Page</code>的<code>repo</code>克隆下来，再把该目录删空作为根目录……不然可能会遇到分支没有共同基点不能合并的问题。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">hexo init </span><br><span class="line"><span class="comment"># 在该目录下初始化</span></span><br><span class="line"></span><br><span class="line">npm install</span><br><span class="line"><span class="comment"># 安装依赖</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="常用hexo命令："><a href="#常用hexo命令：" class="headerlink" title="常用hexo命令："></a>常用hexo命令：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">hexo g <span class="comment"># hexo generate</span></span><br><span class="line"><span class="comment"># 渲染页面，生成网页</span></span><br><span class="line"></span><br><span class="line">hexo s <span class="comment"># hexo server</span></span><br><span class="line"><span class="comment"># 启动本地服务器，提供预览和本地调试</span></span><br><span class="line"></span><br><span class="line">hexo clean</span><br><span class="line"><span class="comment"># 清理本地网页</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>访问<a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000</a>，出现<code>hexo</code>页面说明渲染成功</p>
+<p><img src="https://tva1.sinaimg.cn/large/0084b03xly1gvwdzcr2n8j31hc0n4aw0.jpg" alt="image.png"></p>
+<p>这里我修改过主页，所以可能看起来和初始模板不太一样。</p>
+<p><strong>Tips：</strong>如果<code>server</code>一直起不来，可能是端口被占用了。<code>Ctrl C</code> 关闭服务器，运行 <code>hexo server -p 5000</code> 更改端口号后重试。</p>
+<h3 id="hexo常见目录结构"><a href="#hexo常见目录结构" class="headerlink" title="hexo常见目录结构"></a>hexo常见目录结构</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">├── _config.yml 	<span class="comment"># 网站配置信息</span></span><br><span class="line">├── node_modules	<span class="comment"># nodejs组件</span></span><br><span class="line">├── package.json</span><br><span class="line">├── package-lock.json</span><br><span class="line">├── public			<span class="comment"># 生成的网站文件</span></span><br><span class="line">├── README.md		</span><br><span class="line">├── scaffolds		<span class="comment"># 模板文件夹</span></span><br><span class="line">├── <span class="built_in">source</span>			<span class="comment"># 写博客的markdown源文件</span></span><br><span class="line">└── themes			<span class="comment"># 主题文件夹</span></span><br></pre></td></tr></table></figure>
 
 
 
 
 
-<h3 id="创建分支"><a href="#创建分支" class="headerlink" title="创建分支"></a>创建分支</h3><p>在刚刚创建好<code>git</code>的<code>hexo</code>的根目录下执行：这里以 <code>hexo_backup</code> 分支为例</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">git branch -a</span><br><span class="line"><span class="comment"># 查看所有分支</span></span><br><span class="line"></span><br><span class="line">git branch </span><br><span class="line"><span class="comment"># 查看当前使用分支</span></span><br><span class="line"></span><br><span class="line">git checkout hexo_backup</span><br><span class="line"><span class="comment"># 切换到 hexo_backup 分支上，若不存在则创建该分支并切换到该分支</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># git branch -d hexo_backup</span></span><br><span class="line"><span class="comment"># 删除本地 hexo_backup 分支</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># git push origin --delete hexo_backup</span></span><br><span class="line"><span class="comment"># 删除远程 hexo_backup 分支</span></span><br></pre></td></tr></table></figure>
-
-<p>确保新分支不要与主分支重名……尽量不要取<code>master</code>、<code>main</code>这种名字就好。</p>
-<h2 id="提交备份"><a href="#提交备份" class="headerlink" title="提交备份"></a>提交备份</h2><p>因为之前写了<code>.gitignore</code>，我们可以放心大胆的将当前目录全部<code>commit</code>：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br><span class="line"><span class="comment"># 添加当前目录</span></span><br><span class="line"></span><br><span class="line">git commit -m <span class="string">&quot;backup&quot;</span></span><br><span class="line"><span class="comment"># 添加commit，引号内的内容随意</span></span><br><span class="line"></span><br><span class="line">git push origin hexo_backup</span><br><span class="line"><span class="comment"># 将本地数据推送到 hexo_backup 分支中</span></span><br></pre></td></tr></table></figure>
-
-<p>远程仓库已有两个分支，因此必须指定分支<code>hexo_backup</code>，不能直接<code>git push</code>。</p>
-<p><img src="https://tva1.sinaimg.cn/large/0084b03xly1gvvi0lcpq3j30qh08m0zg.jpg" alt="image.png"></p>
-<p>此时本地分支和远程分支匹配</p>
-<p><img src="https://tva1.sinaimg.cn/large/0084b03xly1gvvi1iy2zmj30w60koqah.jpg" alt="image.png"></p>
-<p>此时已经备份完毕了。</p>
-<h2 id="迁移与复原"><a href="#迁移与复原" class="headerlink" title="迁移与复原"></a>迁移与复原</h2><h3 id="新环境配置"><a href="#新环境配置" class="headerlink" title="新环境配置"></a>新环境配置</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br><span class="line">hexo init</span><br></pre></td></tr></table></figure>
+<h2 id="远程推送"><a href="#远程推送" class="headerlink" title="远程推送"></a>远程推送</h2><p>把<code>hexo</code>推送到<code>github</code>中</p>
+<h3 id="安装hexo-deployer-git"><a href="#安装hexo-deployer-git" class="headerlink" title="安装hexo-deployer-git"></a>安装hexo-deployer-git</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
 
 
 
+<h3 id="修改-comfig-yml"><a href="#修改-comfig-yml" class="headerlink" title="修改_comfig.yml"></a>修改_comfig.yml</h3><p>找到<code>hexo</code>根目录下的<code>_config.yml</code>，文末<code>deploy:</code>模块：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## Docs: https://hexo.io/docs/one-command-deployment</span></span><br><span class="line">deploy:</span><br><span class="line">  <span class="built_in">type</span>: git</span><br><span class="line">  repo: </span><br><span class="line">    github: git@github.com:xiabee/test.github.io.git</span><br><span class="line">    branch: main</span><br><span class="line">    gitee: git@gitee.com:xiabee/test.gitee.io.git</span><br><span class="line">    branch: main</span><br></pre></td></tr></table></figure>
+
+<p>这里是做了<code>Gitee+GitHub</code>双备份，如果不传<code>gitee</code>的话可以只写<code>github</code>的仓库地址。</p>
+<p>此时指定<code>hexo</code>上传的网页文件为<code>main</code>分支，如果刚刚<code>Github Page</code>的分支不是<code>main</code>的可以修改一下……改哪个都可以，一致即可。</p>
+<p><img src="https://tva1.sinaimg.cn/large/0084b03xgy1gvwerqrvzfj30is07hmzf.jpg" alt="image.png"></p>
+<p>这里<code>GitHub Pages</code>用的就是<code>main</code>分支，不需要修改</p>
+<h3 id="推送"><a href="#推送" class="headerlink" title="推送"></a>推送</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">hexo g </span><br><span class="line"><span class="comment"># 渲染页面</span></span><br><span class="line"></span><br><span class="line">hexo d</span><br><span class="line"><span class="comment"># 推送至git，部署发布</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 二者结合相当于 hexo g -d</span></span><br></pre></td></tr></table></figure>
 
 
-<h3 id="克隆备份分支"><a href="#克隆备份分支" class="headerlink" title="克隆备份分支"></a>克隆备份分支</h3><p>将原来的<code>source</code>,  <code>package.json</code>等文件克隆到<code>hexo</code>根目录下</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> -b hexo_backup git@github.com:[username]/[username].github.io.git</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
 
-
-
-<h3 id="渲染与推送"><a href="#渲染与推送" class="headerlink" title="渲染与推送"></a>渲染与推送</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g -d</span><br><span class="line"><span class="comment"># 生成新的页面并推送至主分支</span></span><br></pre></td></tr></table></figure>
-
-<p>主分支利用<code>hexo</code>自身集成的<code>git</code>组件进行推送：</p>
-<p><img src="https://tva1.sinaimg.cn/large/0084b03xly1gvvi31gsgmj30iq0bhwmp.jpg" alt="image.png"></p>
+<p>此时访问公网地址，已经能看到该博客了：</p>
+<p><img src="https://tva1.sinaimg.cn/large/0084b03xly1gvweyd9xbzj31hl0sv1kx.jpg" alt="image.png"></p>
+<h2 id="写文章"><a href="#写文章" class="headerlink" title="写文章"></a>写文章</h2><p>在<code>_posts</code>目录下创建<code>markdown</code>文件，仿照<code>Hello World</code>写就行：</p>
+<p><img src="https://tva1.sinaimg.cn/large/0084b03xly1gvwf1noz1nj30mb08tafh.jpg" alt="image.png"></p>
+<p>然后<code>hexo g -d</code>，渲染、推送。</p>
+<h2 id="Hexo备份"><a href="#Hexo备份" class="headerlink" title="Hexo备份"></a>Hexo备份</h2><ul>
+<li>利用<code>Git</code>分支</li>
+<li>参考<a href="https://xiabee.github.io/posts/hexo-git/">这篇博客</a></li>
+</ul>
 
     </article>
     <!-- license -->
     
         <div class="license-wrapper">
             <p>原文作者：<a href="http://xiabee.github.io">xiabee</a>
-            <p>原文链接：<a href="http://xiabee.github.io/posts/hexo-git/">http://xiabee.github.io/posts/hexo-git/</a>
-            <p>发表日期：<a href="http://xiabee.github.io/posts/hexo-git/">十月 28日 2021, 11:46:18 晚上</a>
-            <p>更新日期：<a href="http://xiabee.github.io/posts/hexo-git/">October 29th 2021, 11:05:59 am</a>
+            <p>原文链接：<a href="http://xiabee.github.io/posts/hexo-git-setup/">http://xiabee.github.io/posts/hexo-git-setup/</a>
+            <p>发表日期：<a href="http://xiabee.github.io/posts/hexo-git-setup/">十月 27日 2021, 11:46:18 晚上</a>
+            <p>更新日期：<a href="http://xiabee.github.io/posts/hexo-git-setup/">October 29th 2021, 7:42:41 pm</a>
             <p>版权声明：本文采用<a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
     <!-- paginator -->
     <ul class="post-paginator">
         <li class="next">
+            
+                <div class="nextSlogan">Next Post</div>
+                <a href="/posts/hexo-git-backup/" title="利用git分支进行Hexo备份">
+                    <div class="nextTitle">利用git分支进行Hexo备份</div>
+                </a>
             
         </li>
         <li class="previous">
@@ -747,7 +798,7 @@
                 <div class="toc-catalog">
                     <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
                 </div>
-                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%97%AE%E9%A2%98%E6%8F%8F%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text">问题描述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="toc-number">2.</span> <span class="toc-text">解决方案</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E5%A4%87%E4%BB%BD"><span class="toc-number">3.</span> <span class="toc-text">创建备份</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%A8hexo%E6%A0%B9%E7%9B%AE%E5%BD%95%E4%B8%8B%E5%88%9B%E5%BB%BAgit"><span class="toc-number">3.1.</span> <span class="toc-text">在hexo根目录下创建git</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA-gitignore"><span class="toc-number">3.2.</span> <span class="toc-text">创建.gitignore</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E5%88%86%E6%94%AF"><span class="toc-number">3.3.</span> <span class="toc-text">创建分支</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8F%90%E4%BA%A4%E5%A4%87%E4%BB%BD"><span class="toc-number">4.</span> <span class="toc-text">提交备份</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%81%E7%A7%BB%E4%B8%8E%E5%A4%8D%E5%8E%9F"><span class="toc-number">5.</span> <span class="toc-text">迁移与复原</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B0%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE"><span class="toc-number">5.1.</span> <span class="toc-text">新环境配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%8B%E9%9A%86%E5%A4%87%E4%BB%BD%E5%88%86%E6%94%AF"><span class="toc-number">5.2.</span> <span class="toc-text">克隆备份分支</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B8%B2%E6%9F%93%E4%B8%8E%E6%8E%A8%E9%80%81"><span class="toc-number">5.3.</span> <span class="toc-text">渲染与推送</span></a></li></ol></li></ol>
+                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E4%BB%8B"><span class="toc-number">2.</span> <span class="toc-text">简介</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#What%E2%80%99s-GitHub-Page"><span class="toc-number">2.1.</span> <span class="toc-text">What’s GitHub Page</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#What%E2%80%99s-Hexo"><span class="toc-number">2.2.</span> <span class="toc-text">What’s Hexo</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Hexo-Github-Page"><span class="toc-number">2.3.</span> <span class="toc-text">Hexo + Github Page</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BAGithub-Pages"><span class="toc-number">3.</span> <span class="toc-text">创建Github Pages</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BArepo"><span class="toc-number">3.1.</span> <span class="toc-text">创建repo</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BAPages"><span class="toc-number">3.2.</span> <span class="toc-text">创建Pages</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA"><span class="toc-number">4.</span> <span class="toc-text">环境搭建</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Node-js"><span class="toc-number">4.1.</span> <span class="toc-text">Node.js</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#NPM"><span class="toc-number">4.2.</span> <span class="toc-text">NPM</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Git"><span class="toc-number">4.3.</span> <span class="toc-text">Git</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HEXO"><span class="toc-number">4.4.</span> <span class="toc-text">HEXO</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%AC%E5%9C%B0%E8%B0%83%E8%AF%95"><span class="toc-number">5.</span> <span class="toc-text">本地调试</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#hexo%E6%A0%B9%E7%9B%AE%E5%BD%95"><span class="toc-number">5.1.</span> <span class="toc-text">hexo根目录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8hexo%E5%91%BD%E4%BB%A4%EF%BC%9A"><span class="toc-number">5.2.</span> <span class="toc-text">常用hexo命令：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#hexo%E5%B8%B8%E8%A7%81%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84"><span class="toc-number">5.3.</span> <span class="toc-text">hexo常见目录结构</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%9C%E7%A8%8B%E6%8E%A8%E9%80%81"><span class="toc-number">6.</span> <span class="toc-text">远程推送</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85hexo-deployer-git"><span class="toc-number">6.1.</span> <span class="toc-text">安装hexo-deployer-git</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9-comfig-yml"><span class="toc-number">6.2.</span> <span class="toc-text">修改_comfig.yml</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8E%A8%E9%80%81"><span class="toc-number">6.3.</span> <span class="toc-text">推送</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%86%99%E6%96%87%E7%AB%A0"><span class="toc-number">7.</span> <span class="toc-text">写文章</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hexo%E5%A4%87%E4%BB%BD"><span class="toc-number">8.</span> <span class="toc-text">Hexo备份</span></a></li></ol>
             </div>
         
         <!-- sidebar -->
@@ -806,7 +857,20 @@
         
         
         
+        
+        
+        
+        
+        
     
+        
+        
+        
+        
+        
+        
+        
+        
         
         
         
@@ -853,7 +917,7 @@
     
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 9
+        Total : 10
         </div>
         <!-- search  -->
         
@@ -874,7 +938,13 @@
         
         <li class="archive-post-item">
             <span class="archive-post-date">10/28</span>
-            <a class="archive-post-title" href="/posts/hexo-git/">利用git分支进行Hexo备份</a>
+            <a class="archive-post-title" href="/posts/hexo-git-backup/">利用git分支进行Hexo备份</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/27</span>
+            <a class="archive-post-title" href="/posts/hexo-git-setup/">Hexo+GitPage搭建个人博客</a>
         </li>
     
         
