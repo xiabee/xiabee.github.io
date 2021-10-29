@@ -6,10 +6,12 @@ tags:
   - git
 categories:
   - coding
-abbrlink: hexo-git
+abbrlink: hexo-git-backup
 ---
 
 
+
+`hexo`博客搭建可以看[这里](https://xiabee.github.io/posts/hexo-git-setup/)。
 
 ## 问题描述
 
