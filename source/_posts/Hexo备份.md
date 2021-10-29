@@ -1,5 +1,5 @@
 ---
-title: 利用git进行Hexo备份
+title: 利用git分支进行Hexo备份
 date: 2021-10-28 23:46:18
 tags:  
   - hexo
@@ -30,7 +30,7 @@ abbrlink: hexo-git
 
 
 
-## 备份
+## 创建备份
 
 这里我们主要介绍`github`分支的方式：主分支用于渲染`github page`，分分支用于备份重要源文件。
 
@@ -48,7 +48,7 @@ abbrlink: hexo-git
 
 
 
-创建本地`git`的方式有很多种，只需要将`git`的指向我们`github.io`的`repo`就行。
+创建本地`git`的方式有很多种，只需要将`git`的指向我们`xxx.github.io`的`repo`就行。
 
 比如可以直接将`xxx.github.io`的整个`repo`克隆下来，然后复制其中的`.git`目录到`hexo`的根目录下。
 
@@ -117,11 +117,11 @@ git checkout hexo_backup
 # 删除远程 hexo_backup 分支
 ```
 
-确保新分支不要与主分支重名......尽量不要取`master`、` main`这种名字就好。
+确保新分支不要与主分支重名......尽量不要取`master`、`main`这种名字就好。
 
 
 
-### 提交备份
+## 提交备份
 
 因为之前写了`.gitignore`，我们可以放心大胆的将当前目录全部`commit`：
 
@@ -157,7 +157,6 @@ git push origin hexo_backup
 ```bash
 npm install -g hexo-cli
 hexo init
-npm install
 ```
 
 
@@ -166,8 +165,11 @@ npm install
 
 ### 克隆备份分支
 
+将原来的`source`,  `package.json`等文件克隆到`hexo`根目录下
+
 ```bash
 git clone -b hexo_backup git@github.com:[username]/[username].github.io.git
+npm install
 ```
 
 
