@@ -37,9 +37,16 @@ abbrlink:
 
 # searching 
 algolia:
-  applicationID: '2BK6PYKX0M'
+  applicationID: '2BK6PYKX0M' # used for hexo-algolia
+  appId: '2BK6PYKX0M'         # used for hexo-algoliasearch
   apiKey: 'b38ca74b6b5c5ffea6dc73886c041838'
+  chunkSize: 5000
   indexName: 'xiabee-search'
+  fields:
+    - path
+    - title
+    - content:strip
+    - excerpt:strip
 
 
 # Directory
@@ -118,6 +125,10 @@ ignore:
 
 # Extensions
 ## Plugins: https://hexo.io/plugins/
+plugins:
+  - hexo-algoliasearch
+
+
 ## Themes: https://hexo.io/themes/
 theme: archer
 

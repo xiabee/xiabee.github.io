@@ -6,6 +6,7 @@ node_modules/
 public/
 .deploy*/
 .git*/
+!.gitignore
 themes/
 !themes/archer/_config.yml
 .vscode/
