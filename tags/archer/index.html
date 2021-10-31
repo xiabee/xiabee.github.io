@@ -441,6 +441,58 @@
             
         
         <article class="index-post">
+            <a class="abstract-title" href="/posts/archer-algolia/">
+                
+                <span class="abstract-title-text">Archer主题启用Algolia全文搜索</span>
+            </a>
+            <div class="abstract-content">
+                问题描述
+Hexo缺少站内搜索功能
+Hexo自带的tag功能并不能满足搜索需求
+Archer主题自带的搜索模块不能实现全文检索（详情可以参考相关issue）
+
+Hexo本质上是一个静态页面的渲染工具，而我们的博客部署在Github Page上，没有数据库的操作权限，也就不能像Wordpress那样自身实现站内的高级搜索……然而主题自带的第三方搜索插件又无法检索文章内容……
+解决方案
+利用Archer封装的第三方插件Algolia实现搜索
+利用hexo-algoliasearch实现全文检索
+
+
+
+为什么不直接用hexo-algoliasearch做搜索
+因为主题没有封装，裸着搜索很违和，...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2021/10/31">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/10/31</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="hexo">hexo</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="archer">archer</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="algolia">algolia</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
             <a class="abstract-title" href="/posts/hexo-archer/">
                 
                 <span class="abstract-title-text">Hexo更换主题</span>
@@ -665,7 +717,20 @@ Hexo主题
         
         
         
+        
+        
+        
+        
+        
     
+        
+        
+        
+        
+        
+        
+        
+        
         
         
         
@@ -734,7 +799,7 @@ Hexo主题
     
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 12
+        Total : 13
         </div>
         <!-- search  -->
         
@@ -756,6 +821,12 @@ Hexo主题
         <li class="archive-post-item">
             <span class="archive-post-date">10/31</span>
             <a class="archive-post-title" href="/posts/hexo-archer/">Hexo更换主题</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/31</span>
+            <a class="archive-post-title" href="/posts/archer-algolia/">Archer主题启用Algolia全文搜索</a>
         </li>
     
         
@@ -882,6 +953,11 @@ Hexo主题
             <span class="sidebar-tag-name" data-tags="docker">
                 <span class="iconfont-archer">&#xe606;</span>
                 docker
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="algolia">
+                <span class="iconfont-archer">&#xe606;</span>
+                algolia
             </span>
         
     </div>
