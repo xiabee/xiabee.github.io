@@ -40,9 +40,9 @@ about:
   image: '/intro/about-bg.jpg'
 # Search for website
 search:
-  enable: false
+  enable: true
   # Seach URL, must be set. For example: 'fi3ework.github.io'
-  url: 
+  url: https://google.com
   # Search engine: 'bing' (default), 'google' or 'baidu'
   engine: bing
 # Display icons of friends, about and search

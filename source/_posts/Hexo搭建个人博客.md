@@ -263,11 +263,33 @@ hexo d
 
 ## 写文章
 
+### 编辑源文件
+
 在`_posts`目录下创建`markdown`文件，仿照`Hello World`写就行：
 
 ![image.png](https://tva1.sinaimg.cn/large/0084b03xly1gvwf1noz1nj30mb08tafh.jpg)
 
 然后`hexo g -d`，渲染、推送。
+
+
+
+### 关于图床
+
+如果是整个媒体库都上传到`Github`上的话，相当于是把`Github`作为图床了......然而众所周知`Github`在国内的速度非常非常慢。所以建议换一个好用的图床。
+
+
+
+关于图床的推荐可以参考一下[知乎](https://www.zhihu.com/question/21349585)。
+
+
+
+这里我个人使用的是[微博](https://weibo.com/)图床，配合`Chrome`插件[新浪微博图床](https://chrome.google.com/webstore/detail/%E6%96%B0%E6%B5%AA%E5%BE%AE%E5%8D%9A%E5%9B%BE%E5%BA%8A/fdfdnfpdplfbbnemmmoklbfjbhecpnhf?utm_source=chrome-ntp-icon)使用，可以直接微信截图到剪贴板，然后复制粘贴，灰常方便：
+
+![image.png](https://tva1.sinaimg.cn/large/0084b03xly1gvysn7j1qaj30ra0ivabw.jpg)
+
+
+
+当然，用这个图床的前提是你得有一个微博账号（x）
 
 
 
