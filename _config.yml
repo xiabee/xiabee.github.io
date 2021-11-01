@@ -18,7 +18,7 @@ permalink: posts/:abbrlink/
 permalink_defaults:
 pretty_urls:
   trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
-  trailing_html: true # Set to false to remove trailing '.html' from permalinks
+  trailing_html: false # Set to false to remove trailing '.html' from permalinks
 
 # abbrlink 
 abbrlink:
@@ -57,7 +57,11 @@ archive_dir: archives
 category_dir: categories
 code_dir: downloads/code
 i18n_dir: :lang
-skip_render: README.md
+skip_render: 
+  - README.md
+  - google5e2c1a2c54cd726e.html
+  - baidu_verify_code-xrWKBSW0Fj.html
+  - html/*
 
 # Writing
 new_post_name: :title.md # File name of new posts
@@ -131,6 +135,12 @@ plugins:
 
 ## Themes: https://hexo.io/themes/
 theme: archer
+
+## sitemap
+sitemap:
+  path: sitemap.xml
+baidusitemap:
+  path: baidusitemap.xml
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
