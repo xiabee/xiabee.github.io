@@ -110,9 +110,40 @@ abbrlink: git-coding-hexo
 
 
 
+### Coding自定义域名
+
 ![image.png](https://tva1.sinaimg.cn/large/0084b03xly1gw1xleyvztj31hc0n4k4w.jpg)
 
 这里需要在域名供应商那里添加一条解析，以验证你的域名；同时需要为你的域名绑定证书。
+
+
+
+### Github自定义域名
+
+![image.png](https://tva1.sinaimg.cn/large/0084b03xgy1gw2573d49uj31hc0p24cm.jpg)
+
+
+
+* 注意：`Github Page`在自定义域名的时候会生成一个`CNAME`文件，为了避免我们每次更新是该文件被覆盖，需要在本地的`source`目录下同步创建一个`CNAME`，该文件内容为你刚刚填写的自定义域名。
+* 同时配置根目录`_config.yml`，防止`CNAME`被渲染成`html`文件
+
+```yml
+skip_render: 
+  - README.md
+  - CNAME
+  - html/*
+  # 这里我设置了自定义页面的目录html
+```
+
+
+
+![image.png](https://tva1.sinaimg.cn/large/0084b03xgy1gw25bgh2rmj30hb0ergon.jpg)
+
+`CNAME`存于`source`目录下，记录值为自定义域名`blog.xiabee.cn`
+
+
+
+### 证书相关
 
 我之前购买`xiabee.cn`的证书的时候，图便宜搞了个单域名的，现在不支持子域名证书，所以就必须重新配置证书。
 
@@ -125,6 +156,8 @@ abbrlink: git-coding-hexo
 想白嫖的同学可以去[OHTTPS](https://ohttps.com/guide/createcertificate)或者[letsencrypt](https://letsencrypt.org/)上面看看。
 
 
+
+有条件的话尽量选大公司的，很多免费的证书已经不被信任了......
 
 ## 设置Hexo
 
