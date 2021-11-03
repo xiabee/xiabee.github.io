@@ -456,6 +456,53 @@
             
         
         <article class="index-post">
+            <a class="abstract-title" href="/posts/git-coding-hexo/">
+                
+                <span class="abstract-title-text">Git Page + Coding Page 实现负载均衡</span>
+            </a>
+            <div class="abstract-content">
+                问题描述Github Page不能被搜索引擎收录Github Page禁止了百度爬虫，导致百度无法收录我的博客；然后其他搜索引擎可能也是类似原因，均无法收录。而且曾经可以通过手动上传和sitemap的方式提交链接，现在连sitemap都读不到了……被迫转战其他平台。
+Github Page在国内访问速度较慢github.io经常抽风，在国内访问不稳定，考虑增加一个国内的备份地址。
+初步解决方案
+利用coding创建国内镜像
+搜索引擎收入coding内容
+利用可控域名，通过CNAME解析到不同域名中，通过DNS实现负载均衡、
+
+
+
+为什么是coding
+因为gitee实在太慢了，性能堪忧；...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2021/11/03">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/11/02</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="hexo">hexo</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="git">git</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
             <a class="abstract-title" href="/posts/archer-algolia/">
                 
                 <span class="abstract-title-text">Archer主题启用Algolia全文搜索</span>
@@ -877,50 +924,6 @@ WSL2从OS层实现了独立，不再与宿主机共享OS，解决了许多二进
         </article>
         <div class="index-post-divider"></div>
     
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/posts/github-ssh/">
-                
-                <span class="abstract-title-text">GitHub配置SSH Key</span>
-            </a>
-            <div class="abstract-content">
-                在Github上提交代码，每次 push 都需要输入一次密码，特别麻烦，所以现在就记录一下用SSH登陆GitHub的过程
-先来康康这两个登陆方式有啥区别：
-1234https://github.com/xiabee/fucking-views.git# use httpsgit@github.com:xiabee/fucking-views.git# use ssh
-
-第一种直接使用https，可以直接浏览器访问，方便查阅，但是每次push都要输入密码
-第二种使用ssh，不能直接访问，但是在push的时候可以保留密钥文件
-个人感觉，在开发的时候，还是使用ssh比较方便。
-那就康康如何配置...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2021/10/27">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/08/27</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="git">git</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="ssh">ssh</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
     <!-- paginator  -->
     
         <nav class="page-nav">
@@ -1233,7 +1236,20 @@ WSL2从OS层实现了独立，不再与宿主机共享OS，解决了许多二进
         
         
         
+        
+        
+        
+        
+        
     
+        
+        
+        
+        
+        
+        
+        
+        
         
         
         
@@ -1310,7 +1326,7 @@ WSL2从OS层实现了独立，不再与宿主机共享OS，解决了许多二进
     
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 13
+        Total : 14
         </div>
         <!-- search  -->
         
@@ -1328,6 +1344,12 @@ WSL2从OS层实现了独立，不再与宿主机共享OS，解决了许多二进
             <div class="archive-year"> 2021 </div>
             <ul class="year-list">
             
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/02</span>
+            <a class="archive-post-title" href="/posts/git-coding-hexo/">Git Page + Coding Page 实现负载均衡</a>
+        </li>
+    
         
         <li class="archive-post-item">
             <span class="archive-post-date">10/31</span>
