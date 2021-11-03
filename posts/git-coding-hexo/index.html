@@ -19,12 +19,12 @@
         <meta name="keywords" content="xiabee,hexo-theme,xiabee-blog">
     
     <meta name="description" content="">
-    <meta name="description" content="问题描述Github Page不能被搜索引擎收录Github Page禁止了百度爬虫，导致百度无法收录我的博客；然后其他搜索引擎可能也是类似原因，均无法收录。而且曾经可以通过手动上传和sitemap的方式提交链接，现在连sitemap都读不到了……被迫转战其他平台。 Github Page在国内访问速度较慢github.io经常抽风，在国内访问不稳定，考虑增加一个国内的备份地址。 初步解决方案 利">
+    <meta name="description" content="问题描述Github Page不能被搜索引擎收录Github Page禁止了百度爬虫，导致百度无法收录我的博客；然后其他搜索引擎可能也是类似原因，均无法收录。而且曾经可以通过手动上传和sitemap的方式提交链接，现在连sitemap都读不到了……被迫转战其他平台。 Github Page在国内访问速度较慢github.io经常抽风，在国内访问不稳定，考虑增加一个国内的备份。 初步解决方案 利用c">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Git Page + Coding Page 实现负载均衡">
 <meta property="og:url" content="https://blog.xiabee.cn/posts/git-coding-hexo/index.html">
 <meta property="og:site_name" content="xiabee-瞎哔哔">
-<meta property="og:description" content="问题描述Github Page不能被搜索引擎收录Github Page禁止了百度爬虫，导致百度无法收录我的博客；然后其他搜索引擎可能也是类似原因，均无法收录。而且曾经可以通过手动上传和sitemap的方式提交链接，现在连sitemap都读不到了……被迫转战其他平台。 Github Page在国内访问速度较慢github.io经常抽风，在国内访问不稳定，考虑增加一个国内的备份地址。 初步解决方案 利">
+<meta property="og:description" content="问题描述Github Page不能被搜索引擎收录Github Page禁止了百度爬虫，导致百度无法收录我的博客；然后其他搜索引擎可能也是类似原因，均无法收录。而且曾经可以通过手动上传和sitemap的方式提交链接，现在连sitemap都读不到了……被迫转战其他平台。 Github Page在国内访问速度较慢github.io经常抽风，在国内访问不稳定，考虑增加一个国内的备份。 初步解决方案 利用c">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://tva1.sinaimg.cn/large/0084b03xly1gw18swxy1kj30qf0fftc8.jpg">
 <meta property="og:image" content="https://tva1.sinaimg.cn/large/0084b03xly1gw18vu6zkpj31g80l248m.jpg">
@@ -32,8 +32,13 @@
 <meta property="og:image" content="https://tva1.sinaimg.cn/large/0084b03xly1gw1xk5mfv7j31hc0n41kx.jpg">
 <meta property="og:image" content="https://tva1.sinaimg.cn/large/0084b03xly1gw18y6sgrrj30ru0mkjwd.jpg">
 <meta property="og:image" content="https://tva1.sinaimg.cn/large/0084b03xly1gw1xleyvztj31hc0n4k4w.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/0084b03xly1gw1xwuzu72j311e07ltck.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/0084b03xly1gw1xxmmpa0j30yf0m5dx3.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/0084b03xly1gw1xz4983aj30kg031jry.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/0084b03xly1gw1y9u3pagj30js05i77q.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/0084b03xly1gw1y8qwz28j30ib05bn0b.jpg">
 <meta property="article:published_time" content="2021-11-02T14:46:18.000Z">
-<meta property="article:modified_time" content="2021-11-03T06:21:14.095Z">
+<meta property="article:modified_time" content="2021-11-03T06:35:19.999Z">
 <meta property="article:author" content="xiabee">
 <meta property="article:tag" content="hexo">
 <meta property="article:tag" content="git">
@@ -356,7 +361,7 @@
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">753</span>阅读时长: <span class="post-count reading-time">2 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">832</span>阅读时长: <span class="post-count reading-time">3 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -518,7 +523,7 @@
                 <main class="main post-page">
     <article class="article-entry">
         <h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><h3 id="Github-Page不能被搜索引擎收录"><a href="#Github-Page不能被搜索引擎收录" class="headerlink" title="Github Page不能被搜索引擎收录"></a>Github Page不能被搜索引擎收录</h3><p><code>Github Page</code>禁止了百度爬虫，导致百度无法收录我的博客；然后其他搜索引擎可能也是类似原因，均无法收录。而且曾经可以通过手动上传和<code>sitemap</code>的方式提交链接，现在连<code>sitemap</code>都读不到了……被迫转战其他平台。</p>
-<h3 id="Github-Page在国内访问速度较慢"><a href="#Github-Page在国内访问速度较慢" class="headerlink" title="Github Page在国内访问速度较慢"></a>Github Page在国内访问速度较慢</h3><p><code>github.io</code>经常抽风，在国内访问不稳定，考虑增加一个国内的备份地址。</p>
+<h3 id="Github-Page在国内访问速度较慢"><a href="#Github-Page在国内访问速度较慢" class="headerlink" title="Github Page在国内访问速度较慢"></a>Github Page在国内访问速度较慢</h3><p><code>github.io</code>经常抽风，在国内访问不稳定，考虑增加一个国内的备份。</p>
 <h3 id="初步解决方案"><a href="#初步解决方案" class="headerlink" title="初步解决方案"></a>初步解决方案</h3><ul>
 <li>利用<code>coding</code>创建国内镜像</li>
 <li>搜索引擎收入<code>coding</code>内容</li>
@@ -572,13 +577,23 @@
 <p><img src="https://tva1.sinaimg.cn/large/0084b03xly1gw1xleyvztj31hc0n4k4w.jpg" alt="image.png"></p>
 <p>这里需要在域名供应商那里添加一条解析，以验证你的域名；同时需要为你的域名绑定证书。</p>
 <p>我之前购买<code>xiabee.cn</code>的证书的时候，图便宜搞了个单域名的，现在不支持子域名证书，所以就必须重新配置证书。</p>
-<p>本来是准备用<a target="_blank" rel="noopener" href="https://ohttps.com/guide/createcertificate">OHTTPS</a>搞个免费泛域名的，但是很多浏览器不认他的证书……导致我去腾讯云搞了一个新的证书（划掉）</p>
+<p>本来是准备用<a target="_blank" rel="noopener" href="https://ohttps.com/guide/createcertificate">OHTTPS</a>搞个免费泛域名的，但是很多浏览器不认他的证书……导致我去腾讯云搞了一个新的证书（划掉）。</p>
+<p><img src="https://tva1.sinaimg.cn/large/0084b03xly1gw1xwuzu72j311e07ltck.jpg" alt="image.png"></p>
+<p>想白嫖的同学可以去<a target="_blank" rel="noopener" href="https://ohttps.com/guide/createcertificate">OHTTPS</a>或者<a target="_blank" rel="noopener" href="https://letsencrypt.org/">letsencrypt</a>上面看看。</p>
 <h2 id="设置Hexo"><a href="#设置Hexo" class="headerlink" title="设置Hexo"></a>设置Hexo</h2><p>修改根目录下的<code>_config.yml</code>最后的<code>deploy</code>：</p>
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">    <span class="attr">repo:</span> </span><br><span class="line">      <span class="attr">github:</span> <span class="string">git@github.com:xiabee/xiabee.github.io.git,main</span></span><br><span class="line">      <span class="attr">coding:</span> <span class="string">git@e.coding.net:xiabee/xiabee-blog/xiabee.coding.me.git</span></span><br><span class="line">      <span class="comment"># 这里改成自己的项目地址即可</span></span><br></pre></td></tr></table></figure>
 
 
 
 <p>然后<code>hexo g -d</code>，渲染，提交。如果你的<code>SSH</code>公钥设置正确的话，应该是没有很大问题的。</p>
+<p><img src="https://tva1.sinaimg.cn/large/0084b03xly1gw1xxmmpa0j30yf0m5dx3.jpg" alt="image.png"></p>
+<h2 id="设置域名解析"><a href="#设置域名解析" class="headerlink" title="设置域名解析"></a>设置域名解析</h2><p>最后把自定义域名同时解析到两个记录值即可：</p>
+<p><img src="https://tva1.sinaimg.cn/large/0084b03xly1gw1xz4983aj30kg031jry.jpg" alt="image.png"></p>
+<h2 id="国内外访问测试"><a href="#国内外访问测试" class="headerlink" title="国内外访问测试"></a>国内外访问测试</h2><p>国内访问指向<code>coding page</code>：</p>
+<p><img src="https://tva1.sinaimg.cn/large/0084b03xly1gw1y9u3pagj30js05i77q.jpg" alt="image.png"></p>
+<p>国外访问指向<code>Github Page</code>：</p>
+<p><img src="https://tva1.sinaimg.cn/large/0084b03xly1gw1y8qwz28j30ib05bn0b.jpg" alt="image.png"></p>
+<p>此时我们的分布式站点已经配置好了（✌）</p>
 
     </article>
     <!-- license -->
@@ -587,7 +602,7 @@
             <p>原文作者：<a href="https://blog.xiabee.cn">xiabee</a>
             <p>原文链接：<a href="https://blog.xiabee.cn/posts/git-coding-hexo/">https://blog.xiabee.cn/posts/git-coding-hexo/</a>
             <p>发表日期：<a href="https://blog.xiabee.cn/posts/git-coding-hexo/">November 2nd 2021, 10:46:18 pm</a>
-            <p>更新日期：<a href="https://blog.xiabee.cn/posts/git-coding-hexo/">November 3rd 2021, 2:21:14 pm</a>
+            <p>更新日期：<a href="https://blog.xiabee.cn/posts/git-coding-hexo/">November 3rd 2021, 2:35:19 pm</a>
             <p>版权声明：本文采用<a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
@@ -756,7 +771,7 @@
                 <div class="toc-catalog">
                     <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
                 </div>
-                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%97%AE%E9%A2%98%E6%8F%8F%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text">问题描述</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Github-Page%E4%B8%8D%E8%83%BD%E8%A2%AB%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E6%94%B6%E5%BD%95"><span class="toc-number">1.1.</span> <span class="toc-text">Github Page不能被搜索引擎收录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Github-Page%E5%9C%A8%E5%9B%BD%E5%86%85%E8%AE%BF%E9%97%AE%E9%80%9F%E5%BA%A6%E8%BE%83%E6%85%A2"><span class="toc-number">1.2.</span> <span class="toc-text">Github Page在国内访问速度较慢</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9D%E6%AD%A5%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="toc-number">1.3.</span> <span class="toc-text">初步解决方案</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Github-Page"><span class="toc-number">2.</span> <span class="toc-text">Github Page</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Coding"><span class="toc-number">3.</span> <span class="toc-text">Coding</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%A8%E5%86%8C%E8%B4%A6%E5%8F%B7"><span class="toc-number">3.1.</span> <span class="toc-text">注册账号</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E9%A1%B9%E7%9B%AE"><span class="toc-number">3.2.</span> <span class="toc-text">创建项目</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0SSH%E5%85%AC%E9%92%A5"><span class="toc-number">3.3.</span> <span class="toc-text">添加SSH公钥</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE%E6%89%98%E7%AE%A1"><span class="toc-number">3.4.</span> <span class="toc-text">设置托管</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D"><span class="toc-number">3.5.</span> <span class="toc-text">设置自定义域名</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AEHexo"><span class="toc-number">4.</span> <span class="toc-text">设置Hexo</span></a></li></ol>
+                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%97%AE%E9%A2%98%E6%8F%8F%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text">问题描述</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Github-Page%E4%B8%8D%E8%83%BD%E8%A2%AB%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E6%94%B6%E5%BD%95"><span class="toc-number">1.1.</span> <span class="toc-text">Github Page不能被搜索引擎收录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Github-Page%E5%9C%A8%E5%9B%BD%E5%86%85%E8%AE%BF%E9%97%AE%E9%80%9F%E5%BA%A6%E8%BE%83%E6%85%A2"><span class="toc-number">1.2.</span> <span class="toc-text">Github Page在国内访问速度较慢</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9D%E6%AD%A5%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="toc-number">1.3.</span> <span class="toc-text">初步解决方案</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Github-Page"><span class="toc-number">2.</span> <span class="toc-text">Github Page</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Coding"><span class="toc-number">3.</span> <span class="toc-text">Coding</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%A8%E5%86%8C%E8%B4%A6%E5%8F%B7"><span class="toc-number">3.1.</span> <span class="toc-text">注册账号</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E9%A1%B9%E7%9B%AE"><span class="toc-number">3.2.</span> <span class="toc-text">创建项目</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0SSH%E5%85%AC%E9%92%A5"><span class="toc-number">3.3.</span> <span class="toc-text">添加SSH公钥</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE%E6%89%98%E7%AE%A1"><span class="toc-number">3.4.</span> <span class="toc-text">设置托管</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D"><span class="toc-number">3.5.</span> <span class="toc-text">设置自定义域名</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AEHexo"><span class="toc-number">4.</span> <span class="toc-text">设置Hexo</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90"><span class="toc-number">5.</span> <span class="toc-text">设置域名解析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BD%E5%86%85%E5%A4%96%E8%AE%BF%E9%97%AE%E6%B5%8B%E8%AF%95"><span class="toc-number">6.</span> <span class="toc-text">国内外访问测试</span></a></li></ol>
             </div>
         
         <!-- sidebar -->
