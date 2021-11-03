@@ -59,9 +59,10 @@ code_dir: downloads/code
 i18n_dir: :lang
 skip_render: 
   - README.md
+  - robots.txt
+  - CNAME
   - google5e2c1a2c54cd726e.html
   - baidu_verify_code-xrWKBSW0Fj.html
-  - CNAME
   - html/*
 
 # Writing
