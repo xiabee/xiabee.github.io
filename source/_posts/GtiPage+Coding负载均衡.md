@@ -29,7 +29,7 @@ abbrlink: git-coding-hexo
 
 * 利用`coding`创建国内镜像
 * 搜索引擎收入`coding`内容
-* 利用可控域名，通过`CNAME`解析到不同域名中，通过`DNS`实现负载均衡、
+* 利用可控域名，通过`CNAME`解析到不同域名中，通过`DNS`实现负载均衡
 
 > * 为什么是coding
 > * 因为gitee实在太慢了，性能堪忧；加上[coding](https://help.coding.net/docs/pages/price.html)能白嫖六个月......
