@@ -94,6 +94,8 @@ deb-src http://mirrors.163.com/debian-security/ jessie/updates main non-free con
 
 ### 阿里源
 
+* [官方地址](https://developer.aliyun.com/mirror/ubuntu)
+
 ```bash
 #阿里源
 deb http://mirrors.aliyun.com/ubuntu/ bionic main restricted universe multiverse
