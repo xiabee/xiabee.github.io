@@ -9,7 +9,9 @@ categories:
 abbrlink: markdown-docker
 ---
 
+## 服务地址
 
+* [https://xyj.xiabee.cn:3000](https://xyj.xiabee.cn:3000)
 
 
 
@@ -400,3 +402,4 @@ docker-compose logs --tail 10 | grep proxy
 再次检查一下`nginx`的配置文件有没有写错......
 
 如果完全不会写，可以直接抄这篇博客里面的，修改一个个人信息配置就行。
+
