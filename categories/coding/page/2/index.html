@@ -21,7 +21,7 @@
     <meta name="description" content="">
     <meta property="og:type" content="website">
 <meta property="og:title" content="xiabee-瞎哔哔">
-<meta property="og:url" content="https://blog.xiabee.cn/tags/algolia/index.html">
+<meta property="og:url" content="https://blog.xiabee.cn/categories/coding/page/2/index.html">
 <meta property="og:site_name" content="xiabee-瞎哔哔">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:author" content="xiabee">
@@ -441,43 +441,32 @@
             
         
         <article class="index-post">
-            <a class="abstract-title" href="/posts/archer-algolia/">
+            <a class="abstract-title" href="/posts/linux-sources/">
                 
-                <span class="abstract-title-text">Archer主题启用Algolia全文搜索</span>
+                <span class="abstract-title-text">Ubuntu/kali 国内各大更新源</span>
             </a>
             <div class="abstract-content">
-                问题描述
-Hexo缺少站内搜索功能
-Hexo自带的tag功能并不能满足搜索需求
-Archer主题自带的搜索模块不能实现全文检索（详情可以参考相关issue）
-
-Hexo本质上是一个静态页面的渲染工具，而我们的博客部署在Github Page上，没有数据库的操作权限，也就不能像Wordpress那样自身实现站内的高级搜索……然而主题自带的第三方搜索插件又无法检索文章内容……
-解决方案
-利用Archer封装的第三方插件Algolia实现搜索
-利用hexo-algoliasearch实现全文检索
+                修改sources.list: vim /etc/apt/sources.list 
+改完记得 apt update 一下
+kali：官方源12deb http://http.kali.org/kali kali-rolling main non-free contribdeb-src http://http.kali.org/kali kali-rolling main non-free contrib
 
 
 
-为什么不直接用hexo-algoliasearch做搜索
-因为主题没有封装，裸着搜索很违和，...
+中科大123# 中科大deb http://mirrors.ustc.edu.cn/kali kali-rolling main non-free contribdeb-src ...
             </div>
             <!-- read more -->
             
             <div class="abstract-post-meta">
                 <!-- date -->
-                <div class="abstract-date" title="Last updated: 2021/10/31">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/10/31</span>
+                <div class="abstract-date" title="Last updated: 2021/11/04">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/03/14</span>
                 </div>
                 <!-- tags -->
                 
                     <div class= abstract-tags >
     
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="hexo">hexo</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="archer">archer</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="algolia">algolia</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="linux">linux</a>
     
 </div>
 
@@ -487,6 +476,10 @@ Hexo本质上是一个静态页面的渲染工具，而我们的博客部署在G
         <div class="index-post-divider"></div>
     
     <!-- paginator  -->
+    
+        <nav class="page-nav">
+            <a class="extend prev" rel="prev" href="/categories/coding/">&lt; PREV</a><a class="page-number" href="/categories/coding/">1</a><span class="page-number current">2</span>
+        </nav>
     
 </main>
 
