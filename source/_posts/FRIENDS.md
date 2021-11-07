@@ -44,7 +44,7 @@ date: 2021-10-01 00:00:00
 
 前浪学长，二进制方向，入职360，做IoT安全
 
-个人主页： https://dev2e.ro/ 
+个人主页： [http://82.157.64.228/](http://82.157.64.228/)
 
 
 
@@ -78,7 +78,7 @@ GitHub：https://github.com/HRex39
 
 前浪学长，WEB方向，博主师傅，现就读于中科院信工所
 
-个人主页：[https://www.m0yuqi.cn/ ](https://www.m0yuqi.cn/)（已失效）
+个人主页：[https://fromhex.cn/](https://fromhex.cn/)
 
 
 
