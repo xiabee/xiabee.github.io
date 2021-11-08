@@ -1,5 +1,5 @@
 ---
-title: docker常用命令
+title: Docker常用命令
 date: 2020-3-18 20:00:23
 tags:
   - docker
@@ -10,7 +10,7 @@ abbrlink: docker-commands
 
 
 
- 运行docker时，发现权限不足可以康康这个：[不输入sudo运行docker](https://xiabee.cn/coding/不输入sudo运行docker/) 
+ 运行docker时，发现权限不足可以康康这个：[不输入sudo运行docker](https://blog.xiabee.cn/posts/docker-sudo/) 
 
 
 
