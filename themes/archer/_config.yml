@@ -42,7 +42,7 @@ about:
 search:
   enable: true
   # Seach URL, must be set. For example: 'fi3ework.github.io'
-  url: xiabee.cn
+  url: blog.xiabee.cn
   # Search engine: 'bing' (default), 'google' or 'baidu'
   engine: bing
 # Display icons of friends, about and search
