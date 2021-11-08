@@ -441,6 +441,51 @@
             
         
         <article class="index-post">
+            <a class="abstract-title" href="/posts/docker-sudo/">
+                
+                <span class="abstract-title-text">不输入sudo运行docker</span>
+            </a>
+            <div class="abstract-content">
+                docker对权限要求较高，需要sudo权限才能运行，但是每次敲命令都加sudo就显得很累赘，这里有个化简办法：将用户加入docker组，实现不加sudo执行docker命令
+查看docker组查看/etc/group,确定是否存在docker组
+1cat /etc/group | grep docker
+
+安装Docker后，docker组已经创建好了，所以上面命令的输出为： docker:x:120:ubuntu 
+
+将当前用户添加到 docker 组1sudo gpasswd -a $&#123;USER&#125; docker
+
+
+
+重新登录或切换到docker组12345ne...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2021/11/08">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/03/19</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="docker">docker</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
             <a class="abstract-title" href="/posts/docker-commands/">
                 
                 <span class="abstract-title-text">docker常用命令</span>
@@ -836,7 +881,20 @@ XIAO氏xiabee，性巨皮，好游戏，六艺经传皆...
         
         
         
+        
+        
+        
+        
+        
     
+        
+        
+        
+        
+        
+        
+        
+        
         
         
         
@@ -945,7 +1003,7 @@ XIAO氏xiabee，性巨皮，好游戏，六艺经传皆...
     
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 17
+        Total : 18
         </div>
         <!-- search  -->
         
@@ -1048,6 +1106,12 @@ XIAO氏xiabee，性巨皮，好游戏，六艺经传皆...
         <li class="archive-post-item">
             <span class="archive-post-date">08/27</span>
             <a class="archive-post-title" href="/posts/github-ssh/">GitHub配置SSH Key</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/19</span>
+            <a class="archive-post-title" href="/posts/docker-sudo/">不输入sudo运行docker</a>
         </li>
     
         
