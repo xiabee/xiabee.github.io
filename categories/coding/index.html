@@ -441,6 +441,56 @@
             
         
         <article class="index-post">
+            <a class="abstract-title" href="/posts/nextcloud-docker/">
+                
+                <span class="abstract-title-text">Docker搭建NextCloud</span>
+            </a>
+            <div class="abstract-content">
+                开端
+百度云不充会员的时候太慢了！！！
+正好手头有个4G内存8M带宽的服务器，可以整个活
+手头也有个域名，已经搞了SSL证书，可以满足网盘加密传输的需求
+
+NextCloud简介
+官网
+
+nextcloud是一款开源的、支持多平台的云盘，有服务器的小朋友可以整一个玩玩，可以搭一个自己的One Drive
+
+
+搭建方式官网的搭建过程比较麻烦，需要手动配置服务器再执行相关代码等等。这里懒癌晚期患者直接去dockerhub找了个官方镜像，直接通过容器进行安装。
+docker-compose部分借鉴了一位素不相识的名为chensmallx大佬的博客，同时解决了innodb不能接除限制的BUG
+代...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2021/11/09">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/11/09</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="docker">docker</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="nextcloud">nextcloud</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
             <a class="abstract-title" href="/posts/markdown-docker/">
                 
                 <span class="abstract-title-text">Docker搭建Markdown共享编辑器</span>
@@ -894,51 +944,6 @@ WSL2从OS层实现了独立，不再与宿主机共享OS，解决了许多二进
         </article>
         <div class="index-post-divider"></div>
     
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/posts/docker-sudo/">
-                
-                <span class="abstract-title-text">不输入sudo运行Docker</span>
-            </a>
-            <div class="abstract-content">
-                docker对权限要求较高，需要sudo权限才能运行，但是每次敲命令都加sudo就显得很累赘，这里有个化简办法：将用户加入docker组，实现不加sudo执行docker命令
-查看docker组查看/etc/group,确定是否存在docker组
-1cat /etc/group | grep docker
-
-安装Docker后，docker组已经创建好了，所以上面命令的输出为： docker:x:120:ubuntu 
-
-将当前用户添加到 docker 组1sudo gpasswd -a $&#123;USER&#125; docker
-
-
-
-重新登录或切换到docker组12345ne...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2021/11/08">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/03/19</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="docker">docker</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
     <!-- paginator  -->
     
         <nav class="page-nav">
@@ -1150,7 +1155,22 @@ WSL2从OS层实现了独立，不再与宿主机共享OS，解决了许多二进
         
         
         
+        
+        
+        
+        
+        
     
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         
         
@@ -1271,7 +1291,7 @@ WSL2从OS层实现了独立，不再与宿主机共享OS，解决了许多二进
     
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 19
+        Total : 20
         </div>
         <!-- search  -->
         
@@ -1289,6 +1309,12 @@ WSL2从OS层实现了独立，不再与宿主机共享OS，解决了许多二进
             <div class="archive-year"> 2021 </div>
             <ul class="year-list">
             
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/09</span>
+            <a class="archive-post-title" href="/posts/nextcloud-docker/">Docker搭建NextCloud</a>
+        </li>
+    
         
         <li class="archive-post-item">
             <span class="archive-post-date">11/07</span>
@@ -1481,6 +1507,11 @@ WSL2从OS层实现了独立，不再与宿主机共享OS，解决了许多二进
             <span class="sidebar-tag-name" data-tags="0day">
                 <span class="iconfont-archer">&#xe606;</span>
                 0day
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="nextcloud">
+                <span class="iconfont-archer">&#xe606;</span>
+                nextcloud
             </span>
         
     </div>
