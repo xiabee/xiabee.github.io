@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.xiabee.cn/about/index.html</loc>
+    
+    <lastmod>2021-11-15</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://blog.xiabee.cn/posts/diary/</loc>
     
     <lastmod>2021-11-15</lastmod>
@@ -150,13 +157,6 @@
   
   <url>
     <loc>https://blog.xiabee.cn/404</loc>
-    
-    <lastmod>2021-10-28</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.xiabee.cn/about/index.html</loc>
     
     <lastmod>2021-10-28</lastmod>
     
