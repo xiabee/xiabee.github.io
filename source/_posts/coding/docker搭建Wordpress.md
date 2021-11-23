@@ -320,3 +320,18 @@ server {
 
 ![image.png](https://tva1.sinaimg.cn/large/0084b03xly1gwdl0zor35j31890ql79w.jpg)
 
+
+
+安装完成之后，剩下的事情对着说明做就行了，~~如果实在看不懂就装个中文版的~~......
+
+
+
+## 关于主题
+
+* [xiabee.cn](https://xiabee.cn/)用的是[樱花庄](https://github.com/mashirozx/Sakura)主题：个人感觉还算好看，就是不够简洁，所以转战`hexo`了哈哈哈（x）
+
+![image.png](https://tva1.sinaimg.cn/large/0084b03xly1gwpgbyy55pj31hc0smkai.jpg)
+
+
+
+* 不过之后可能会再找几个好看的主题
