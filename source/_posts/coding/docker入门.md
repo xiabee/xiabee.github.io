@@ -105,6 +105,18 @@ docker -v
 
 
 
+## docker-compose
+
+* [官网](https://docs.docker.com/compose/)
+
+* 用于编排容器，具体教程以后再写（x）
+
+```bash
+sudo apt install docker-compose
+```
+
+
+
 ## 关于其他
 
 * 常用命令可以参考这篇博客：[docker常用命令](https://blog.xiabee.cn/posts/docker-commands/)

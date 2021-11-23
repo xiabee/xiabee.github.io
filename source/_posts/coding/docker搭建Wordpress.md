@@ -22,14 +22,20 @@ abbrlink: wordpress-docker
 
 * 项目地址：[Github](https://github.com/xiabee/wordpress-docker)
 * 功能：通过`docker-compose`，实现了利用容器搭建`nginx`+`mariadb`+`wordpress`的组合，在VPS中搭建个人博客
-
 * 运行方式：详情见项目的`README.md`
+* 环境依赖：`docker`
+
+```bash
+sudo apt install docker docker-compose
+git clone https://github.com/xiabee/wordpress-docker
+cd wordpress-docker
+```
+
+
 
 ### 搭建HTTP服务 
 
 ```bash
-git clone https://github.com/xiabee/wordpress-docker
-cd wordpress-docker
 rm ./nginx/nginx_https.conf
 # 删除https
 docker-compose up -d
@@ -43,6 +49,7 @@ docker-compose up -d
 如果要搭建`https`服务的话需要在`nginx_https.conf`中配置一下证书路径，并删除`nginx.conf`，重新构建服务。
 
 ```bash
+rm ./nginx/nginx.conf
 docker-compose up -d
 ```
 
