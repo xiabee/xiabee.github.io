@@ -117,7 +117,7 @@ docker.io/nextcloud	# 创建容器用到的镜像
 
 #### 依赖关系
 
-* `nextcloud`是主业务，读写数据时会哟个到数据库`mariadb`和缓存`redis`，因此`nextcloud`依赖于`mariadb`和`redis`
+* `nextcloud`是主业务，读写数据时会用到数据库`mariadb`和缓存`redis`，因此`nextcloud`依赖于`mariadb`和`redis`
 * `mariadb`和`redis`各司其职，挂了一个不会影响到另一个，故没有依赖关系
 * `nginx`作为反向代理，需要主体业务`nextcloud`正常运行才能提供代理服务，故`nginx`依赖于`nextcloud`
 
@@ -618,7 +618,7 @@ docker-compose up -d
 
 因该通过容器的`DNS`服务寻找，比如在我们项目中，就应该输入`db:3306`
 
-![image-20211110102356732](C:\Users\14793\AppData\Roaming\Typora\typora-user-images\image-20211110102356732.png)
+<img src="https://tva1.sinaimg.cn/large/0084b03xgy1gww6os69z3j30kg0jtjyx.jpg" alt="image-20211110102356732.png" style="zoom:67%;" />
 
 
 
