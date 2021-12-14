@@ -14,15 +14,11 @@ date: 2021-10-01 00:00:00
 
 个人主页：[https://dynasty-li.github.io](https://dynasty-li.github.io/)
 
-
-
 #### mariozzj
 
 二中同班同学，南京大学直博
 
 个人主页：https://blog.mariozzj.cn/
-
-
 
 #### zesia0
 
@@ -30,23 +26,17 @@ date: 2021-10-01 00:00:00
 
 个人主页：http://121.40.251.109/
 
-
-
 #### 北国鸣鹤
 
 二中校友，同级，北交大佬
 
 个人主页：https://rzvtech.top/（已失效）
 
-
-
 #### IZAYOI
 
 前浪学长，二进制方向，入职360，做IoT安全
 
 个人主页： [http://82.157.64.228/](http://82.157.64.228/)
-
-
 
 #### Rex Huang
 
@@ -56,15 +46,11 @@ date: 2021-10-01 00:00:00
 
 GitHub：https://github.com/HRex39
 
-
-
 #### Spaceskynet
 
 后浪学弟，数院人整计院活，科技创新基地信安实验室19级主任
 
 个人主页：http://spaceskynet.top/
-
-
 
 #### 洛水天依
 
@@ -72,15 +58,11 @@ GitHub：https://github.com/HRex39
 
 个人主页: http://everything411.top/（已失效）
 
-
-
 #### 墨雨琪
 
 前浪学长，WEB方向，博主师傅，现就读于中科院信工所
 
 个人主页：[https://fromhex.cn/](https://fromhex.cn/)
-
-
 
 #### 98年生的猫
 
@@ -88,15 +70,11 @@ GitHub：https://github.com/HRex39
 
 个人主页：https://code.felinae98.cn/
 
-
-
 #### 橘子哥
 
 前浪学长，网协前网络部部长，带博主走进[BIT NP](http://www.bitnp.net/)的大哥
 
 个人主页：https://ugorange.com/（已失效）
-
-
 
 #### FKY
 
@@ -104,15 +82,13 @@ GitHub：https://github.com/HRex39
 
 个人主页：https://blog.fkynjyq.com/
 
-
-
 #### layfolk
 
 同级大佬，（前）科技创新基地移动政务实验室主任，睿信书院技术保障中心部长，乐于帮助同学解决学业困难
 
-个人主页：http://layfolk.ltd
+* 个人主页：[http://layfolk.ltd/](http://layfolk.ltd/)
 
-
+* 公众号：俊霖说 IT
 
 #### 大笨猪
 
@@ -120,23 +96,17 @@ GitHub：https://github.com/HRex39
 
 个人主页：http://learnfzero.top/
 
-
-
 #### olist213
 
 实习时遇到的师傅，专业的，膜了
 
 个人主页：https://olist213.github.io/
 
-
-
 #### Martian
 
 演习友军，北工大大佬，考研研友
 
 个人主页：https://i.urox.cn
-
-
 
 #### FGM
 
