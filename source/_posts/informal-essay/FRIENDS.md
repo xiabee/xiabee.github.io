@@ -90,6 +90,8 @@ GitHub：https://github.com/HRex39
 
 * 公众号：俊霖说 IT
 
+* 语雀：[https://www.yuque.com/lijunlin-yzgmr/](https://www.yuque.com/lijunlin-yzgmr/)
+
 #### 大笨猪
 
 同级大佬，博主隔壁寝室的好兄弟，一起干作业一起考研，个人感觉比较佛系
