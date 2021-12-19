@@ -14,6 +14,20 @@ date: 2021-10-01 00:00:00
 
 个人主页：[https://dynasty-li.github.io](https://dynasty-li.github.io/)
 
+
+
+#### layfolk
+
+同级大佬，（前）科技创新基地移动政务实验室主任，睿信书院技术保障中心部长，乐于帮助同学解决学业困难
+
+- 个人主页：[计算机专业资料分享](http://layfolk.ltd/)
+
+- 公众号：俊霖说 IT
+
+- 语雀：[李俊霖 · 语雀](https://www.yuque.com/lijunlin-yzgmr/)
+
+
+
 #### mariozzj
 
 二中同班同学，南京大学直博
@@ -82,15 +96,7 @@ GitHub：https://github.com/HRex39
 
 个人主页：https://blog.fkynjyq.com/
 
-#### layfolk
 
-同级大佬，（前）科技创新基地移动政务实验室主任，睿信书院技术保障中心部长，乐于帮助同学解决学业困难
-
-* 个人主页：[http://layfolk.ltd/](http://layfolk.ltd/)
-
-* 公众号：俊霖说 IT
-
-* 语雀：[https://www.yuque.com/lijunlin-yzgmr/](https://www.yuque.com/lijunlin-yzgmr/)
 
 #### 大笨猪
 
