@@ -11,9 +11,7 @@ abbrlink: markdown-docker
 
 ## 服务地址
 
-* [https://xyj.xiabee.cn:3000](https://xyj.xiabee.cn:3000)
-
-
+* [https://xiabee.cn:3000](https://xiabee.cn:3000)
 
 ## 前情提要
 
@@ -21,19 +19,16 @@ abbrlink: markdown-docker
 
 * 目前的想法是搞个`markdown`共享编辑器、个人网盘啥的
 
-
-
 ## 搭建动机
 
 主流的共享编辑器有很多，这里安利一个我个人比较喜欢的：[Hackmd](https://codimd-app.herokuapp.com/)的[Codimd](https://codimd-app.herokuapp.com/)
 
 上述的链接需要翻墙，非常不方便，所以我想在自己的服务器里面也造一个......
 
-
-
 ## 前期准备
 
 * 一个[VPS](https://www.zhihu.com/topic/19563791/hot)
+
 * 一个[SSL证书](https://cloud.tencent.com/product/ssl)（可选）
 
 * VPS中安装了`docker`、`docker-compose`等服务
@@ -46,16 +41,10 @@ sudo service docker start
 # 下载、启动docker等
 ```
 
-
-
-
-
 ## 部署方式
 
 * 官方推荐通过[容器部署](https://hackmd.io/c/codimd-documentation/%2Fs%2Fcodimd-docker-deployment)，这里也是介绍容器部署方式，**同时添加`nginx`代理**
 * 其他部署方式可以参考[官方文档](https://hackmd.io/c/codimd-documentation/%2Fs%2Fcodimd-manual-deployment)
-
-
 
 ### 编写yml文件
 
@@ -92,19 +81,13 @@ volumes:
   upload-data: {}
 ```
 
-
-
 此时通过`docker-compose up -d`启动容器，这个服务默认端口是`3000`。在浏览器输入你的域名和端口`http://xxxx.xxx.xxx:3000`就能看到这个编辑器了。
 
 如果看不到的话记得检查一下云服务器厂商的**防火墙**关没关......
 
 ![image.png](https://tva1.sinaimg.cn/large/0084b03xly1gw6lwp9v3ij31hc0n4wm3.jpg)
 
-
-
 当然，这个是最基础的版本，我们可以继续优化一下。
-
-
 
 ### 添加Nginx代理
 
@@ -117,10 +100,6 @@ volumes:
     └── conf.d
         └── hackmd.conf
 ```
-
-
-
-
 
 在`docker-compose.yml`中添加关于`nginx`相关内容，大致内容如下：
 
@@ -167,8 +146,6 @@ volumes:
   upload-data: {}
 ```
 
-
-
 同时配置`hackmd.conf`，作为`nginx`的配置文件，大致内容如下：
 
 ```nginx
@@ -203,8 +180,6 @@ server {
 }
 ```
 
-
-
 然后再重新部署容器：
 
 ```bash
@@ -215,13 +190,9 @@ docker-compose up -d
 # 启动容器
 ```
 
-
-
 此时我们的`nginx`代理已经开始运行了：
 
 ![image.png](https://tva1.sinaimg.cn/large/0084b03xly1gw6mek56brj30ih0bzama.jpg)
-
-
 
 ### 启用SSL（可选）
 
@@ -240,8 +211,6 @@ docker-compose up -d
         ├── cert.key
         └── fullchain.cer
 ```
-
-
 
 #### 修改`docker-compose.yml`：
 
@@ -289,8 +258,6 @@ volumes:
   upload-data: {}
 ```
 
-
-
 #### 修改hackmd.conf
 
 把域名和证书设置为自己的：
@@ -326,7 +293,7 @@ server {
 
     location / {
         proxy_http_version 1.1;
-        
+
         # set header for proxy protocol
         proxy_set_header Host $host;
         proxy_set_header X-Real-IP $remote_addr;
@@ -334,25 +301,23 @@ server {
         proxy_set_header X-Forwarded-Proto $scheme;
         proxy_set_header Upgrade $http_upgrade;
         proxy_set_header Connection $connection_upgrade;
-        
+
         # setup for image upload
         client_max_body_size 8192m;
-        
+
         # adjust proxy buffer setting
         proxy_buffers 8 32k; 
         proxy_buffer_size 32k; 
         proxy_busy_buffers_size 64k;
-  
+
         proxy_max_temp_file_size 8192m;
-        
+
         proxy_read_timeout 300;
         proxy_connect_timeout 300;
         proxy_pass http://@codimd;
       }
 }
 ```
-
-
 
 然后重新构造容器：
 
@@ -367,13 +332,9 @@ docker-compose restart
 # 重启容器
 ```
 
-
-
 此时已经可以`https`访问了：
 
 ![image.png](https://tva1.sinaimg.cn/large/0084b03xly1gw6mobzd7jj31h40nk115.jpg)
-
-
 
 ## 一些BUG
 
@@ -387,19 +348,14 @@ docker-compose logs --tail 10
 docker-compose logs --tail 10 | grep proxy
 ```
 
-
-
 ### 代理相关
 
 检查一下`nginx`的配置文件有没有写错......
 
 之前我本人写的`xxx.conf`就有bug，一直登录不上
 
-
-
 ### 主页能访问，但是无法登陆
 
 再次检查一下`nginx`的配置文件有没有写错......
 
 如果完全不会写，可以直接抄这篇博客里面的，修改一个个人信息配置就行。
-
