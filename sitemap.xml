@@ -4,6 +4,13 @@
   <url>
     <loc>https://blog.xiabee.cn/posts/vps-toss/</loc>
     
+    <lastmod>2022-02-09</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.xiabee.cn/posts/vps-toss/</loc>
+    
     <lastmod>2022-02-03</lastmod>
     
   </url>
@@ -320,6 +327,13 @@
   
   <url>
     <loc>https://blog.xiabee.cn/tags/vps/</loc>
+    <lastmod>2022-02-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xiabee.cn/tags/ctf/</loc>
     <lastmod>2022-02-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>

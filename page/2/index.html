@@ -456,6 +456,65 @@
             
         
         <article class="index-post">
+            <a class="abstract-title" href="/posts/hexo-archer/">
+                
+                <span class="abstract-title-text">Hexo更换主题</span>
+            </a>
+            <div class="abstract-content">
+                本站主题
+Archer
+Demo
+
+更换方式
+官网下载主题
+将主题源代码解压到hexo的theme目录下，并更改该主题的目录名称
+修改hexo根目录中的_config.yml文件的theme字段，将其改为对应主题的目录名
+
+
+然后进入主题目录，找到主题的_config.yml进行修改即可。
+最后重新渲染并部署：
+123hexo cleanhexo ghexo d
+
+
+
+Hexo主题
+官网主题
+
+知乎推荐
+
+
+
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2021/10/31">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/10/31</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="hexo">hexo</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="archer">archer</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
             <a class="abstract-title" href="/posts/hexo-git-backup/">
                 
                 <span class="abstract-title-text">利用git分支进行Hexo备份</span>
@@ -864,51 +923,6 @@ RCE(Remote command/code execute)漏洞，可以让攻击者直接向后台服务
         </article>
         <div class="index-post-divider"></div>
     
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/posts/docker-sudo/">
-                
-                <span class="abstract-title-text">不输入sudo运行Docker</span>
-            </a>
-            <div class="abstract-content">
-                docker对权限要求较高，需要sudo权限才能运行，但是每次敲命令都加sudo就显得很累赘，这里有个化简办法：将用户加入docker组，实现不加sudo执行docker命令
-查看docker组查看/etc/group,确定是否存在docker组
-1cat /etc/group | grep docker
-
-安装Docker后，docker组已经创建好了，所以上面命令的输出为： docker:x:120:ubuntu 
-
-将当前用户添加到 docker 组1sudo gpasswd -a $&#123;USER&#125; docker
-
-
-
-重新登录或切换到docker组12345ne...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2021/11/08">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/03/19</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="docker">docker</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
     <!-- paginator  -->
     
         <nav class="page-nav">
@@ -1281,7 +1295,22 @@ RCE(Remote command/code execute)漏洞，可以让攻击者直接向后台服务
         
         
         
+        
+        
+        
+        
+        
     
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         
         
@@ -1454,7 +1483,7 @@ RCE(Remote command/code execute)漏洞，可以让攻击者直接向后台服务
     
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 25
+        Total : 26
         </div>
         <!-- search  -->
         
@@ -1472,6 +1501,12 @@ RCE(Remote command/code execute)漏洞，可以让攻击者直接向后台服务
             <div class="archive-year"> 2022 </div>
             <ul class="year-list">
             
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/09</span>
+            <a class="archive-post-title" href="/posts/vps-toss/">2022春招面试记录</a>
+        </li>
+    
         
         <li class="archive-post-item">
             <span class="archive-post-date">02/03</span>
@@ -1724,6 +1759,11 @@ RCE(Remote command/code execute)漏洞，可以让攻击者直接向后台服务
             <span class="sidebar-tag-name" data-tags="vps">
                 <span class="iconfont-archer">&#xe606;</span>
                 vps
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="ctf">
+                <span class="iconfont-archer">&#xe606;</span>
+                ctf
             </span>
         
     </div>
