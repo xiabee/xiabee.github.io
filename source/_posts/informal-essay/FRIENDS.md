@@ -16,17 +16,25 @@ date: 2021-10-01 00:00:00
 
 
 
+### xiabee碎碎念
+
+自己的公众号，随缘更新
+
+名称：xiabee碎碎念
+
+<img title="" src="https://tva1.sinaimg.cn/large/0084b03xly1h06992qrtzj308g08fdh7.jpg" alt="image.png" width="195">
+
+
+
 #### layfolk
 
 同级大佬，（前）科技创新基地移动政务实验室主任，睿信书院技术保障中心部长，乐于帮助同学解决学业困难
 
 - 个人主页：[计算机专业资料分享](http://layfolk.ltd/)
 
-- 公众号：俊霖说 IT
+- 公众号：俊霖说IT
 
 - 语雀：[李俊霖 · 语雀](https://www.yuque.com/lijunlin-yzgmr/)
-
-
 
 #### mariozzj
 
@@ -95,8 +103,6 @@ GitHub：https://github.com/HRex39
 前浪学长，信安实验室17级主任，朋友圈内最长恋爱时长保持者
 
 个人主页：https://blog.fkynjyq.com/
-
-
 
 #### 大笨猪
 
