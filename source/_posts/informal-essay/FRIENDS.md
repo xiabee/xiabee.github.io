@@ -16,7 +16,7 @@ date: 2021-10-01 00:00:00
 
 
 
-### xiabee碎碎念
+#### xiabee碎碎念
 
 自己的公众号，随缘更新
 
@@ -78,7 +78,7 @@ GitHub：https://github.com/HRex39
 
 同级大佬，二进制方向，和博主与饿龙一起扛下了整个19级的教学
 
-个人主页: http://everything411.top/（已失效）
+个人主页: http://everything411.top/
 
 #### 墨雨琪
 
