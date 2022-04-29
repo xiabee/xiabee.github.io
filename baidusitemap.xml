@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://blog.xiabee.cn/posts/2022-spring-recruitment/</loc>
+    <lastmod>2022-04-29</lastmod>
+  </url>
+  <url>
     <loc>https://blog.xiabee.cn/posts/fri/</loc>
     <lastmod>2022-03-11</lastmod>
   </url>

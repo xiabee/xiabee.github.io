@@ -21,7 +21,7 @@
     <meta name="description" content="">
     <meta property="og:type" content="website">
 <meta property="og:title" content="xiabee-瞎哔哔">
-<meta property="og:url" content="https://blog.xiabee.cn/archives/2020/index.html">
+<meta property="og:url" content="https://blog.xiabee.cn/tags/oj/index.html">
 <meta property="og:site_name" content="xiabee-瞎哔哔">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:author" content="xiabee">
@@ -441,253 +441,37 @@
             
         
         <article class="index-post">
-            <a class="abstract-title" href="/posts/wsl2-about/">
+            <a class="abstract-title" href="/posts/2022-spring-recruitment/">
                 
-                <span class="abstract-title-text">WSL2踩坑分享</span>
+                <span class="abstract-title-text">Docker搭建Hydro-OJ系统</span>
             </a>
             <div class="abstract-content">
-                WSL：Windows Subsystem For Linux
-前段时间听说WSL2很香，然后试了一下，确实很香……如果你不是一个WEB狗
+                Hydro简介
+Hydro是目前来看比较新的一款开源Online Judge系统
+目前官网有常见的安装方式，但是Docker的支持不是很好，于是我自己在官网架构基础上，重新编写了一下容器部署。
 
-WSL2的安装我就不具体写了，太简单了，直接看官网教程
-0x00 与WSL的区别WSL1大家应该都很熟悉，WSL2也问世挺久了，我就不详细嗦了，直接看看官网解释的区别：
 
-摘自微软官网
-整体上看……这俩完全就不是一个东西嘛：wsl只是一个单纯的shell，wsl2简直就是一台虚拟机
-WSL2从OS层实现了独立，不再与宿主机共享OS，解决了许多二进制狗的蜜汁BUG，但是这种独立性给WEB狗创造了更多的烦恼
-0x01 主要问题IPV6没有IPV6，失去...
+项目地址：Hydro-Docker
+
+
+使用方式
+直接使用docker-compose运行容器，在本地构建镜像
+123git clone https://github.com/xiabee/Hydro-Dockercd Hydro-Dockerdocker-compose up -d
+没有报错就是成功（x）：
+1docker-compose ps
+
+
+
+
+聊聊编写过程
+准确的说所有模块的测试完...
             </div>
             <!-- read more -->
             
             <div class="abstract-post-meta">
                 <!-- date -->
-                <div class="abstract-date" title="Last updated: 2021/10/31">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/10/26</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="linux">linux</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="wsl">wsl</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/posts/linux-gmp/">
-                
-                <span class="abstract-title-text">Linux安装GMP依赖</span>
-            </a>
-            <div class="abstract-content">
-                GMP简介
-官网
-GMP：GNU Multiple Precision Arithmetic Library，即GNU高精度算术运算库，在现代密码学的计算中十分关键
-
-
-什么是GMP？
-GMP是一个用于任意精度算术的免费库，可处理带符号整数，有理数和浮点数。除了运行GMP机器中的可用内存所暗示的精度外，对精度没有实际限制。GMP具有丰富的功能集，并且这些功能具有常规接口。
-GMP的主要目标应用程序是密码学应用程序和研究，Internet安全应用程序，代数系统，计算代数研究等
-GMP经过精心设计，无论是小型操作数还是大型操作数，都应尽可能快。通过使用全字作为基本算术类型，使用快速算法，针对...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2021/11/13">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/09/14</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="linux">linux</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/posts/2020-summer/">
-                
-                <span class="abstract-title-text">2020 Summer Review of xiabee</span>
-            </a>
-            <div class="abstract-content">
-                有人问我最喜欢哪个季节，我觉得大概是夏季——夏季总有一些特殊的回忆：
-
-今年的我度过了一次最长的夏天——准确的来说应该是最长的假期
-0x00 前言这是我读书生涯开始以后，第一个超过六个月的“假期”……疫情宅家，几乎就没干成啥事，flag立了一堆，真正实现的貌似…….妹有吧（划掉
-来莽一眼我5月23日在popi里面的flag：“考完试想干啥”
-
-好多想干的事情呢。
-考完当即大概是吃吃吃，和cc约了吨火锅，（突然发现输入法挺懂我），然后吃完火锅可能会再约几局，把最近少吃的垃圾食品全部补会来(啊巴斯……可能会去探索一下新的吃货打卡地点√
-然后抓紧时间练车车，票圈一个个老司机横空出世，本弟弟才开...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2021/10/28">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/09/05</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="碎碎念">碎碎念</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/posts/github-ssh/">
-                
-                <span class="abstract-title-text">GitHub配置SSH Key</span>
-            </a>
-            <div class="abstract-content">
-                在Github上提交代码，每次 push 都需要输入一次密码，特别麻烦，所以现在就记录一下用SSH登陆GitHub的过程
-先来康康这两个登陆方式有啥区别：
-1234https://github.com/xiabee/fucking-views.git# use httpsgit@github.com:xiabee/fucking-views.git# use ssh
-
-第一种直接使用https，可以直接浏览器访问，方便查阅，但是每次push都要输入密码
-第二种使用ssh，不能直接访问，但是在push的时候可以保留密钥文件
-个人感觉，在开发的时候，还是使用ssh比较方便。
-那就康康如何配置...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2021/10/27">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/08/27</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="git">git</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="ssh">ssh</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/posts/wechat-0day/">
-                
-                <span class="abstract-title-text">微信RCE 0day复现</span>
-            </a>
-            <div class="abstract-content">
-                0xFF 免责声明由于传播、利用此文提供的信息而造成的任何直接或间接的后果，均有使用者承担，本站不为此承担任何责任。
-太长不看版：(2021年4月17日的0day漏洞)
-3.2.1.132及之前版本的PC版微信有安全漏洞，通过微信内置浏览器点击恶意链接，即可实现任意命令执行（RCE）
-
-测试链接：http://xiabee.cn:9999/
-
-POC源码：http://xiabee.cn:9999/poc.js
-
-
-以上测试为打开Windows系统（64位机）内置计算器
-
-
-
-RCE(Remote command/code execute)漏洞，可以让攻击者直接向后台服务器远程注入操作系...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2021/11/08">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/04/18</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="0day">0day</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/posts/docker-sudo/">
-                
-                <span class="abstract-title-text">不输入sudo运行Docker</span>
-            </a>
-            <div class="abstract-content">
-                docker对权限要求较高，需要sudo权限才能运行，但是每次敲命令都加sudo就显得很累赘，这里有个化简办法：将用户加入docker组，实现不加sudo执行docker命令
-查看docker组查看/etc/group,确定是否存在docker组
-1cat /etc/group | grep docker
-
-安装Docker后，docker组已经创建好了，所以上面命令的输出为： docker:x:120:ubuntu 
-
-将当前用户添加到 docker 组1sudo gpasswd -a $&#123;USER&#125; docker
-
-
-
-重新登录或切换到docker组12345ne...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2021/11/08">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/03/19</span>
+                <div class="abstract-date" title="Last updated: 2022/04/30">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/04/29</span>
                 </div>
                 <!-- tags -->
                 
@@ -696,194 +480,7 @@ RCE(Remote command/code execute)漏洞，可以让攻击者直接向后台服务
     
         <a class="post-tag" href="javascript:void(0);" data-tags="docker">docker</a>
     
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/posts/docker-commands/">
-                
-                <span class="abstract-title-text">Docker常用命令</span>
-            </a>
-            <div class="abstract-content">
-                 运行docker时，发现权限不足可以康康这个：不输入sudo运行docker 
-1.查看docker容器信息123docker --help    #查看docker容器帮助docker version   #查看docker容器版本docker info      #查看docker容器信息
-
-
-2.镜像查看1234567docker images     #列出本地imagesdocker images -a  #含中间映像层docker images -q  #只显示镜像IDdocker images -qa #含中间映像层  docker images --digests  #...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2021/11/08">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/03/18</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="docker">docker</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/posts/docker-source/">
-                
-                <span class="abstract-title-text">Docker换源</span>
-            </a>
-            <div class="abstract-content">
-                Docker相关
-Docker入门
-
-Docker常用命令
-
-Docker解决sudo
-
-
-Docker换源由于众所周知的原因，国内的访问docker源时会比较慢，所以我们换源到国内镜像站上。
-这里依然以Ubuntu为例。
-腾讯源
-官方文档
-
-
-具体操作：
-创建加速器文件
-12/etc/docker/daemon.jsonvim /etc/docker/daemon.json
-
-
-
-按i切换至编辑模式，在daemon.json中添加以下内容，并保存（ESC；输入:进入命令模式；q保存并退出）
-12345&#123;&quot;registry-mirrors&quot;: [ &quot...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2021/11/13">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/03/17</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="docker">docker</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/posts/docker-pupy/">
-                
-                <span class="abstract-title-text">Docker入门</span>
-            </a>
-            <div class="abstract-content">
-                Docker简介
-官方文档
-
-简言之：开源的、跨平台的、虚拟化的应用引擎；使用沙箱机制。
-
-一个完整的Docker通常会包括以下几个部分：
-
-DockerClient 客户端
-Docker Daemon守护进程
-Docker Image镜像
-DockerContainer容器 
-
-
-
-
-Docker与VM可能很多朋友都用过虚拟机，而对容器这个概念比较的陌生——简单来说，可以理解为：相较于VM，docker是轻量级的虚拟化技术，却有着更强大的性能。
-虚拟机（VM）
-我们用的传统虚拟机如 VMware ， virtualbox之类的需要模拟整台机器包括硬件。
-每台虚拟机都需要有自己的操作系统...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2021/11/23">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/03/17</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="docker">docker</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/posts/linux-sources/">
-                
-                <span class="abstract-title-text">Ubuntu/kali 国内各大更新源</span>
-            </a>
-            <div class="abstract-content">
-                修改sources.list: vim /etc/apt/sources.list 
-改完记得 apt update 一下
-kali：官方源12deb http://http.kali.org/kali kali-rolling main non-free contribdeb-src http://http.kali.org/kali kali-rolling main non-free contrib
-
-
-
-中科大123# 中科大deb http://mirrors.ustc.edu.cn/kali kali-rolling main non-free contribdeb-src ...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2021/11/04">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/03/14</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="linux">linux</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="oj">oj</a>
     
 </div>
 
@@ -893,10 +490,6 @@ kali：官方源12deb http://http.kali.org/kali kali-rolling main non-free contr
         <div class="index-post-divider"></div>
     
     <!-- paginator  -->
-    
-        <nav class="page-nav">
-            <span class="page-number current">1</span><a class="page-number" href="/archives/2020/page/2/">2</a><a class="extend next" rel="next" href="/archives/2020/page/2/">NEXT &gt;</a>
-        </nav>
     
 </main>
 
