@@ -152,4 +152,3 @@ deploy:
   - type: git
     repo: 
       github: git@github.com:xiabee/xiabee.github.io.git,main
-      coding: git@e.coding.net:xiabee/xiabee-blog/xiabee.coding.me.git
