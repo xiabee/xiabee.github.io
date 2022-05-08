@@ -156,6 +156,16 @@ oj-judge    |       data: '{"uname":"root","password":"rootroot","rememberme":"o
       detail: true
   ```
 
+* 然后重启容器就可以正常测评了：`docker-compose restart`
+
+<img title="" src="https://tva1.sinaimg.cn/large/0084b03xly1h1s1y34q16j30cu06jwfl.jpg" alt="image.png" data-align="center">
+
+
+
+
+
+
+
 ### 其他问题
 
 * 暂时不记得了，想起来了来写
