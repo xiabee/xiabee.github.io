@@ -441,6 +441,54 @@
             
         
         <article class="index-post">
+            <a class="abstract-title" href="/posts/hydro-hepler/">
+                
+                <span class="abstract-title-text">Hydro-OJ 使用说明</span>
+            </a>
+            <div class="abstract-content">
+                本OJ的具体搭建方式：Docker搭建Hydro-OJ系统 · xiabee-瞎哔哔
+以下内容为用户文档
+超级管理员
+超级管理员是OJ系统的最高权限，能够直接控制OJ的全部内容，不建议设置多个
+
+使用要求
+拥有服务器ssh权限，且能够直接控制服务器容器
+
+创建方法
+在OJ右上角注册一个账号，此时账号的UID为2
+回到服务器的终端，使用 docker oj-backend exec -it hydrooj cli user setSuperAdmin 2 将 UID 为 2 的用户设置为超级管理员。
+使用 docker oj-backend exec -it pm2 restart hyd...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/05/21">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/05/21</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="docker">docker</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="oj">oj</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
             <a class="abstract-title" href="/posts/docker-compose-2/">
                 
                 <span class="abstract-title-text">安装 docker-compose 2</span>
@@ -955,7 +1003,22 @@ NEXTCloud个人网盘
         
         
         
+        
+        
+        
+        
+        
     
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         
         
@@ -1168,7 +1231,7 @@ NEXTCloud个人网盘
     
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 29
+        Total : 30
         </div>
         <!-- search  -->
         
@@ -1186,6 +1249,12 @@ NEXTCloud个人网盘
             <div class="archive-year"> 2022 </div>
             <ul class="year-list">
             
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/21</span>
+            <a class="archive-post-title" href="/posts/hydro-hepler/">Hydro-OJ 使用说明</a>
+        </li>
+    
         
         <li class="archive-post-item">
             <span class="archive-post-date">05/08</span>
