@@ -1,6 +1,6 @@
 ---
 title: About Me
-date: 2021-10-25 19:39:57
+date: 2022-7-25 19:39:57
 type: about
 layout: about
 ---
@@ -11,8 +11,9 @@ layout: about
 
 * Undergraduate of Beijing Institute of Technology
 * Majoring in Computer Science and Technology
-* Research Interests：Cyber Security, Web Security
-* Expected graduation time: 2022.7
+* Working in [PingCAP](https://github.com/pingcap), Security Engineer
+* Research Drirections: Web / Cloud Security, SaaS Security, PaaS Securiy, etc
+
 
 
 
