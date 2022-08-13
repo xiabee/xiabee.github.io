@@ -1,0 +1,1608 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <!-- title -->
+
+
+    
+
+<!-- keywords -->
+
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="author" content="xiabee">
+    <meta name="renderer" content="webkit">
+    <meta name="copyright" content="xiabee">
+    
+        <meta name="keywords" content="xiabee,hexo-theme,xiabee-blog">
+    
+    <meta name="description" content="">
+    <meta name="description" content="前言之前一段时间都是用wordpress做个人博客，后来发现Git Page + hexo可以免费做静态页面……尝试了一下，后面就真香了（x） 关于wordpress和hexo孰优孰劣的问题这里不做详细讨论，只是介绍一下如何用Git Page+hexo搭建一个个人博客。二者具体的比较可以参考知乎的激(you)烈(hao)讨论。 简介What’s GitHub Page 官方文档  简而言之就是 白">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo+GitPage搭建个人博客">
+<meta property="og:url" content="https://blog.xiabee.cn/posts/hexo-git-setup/index.html">
+<meta property="og:site_name" content="xiabee-瞎哔哔">
+<meta property="og:description" content="前言之前一段时间都是用wordpress做个人博客，后来发现Git Page + hexo可以免费做静态页面……尝试了一下，后面就真香了（x） 关于wordpress和hexo孰优孰劣的问题这里不做详细讨论，只是介绍一下如何用Git Page+hexo搭建一个个人博客。二者具体的比较可以参考知乎的激(you)烈(hao)讨论。 简介What’s GitHub Page 官方文档  简而言之就是 白">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/0084b03xly1gvwe3g2y4pj30px0c8ade.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/0084b03xly1gvwe8mpskbj31720n0wot.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/0084b03xly1gvwdzcr2n8j31hc0n4aw0.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/0084b03xgy1gvwerqrvzfj30is07hmzf.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/0084b03xly1gvweyd9xbzj31hl0sv1kx.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/0084b03xly1gvwf1noz1nj30mb08tafh.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/0084b03xly1gvysn7j1qaj30ra0ivabw.jpg">
+<meta property="article:published_time" content="2021-10-27T15:46:18.000Z">
+<meta property="article:modified_time" content="2022-08-13T15:39:31.407Z">
+<meta property="article:author" content="xiabee">
+<meta property="article:tag" content="hexo">
+<meta property="article:tag" content="git">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://tva1.sinaimg.cn/large/0084b03xly1gvwe3g2y4pj30px0c8ade.jpg">
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link rel="icon" href="https://tva1.sinaimg.cn/thumbnail/0084b03xly1gvsjbyp2w8j30qo0qognu.jpg">
+    
+    <title>Hexo+GitPage搭建个人博客 · xiabee-瞎哔哔</title>
+    <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+/* This file is meant as a standalone workflow for
+- testing support for link[rel=preload]
+- enabling async CSS loading in browsers that do not support rel=preload
+- applying rel preload css once loaded, whether supported or not.
+*/ -->
+<script>
+    (function (w) {
+        'use strict'
+        // rel=preload support test
+        if (!w.loadCSS) {
+            w.loadCSS = function () {}
+        }
+        // define on the loadCSS obj
+        var rp = (loadCSS.relpreload = {})
+        // rel=preload feature support test
+        // runs once and returns a function for compat purposes
+        rp.support = (function () {
+            var ret
+            try {
+                ret = w.document.createElement('link').relList.supports('preload')
+            } catch (e) {
+                ret = false
+            }
+            return function () {
+                return ret
+            }
+        })()
+
+        // if preload isn't supported, get an asynchronous load by using a non-matching media attribute
+        // then change that media back to its intended value on load
+        rp.bindMediaToggle = function (link) {
+            // remember existing media attr for ultimate state, or default to 'all'
+            var finalMedia = link.media || 'all'
+
+            function enableStylesheet() {
+                link.media = finalMedia
+            }
+
+            // bind load handlers to enable media
+            if (link.addEventListener) {
+                link.addEventListener('load', enableStylesheet)
+            } else if (link.attachEvent) {
+                link.attachEvent('onload', enableStylesheet)
+            }
+
+            // Set rel and non-applicable media type to start an async request
+            // note: timeout allows this to happen async to let rendering continue in IE
+            setTimeout(function () {
+                link.rel = 'stylesheet'
+                link.media = 'only x'
+            })
+            // also enable media after 3 seconds,
+            // which will catch very old browsers (android 2.x, old firefox) that don't support onload on link
+            setTimeout(enableStylesheet, 3000)
+        }
+
+        // loop through link elements in DOM
+        rp.poly = function () {
+            // double check this to prevent external calls from running
+            if (rp.support()) {
+                return
+            }
+            var links = w.document.getElementsByTagName('link')
+            for (var i = 0; i < links.length; i++) {
+                var link = links[i]
+                // qualify links to those with rel=preload and as=style attrs
+                if (
+                    link.rel === 'preload' &&
+                    link.getAttribute('as') === 'style' &&
+                    !link.getAttribute('data-loadcss')
+                ) {
+                    // prevent rerunning on link
+                    link.setAttribute('data-loadcss', true)
+                    // bind listeners to toggle media back
+                    rp.bindMediaToggle(link)
+                }
+            }
+        }
+
+        // if unsupported, run the polyfill
+        if (!rp.support()) {
+            // run once at least
+            rp.poly()
+
+            // rerun poly on an interval until onload
+            var run = w.setInterval(rp.poly, 500)
+            if (w.addEventListener) {
+                w.addEventListener('load', function () {
+                    rp.poly()
+                    w.clearInterval(run)
+                })
+            } else if (w.attachEvent) {
+                w.attachEvent('onload', function () {
+                    rp.poly()
+                    w.clearInterval(run)
+                })
+            }
+        }
+
+        // commonjs
+        if (typeof exports !== 'undefined') {
+            exports.loadCSS = loadCSS
+        } else {
+            w.loadCSS = loadCSS
+        }
+    })(typeof global !== 'undefined' ? global : this)
+</script>
+
+    <style type="text/css">
+    @font-face {
+        font-family: 'Oswald-Regular';
+        src: url("/font/Oswald-Regular.ttf");
+    }
+
+    body {
+        margin: 0;
+    }
+
+    header,
+    footer,
+    .back-top,
+    .sidebar,
+    .container,
+    .site-intro-meta,
+    .toc-wrapper {
+        display: none;
+    }
+
+    .site-intro {
+        position: relative;
+        z-index: 3;
+        width: 100%;
+        /* height: 50vh; */
+        overflow: hidden;
+    }
+
+    .site-intro-placeholder {
+        position: absolute;
+        z-index: -2;
+        top: 0;
+        left: 0;
+        width: calc(100% + 300px);
+        height: 100%;
+        background: repeating-linear-gradient(-45deg, #444 0, #444 80px, #333 80px, #333 160px);
+        background-position: center center;
+        transform: translate3d(-226px, 0, 0);
+        animation: gradient-move 2.5s ease-out 0s infinite;
+    }
+
+    @keyframes gradient-move {
+        0% {
+            transform: translate3d(-226px, 0, 0);
+        }
+        100% {
+            transform: translate3d(0, 0, 0);
+        }
+    }
+</style>
+
+    <link rel="preload" href="/css/style.css?v=20210823" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="/css/dark.css?v=20210823" as="style">
+    <link rel="stylesheet" href="/css/dark.css">
+    <link rel="stylesheet" href="/css/mobile.css?v=20210823" media="(max-width: 960px)">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" as="script">
+    <link rel="preload" href="/scripts/main.js?v=20210823" as="script">
+    <link rel="preload" href="/scripts/dark.js?v=20210823" as="script">
+    <link rel="preload" href="/font/Oswald-Regular.ttf" as="font" crossorigin>
+    <link rel="preload" href="https://at.alicdn.com/t/font_327081_1dta1rlogw17zaor.woff" as="font" crossorigin>
+    <!-- algolia -->
+    
+        <script>
+            var hits = JSON.parse('{"per_page":10}')
+            var labels = JSON.parse('{"input_placeholder":"Search for Posts","hits_empty":"We did not find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}')
+
+            var algolia = {
+                applicationID: '2BK6PYKX0M',
+                apiKey: 'b38ca74b6b5c5ffea6dc73886c041838',
+                indexName: 'xiabee-search',
+                hits: hits,
+                labels: labels
+            }
+        </script>
+    
+    <!-- 百度统计  -->
+    
+    <!-- 谷歌统计  -->
+    
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <script type="text/javascript">
+        if (typeof window.$ == undefined) {
+            console.warn('jquery load from jsdelivr failed, will load local script')
+            document.write('<script src="/lib/jquery.min.js" />')
+        }
+    </script>
+    
+        <body class="post-body">
+    
+        <!-- header -->
+        <header class="header header-mobile">
+    <!-- top read progress line -->
+    <div class="header-element">
+        <div class="read-progress"></div>
+    </div>
+    <!-- sidebar menu button -->
+    <div class="header-element">
+        
+            <div class="header-sidebar-menu">
+        
+            
+                <div style="padding-left: 1px;">&#xe775;</div>
+            
+        </div>
+    </div>
+    <!-- header actions -->
+    <div class="header-actions">
+        <!-- theme mode switch button -->
+        <span class="header-theme-btn header-element">
+            <i class="fas fa-adjust"></i>
+        </span>
+        <!-- back to home page text -->
+        <span class="home-link header-element">
+            <a href=/>XiaBee's Studio.</a>
+        </span>
+    </div>
+    <!-- toggle banner for post layout -->
+    
+        
+            <div class="banner">
+        
+            <div class="blog-title header-element">
+                <a href="/">XiaBee&#39;s Studio.</a>
+            </div>
+            <div class="post-title header-element">
+                <a href="#" class="post-name">Hexo+GitPage搭建个人博客</a>
+            </div>
+        </div>
+    
+</header>
+
+        <!-- fixed footer -->
+        <footer class="footer-fixed">
+    <!-- back to top button -->
+    <div class="footer-fixed-element">
+        
+            <div class="back-top back-top-hidden">
+        
+        
+            <div>&#xe639;</div>
+        
+        </div>
+    </div>
+</footer>
+
+        <!-- wrapper -->
+        <div class="wrapper">
+            <div class="site-intro" style="
+
+
+
+
+
+
+
+    height:50vh;
+
+">
+    
+    <!-- 主页  -->
+    
+        
+    <!-- 404页  -->
+            
+    <div class="site-intro-placeholder"></div>
+    <div class="site-intro-img" style="background-image: url(https://tva1.sinaimg.cn/large/0084b03xly1gvzwsehqmmj31380d7wlp.jpg)"></div>
+    <div class="site-intro-meta">
+        <!-- 标题  -->
+        <h1 class="intro-title">
+            <!-- 主页  -->
+            
+                Hexo+GitPage搭建个人博客
+            <!-- 404 -->
+            
+        </h1>
+        <!-- 副标题 -->
+        <p class="intro-subtitle">
+            <!-- 主页副标题  -->
+            
+                
+            <!-- 404 -->
+            
+        </p>
+        <!-- 文章页 meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class= post-intro-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="hexo">hexo</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="git">git</a>
+    
+</div>
+
+                
+                
+                    <div class="post-intro-read">
+                        <span>字数统计: <span class="post-count word-count">1.2k</span>阅读时长: <span class="post-count reading-time">4 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <!-- 撰写日期 -->
+                    <span class="iconfont-archer post-intro-calander">&#xe676;</span>
+                    <span class="post-intro-time">2021/10/27</span>
+                    <!-- busuanzi -->
+                    
+                        <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                            <span class="iconfont-archer post-intro-busuanzi">&#xe602;</span>
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    
+                    <!-- 文章分享 -->
+                    <span class="share-wrapper">
+                        <span class="iconfont-archer share-icon">&#xe71d;</span>
+                        <span class="share-text">Share</span>
+                        <ul class="share-list">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
+        
+    </div>
+</div>
+
+            <script>
+  // get user agent
+  function getBrowserVersions() {
+    var u = window.navigator.userAgent
+    return {
+      userAgent: u,
+      trident: u.indexOf('Trident') > -1, //IE内核
+      presto: u.indexOf('Presto') > -1, //opera内核
+      webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+      gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
+      mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+      ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+      android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
+      iPhone: u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1, //是否为iPhone或者安卓QQ浏览器
+      iPad: u.indexOf('iPad') > -1, //是否为iPad
+      webApp: u.indexOf('Safari') == -1, //是否为web应用程序，没有头部与底部
+      weixin: u.indexOf('MicroMessenger') == -1, //是否为微信浏览器
+      uc: u.indexOf('UCBrowser') > -1, //是否为android下的UC浏览器
+    }
+  }
+  var browser = {
+    versions: getBrowserVersions(),
+  }
+  console.log('userAgent: ' + browser.versions.userAgent)
+
+  // callback
+  function fontLoaded() {
+    console.log('font loaded')
+    if (document.getElementsByClassName('site-intro-meta')) {
+      document
+        .getElementsByClassName('intro-title')[0]
+        .classList.add('intro-fade-in')
+      document
+        .getElementsByClassName('intro-subtitle')[0]
+        .classList.add('intro-fade-in')
+      var postIntros = document.getElementsByClassName('post-intros')[0]
+      if (postIntros) {
+        postIntros.classList.add('post-fade-in')
+      }
+    }
+  }
+
+  // UC不支持跨域，所以直接显示
+  function asyncCb() {
+    if (browser.versions.uc) {
+      console.log('UCBrowser')
+      fontLoaded()
+    } else {
+      WebFont.load({
+        custom: {
+          families: ['Oswald-Regular'],
+        },
+        loading: function () {
+          // 所有字体开始加载
+          // console.log('font loading');
+        },
+        active: function () {
+          // 所有字体已渲染
+          fontLoaded()
+        },
+        inactive: function () {
+          // 字体预加载失败，无效字体或浏览器不支持加载
+          console.log('inactive: timeout')
+          fontLoaded()
+        },
+        timeout: 5000, // Set the timeout to two seconds
+      })
+    }
+  }
+
+  function asyncErr() {
+    console.warn('script load from CDN failed, will load local script')
+  }
+
+  // load webfont-loader async, and add callback function
+  function async(u, cb, err) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0]
+    o.src = u
+    if (cb) {
+      o.addEventListener(
+        'load',
+        function (e) {
+          cb(null, e)
+        },
+        false
+      )
+    }
+    if (err) {
+      o.addEventListener(
+        'error',
+        function (e) {
+          err(null, e)
+        },
+        false
+      )
+    }
+    s.parentNode.insertBefore(o, s)
+  }
+
+  var asyncLoadWithFallBack = function (arr, success, reject) {
+    var currReject = function () {
+      reject()
+      arr.shift()
+      if (arr.length) async(arr[0], success, currReject)
+    }
+
+    async(arr[0], success, currReject)
+  }
+
+  asyncLoadWithFallBack(
+    [
+      'https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js',
+      'https://cdn.bootcss.com/webfont/1.6.28/webfontloader.js',
+      "/lib/webfontloader.min.js",
+    ],
+    asyncCb,
+    asyncErr
+  )
+</script>
+
+            <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
+            <div class="container container-unloaded">
+                <main class="main post-page">
+    <article class="article-entry">
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>之前一段时间都是用<code>wordpress</code>做<a target="_blank" rel="noopener" href="https://xiabee.cn/">个人博客</a>，后来发现<code>Git Page + hexo</code>可以免费做静态页面……尝试了一下，后面就真香了（x）</p>
+<p>关于<code>wordpress</code>和<code>hexo</code>孰优孰劣的问题这里不做详细讨论，只是介绍一下如何用<code>Git Page</code>+<code>hexo</code>搭建一个个人博客。二者具体的比较可以参考<a target="_blank" rel="noopener" href="https://www.zhihu.com/question/53068081">知乎</a>的激(you)烈(hao)讨论。</p>
+<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><h3 id="What’s-GitHub-Page"><a href="#What’s-GitHub-Page" class="headerlink" title="What’s GitHub Page"></a>What’s GitHub Page</h3><ul>
+<li><p><a target="_blank" rel="noopener" href="https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages">官方文档</a></p>
+</li>
+<li><p>简而言之就是 <em>白嫖</em> <code>GitHub</code>的服务器，通过仓库挂一个自己的静态网站。</p>
+</li>
+</ul>
+<h3 id="What’s-Hexo"><a href="#What’s-Hexo" class="headerlink" title="What’s Hexo"></a>What’s Hexo</h3><ul>
+<li><p><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/">官方文档</a></p>
+</li>
+<li><p>一个渲染静态博客的框架，基于<code>Node.js</code>，将<code>markdown</code>文件渲染成<code>html</code>文件</p>
+</li>
+</ul>
+<h3 id="Hexo-Github-Page"><a href="#Hexo-Github-Page" class="headerlink" title="Hexo + Github Page"></a>Hexo + Github Page</h3><ul>
+<li>利用<code>hexo</code>快速生成需要的页面，利用<code>github</code>在公网展示出来</li>
+</ul>
+<h2 id="创建Github-Pages"><a href="#创建Github-Pages" class="headerlink" title="创建Github Pages"></a>创建Github Pages</h2><p>创建一个公网能访问的<code>page</code>，让大家能看到你的博客，这里利用<code>Github page</code></p>
+<h3 id="创建repo"><a href="#创建repo" class="headerlink" title="创建repo"></a>创建repo</h3><p>创建一个名为<code>xxx.github.io</code>的仓库，且允许公网访问：</p>
+<p><img src="https://tva1.sinaimg.cn/large/0084b03xly1gvwe3g2y4pj30px0c8ade.jpg" alt="image.png"></p>
+<h3 id="创建Pages"><a href="#创建Pages" class="headerlink" title="创建Pages"></a>创建Pages</h3><p>在里面随便新建一个文件，确保<code>main</code>分支有东西。</p>
+<p>然后在<code>Settings -&gt; Pages</code>里面设置分支和网站根目录：这里直接设置为<code>main</code>和<code>/(root)</code>。如果网页上传在其他分支上可以在这里修改。</p>
+<p><img src="https://tva1.sinaimg.cn/large/0084b03xly1gvwe8mpskbj31720n0wot.jpg" alt="image.png"></p>
+<p>此时访问<code>https://test.github.io</code>应该就能看到刚刚的网页了。<del>（因为我已经开了一个<code>xiabee.github.io</code>，而免费版只能开一个网页，所以<code>test.github.io</code>就暂时无法展示）</del></p>
+<h2 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h2><h3 id="Node-js"><a href="#Node-js" class="headerlink" title="Node.js"></a>Node.js</h3><ul>
+<li><p><code>Linux</code>用户：直接包管理器安装即可</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 例如Ubuntu</span></span><br><span class="line">apt update</span><br><span class="line">apt install nodejs</span><br></pre></td></tr></table></figure>
+
+<p>包管理器找不到<code>nodejs</code>的可以和<code>Windows</code>用户一样取官网安装。</p>
+</li>
+<li><p><code>Windows</code>用户：<a target="_blank" rel="noopener" href="https://nodejs.org/zh-cn/">官网</a>下载并安装</p>
+</li>
+</ul>
+<h3 id="NPM"><a href="#NPM" class="headerlink" title="NPM"></a>NPM</h3><ul>
+<li><p><code>node.js</code>一般自带<code>npm</code>，但是可能不是最新版的<code>npm</code>，直接更新即可</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">apt-get install nodejs-legacy</span><br><span class="line">apt-get install npm</span><br><span class="line">npm install -g n</span><br><span class="line"><span class="comment"># 安装n模块</span></span><br><span class="line"></span><br><span class="line">n stable</span><br><span class="line"><span class="comment"># 升级nodejs到最新stable版本</span></span><br><span class="line"></span><br><span class="line">npm install npm@latest -g</span><br><span class="line"><span class="comment"># 升级最新npm</span></span><br></pre></td></tr></table></figure></li>
+<li><p>如果没有自带<code>npm</code>可以去<a target="_blank" rel="noopener" href="https://docs.npmjs.com/">官网</a>看看，手动安装<code>npm</code></p>
+</li>
+</ul>
+<h3 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h3><ul>
+<li><p><code>Linux</code>：直接包管理器安装</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># ubuntu</span></span><br><span class="line">apt update</span><br><span class="line">apt install git</span><br></pre></td></tr></table></figure></li>
+<li><p><code>Windows</code>：<a target="_blank" rel="noopener" href="https://git-scm.com/downloads">官网</a>下载安装</p>
+</li>
+<li><p>配置<code>ssh</code>登录可以参考<a target="_blank" rel="noopener" href="https://xiabee.github.io/posts/github-ssh/">这篇博客</a></p>
+</li>
+</ul>
+<h3 id="HEXO"><a href="#HEXO" class="headerlink" title="HEXO"></a>HEXO</h3><p>先装<code>hexo-cli</code>：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo npm install -g hexo-cli</span><br><span class="line"><span class="comment"># 全局安装hexo</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="本地调试"><a href="#本地调试" class="headerlink" title="本地调试"></a>本地调试</h2><h3 id="hexo根目录"><a href="#hexo根目录" class="headerlink" title="hexo根目录"></a>hexo根目录</h3><p>选择一个空目录做为<code>hexo</code>的根目录，初始化并安装相关依赖：</p>
+<p>这里建议把刚刚创建的<code>Github Page</code>的<code>repo</code>克隆下来，再把该目录删空作为根目录……不然可能会遇到分支没有共同基点不能合并的问题。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">hexo init </span><br><span class="line"><span class="comment"># 在该目录下初始化</span></span><br><span class="line"></span><br><span class="line">npm install</span><br><span class="line"><span class="comment"># 安装依赖</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="常用hexo命令："><a href="#常用hexo命令：" class="headerlink" title="常用hexo命令："></a>常用hexo命令：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">hexo g <span class="comment"># hexo generate</span></span><br><span class="line"><span class="comment"># 渲染页面，生成网页</span></span><br><span class="line"></span><br><span class="line">hexo s <span class="comment"># hexo server</span></span><br><span class="line"><span class="comment"># 启动本地服务器，提供预览和本地调试</span></span><br><span class="line"></span><br><span class="line">hexo clean</span><br><span class="line"><span class="comment"># 清理本地网页</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>访问<a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000</a>，出现<code>hexo</code>页面说明渲染成功</p>
+<p><img src="https://tva1.sinaimg.cn/large/0084b03xly1gvwdzcr2n8j31hc0n4aw0.jpg" alt="image.png"></p>
+<p>这里我修改过主页，所以可能看起来和初始模板不太一样。</p>
+<p><strong>Tips：</strong>如果<code>server</code>一直起不来，可能是端口被占用了。<code>Ctrl C</code> 关闭服务器，运行 <code>hexo server -p 5000</code> 更改端口号后重试。</p>
+<h3 id="hexo常见目录结构"><a href="#hexo常见目录结构" class="headerlink" title="hexo常见目录结构"></a>hexo常见目录结构</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">├── _config.yml 	<span class="comment"># 网站配置信息</span></span><br><span class="line">├── node_modules	<span class="comment"># nodejs组件</span></span><br><span class="line">├── package.json</span><br><span class="line">├── package-lock.json</span><br><span class="line">├── public			<span class="comment"># 生成的网站文件</span></span><br><span class="line">├── README.md		</span><br><span class="line">├── scaffolds		<span class="comment"># 模板文件夹</span></span><br><span class="line">├── <span class="built_in">source</span>			<span class="comment"># 写博客的markdown源文件</span></span><br><span class="line">└── themes			<span class="comment"># 主题文件夹</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="远程推送"><a href="#远程推送" class="headerlink" title="远程推送"></a>远程推送</h2><p>把<code>hexo</code>推送到<code>github</code>中</p>
+<h3 id="安装hexo-deployer-git"><a href="#安装hexo-deployer-git" class="headerlink" title="安装hexo-deployer-git"></a>安装hexo-deployer-git</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="修改-comfig-yml"><a href="#修改-comfig-yml" class="headerlink" title="修改_comfig.yml"></a>修改_comfig.yml</h3><p>找到<code>hexo</code>根目录下的<code>_config.yml</code>，文末<code>deploy:</code>模块：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## Docs: https://hexo.io/docs/one-command-deployment</span></span><br><span class="line">deploy:</span><br><span class="line">  <span class="built_in">type</span>: git</span><br><span class="line">  repo: </span><br><span class="line">    github: git@github.com:xiabee/test.github.io.git</span><br><span class="line">    branch: main</span><br><span class="line">    gitee: git@gitee.com:xiabee/test.gitee.io.git</span><br><span class="line">    branch: main</span><br></pre></td></tr></table></figure>
+
+<p>这里是做了<code>Gitee+GitHub</code>双备份，如果不传<code>gitee</code>的话可以只写<code>github</code>的仓库地址。</p>
+<p>此时指定<code>hexo</code>上传的网页文件为<code>main</code>分支，如果刚刚<code>Github Page</code>的分支不是<code>main</code>的可以修改一下……改哪个都可以，一致即可。</p>
+<p><img src="https://tva1.sinaimg.cn/large/0084b03xgy1gvwerqrvzfj30is07hmzf.jpg" alt="image.png"></p>
+<p>这里<code>GitHub Pages</code>用的就是<code>main</code>分支，不需要修改</p>
+<h3 id="推送"><a href="#推送" class="headerlink" title="推送"></a>推送</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">hexo g </span><br><span class="line"><span class="comment"># 渲染页面</span></span><br><span class="line"></span><br><span class="line">hexo d</span><br><span class="line"><span class="comment"># 推送至git，部署发布</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 二者结合相当于 hexo g -d</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>此时访问公网地址，已经能看到该博客了：</p>
+<p><img src="https://tva1.sinaimg.cn/large/0084b03xly1gvweyd9xbzj31hl0sv1kx.jpg" alt="image.png"></p>
+<h2 id="写文章"><a href="#写文章" class="headerlink" title="写文章"></a>写文章</h2><h3 id="编辑源文件"><a href="#编辑源文件" class="headerlink" title="编辑源文件"></a>编辑源文件</h3><p>在<code>_posts</code>目录下创建<code>markdown</code>文件，仿照<code>Hello World</code>写就行：</p>
+<p><img src="https://tva1.sinaimg.cn/large/0084b03xly1gvwf1noz1nj30mb08tafh.jpg" alt="image.png"></p>
+<p>然后<code>hexo g -d</code>，渲染、推送。</p>
+<h3 id="关于图床"><a href="#关于图床" class="headerlink" title="关于图床"></a>关于图床</h3><p>如果是整个媒体库都上传到<code>Github</code>上的话，相当于是把<code>Github</code>作为图床了……然而众所周知<code>Github</code>在国内的速度非常非常慢。所以建议换一个好用的图床。</p>
+<p>关于图床的推荐可以参考一下<a target="_blank" rel="noopener" href="https://www.zhihu.com/question/21349585">知乎</a>。</p>
+<p>这里我个人使用的是<a target="_blank" rel="noopener" href="https://weibo.com/">微博</a>图床，配合<code>Chrome</code>插件<a target="_blank" rel="noopener" href="https://chrome.google.com/webstore/detail/%E6%96%B0%E6%B5%AA%E5%BE%AE%E5%8D%9A%E5%9B%BE%E5%BA%8A/fdfdnfpdplfbbnemmmoklbfjbhecpnhf?utm_source=chrome-ntp-icon">新浪微博图床</a>使用，可以直接微信截图到剪贴板，然后复制粘贴，灰常方便：</p>
+<p><img src="https://tva1.sinaimg.cn/large/0084b03xly1gvysn7j1qaj30ra0ivabw.jpg" alt="image.png"></p>
+<p>当然，用这个图床的前提是你得有一个微博账号（x）</p>
+<h2 id="Hexo备份"><a href="#Hexo备份" class="headerlink" title="Hexo备份"></a>Hexo备份</h2><ul>
+<li>利用<code>Git</code>分支</li>
+<li>参考<a target="_blank" rel="noopener" href="https://xiabee.github.io/posts/hexo-git-backup/">这篇博客</a></li>
+</ul>
+
+    </article>
+    <!-- license -->
+    
+        <div class="license-wrapper">
+            <p>原文作者：<a href="https://blog.xiabee.cn">xiabee</a>
+            <p>原文链接：<a href="https://blog.xiabee.cn/posts/hexo-git-setup/">https://blog.xiabee.cn/posts/hexo-git-setup/</a>
+            <p>发表日期：<a href="https://blog.xiabee.cn/posts/hexo-git-setup/">October 27th 2021, 11:46:18 pm</a>
+            <p>更新日期：<a href="https://blog.xiabee.cn/posts/hexo-git-setup/">August 13th 2022, 11:39:31 pm</a>
+            <p>版权声明：本文采用<a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
+        </div>
+    
+    <!-- paginator -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+                <div class="nextSlogan">Next Post</div>
+                <a href="/posts/hexo-git-backup/" title="利用git分支进行Hexo备份">
+                    <div class="nextTitle">利用git分支进行Hexo备份</div>
+                </a>
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href="/posts/fri/" title="FRIENDS">
+                    <div class="prevTitle">FRIENDS</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- comment -->
+    
+        <div class="post-comment">
+            <!-- 来必力 City 版安装代码 -->
+
+
+            
+
+            
+
+            
+
+            <!-- utteranc评论 -->
+
+    <script src='https://utteranc.es/client.js'
+        repo='xiabee/xiabee.github.io'
+        issue-term='title'
+        label='Comment'
+        theme='github-light'
+        crossorigin='anonymous'
+        async>
+    </script>
+
+
+            <!-- partial('_partial/comment/changyan') -->
+            <!--PC版-->
+
+
+            
+            
+
+            
+
+        </div>
+    
+    <!-- timeliness note -->
+    <!-- idea from: https://hexo.fluid-dev.com/posts/hexo-injector/#%E6%96%87%E7%AB%A0%E6%97%B6%E6%95%88%E6%80%A7%E6%8F%90%E7%A4%BA -->
+    
+    <!-- Mathjax -->
+    
+</main>
+
+                <!-- profile -->
+                
+            </div>
+            <footer class="footer footer-unloaded">
+    <!-- social  -->
+    
+        <div class="social">
+            
+    
+        
+            
+                <a href="mailto:xiabee@foxmail.com" class="iconfont-archer email" title=email ></a>
+            
+        
+    
+        
+            
+                <a href="https://github.com/xiabee" class="iconfont-archer github" target="_blank" title=github></a>
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            
+                <a href="https://weibo.com/u/7390789827" class="iconfont-archer weibo" target="_blank" title=weibo></a>
+            
+        
+    
+        
+            
+                <a href="https://www.zhihu.com/people/xiao-53-1" class="iconfont-archer zhihu" target="_blank" title=zhihu></a>
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            
+                <a href="https://space.bilibili.com/43789348" class="iconfont-archer bilibili" target="_blank" title=bilibili></a>
+            
+        
+    
+        
+    
+        
+            
+                <a href="https://steamcommunity.com/id/xiabee/" class="iconfont-archer steam" target="_blank" title=steam></a>
+            
+        
+    
+        
+    
+        
+    
+
+
+        </div>
+    
+    <!-- powered by Hexo  -->
+    <div class="copyright">
+        <span id="hexo-power">Powered by <a href="https://hexo.io/" target="_blank">Hexo</a></span><span class="iconfont-archer power">&#xe635;</span><span id="theme-info">theme <a href="https://github.com/fi3ework/hexo-theme-archer" target="_blank">Archer</a></span>
+    </div>
+    <!-- website approve for Chinese user -->
+    
+    <!-- 不蒜子  -->
+    
+        <div class="busuanzi-container">
+            
+             
+                <span id="busuanzi_container_site_pv">PV: <span id="busuanzi_value_site_pv"></span> :)</span>
+            
+        </div>
+    	
+</footer>
+
+        </div>
+        <!-- toc -->
+        
+            <div class="toc-wrapper toc-wrapper-loding" style=
+
+
+
+
+
+
+
+    top:50vh;
+
+>
+                <div class="toc-catalog">
+                    <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+                </div>
+                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E4%BB%8B"><span class="toc-number">2.</span> <span class="toc-text">简介</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#What%E2%80%99s-GitHub-Page"><span class="toc-number">2.1.</span> <span class="toc-text">What’s GitHub Page</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#What%E2%80%99s-Hexo"><span class="toc-number">2.2.</span> <span class="toc-text">What’s Hexo</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Hexo-Github-Page"><span class="toc-number">2.3.</span> <span class="toc-text">Hexo + Github Page</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BAGithub-Pages"><span class="toc-number">3.</span> <span class="toc-text">创建Github Pages</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BArepo"><span class="toc-number">3.1.</span> <span class="toc-text">创建repo</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BAPages"><span class="toc-number">3.2.</span> <span class="toc-text">创建Pages</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA"><span class="toc-number">4.</span> <span class="toc-text">环境搭建</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Node-js"><span class="toc-number">4.1.</span> <span class="toc-text">Node.js</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#NPM"><span class="toc-number">4.2.</span> <span class="toc-text">NPM</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Git"><span class="toc-number">4.3.</span> <span class="toc-text">Git</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HEXO"><span class="toc-number">4.4.</span> <span class="toc-text">HEXO</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%AC%E5%9C%B0%E8%B0%83%E8%AF%95"><span class="toc-number">5.</span> <span class="toc-text">本地调试</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#hexo%E6%A0%B9%E7%9B%AE%E5%BD%95"><span class="toc-number">5.1.</span> <span class="toc-text">hexo根目录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8hexo%E5%91%BD%E4%BB%A4%EF%BC%9A"><span class="toc-number">5.2.</span> <span class="toc-text">常用hexo命令：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#hexo%E5%B8%B8%E8%A7%81%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84"><span class="toc-number">5.3.</span> <span class="toc-text">hexo常见目录结构</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%9C%E7%A8%8B%E6%8E%A8%E9%80%81"><span class="toc-number">6.</span> <span class="toc-text">远程推送</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85hexo-deployer-git"><span class="toc-number">6.1.</span> <span class="toc-text">安装hexo-deployer-git</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9-comfig-yml"><span class="toc-number">6.2.</span> <span class="toc-text">修改_comfig.yml</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8E%A8%E9%80%81"><span class="toc-number">6.3.</span> <span class="toc-text">推送</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%86%99%E6%96%87%E7%AB%A0"><span class="toc-number">7.</span> <span class="toc-text">写文章</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BC%96%E8%BE%91%E6%BA%90%E6%96%87%E4%BB%B6"><span class="toc-number">7.1.</span> <span class="toc-text">编辑源文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E%E5%9B%BE%E5%BA%8A"><span class="toc-number">7.2.</span> <span class="toc-text">关于图床</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hexo%E5%A4%87%E4%BB%BD"><span class="toc-number">8.</span> <span class="toc-text">Hexo备份</span></a></li></ol>
+            </div>
+        
+        <!-- sidebar -->
+        <div class="sidebar sidebar-hide">
+    <ul class="sidebar-tabs sidebar-tabs-active-0">
+        <li class="sidebar-tab-archives"><span class="iconfont-archer">&#xe67d;</span><span class="tab-name">Archive</span></li>
+        <li class="sidebar-tab-tags"><span class="iconfont-archer">&#xe61b;</span><span class="tab-name">Tag</span></li>
+        <li class="sidebar-tab-categories"><span class="iconfont-archer">&#xe666;</span><span class="tab-name">Cate</span></li>
+    </ul>
+    <div class="sidebar-content sidebar-content-show-archive">
+        <div class="sidebar-panel-archives">
+    <!-- 在 ejs 中将 archive 按照时间排序 -->
+    
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    
+    
+    
+    
+    <div class="total-and-search">
+        <div class="total-archive">
+        Total : 29
+        </div>
+        <!-- search  -->
+        
+            <div class="site-search site-search-loading popup-trigger">
+                <span class="iconfont-archer search-icon">&#xe627;</span>
+            </div>
+        
+    </div>
+    
+    <div class="post-archive">
+    
+        
+            
+            
+            <div class="archive-year"> 2022 </div>
+            <ul class="year-list">
+            
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/08</span>
+            <a class="archive-post-title" href="/posts/docker-compose-2/">安装 docker-compose 2</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/08</span>
+            <a class="archive-post-title" href="/posts/postal-mailserver/">Docker 搭建 Postal 邮件系统</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/29</span>
+            <a class="archive-post-title" href="/posts/hydro-docker/">Docker搭建Hydro-OJ系统</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/08</span>
+            <a class="archive-post-title" href="/posts/2022-spring-recruitment/">2022春招安全岗记录</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/03</span>
+            <a class="archive-post-title" href="/posts/vps-toss/">服务器的折腾</a>
+        </li>
+    
+        
+            
+            
+                
+                </ul>
+            
+            <div class="archive-year"> 2021 </div>
+            <ul class="year-list">
+            
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/25</span>
+            <a class="archive-post-title" href="/posts/diary/">考研日记</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/11</span>
+            <a class="archive-post-title" href="/posts/11-11/">如何在双十一快速脱单？</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/09</span>
+            <a class="archive-post-title" href="/posts/wordpress-docker/">Docker搭建Wordpress个人博客</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/09</span>
+            <a class="archive-post-title" href="/posts/nextcloud-docker/">Docker搭建NextCloud个人网盘</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/07</span>
+            <a class="archive-post-title" href="/posts/markdown-docker/">Docker搭建Markdown共享编辑器</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/03</span>
+            <a class="archive-post-title" href="/posts/utteranc-hexo/">utteranc 搭建评论系统</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/02</span>
+            <a class="archive-post-title" href="/posts/git-coding-hexo/">Git Page + Coding Page 实现负载均衡</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/31</span>
+            <a class="archive-post-title" href="/posts/archer-algolia/">Archer主题启用Algolia全文搜索</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/31</span>
+            <a class="archive-post-title" href="/posts/hexo-archer/">Hexo更换主题</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/28</span>
+            <a class="archive-post-title" href="/posts/hexo-git-backup/">利用git分支进行Hexo备份</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/27</span>
+            <a class="archive-post-title" href="/posts/hexo-git-setup/">Hexo+GitPage搭建个人博客</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/01</span>
+            <a class="archive-post-title" href="/posts/fri/">FRIENDS</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/15</span>
+            <a class="archive-post-title" href="/posts/2021-summer-year3/">我的大三</a>
+        </li>
+    
+        
+            
+            
+                
+                </ul>
+            
+            <div class="archive-year"> 2020 </div>
+            <ul class="year-list">
+            
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/26</span>
+            <a class="archive-post-title" href="/posts/wsl2-about/">WSL2踩坑分享</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/14</span>
+            <a class="archive-post-title" href="/posts/linux-gmp/">Linux安装GMP依赖</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/05</span>
+            <a class="archive-post-title" href="/posts/2020-summer/">2020 Summer Review of xiabee</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/27</span>
+            <a class="archive-post-title" href="/posts/github-ssh/">GitHub配置SSH Key</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/18</span>
+            <a class="archive-post-title" href="/posts/wechat-0day/">微信RCE 0day复现</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/19</span>
+            <a class="archive-post-title" href="/posts/docker-sudo/">不输入sudo运行Docker</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/18</span>
+            <a class="archive-post-title" href="/posts/docker-commands/">Docker常用命令</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/17</span>
+            <a class="archive-post-title" href="/posts/docker-pupy/">Docker入门</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/17</span>
+            <a class="archive-post-title" href="/posts/docker-source/">Docker换源</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/14</span>
+            <a class="archive-post-title" href="/posts/linux-sources/">Ubuntu/kali 国内各大更新源</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/10</span>
+            <a class="archive-post-title" href="/posts/ababa/">碎碎念</a>
+        </li>
+    
+    </div>
+</div>
+
+        <div class="sidebar-panel-tags">
+    <div class="sidebar-tags-name">
+        
+            <span class="sidebar-tag-name" data-tags="0day">
+                <span class="iconfont-archer">&#xe606;</span>
+                0day
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="hexo">
+                <span class="iconfont-archer">&#xe606;</span>
+                hexo
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="archer">
+                <span class="iconfont-archer">&#xe606;</span>
+                archer
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="algolia">
+                <span class="iconfont-archer">&#xe606;</span>
+                algolia
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="git">
+                <span class="iconfont-archer">&#xe606;</span>
+                git
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="ssh">
+                <span class="iconfont-archer">&#xe606;</span>
+                ssh
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="linux">
+                <span class="iconfont-archer">&#xe606;</span>
+                linux
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="oj">
+                <span class="iconfont-archer">&#xe606;</span>
+                oj
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="docker">
+                <span class="iconfont-archer">&#xe606;</span>
+                docker
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="wsl">
+                <span class="iconfont-archer">&#xe606;</span>
+                wsl
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="wordpress">
+                <span class="iconfont-archer">&#xe606;</span>
+                wordpress
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="nextcloud">
+                <span class="iconfont-archer">&#xe606;</span>
+                nextcloud
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="markdown">
+                <span class="iconfont-archer">&#xe606;</span>
+                markdown
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="utteranc">
+                <span class="iconfont-archer">&#xe606;</span>
+                utteranc
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="postal">
+                <span class="iconfont-archer">&#xe606;</span>
+                postal
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="docker-compose">
+                <span class="iconfont-archer">&#xe606;</span>
+                docker-compose
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="vps">
+                <span class="iconfont-archer">&#xe606;</span>
+                vps
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="ctf">
+                <span class="iconfont-archer">&#xe606;</span>
+                ctf
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="碎碎念">
+                <span class="iconfont-archer">&#xe606;</span>
+                碎碎念
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="friends">
+                <span class="iconfont-archer">&#xe606;</span>
+                friends
+            </span>
+        
+    </div>
+    <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
+    <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
+        缺失模块，请参考主题文档进行安装配置：https://github.com/fi3ework/hexo-theme-archer#%E5%AE%89%E8%A3%85%E4%B8%BB%E9%A2%98
+    </div> 
+    <div class="sidebar-tags-list"></div>
+</div>
+
+        <div class="sidebar-panel-categories">
+    <div class="sidebar-categories-name">
+    
+        <span class="sidebar-category-name" data-categories="ctf">
+            <span class="iconfont-archer">&#xe60a;</span>
+            ctf
+        </span>
+    
+        <span class="sidebar-category-name" data-categories="coding">
+            <span class="iconfont-archer">&#xe60a;</span>
+            coding
+        </span>
+    
+        <span class="sidebar-category-name" data-categories="informal essay">
+            <span class="iconfont-archer">&#xe60a;</span>
+            informal essay
+        </span>
+    
+        <span class="sidebar-category-name" data-categories="friends">
+            <span class="iconfont-archer">&#xe60a;</span>
+            friends
+        </span>
+    
+    </div>
+    <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
+    <div class="sidebar-categories-list"></div>
+</div>
+
+    </div>
+</div>
+
+        <!-- site-meta -->
+        <script>
+    var siteMetaRoot = "/"
+    if (siteMetaRoot === "undefined") {
+        siteMetaRoot = '/'
+    }
+    var siteMeta = {
+        url: "https://blog.xiabee.cn",
+        root: siteMetaRoot,
+        author: "xiabee"
+    }
+</script>
+
+        <!-- import experimental options here -->
+        <!-- Custom Font -->
+
+
+        <!-- main func -->
+        <script src="/scripts/main.js?v=20210823"></script>
+        <!-- dark mode -->
+        <script src="/scripts/dark.js?v=20210823"></script>
+        <!-- fancybox -->
+        <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" defer></script>
+        <!-- algolia -->
+        
+            <div class="site-search site-search-loading">
+    <div class="algolia-popup popup">
+        <div class="algolia-search">
+            <div class="algolia-search-input-icon">
+                <i class="fa fa-search"></i>
+            </div>
+            <div class="algolia-search-input" id="algolia-search-input"></div>
+            <div class="popup-btn-close">
+                <i class="iconfont-archer">&#xe609;</i>
+            </div>
+        </div>
+
+        <div class="algolia-results">
+            <div id="algolia-stats" class="algolia-stats"></div>
+            <div id="algolia-hits"></div>
+            <div id="algolia-pagination" class="algolia-pagination"></div>
+        </div>
+    </div>
+</div>
+
+            <script src="/scripts/search.js?v=20210823" defer></script>
+        
+        <!-- busuanzi -->
+        
+            <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+        
+        <!-- CNZZ -->
+        
+        <!-- async load share.js -->
+        
+            <script src="/scripts/share.js?v=20210823" async></script>
+        
+        <!-- mermaid -->
+        
+    </body>
+</html>
