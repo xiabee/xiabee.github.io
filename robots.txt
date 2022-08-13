@@ -1,0 +1,5 @@
+User-agent: * 
+Allow: /
+
+Sitemap: https://blog.xiabee.cn/sitemap.xml
+Sitemap: https://blog.xiabee.cn/baidusitemap.xml
