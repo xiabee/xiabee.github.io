@@ -191,14 +191,14 @@
   </url>
   
   <url>
-    <loc>https://blog.xiabee.cn/posts/hexo-git-backup/</loc>
+    <loc>https://blog.xiabee.cn/posts/git-coding-hexo/</loc>
     
     <lastmod>2022-08-13</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.xiabee.cn/posts/git-coding-hexo/</loc>
+    <loc>https://blog.xiabee.cn/posts/hexo-git-backup/</loc>
     
     <lastmod>2022-08-13</lastmod>
     
@@ -305,6 +305,13 @@
   </url>
   
   <url>
+    <loc>https://blog.xiabee.cn/tags/wordpress/</loc>
+    <lastmod>2022-08-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.xiabee.cn/tags/nextcloud/</loc>
     <lastmod>2022-08-13</lastmod>
     <changefreq>daily</changefreq>
@@ -313,13 +320,6 @@
   
   <url>
     <loc>https://blog.xiabee.cn/tags/markdown/</loc>
-    <lastmod>2022-08-13</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.xiabee.cn/tags/wordpress/</loc>
     <lastmod>2022-08-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -347,14 +347,14 @@
   </url>
   
   <url>
-    <loc>https://blog.xiabee.cn/tags/ctf/</loc>
+    <loc>https://blog.xiabee.cn/tags/vps/</loc>
     <lastmod>2022-08-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://blog.xiabee.cn/tags/vps/</loc>
+    <loc>https://blog.xiabee.cn/tags/ctf/</loc>
     <lastmod>2022-08-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
