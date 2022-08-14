@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://blog.xiabee.cn/posts/tidb-build-up/</loc>
+    <lastmod>2022-08-14</lastmod>
+  </url>
+  <url>
     <loc>https://blog.xiabee.cn/posts/fri/</loc>
     <lastmod>2022-08-14</lastmod>
   </url>
@@ -9,7 +13,7 @@
     <lastmod>2022-08-14</lastmod>
   </url>
   <url>
-    <loc>https://blog.xiabee.cn/posts/docker-compose-2/</loc>
+    <loc>https://blog.xiabee.cn/%E5%AE%89%E8%A3%85docker-compose%202.html</loc>
     <lastmod>2022-08-13</lastmod>
   </url>
   <url>
@@ -53,11 +57,11 @@
     <lastmod>2022-08-13</lastmod>
   </url>
   <url>
-    <loc>https://blog.xiabee.cn/posts/markdown-docker/</loc>
+    <loc>https://blog.xiabee.cn/posts/utteranc-hexo/</loc>
     <lastmod>2022-08-13</lastmod>
   </url>
   <url>
-    <loc>https://blog.xiabee.cn/posts/utteranc-hexo/</loc>
+    <loc>https://blog.xiabee.cn/posts/markdown-docker/</loc>
     <lastmod>2022-08-13</lastmod>
   </url>
   <url>
@@ -101,11 +105,11 @@
     <lastmod>2022-08-13</lastmod>
   </url>
   <url>
-    <loc>https://blog.xiabee.cn/posts/hexo-git-backup/</loc>
+    <loc>https://blog.xiabee.cn/posts/git-coding-hexo/</loc>
     <lastmod>2022-08-13</lastmod>
   </url>
   <url>
-    <loc>https://blog.xiabee.cn/posts/git-coding-hexo/</loc>
+    <loc>https://blog.xiabee.cn/posts/hexo-git-backup/</loc>
     <lastmod>2022-08-13</lastmod>
   </url>
   <url>
@@ -113,11 +117,11 @@
     <lastmod>2022-08-13</lastmod>
   </url>
   <url>
-    <loc>https://blog.xiabee.cn/posts/github-ssh/</loc>
+    <loc>https://blog.xiabee.cn/posts/archer-algolia/</loc>
     <lastmod>2022-08-13</lastmod>
   </url>
   <url>
-    <loc>https://blog.xiabee.cn/posts/archer-algolia/</loc>
+    <loc>https://blog.xiabee.cn/posts/github-ssh/</loc>
     <lastmod>2022-08-13</lastmod>
   </url>
 </urlset> 
