@@ -441,6 +441,53 @@
             
         
         <article class="index-post">
+            <a class="abstract-title" href="/posts/git-coding-hexo/">
+                
+                <span class="abstract-title-text">Git Page + Coding Page 实现负载均衡</span>
+            </a>
+            <div class="abstract-content">
+                问题描述Github Page不能被搜索引擎收录Github Page禁止了百度爬虫，导致百度无法收录我的博客；然后其他搜索引擎可能也是类似原因，均无法收录。而且曾经可以通过手动上传和sitemap的方式提交链接，现在连sitemap都读不到了……被迫转战其他平台：使用自定义域名
+Github Page在国内访问速度较慢github.io经常抽风，在国内访问不稳定，考虑增加一个国内的备份。
+初步解决方案
+利用coding创建国内镜像
+搜索引擎收入coding内容
+利用可控域名，通过CNAME解析到不同域名中，通过DNS实现负载均衡
+
+
+
+为什么是coding
+因为gitee实在太慢了，性...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/08/13">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/11/02</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="git">git</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="hexo">hexo</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
             <a class="abstract-title" href="/posts/archer-algolia/">
                 
                 <span class="abstract-title-text">Archer主题启用Algolia全文搜索</span>
@@ -582,9 +629,9 @@ Hexo主题
                     <div class= abstract-tags >
     
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="hexo">hexo</a>
-    
         <a class="post-tag" href="javascript:void(0);" data-tags="git">git</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="hexo">hexo</a>
     
 </div>
 
@@ -633,9 +680,9 @@ Hex...
                     <div class= abstract-tags >
     
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="hexo">hexo</a>
-    
         <a class="post-tag" href="javascript:void(0);" data-tags="git">git</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="hexo">hexo</a>
     
 </div>
 
@@ -844,62 +891,6 @@ GMP经过精心设计，无论是小型操作数还是大型操作数，都应�
                 <!-- date -->
                 <div class="abstract-date" title="Last updated: 2022/08/13">
                     <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/03/18</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="docker">docker</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/posts/docker-source/">
-                
-                <span class="abstract-title-text">Docker换源</span>
-            </a>
-            <div class="abstract-content">
-                Docker相关
-Docker入门
-
-Docker常用命令
-
-Docker解决sudo
-
-
-Docker换源由于众所周知的原因，国内的访问docker源时会比较慢，所以我们换源到国内镜像站上。
-这里依然以Ubuntu为例。
-腾讯源
-官方文档
-
-
-具体操作：
-创建加速器文件
-12/etc/docker/daemon.jsonvim /etc/docker/daemon.json
-
-
-
-按i切换至编辑模式，在daemon.json中添加以下内容，并保存（ESC；输入:进入命令模式；q保存并退出）
-12345&#123;&quot;registry-mirrors&quot;: [ &quot...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/08/13">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/03/17</span>
                 </div>
                 <!-- tags -->
                 
@@ -1176,7 +1167,16 @@ Docker换源由于众所周知的原因，国内的访问docker源时会比较�
         
         
         
+        
+        
+        
+        
+        
     
+        
+        
+        
+        
         
         
         
@@ -1395,7 +1395,7 @@ Docker换源由于众所周知的原因，国内的访问docker源时会比较�
     
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 29
+        Total : 30
         </div>
         <!-- search  -->
         
@@ -1413,6 +1413,12 @@ Docker换源由于众所周知的原因，国内的访问docker源时会比较�
             <div class="archive-year"> 2022 </div>
             <ul class="year-list">
             
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/21</span>
+            <a class="archive-post-title" href="/posts/hydro-hepler/">Hydro-OJ 使用说明</a>
+        </li>
+    
         
         <li class="archive-post-item">
             <span class="archive-post-date">05/08</span>
@@ -1611,14 +1617,19 @@ Docker换源由于众所周知的原因，国内的访问docker源时会比较�
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
         
-            <span class="sidebar-tag-name" data-tags="hexo">
-                <span class="iconfont-archer">&#xe606;</span>
-                hexo
-            </span>
-        
             <span class="sidebar-tag-name" data-tags="git">
                 <span class="iconfont-archer">&#xe606;</span>
                 git
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="ssh">
+                <span class="iconfont-archer">&#xe606;</span>
+                ssh
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="hexo">
+                <span class="iconfont-archer">&#xe606;</span>
+                hexo
             </span>
         
             <span class="sidebar-tag-name" data-tags="archer">
@@ -1629,11 +1640,6 @@ Docker换源由于众所周知的原因，国内的访问docker源时会比较�
             <span class="sidebar-tag-name" data-tags="algolia">
                 <span class="iconfont-archer">&#xe606;</span>
                 algolia
-            </span>
-        
-            <span class="sidebar-tag-name" data-tags="ssh">
-                <span class="iconfont-archer">&#xe606;</span>
-                ssh
             </span>
         
             <span class="sidebar-tag-name" data-tags="oj">
@@ -1661,14 +1667,19 @@ Docker换源由于众所周知的原因，国内的访问docker源时会比较�
                 wordpress
             </span>
         
-            <span class="sidebar-tag-name" data-tags="utteranc">
+            <span class="sidebar-tag-name" data-tags="nextcloud">
                 <span class="iconfont-archer">&#xe606;</span>
-                utteranc
+                nextcloud
             </span>
         
             <span class="sidebar-tag-name" data-tags="markdown">
                 <span class="iconfont-archer">&#xe606;</span>
                 markdown
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="utteranc">
+                <span class="iconfont-archer">&#xe606;</span>
+                utteranc
             </span>
         
             <span class="sidebar-tag-name" data-tags="postal">
@@ -1686,24 +1697,19 @@ Docker换源由于众所周知的原因，国内的访问docker源时会比较�
                 vps
             </span>
         
-            <span class="sidebar-tag-name" data-tags="0day">
-                <span class="iconfont-archer">&#xe606;</span>
-                0day
-            </span>
-        
             <span class="sidebar-tag-name" data-tags="ctf">
                 <span class="iconfont-archer">&#xe606;</span>
                 ctf
             </span>
         
+            <span class="sidebar-tag-name" data-tags="0day">
+                <span class="iconfont-archer">&#xe606;</span>
+                0day
+            </span>
+        
             <span class="sidebar-tag-name" data-tags="碎碎念">
                 <span class="iconfont-archer">&#xe606;</span>
                 碎碎念
-            </span>
-        
-            <span class="sidebar-tag-name" data-tags="nextcloud">
-                <span class="iconfont-archer">&#xe606;</span>
-                nextcloud
             </span>
         
             <span class="sidebar-tag-name" data-tags="friends">

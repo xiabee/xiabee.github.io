@@ -441,6 +441,55 @@
             
         
         <article class="index-post">
+            <a class="abstract-title" href="/posts/hydro-hepler/">
+                
+                <span class="abstract-title-text">Hydro-OJ 使用说明</span>
+            </a>
+            <div class="abstract-content">
+                本OJ的具体搭建方式：Docker搭建Hydro-OJ系统 · xiabee-瞎哔哔
+以下内容为用户文档
+超级管理员
+超级管理员是OJ系统的最高权限，能够直接控制OJ的全部内容，不建议设置多个
+
+使用要求·
+
+拥有服务器ssh权限，且能够直接控制服务器容器
+
+创建方法
+在OJ右上角注册一个账号，此时账号的UID为2·
+回到服务器的终端，使用 docker oj-backend exec -it hydrooj cli user setSuperAdmin 2 将 UID 为 2 的用户设置为超级管理员。
+使用 docker oj-backend exec -it pm2 restart ...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/08/14">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/05/21</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="oj">oj</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="docker">docker</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
             <a class="abstract-title" href="/posts/hydro-docker/">
                 
                 <span class="abstract-title-text">Docker搭建Hydro-OJ系统</span>
@@ -746,7 +795,16 @@ Hydro是目前来看比较新的一款开源Online Judge系统
         
         
         
+        
+        
+        
+        
+        
     
+        
+        
+        
+        
         
         
         
@@ -965,7 +1023,7 @@ Hydro是目前来看比较新的一款开源Online Judge系统
     
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 29
+        Total : 30
         </div>
         <!-- search  -->
         
@@ -983,6 +1041,12 @@ Hydro是目前来看比较新的一款开源Online Judge系统
             <div class="archive-year"> 2022 </div>
             <ul class="year-list">
             
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/21</span>
+            <a class="archive-post-title" href="/posts/hydro-hepler/">Hydro-OJ 使用说明</a>
+        </li>
+    
         
         <li class="archive-post-item">
             <span class="archive-post-date">05/08</span>
@@ -1181,14 +1245,19 @@ Hydro是目前来看比较新的一款开源Online Judge系统
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
         
-            <span class="sidebar-tag-name" data-tags="hexo">
-                <span class="iconfont-archer">&#xe606;</span>
-                hexo
-            </span>
-        
             <span class="sidebar-tag-name" data-tags="git">
                 <span class="iconfont-archer">&#xe606;</span>
                 git
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="ssh">
+                <span class="iconfont-archer">&#xe606;</span>
+                ssh
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="hexo">
+                <span class="iconfont-archer">&#xe606;</span>
+                hexo
             </span>
         
             <span class="sidebar-tag-name" data-tags="archer">
@@ -1199,11 +1268,6 @@ Hydro是目前来看比较新的一款开源Online Judge系统
             <span class="sidebar-tag-name" data-tags="algolia">
                 <span class="iconfont-archer">&#xe606;</span>
                 algolia
-            </span>
-        
-            <span class="sidebar-tag-name" data-tags="ssh">
-                <span class="iconfont-archer">&#xe606;</span>
-                ssh
             </span>
         
             <span class="sidebar-tag-name" data-tags="oj">
@@ -1231,14 +1295,19 @@ Hydro是目前来看比较新的一款开源Online Judge系统
                 wordpress
             </span>
         
-            <span class="sidebar-tag-name" data-tags="utteranc">
+            <span class="sidebar-tag-name" data-tags="nextcloud">
                 <span class="iconfont-archer">&#xe606;</span>
-                utteranc
+                nextcloud
             </span>
         
             <span class="sidebar-tag-name" data-tags="markdown">
                 <span class="iconfont-archer">&#xe606;</span>
                 markdown
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="utteranc">
+                <span class="iconfont-archer">&#xe606;</span>
+                utteranc
             </span>
         
             <span class="sidebar-tag-name" data-tags="postal">
@@ -1256,24 +1325,19 @@ Hydro是目前来看比较新的一款开源Online Judge系统
                 vps
             </span>
         
-            <span class="sidebar-tag-name" data-tags="0day">
-                <span class="iconfont-archer">&#xe606;</span>
-                0day
-            </span>
-        
             <span class="sidebar-tag-name" data-tags="ctf">
                 <span class="iconfont-archer">&#xe606;</span>
                 ctf
             </span>
         
+            <span class="sidebar-tag-name" data-tags="0day">
+                <span class="iconfont-archer">&#xe606;</span>
+                0day
+            </span>
+        
             <span class="sidebar-tag-name" data-tags="碎碎念">
                 <span class="iconfont-archer">&#xe606;</span>
                 碎碎念
-            </span>
-        
-            <span class="sidebar-tag-name" data-tags="nextcloud">
-                <span class="iconfont-archer">&#xe606;</span>
-                nextcloud
             </span>
         
             <span class="sidebar-tag-name" data-tags="friends">

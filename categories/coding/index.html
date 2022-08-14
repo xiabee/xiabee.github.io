@@ -441,6 +441,55 @@
             
         
         <article class="index-post">
+            <a class="abstract-title" href="/posts/hydro-hepler/">
+                
+                <span class="abstract-title-text">Hydro-OJ 使用说明</span>
+            </a>
+            <div class="abstract-content">
+                本OJ的具体搭建方式：Docker搭建Hydro-OJ系统 · xiabee-瞎哔哔
+以下内容为用户文档
+超级管理员
+超级管理员是OJ系统的最高权限，能够直接控制OJ的全部内容，不建议设置多个
+
+使用要求·
+
+拥有服务器ssh权限，且能够直接控制服务器容器
+
+创建方法
+在OJ右上角注册一个账号，此时账号的UID为2·
+回到服务器的终端，使用 docker oj-backend exec -it hydrooj cli user setSuperAdmin 2 将 UID 为 2 的用户设置为超级管理员。
+使用 docker oj-backend exec -it pm2 restart ...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/08/14">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/05/21</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="oj">oj</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="docker">docker</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
             <a class="abstract-title" href="/posts/docker-compose-2/">
                 
                 <span class="abstract-title-text">安装 docker-compose 2</span>
@@ -908,53 +957,6 @@ VPS中安装了docker、docker-compose等服务
         </article>
         <div class="index-post-divider"></div>
     
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/posts/git-coding-hexo/">
-                
-                <span class="abstract-title-text">Git Page + Coding Page 实现负载均衡</span>
-            </a>
-            <div class="abstract-content">
-                问题描述Github Page不能被搜索引擎收录Github Page禁止了百度爬虫，导致百度无法收录我的博客；然后其他搜索引擎可能也是类似原因，均无法收录。而且曾经可以通过手动上传和sitemap的方式提交链接，现在连sitemap都读不到了……被迫转战其他平台：使用自定义域名
-Github Page在国内访问速度较慢github.io经常抽风，在国内访问不稳定，考虑增加一个国内的备份。
-初步解决方案
-利用coding创建国内镜像
-搜索引擎收入coding内容
-利用可控域名，通过CNAME解析到不同域名中，通过DNS实现负载均衡
-
-
-
-为什么是coding
-因为gitee实在太慢了，性...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/08/13">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/11/02</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="hexo">hexo</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="git">git</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
     <!-- paginator  -->
     
         <nav class="page-nav">
@@ -1216,7 +1218,16 @@ Github Page在国内访问速度较慢github.io经常抽风，在国内访问不
         
         
         
+        
+        
+        
+        
+        
     
+        
+        
+        
+        
         
         
         
@@ -1435,7 +1446,7 @@ Github Page在国内访问速度较慢github.io经常抽风，在国内访问不
     
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 29
+        Total : 30
         </div>
         <!-- search  -->
         
@@ -1453,6 +1464,12 @@ Github Page在国内访问速度较慢github.io经常抽风，在国内访问不
             <div class="archive-year"> 2022 </div>
             <ul class="year-list">
             
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/21</span>
+            <a class="archive-post-title" href="/posts/hydro-hepler/">Hydro-OJ 使用说明</a>
+        </li>
+    
         
         <li class="archive-post-item">
             <span class="archive-post-date">05/08</span>
@@ -1651,14 +1668,19 @@ Github Page在国内访问速度较慢github.io经常抽风，在国内访问不
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
         
-            <span class="sidebar-tag-name" data-tags="hexo">
-                <span class="iconfont-archer">&#xe606;</span>
-                hexo
-            </span>
-        
             <span class="sidebar-tag-name" data-tags="git">
                 <span class="iconfont-archer">&#xe606;</span>
                 git
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="ssh">
+                <span class="iconfont-archer">&#xe606;</span>
+                ssh
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="hexo">
+                <span class="iconfont-archer">&#xe606;</span>
+                hexo
             </span>
         
             <span class="sidebar-tag-name" data-tags="archer">
@@ -1669,11 +1691,6 @@ Github Page在国内访问速度较慢github.io经常抽风，在国内访问不
             <span class="sidebar-tag-name" data-tags="algolia">
                 <span class="iconfont-archer">&#xe606;</span>
                 algolia
-            </span>
-        
-            <span class="sidebar-tag-name" data-tags="ssh">
-                <span class="iconfont-archer">&#xe606;</span>
-                ssh
             </span>
         
             <span class="sidebar-tag-name" data-tags="oj">
@@ -1701,14 +1718,19 @@ Github Page在国内访问速度较慢github.io经常抽风，在国内访问不
                 wordpress
             </span>
         
-            <span class="sidebar-tag-name" data-tags="utteranc">
+            <span class="sidebar-tag-name" data-tags="nextcloud">
                 <span class="iconfont-archer">&#xe606;</span>
-                utteranc
+                nextcloud
             </span>
         
             <span class="sidebar-tag-name" data-tags="markdown">
                 <span class="iconfont-archer">&#xe606;</span>
                 markdown
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="utteranc">
+                <span class="iconfont-archer">&#xe606;</span>
+                utteranc
             </span>
         
             <span class="sidebar-tag-name" data-tags="postal">
@@ -1726,24 +1748,19 @@ Github Page在国内访问速度较慢github.io经常抽风，在国内访问不
                 vps
             </span>
         
-            <span class="sidebar-tag-name" data-tags="0day">
-                <span class="iconfont-archer">&#xe606;</span>
-                0day
-            </span>
-        
             <span class="sidebar-tag-name" data-tags="ctf">
                 <span class="iconfont-archer">&#xe606;</span>
                 ctf
             </span>
         
+            <span class="sidebar-tag-name" data-tags="0day">
+                <span class="iconfont-archer">&#xe606;</span>
+                0day
+            </span>
+        
             <span class="sidebar-tag-name" data-tags="碎碎念">
                 <span class="iconfont-archer">&#xe606;</span>
                 碎碎念
-            </span>
-        
-            <span class="sidebar-tag-name" data-tags="nextcloud">
-                <span class="iconfont-archer">&#xe606;</span>
-                nextcloud
             </span>
         
             <span class="sidebar-tag-name" data-tags="friends">
