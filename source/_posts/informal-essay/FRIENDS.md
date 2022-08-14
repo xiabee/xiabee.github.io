@@ -21,7 +21,7 @@ date: 2021-10-01 00:00:00
 自己的公众号，随缘更新
 
 <details>
-  <summary>二维码</summary>
+  <summary>Click here to show QR code</summary>
   <p><img title="" src="https://tva1.sinaimg.cn/large/0084b03xly1h06992qrtzj308g08fdh7.jpg" alt="image.png" width="195"></p>
   <pre><code>xiabee碎碎念</code></pre>
 </details>
