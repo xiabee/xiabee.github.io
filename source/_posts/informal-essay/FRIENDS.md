@@ -10,7 +10,7 @@ date: 2021-10-01 00:00:00
 
 #### 姓李名唐朝
 
-二中校友，同级，西浦CS HCI方向，本科期间发A会，膜了
+二中校友，同级，剑桥博士，研究方向：HCI
 
 个人主页：[https://dynasty-li.github.io](https://dynasty-li.github.io/)
 
@@ -20,9 +20,19 @@ date: 2021-10-01 00:00:00
 
 自己的公众号，随缘更新
 
-名称：xiabee碎碎念
+<details>
+  <summary>二维码</summary>
+  <p><img title="" src="https://tva1.sinaimg.cn/large/0084b03xly1h06992qrtzj308g08fdh7.jpg" alt="image.png" width="195"></p>
+  <pre><code>xiabee碎碎念</code></pre>
+</details>
 
-<img title="" src="https://tva1.sinaimg.cn/large/0084b03xly1h06992qrtzj308g08fdh7.jpg" alt="image.png" width="195">
+
+
+#### IZAYOI
+
+前浪学长，二进制方向，入职360，做IoT安全
+
+个人主页：[cerr.cc](https://cerr.cc)
 
 
 
@@ -54,11 +64,7 @@ date: 2021-10-01 00:00:00
 
 个人主页：https://rzvtech.top/（已失效）
 
-#### IZAYOI
 
-前浪学长，二进制方向，入职360，做IoT安全
-
-个人主页： [http://82.157.64.228/](http://82.157.64.228/)
 
 #### Rex Huang
 
