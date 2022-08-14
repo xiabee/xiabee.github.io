@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.xiabee.cn/posts/fri/</loc>
+    
+    <lastmod>2022-08-14</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://blog.xiabee.cn/posts/hydro-hepler/</loc>
     
     <lastmod>2022-08-14</lastmod>
@@ -66,13 +73,6 @@
   
   <url>
     <loc>https://blog.xiabee.cn/posts/2020-summer/</loc>
-    
-    <lastmod>2022-08-13</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.xiabee.cn/posts/fri/</loc>
     
     <lastmod>2022-08-13</lastmod>
     
