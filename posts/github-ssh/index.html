@@ -234,7 +234,7 @@
     
     <!-- 谷歌统计  -->
     
-<meta name="generator" content="Hexo 5.4.0"></head>
+<meta name="generator" content="Hexo 5.4.2"></head>
 
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
     <script type="text/javascript">
@@ -536,7 +536,7 @@
 
 
 <h2 id="0x01-生成SSH密钥对"><a href="#0x01-生成SSH密钥对" class="headerlink" title="0x01 生成SSH密钥对"></a>0x01 生成SSH密钥对</h2><p>先检查一下本地是否存在密钥对</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/.ssh</span><br><span class="line">ls</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/.ssh</span><br><span class="line"><span class="built_in">ls</span></span><br></pre></td></tr></table></figure>
 
 <p><img src="https://tva1.sinaimg.cn/large/0084b03xly1gvsyrgz0a2j30a704bdh9.jpg" alt="img"></p>
 <p><code>id_rsa</code> 和 <code>id_rsa.pub</code> 分别是ssh的私钥和公钥 </p>
@@ -547,7 +547,7 @@
 
 <p><img src="https://tva1.sinaimg.cn/large/0084b03xly1gvsyrxg1n7j30hi06twj1.jpg" alt="注释记得去掉..."></p>
 <h2 id="0x03-配置密钥对"><a href="#0x03-配置密钥对" class="headerlink" title="0x03 配置密钥对"></a>0x03 配置密钥对</h2><p>查看公钥：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cat id_rsa.pub</span><br><span class="line"><span class="comment"># 查看私钥信息</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cat</span> id_rsa.pub</span><br><span class="line"><span class="comment"># 查看私钥信息</span></span><br></pre></td></tr></table></figure>
 
 <p><img src="https://tva1.sinaimg.cn/large/0084b03xly1gvsyshwq6hj30b8054q6f.jpg" alt="公钥信息"></p>
 <p>配置GitHub公钥信息：</p>
@@ -913,7 +913,22 @@
         
         
         
+        
+        
+        
+        
+        
     
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         
         
@@ -1138,7 +1153,7 @@
     
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 30
+        Total : 31
         </div>
         <!-- search  -->
         
@@ -1156,6 +1171,12 @@
             <div class="archive-year"> 2022 </div>
             <ul class="year-list">
             
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/14</span>
+            <a class="archive-post-title" href="/posts/hexo-transfer-issue/">Hexo 本地迁移</a>
+        </li>
+    
         
         <li class="archive-post-item">
             <span class="archive-post-date">08/08</span>
@@ -1216,13 +1237,13 @@
         
         <li class="archive-post-item">
             <span class="archive-post-date">11/09</span>
-            <a class="archive-post-title" href="/posts/nextcloud-docker/">Docker搭建NextCloud个人网盘</a>
+            <a class="archive-post-title" href="/posts/wordpress-docker/">Docker搭建Wordpress个人博客</a>
         </li>
     
         
         <li class="archive-post-item">
             <span class="archive-post-date">11/09</span>
-            <a class="archive-post-title" href="/posts/wordpress-docker/">Docker搭建Wordpress个人博客</a>
+            <a class="archive-post-title" href="/posts/nextcloud-docker/">Docker搭建NextCloud个人网盘</a>
         </li>
     
         
@@ -1385,6 +1406,11 @@
                 algolia
             </span>
         
+            <span class="sidebar-tag-name" data-tags="tidb">
+                <span class="iconfont-archer">&#xe606;</span>
+                tidb
+            </span>
+        
             <span class="sidebar-tag-name" data-tags="linux">
                 <span class="iconfont-archer">&#xe606;</span>
                 linux
@@ -1400,19 +1426,9 @@
                 docker
             </span>
         
-            <span class="sidebar-tag-name" data-tags="tidb">
-                <span class="iconfont-archer">&#xe606;</span>
-                tidb
-            </span>
-        
             <span class="sidebar-tag-name" data-tags="wsl">
                 <span class="iconfont-archer">&#xe606;</span>
                 wsl
-            </span>
-        
-            <span class="sidebar-tag-name" data-tags="nextcloud">
-                <span class="iconfont-archer">&#xe606;</span>
-                nextcloud
             </span>
         
             <span class="sidebar-tag-name" data-tags="wordpress">
@@ -1420,9 +1436,14 @@
                 wordpress
             </span>
         
-            <span class="sidebar-tag-name" data-tags="postal">
+            <span class="sidebar-tag-name" data-tags="nextcloud">
                 <span class="iconfont-archer">&#xe606;</span>
-                postal
+                nextcloud
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="markdown">
+                <span class="iconfont-archer">&#xe606;</span>
+                markdown
             </span>
         
             <span class="sidebar-tag-name" data-tags="utteranc">
@@ -1435,14 +1456,19 @@
                 vps
             </span>
         
+            <span class="sidebar-tag-name" data-tags="postal">
+                <span class="iconfont-archer">&#xe606;</span>
+                postal
+            </span>
+        
             <span class="sidebar-tag-name" data-tags="ctf">
                 <span class="iconfont-archer">&#xe606;</span>
                 ctf
             </span>
         
-            <span class="sidebar-tag-name" data-tags="碎碎念">
+            <span class="sidebar-tag-name" data-tags="0day">
                 <span class="iconfont-archer">&#xe606;</span>
-                碎碎念
+                0day
             </span>
         
             <span class="sidebar-tag-name" data-tags="friends">
@@ -1450,14 +1476,9 @@
                 friends
             </span>
         
-            <span class="sidebar-tag-name" data-tags="markdown">
+            <span class="sidebar-tag-name" data-tags="碎碎念">
                 <span class="iconfont-archer">&#xe606;</span>
-                markdown
-            </span>
-        
-            <span class="sidebar-tag-name" data-tags="0day">
-                <span class="iconfont-archer">&#xe606;</span>
-                0day
+                碎碎念
             </span>
         
     </div>
@@ -1476,9 +1497,9 @@
             coding
         </span>
     
-        <span class="sidebar-category-name" data-categories="informal essay">
+        <span class="sidebar-category-name" data-categories="ctf">
             <span class="iconfont-archer">&#xe60a;</span>
-            informal essay
+            ctf
         </span>
     
         <span class="sidebar-category-name" data-categories="friends">
@@ -1486,9 +1507,9 @@
             friends
         </span>
     
-        <span class="sidebar-category-name" data-categories="ctf">
+        <span class="sidebar-category-name" data-categories="informal essay">
             <span class="iconfont-archer">&#xe60a;</span>
-            ctf
+            informal essay
         </span>
     
     </div>

@@ -230,7 +230,7 @@
     
     <!-- 谷歌统计  -->
     
-<meta name="generator" content="Hexo 5.4.0"></head>
+<meta name="generator" content="Hexo 5.4.2"></head>
 
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
     <script type="text/javascript">
@@ -541,17 +541,17 @@
 <li><p>问题描述：如题</p>
 </li>
 <li><p>解决方案：这个直接给<code>Dockerfile</code>换源就好，找一个合适的源，比如清华源：</p>
-<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">RUN</span><span class="bash"> sed -i <span class="string">&quot;s/deb.debian.org/mirrors.tuna.tsinghua.edu.cn/g&quot;</span> /etc/apt/sources.list &amp;&amp; \</span></span><br><span class="line"><span class="bash">    sed -i <span class="string">&quot;s/security.debian.org/mirrors.tuna.tsinghua.edu.cn/g&quot;</span> /etc/apt/sources.list &amp;&amp; \</span></span><br><span class="line"><span class="bash">    apt-get update &amp;&amp; apt-get install -y --no-install-recommends &amp;&amp; apt upgrade -y</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">RUN</span><span class="language-bash"> sed -i <span class="string">&quot;s/deb.debian.org/mirrors.tuna.tsinghua.edu.cn/g&quot;</span> /etc/apt/sources.list &amp;&amp; \</span></span><br><span class="line"><span class="language-bash">    sed -i <span class="string">&quot;s/security.debian.org/mirrors.tuna.tsinghua.edu.cn/g&quot;</span> /etc/apt/sources.list &amp;&amp; \</span></span><br><span class="line"><span class="language-bash">    apt-get update &amp;&amp; apt-get install -y --no-install-recommends &amp;&amp; apt upgrade -y</span></span><br></pre></td></tr></table></figure>
 
 <p>同时给宿主机配置容器加速器，这里以阿里云、<code>Ubuntu</code>为例：</p>
 </li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">sudo mkdir -p /etc/docker</span><br><span class="line">sudo tee /etc/docker/daemon.json &lt;&lt;-<span class="string">&#x27;EOF&#x27;</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;registry-mirrors&quot;</span>: [<span class="string">&quot;https://ee1z0bm0.mirror.aliyuncs.com&quot;</span>]</span><br><span class="line">&#125;</span><br><span class="line">EOF</span><br><span class="line">sudo systemctl daemon-reload</span><br><span class="line">sudo systemctl restart docker</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">sudo <span class="built_in">mkdir</span> -p /etc/docker</span><br><span class="line">sudo <span class="built_in">tee</span> /etc/docker/daemon.json &lt;&lt;-<span class="string">&#x27;EOF&#x27;</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;registry-mirrors&quot;</span>: [<span class="string">&quot;https://ee1z0bm0.mirror.aliyuncs.com&quot;</span>]</span><br><span class="line">&#125;</span><br><span class="line">EOF</span><br><span class="line">sudo systemctl daemon-reload</span><br><span class="line">sudo systemctl restart docker</span><br></pre></td></tr></table></figure>
 
 
 
 <h3 id="测评机不响应"><a href="#测评机不响应" class="headerlink" title="测评机不响应"></a>测评机不响应</h3><ul>
-<li>问题描述：各个容器运行正常，但是测评机一直处于不工作状态，即提交代码无法测评<h4 id="Error-Request-failed-with-status-code-404"><a href="#Error-Request-failed-with-status-code-404" class="headerlink" title="Error: Request failed with status code 404"></a>Error: Request failed with status code 404</h4><code>docker-compose logs | grep judge</code>查看测评机容器日志，发现以下内容：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">oj-judge    | Unhandled Rejection at: Promise  Promise &#123;</span><br><span class="line">oj-judge    |   &lt;rejected&gt; Error: Request failed with status code 404</span><br><span class="line">oj-judge    |       at createError (/usr/<span class="built_in">local</span>/share/.config/yarn/global/node_modules/axios/lib/core/createError.js:16:15)</span><br><span class="line">oj-judge    |       at settle (/usr/<span class="built_in">local</span>/share/.config/yarn/global/node_modules/axios/lib/core/settle.js:17:12)</span><br><span class="line">oj-judge    |       at IncomingMessage.handleStreamEnd (/usr/<span class="built_in">local</span>/share/.config/yarn/global/node_modules/axios/lib/adapters/http.js:322:11)</span><br><span class="line">oj-judge    |       at IncomingMessage.emit (events.js:412:35)</span><br><span class="line">oj-judge    |       at endReadableNT (internal/streams/readable.js:1334:12)</span><br><span class="line">oj-judge    |       at processTicksAndRejections (internal/process/task_queues.js:82:21) &#123;</span><br><span class="line">oj-judge    |     config: &#123;</span><br><span class="line">oj-judge    |       transitional: [Object],</span><br><span class="line">oj-judge    |       adapter: [Function: httpAdapter],</span><br><span class="line">oj-judge    |       transformRequest: [Array],</span><br><span class="line">oj-judge    |       transformResponse: [Array],</span><br><span class="line">oj-judge    |       timeout: 30000,</span><br><span class="line">oj-judge    |       xsrfCookieName: <span class="string">&#x27;XSRF-TOKEN&#x27;</span>,</span><br><span class="line">oj-judge    |       xsrfHeaderName: <span class="string">&#x27;X-XSRF-TOKEN&#x27;</span>,</span><br><span class="line">oj-judge    |       maxContentLength: -1,</span><br><span class="line">oj-judge    |       maxBodyLength: -1,</span><br><span class="line">oj-judge    |       validateStatus: [Function: validateStatus],</span><br><span class="line">oj-judge    |       headers: [Object],</span><br><span class="line">oj-judge    |       baseURL: <span class="string">&#x27;http://oj-backend:8888/&#x27;</span>,</span><br><span class="line">oj-judge    |       method: <span class="string">&#x27;post&#x27;</span>,</span><br><span class="line">oj-judge    |       url: <span class="string">&#x27;login&#x27;</span>,</span><br><span class="line">oj-judge    |       data: <span class="string">&#x27;&#123;&quot;uname&quot;:&quot;root&quot;,&quot;password&quot;:&quot;rootroot&quot;,&quot;rememberme&quot;:&quot;on&quot;&#125;&#x27;</span></span><br><span class="line">oj-judge    |     &#125;,</span><br></pre></td></tr></table></figure></li>
+<li>问题描述：各个容器运行正常，但是测评机一直处于不工作状态，即提交代码无法测评<h4 id="Error-Request-failed-with-status-code-404"><a href="#Error-Request-failed-with-status-code-404" class="headerlink" title="Error: Request failed with status code 404"></a>Error: Request failed with status code 404</h4><code>docker-compose logs | grep judge</code>查看测评机容器日志，发现以下内容：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">oj-judge    | Unhandled Rejection at: Promise  Promise &#123;</span><br><span class="line">oj-judge    |   &lt;rejected&gt; Error: Request failed with status code 404</span><br><span class="line">oj-judge    |       at createError (/usr/local/share/.config/yarn/global/node_modules/axios/lib/core/createError.js:16:15)</span><br><span class="line">oj-judge    |       at settle (/usr/local/share/.config/yarn/global/node_modules/axios/lib/core/settle.js:17:12)</span><br><span class="line">oj-judge    |       at IncomingMessage.handleStreamEnd (/usr/local/share/.config/yarn/global/node_modules/axios/lib/adapters/http.js:322:11)</span><br><span class="line">oj-judge    |       at IncomingMessage.emit (events.js:412:35)</span><br><span class="line">oj-judge    |       at endReadableNT (internal/streams/readable.js:1334:12)</span><br><span class="line">oj-judge    |       at processTicksAndRejections (internal/process/task_queues.js:82:21) &#123;</span><br><span class="line">oj-judge    |     config: &#123;</span><br><span class="line">oj-judge    |       transitional: [Object],</span><br><span class="line">oj-judge    |       adapter: [Function: httpAdapter],</span><br><span class="line">oj-judge    |       transformRequest: [Array],</span><br><span class="line">oj-judge    |       transformResponse: [Array],</span><br><span class="line">oj-judge    |       <span class="built_in">timeout</span>: 30000,</span><br><span class="line">oj-judge    |       xsrfCookieName: <span class="string">&#x27;XSRF-TOKEN&#x27;</span>,</span><br><span class="line">oj-judge    |       xsrfHeaderName: <span class="string">&#x27;X-XSRF-TOKEN&#x27;</span>,</span><br><span class="line">oj-judge    |       maxContentLength: -1,</span><br><span class="line">oj-judge    |       maxBodyLength: -1,</span><br><span class="line">oj-judge    |       validateStatus: [Function: validateStatus],</span><br><span class="line">oj-judge    |       headers: [Object],</span><br><span class="line">oj-judge    |       baseURL: <span class="string">&#x27;http://oj-backend:8888/&#x27;</span>,</span><br><span class="line">oj-judge    |       method: <span class="string">&#x27;post&#x27;</span>,</span><br><span class="line">oj-judge    |       url: <span class="string">&#x27;login&#x27;</span>,</span><br><span class="line">oj-judge    |       data: <span class="string">&#x27;&#123;&quot;uname&quot;:&quot;root&quot;,&quot;password&quot;:&quot;rootroot&quot;,&quot;rememberme&quot;:&quot;on&quot;&#125;&#x27;</span></span><br><span class="line">oj-judge    |     &#125;,</span><br></pre></td></tr></table></figure></li>
 </ul>
 <p>   注意此时报错：<code>oj-judge</code>在不断请求<code>http://oj-backend:8888/</code>，但是返回值一直是<code>404</code>，然而观察到<code>oj-backend</code>并没有暴露<code>8888</code>端口……发现问题所在！</p>
 <ul>
@@ -930,7 +930,22 @@
         
         
         
+        
+        
+        
+        
+        
     
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         
         
@@ -1155,7 +1170,7 @@
     
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 30
+        Total : 31
         </div>
         <!-- search  -->
         
@@ -1173,6 +1188,12 @@
             <div class="archive-year"> 2022 </div>
             <ul class="year-list">
             
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/14</span>
+            <a class="archive-post-title" href="/posts/hexo-transfer-issue/">Hexo 本地迁移</a>
+        </li>
+    
         
         <li class="archive-post-item">
             <span class="archive-post-date">08/08</span>
@@ -1233,13 +1254,13 @@
         
         <li class="archive-post-item">
             <span class="archive-post-date">11/09</span>
-            <a class="archive-post-title" href="/posts/nextcloud-docker/">Docker搭建NextCloud个人网盘</a>
+            <a class="archive-post-title" href="/posts/wordpress-docker/">Docker搭建Wordpress个人博客</a>
         </li>
     
         
         <li class="archive-post-item">
             <span class="archive-post-date">11/09</span>
-            <a class="archive-post-title" href="/posts/wordpress-docker/">Docker搭建Wordpress个人博客</a>
+            <a class="archive-post-title" href="/posts/nextcloud-docker/">Docker搭建NextCloud个人网盘</a>
         </li>
     
         
@@ -1402,6 +1423,11 @@
                 algolia
             </span>
         
+            <span class="sidebar-tag-name" data-tags="tidb">
+                <span class="iconfont-archer">&#xe606;</span>
+                tidb
+            </span>
+        
             <span class="sidebar-tag-name" data-tags="linux">
                 <span class="iconfont-archer">&#xe606;</span>
                 linux
@@ -1417,19 +1443,9 @@
                 docker
             </span>
         
-            <span class="sidebar-tag-name" data-tags="tidb">
-                <span class="iconfont-archer">&#xe606;</span>
-                tidb
-            </span>
-        
             <span class="sidebar-tag-name" data-tags="wsl">
                 <span class="iconfont-archer">&#xe606;</span>
                 wsl
-            </span>
-        
-            <span class="sidebar-tag-name" data-tags="nextcloud">
-                <span class="iconfont-archer">&#xe606;</span>
-                nextcloud
             </span>
         
             <span class="sidebar-tag-name" data-tags="wordpress">
@@ -1437,9 +1453,14 @@
                 wordpress
             </span>
         
-            <span class="sidebar-tag-name" data-tags="postal">
+            <span class="sidebar-tag-name" data-tags="nextcloud">
                 <span class="iconfont-archer">&#xe606;</span>
-                postal
+                nextcloud
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="markdown">
+                <span class="iconfont-archer">&#xe606;</span>
+                markdown
             </span>
         
             <span class="sidebar-tag-name" data-tags="utteranc">
@@ -1452,14 +1473,19 @@
                 vps
             </span>
         
+            <span class="sidebar-tag-name" data-tags="postal">
+                <span class="iconfont-archer">&#xe606;</span>
+                postal
+            </span>
+        
             <span class="sidebar-tag-name" data-tags="ctf">
                 <span class="iconfont-archer">&#xe606;</span>
                 ctf
             </span>
         
-            <span class="sidebar-tag-name" data-tags="碎碎念">
+            <span class="sidebar-tag-name" data-tags="0day">
                 <span class="iconfont-archer">&#xe606;</span>
-                碎碎念
+                0day
             </span>
         
             <span class="sidebar-tag-name" data-tags="friends">
@@ -1467,14 +1493,9 @@
                 friends
             </span>
         
-            <span class="sidebar-tag-name" data-tags="markdown">
+            <span class="sidebar-tag-name" data-tags="碎碎念">
                 <span class="iconfont-archer">&#xe606;</span>
-                markdown
-            </span>
-        
-            <span class="sidebar-tag-name" data-tags="0day">
-                <span class="iconfont-archer">&#xe606;</span>
-                0day
+                碎碎念
             </span>
         
     </div>
@@ -1493,9 +1514,9 @@
             coding
         </span>
     
-        <span class="sidebar-category-name" data-categories="informal essay">
+        <span class="sidebar-category-name" data-categories="ctf">
             <span class="iconfont-archer">&#xe60a;</span>
-            informal essay
+            ctf
         </span>
     
         <span class="sidebar-category-name" data-categories="friends">
@@ -1503,9 +1524,9 @@
             friends
         </span>
     
-        <span class="sidebar-category-name" data-categories="ctf">
+        <span class="sidebar-category-name" data-categories="informal essay">
             <span class="iconfont-archer">&#xe60a;</span>
-            ctf
+            informal essay
         </span>
     
     </div>

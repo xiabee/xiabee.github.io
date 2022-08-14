@@ -233,7 +233,7 @@
     
     <!-- 谷歌统计  -->
     
-<meta name="generator" content="Hexo 5.4.0"></head>
+<meta name="generator" content="Hexo 5.4.2"></head>
 
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
     <script type="text/javascript">
@@ -465,15 +465,15 @@
 <p>截至目前，最高版本是<code>2.5.0</code>。</p>
 <p><img src="https://tva1.sinaimg.cn/large/0084b03xgy1h219mrogiqj30fc097gp4.jpg" alt="image.png"></p>
 <h3 id="下载文件"><a href="#下载文件" class="headerlink" title="下载文件"></a>下载文件</h3><p>然后从发布的二进制文件中，找到对应系统的可执行文件，下载下来：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p ~/.docker/cli-plugins/</span><br><span class="line">curl -SL https://github.com/docker/compose/releases/download/v2.5.0/docker-compose-linux-x86_64 -o ~/.docker/cli-plugins/docker-compose</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> -p ~/.docker/cli-plugins/</span><br><span class="line">curl -SL https://github.com/docker/compose/releases/download/v2.5.0/docker-compose-linux-x86_64 -o ~/.docker/cli-plugins/docker-compose</span><br></pre></td></tr></table></figure>
 
 <p>上述命令为<code>$HOME</code>目录下的活动用户安装<code>Compose V2</code>。</p>
 <p>如果需要为系统中的所有用户安装<code>Docker Compose V2</code>的话则执行：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p /usr/<span class="built_in">local</span>/lib/docker/cli-plugins</span><br><span class="line">curl -SL https://github.com/docker/compose/releases/download/v2.5.0/docker-compose-linux-x86_64 -o /usr/<span class="built_in">local</span>/lib/docker/cli-plugins/docker-compose</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> -p /usr/local/lib/docker/cli-plugins</span><br><span class="line">curl -SL https://github.com/docker/compose/releases/download/v2.5.0/docker-compose-linux-x86_64 -o /usr/local/lib/docker/cli-plugins/docker-compose</span><br></pre></td></tr></table></figure>
 
 
 
-<h3 id="添加权限"><a href="#添加权限" class="headerlink" title="添加权限"></a>添加权限</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod +x ~/.docker/cli-plugins/docker-compose</span><br></pre></td></tr></table></figure>
+<h3 id="添加权限"><a href="#添加权限" class="headerlink" title="添加权限"></a>添加权限</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">chmod</span> +x ~/.docker/cli-plugins/docker-compose</span><br></pre></td></tr></table></figure>
 
 
 
@@ -488,7 +488,7 @@
 
 
 
-<h3 id="添加权限-1"><a href="#添加权限-1" class="headerlink" title="添加权限"></a>添加权限</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod +x docker-compose</span><br></pre></td></tr></table></figure>
+<h3 id="添加权限-1"><a href="#添加权限-1" class="headerlink" title="添加权限"></a>添加权限</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">chmod</span> +x docker-compose</span><br></pre></td></tr></table></figure>
 
 
 
@@ -496,7 +496,7 @@
 
 <p>一般来说在<code>/usr/bin/docker-compose</code>中：</p>
 <p><img src="https://tva1.sinaimg.cn/large/0084b03xgy1h21a2ndezyj30g9041tbs.jpg" alt="image.png"></p>
-<h3 id="替换文件"><a href="#替换文件" class="headerlink" title="替换文件"></a>替换文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo cp docker-compose /usr/bin/docker-compose</span><br></pre></td></tr></table></figure>
+<h3 id="替换文件"><a href="#替换文件" class="headerlink" title="替换文件"></a>替换文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo <span class="built_in">cp</span> docker-compose /usr/bin/docker-compose</span><br></pre></td></tr></table></figure>
 
 
 
@@ -825,7 +825,22 @@
         
         
         
+        
+        
+        
+        
+        
     
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         
         
@@ -1050,7 +1065,7 @@
     
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 30
+        Total : 31
         </div>
         <!-- search  -->
         
@@ -1068,6 +1083,12 @@
             <div class="archive-year"> 2022 </div>
             <ul class="year-list">
             
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/14</span>
+            <a class="archive-post-title" href="/posts/hexo-transfer-issue/">Hexo 本地迁移</a>
+        </li>
+    
         
         <li class="archive-post-item">
             <span class="archive-post-date">08/08</span>
@@ -1128,13 +1149,13 @@
         
         <li class="archive-post-item">
             <span class="archive-post-date">11/09</span>
-            <a class="archive-post-title" href="/posts/nextcloud-docker/">Docker搭建NextCloud个人网盘</a>
+            <a class="archive-post-title" href="/posts/wordpress-docker/">Docker搭建Wordpress个人博客</a>
         </li>
     
         
         <li class="archive-post-item">
             <span class="archive-post-date">11/09</span>
-            <a class="archive-post-title" href="/posts/wordpress-docker/">Docker搭建Wordpress个人博客</a>
+            <a class="archive-post-title" href="/posts/nextcloud-docker/">Docker搭建NextCloud个人网盘</a>
         </li>
     
         
@@ -1297,6 +1318,11 @@
                 algolia
             </span>
         
+            <span class="sidebar-tag-name" data-tags="tidb">
+                <span class="iconfont-archer">&#xe606;</span>
+                tidb
+            </span>
+        
             <span class="sidebar-tag-name" data-tags="linux">
                 <span class="iconfont-archer">&#xe606;</span>
                 linux
@@ -1312,19 +1338,9 @@
                 docker
             </span>
         
-            <span class="sidebar-tag-name" data-tags="tidb">
-                <span class="iconfont-archer">&#xe606;</span>
-                tidb
-            </span>
-        
             <span class="sidebar-tag-name" data-tags="wsl">
                 <span class="iconfont-archer">&#xe606;</span>
                 wsl
-            </span>
-        
-            <span class="sidebar-tag-name" data-tags="nextcloud">
-                <span class="iconfont-archer">&#xe606;</span>
-                nextcloud
             </span>
         
             <span class="sidebar-tag-name" data-tags="wordpress">
@@ -1332,9 +1348,14 @@
                 wordpress
             </span>
         
-            <span class="sidebar-tag-name" data-tags="postal">
+            <span class="sidebar-tag-name" data-tags="nextcloud">
                 <span class="iconfont-archer">&#xe606;</span>
-                postal
+                nextcloud
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="markdown">
+                <span class="iconfont-archer">&#xe606;</span>
+                markdown
             </span>
         
             <span class="sidebar-tag-name" data-tags="utteranc">
@@ -1347,14 +1368,19 @@
                 vps
             </span>
         
+            <span class="sidebar-tag-name" data-tags="postal">
+                <span class="iconfont-archer">&#xe606;</span>
+                postal
+            </span>
+        
             <span class="sidebar-tag-name" data-tags="ctf">
                 <span class="iconfont-archer">&#xe606;</span>
                 ctf
             </span>
         
-            <span class="sidebar-tag-name" data-tags="碎碎念">
+            <span class="sidebar-tag-name" data-tags="0day">
                 <span class="iconfont-archer">&#xe606;</span>
-                碎碎念
+                0day
             </span>
         
             <span class="sidebar-tag-name" data-tags="friends">
@@ -1362,14 +1388,9 @@
                 friends
             </span>
         
-            <span class="sidebar-tag-name" data-tags="markdown">
+            <span class="sidebar-tag-name" data-tags="碎碎念">
                 <span class="iconfont-archer">&#xe606;</span>
-                markdown
-            </span>
-        
-            <span class="sidebar-tag-name" data-tags="0day">
-                <span class="iconfont-archer">&#xe606;</span>
-                0day
+                碎碎念
             </span>
         
     </div>
@@ -1388,9 +1409,9 @@
             coding
         </span>
     
-        <span class="sidebar-category-name" data-categories="informal essay">
+        <span class="sidebar-category-name" data-categories="ctf">
             <span class="iconfont-archer">&#xe60a;</span>
-            informal essay
+            ctf
         </span>
     
         <span class="sidebar-category-name" data-categories="friends">
@@ -1398,9 +1419,9 @@
             friends
         </span>
     
-        <span class="sidebar-category-name" data-categories="ctf">
+        <span class="sidebar-category-name" data-categories="informal essay">
             <span class="iconfont-archer">&#xe60a;</span>
-            ctf
+            informal essay
         </span>
     
     </div>

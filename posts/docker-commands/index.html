@@ -233,7 +233,7 @@
     
     <!-- 谷歌统计  -->
     
-<meta name="generator" content="Hexo 5.4.0"></head>
+<meta name="generator" content="Hexo 5.4.2"></head>
 
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
     <script type="text/javascript">
@@ -546,14 +546,14 @@
 
 <p>  注意：直接使用名称可能会找不到容器，建议直接使用容器ID进行容器操作  </p>
 <p><img src="https://tva1.sinaimg.cn/large/0084b03xly1gvuaxn6yl1j316o054k1i.jpg" alt="img"></p>
-<h3 id="9-容器日志"><a href="#9-容器日志" class="headerlink" title="9.容器日志"></a>9.容器日志</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">docker logs xxxxx</span><br><span class="line"><span class="comment">##查看xxxxxx容器日志，默认参数</span></span><br><span class="line"></span><br><span class="line">docker logs -f -t --tail=20 wordpress</span><br><span class="line"><span class="comment">##查看wordpress容器日志，参数：-f  跟踪日志输出；-t   显示时间戳；--tail  仅列出最新N条容器日志；</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">docker logs --since=<span class="string">&quot;2019-05-21&quot;</span> --tail=10 wordpress</span><br><span class="line"><span class="comment">##查看容器wordpress从2019年05月21日后的最新10条日志。</span></span><br></pre></td></tr></table></figure>
+<h3 id="9-容器日志"><a href="#9-容器日志" class="headerlink" title="9.容器日志"></a>9.容器日志</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">docker logs xxxxx</span><br><span class="line"><span class="comment">##查看xxxxxx容器日志，默认参数</span></span><br><span class="line"></span><br><span class="line">docker logs -f -t --<span class="built_in">tail</span>=20 wordpress</span><br><span class="line"><span class="comment">##查看wordpress容器日志，参数：-f  跟踪日志输出；-t   显示时间戳；--tail  仅列出最新N条容器日志；</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">docker logs --since=<span class="string">&quot;2019-05-21&quot;</span> --<span class="built_in">tail</span>=10 wordpress</span><br><span class="line"><span class="comment">##查看容器wordpress从2019年05月21日后的最新10条日志。</span></span><br></pre></td></tr></table></figure>
 
 <p><img src="https://tva1.sinaimg.cn/large/0084b03xly1gvuaxwgkq5j30mn062do9.jpg" alt="img"></p>
 <p><code>docker logs 2968994e3fb2 --since=&quot;2019-05-21&quot; --tail=10</code>，这里直接使用了容器ID</p>
-<h3 id="10-容器的进入与退出"><a href="#10-容器的进入与退出" class="headerlink" title="10.容器的进入与退出"></a>10.容器的进入与退出</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">docker run -it centos /bin/bash</span><br><span class="line"><span class="comment">##使用run方式在创建时进入</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">exit</span></span><br><span class="line"><span class="comment">##关闭容器并退出</span></span><br><span class="line"></span><br><span class="line">docker attach --sig-proxy=<span class="literal">false</span> centos </span><br><span class="line"><span class="comment">##直接进入centos 容器启动命令的终端，不会启动新进程，多个attach连接共享容器屏幕，参数：--sig-proxy=false  确保CTRL-D或CTRL-C不会关闭容器</span></span><br><span class="line"></span><br><span class="line">docker <span class="built_in">exec</span> -i -t  centos /bin/bash</span><br><span class="line"><span class="comment">##在 centos 容器中打开新的交互模式终端，可以启动新进程，参数：-i  即使没有附加也保持STDIN 打开；-t  分配一个伪终端</span></span><br><span class="line"></span><br><span class="line">docker <span class="built_in">exec</span> -i -t centos ls -l /tmp</span><br><span class="line"><span class="comment">##以交互模式在容器中执行命令，结果返回到当前终端屏幕</span></span><br><span class="line"></span><br><span class="line">docker <span class="built_in">exec</span> -d centos  touch cache.txt </span><br><span class="line"><span class="comment">##以分离模式在容器中执行命令，程序后台运行，结果不会反馈到当前终端</span></span><br></pre></td></tr></table></figure>
+<h3 id="10-容器的进入与退出"><a href="#10-容器的进入与退出" class="headerlink" title="10.容器的进入与退出"></a>10.容器的进入与退出</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">docker run -it centos /bin/bash</span><br><span class="line"><span class="comment">##使用run方式在创建时进入</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">exit</span></span><br><span class="line"><span class="comment">##关闭容器并退出</span></span><br><span class="line"></span><br><span class="line">docker attach --sig-proxy=<span class="literal">false</span> centos </span><br><span class="line"><span class="comment">##直接进入centos 容器启动命令的终端，不会启动新进程，多个attach连接共享容器屏幕，参数：--sig-proxy=false  确保CTRL-D或CTRL-C不会关闭容器</span></span><br><span class="line"></span><br><span class="line">docker <span class="built_in">exec</span> -i -t  centos /bin/bash</span><br><span class="line"><span class="comment">##在 centos 容器中打开新的交互模式终端，可以启动新进程，参数：-i  即使没有附加也保持STDIN 打开；-t  分配一个伪终端</span></span><br><span class="line"></span><br><span class="line">docker <span class="built_in">exec</span> -i -t centos <span class="built_in">ls</span> -l /tmp</span><br><span class="line"><span class="comment">##以交互模式在容器中执行命令，结果返回到当前终端屏幕</span></span><br><span class="line"></span><br><span class="line">docker <span class="built_in">exec</span> -d centos  <span class="built_in">touch</span> cache.txt </span><br><span class="line"><span class="comment">##以分离模式在容器中执行命令，程序后台运行，结果不会反馈到当前终端</span></span><br></pre></td></tr></table></figure>
 
 <p>这里同样建议通过ID进入容器</p>
-<h3 id="11-容器的停止与删除"><a href="#11-容器的停止与删除" class="headerlink" title="11.容器的停止与删除"></a>11.容器的停止与删除</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">docker stop wordpres    <span class="comment">##停止一个运行中的容器</span></span><br><span class="line">docker <span class="built_in">kill</span> wordpres    <span class="comment">##干掉一个运行中的容器</span></span><br><span class="line">docker rm wordpres      <span class="comment">##删除一个已停止的容器</span></span><br><span class="line">docker rm -f wordpres   <span class="comment">##删除一个运行中的容器</span></span><br><span class="line">docker rm -f $(docker ps -a -q)   </span><br><span class="line">docker ps -a -q | xargs docker rm  <span class="comment">##删除多个容器</span></span><br><span class="line"></span><br><span class="line">docker rm -l db         <span class="comment">## -l 移除容器间的网络连接，连接名为 db</span></span><br><span class="line"></span><br><span class="line">docker rm -v wordpres   <span class="comment">## -v 删除容器，并删除容器挂载的数据卷</span></span><br></pre></td></tr></table></figure>
+<h3 id="11-容器的停止与删除"><a href="#11-容器的停止与删除" class="headerlink" title="11.容器的停止与删除"></a>11.容器的停止与删除</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">docker stop wordpres    <span class="comment">##停止一个运行中的容器</span></span><br><span class="line">docker <span class="built_in">kill</span> wordpres    <span class="comment">##干掉一个运行中的容器</span></span><br><span class="line">docker <span class="built_in">rm</span> wordpres      <span class="comment">##删除一个已停止的容器</span></span><br><span class="line">docker <span class="built_in">rm</span> -f wordpres   <span class="comment">##删除一个运行中的容器</span></span><br><span class="line">docker <span class="built_in">rm</span> -f $(docker ps -a -q)   </span><br><span class="line">docker ps -a -q | xargs docker <span class="built_in">rm</span>  <span class="comment">##删除多个容器</span></span><br><span class="line"></span><br><span class="line">docker <span class="built_in">rm</span> -l db         <span class="comment">## -l 移除容器间的网络连接，连接名为 db</span></span><br><span class="line"></span><br><span class="line">docker <span class="built_in">rm</span> -v wordpres   <span class="comment">## -v 删除容器，并删除容器挂载的数据卷</span></span><br></pre></td></tr></table></figure>
 
 
 
@@ -561,7 +561,7 @@
 
 
 
-<h3 id="13-容器与宿主机间的数据拷贝"><a href="#13-容器与宿主机间的数据拷贝" class="headerlink" title="13.容器与宿主机间的数据拷贝"></a>13.容器与宿主机间的数据拷贝</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">docker cp rabbitmq:/[container_path] [local_path]</span><br><span class="line"><span class="comment">##将rabbitmq容器中的文件copy至本地路径</span></span><br><span class="line"></span><br><span class="line">docker cp [local_path] rabbitmq:/[container_path]/</span><br><span class="line"><span class="comment">##将主机文件copy至rabbitmq容器</span></span><br><span class="line"></span><br><span class="line">docker cp [local_path] rabbitmq:/[container_path]</span><br><span class="line"><span class="comment">##将主机文件copy至rabbitmq容器，目录重命名为[container_path]（注意与非重命名copy的区别）</span></span><br></pre></td></tr></table></figure>
+<h3 id="13-容器与宿主机间的数据拷贝"><a href="#13-容器与宿主机间的数据拷贝" class="headerlink" title="13.容器与宿主机间的数据拷贝"></a>13.容器与宿主机间的数据拷贝</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">docker <span class="built_in">cp</span> rabbitmq:/[container_path] [local_path]</span><br><span class="line"><span class="comment">##将rabbitmq容器中的文件copy至本地路径</span></span><br><span class="line"></span><br><span class="line">docker <span class="built_in">cp</span> [local_path] rabbitmq:/[container_path]/</span><br><span class="line"><span class="comment">##将主机文件copy至rabbitmq容器</span></span><br><span class="line"></span><br><span class="line">docker <span class="built_in">cp</span> [local_path] rabbitmq:/[container_path]</span><br><span class="line"><span class="comment">##将主机文件copy至rabbitmq容器，目录重命名为[container_path]（注意与非重命名copy的区别）</span></span><br></pre></td></tr></table></figure>
 
 
 
@@ -915,7 +915,22 @@
         
         
         
+        
+        
+        
+        
+        
     
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         
         
@@ -1140,7 +1155,7 @@
     
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 30
+        Total : 31
         </div>
         <!-- search  -->
         
@@ -1158,6 +1173,12 @@
             <div class="archive-year"> 2022 </div>
             <ul class="year-list">
             
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/14</span>
+            <a class="archive-post-title" href="/posts/hexo-transfer-issue/">Hexo 本地迁移</a>
+        </li>
+    
         
         <li class="archive-post-item">
             <span class="archive-post-date">08/08</span>
@@ -1218,13 +1239,13 @@
         
         <li class="archive-post-item">
             <span class="archive-post-date">11/09</span>
-            <a class="archive-post-title" href="/posts/nextcloud-docker/">Docker搭建NextCloud个人网盘</a>
+            <a class="archive-post-title" href="/posts/wordpress-docker/">Docker搭建Wordpress个人博客</a>
         </li>
     
         
         <li class="archive-post-item">
             <span class="archive-post-date">11/09</span>
-            <a class="archive-post-title" href="/posts/wordpress-docker/">Docker搭建Wordpress个人博客</a>
+            <a class="archive-post-title" href="/posts/nextcloud-docker/">Docker搭建NextCloud个人网盘</a>
         </li>
     
         
@@ -1387,6 +1408,11 @@
                 algolia
             </span>
         
+            <span class="sidebar-tag-name" data-tags="tidb">
+                <span class="iconfont-archer">&#xe606;</span>
+                tidb
+            </span>
+        
             <span class="sidebar-tag-name" data-tags="linux">
                 <span class="iconfont-archer">&#xe606;</span>
                 linux
@@ -1402,19 +1428,9 @@
                 docker
             </span>
         
-            <span class="sidebar-tag-name" data-tags="tidb">
-                <span class="iconfont-archer">&#xe606;</span>
-                tidb
-            </span>
-        
             <span class="sidebar-tag-name" data-tags="wsl">
                 <span class="iconfont-archer">&#xe606;</span>
                 wsl
-            </span>
-        
-            <span class="sidebar-tag-name" data-tags="nextcloud">
-                <span class="iconfont-archer">&#xe606;</span>
-                nextcloud
             </span>
         
             <span class="sidebar-tag-name" data-tags="wordpress">
@@ -1422,9 +1438,14 @@
                 wordpress
             </span>
         
-            <span class="sidebar-tag-name" data-tags="postal">
+            <span class="sidebar-tag-name" data-tags="nextcloud">
                 <span class="iconfont-archer">&#xe606;</span>
-                postal
+                nextcloud
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="markdown">
+                <span class="iconfont-archer">&#xe606;</span>
+                markdown
             </span>
         
             <span class="sidebar-tag-name" data-tags="utteranc">
@@ -1437,14 +1458,19 @@
                 vps
             </span>
         
+            <span class="sidebar-tag-name" data-tags="postal">
+                <span class="iconfont-archer">&#xe606;</span>
+                postal
+            </span>
+        
             <span class="sidebar-tag-name" data-tags="ctf">
                 <span class="iconfont-archer">&#xe606;</span>
                 ctf
             </span>
         
-            <span class="sidebar-tag-name" data-tags="碎碎念">
+            <span class="sidebar-tag-name" data-tags="0day">
                 <span class="iconfont-archer">&#xe606;</span>
-                碎碎念
+                0day
             </span>
         
             <span class="sidebar-tag-name" data-tags="friends">
@@ -1452,14 +1478,9 @@
                 friends
             </span>
         
-            <span class="sidebar-tag-name" data-tags="markdown">
+            <span class="sidebar-tag-name" data-tags="碎碎念">
                 <span class="iconfont-archer">&#xe606;</span>
-                markdown
-            </span>
-        
-            <span class="sidebar-tag-name" data-tags="0day">
-                <span class="iconfont-archer">&#xe606;</span>
-                0day
+                碎碎念
             </span>
         
     </div>
@@ -1478,9 +1499,9 @@
             coding
         </span>
     
-        <span class="sidebar-category-name" data-categories="informal essay">
+        <span class="sidebar-category-name" data-categories="ctf">
             <span class="iconfont-archer">&#xe60a;</span>
-            informal essay
+            ctf
         </span>
     
         <span class="sidebar-category-name" data-categories="friends">
@@ -1488,9 +1509,9 @@
             friends
         </span>
     
-        <span class="sidebar-category-name" data-categories="ctf">
+        <span class="sidebar-category-name" data-categories="informal essay">
             <span class="iconfont-archer">&#xe60a;</span>
-            ctf
+            informal essay
         </span>
     
     </div>
