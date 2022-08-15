@@ -465,11 +465,11 @@
                     <div class= abstract-tags >
     
     
+        <a class="post-tag" href="javascript:void(0);" data-tags="linux">linux</a>
+    
         <a class="post-tag" href="javascript:void(0);" data-tags="hexo">hexo</a>
     
         <a class="post-tag" href="javascript:void(0);" data-tags="algolia">algolia</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="linux">linux</a>
     
 </div>
 
@@ -557,6 +557,60 @@ Server preparingWe use several ECS to build the real distributed system, instead
         <a class="post-tag" href="javascript:void(0);" data-tags="oj">oj</a>
     
         <a class="post-tag" href="javascript:void(0);" data-tags="docker">docker</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/posts/docker-compose-2/">
+                
+                <span class="abstract-title-text">安装 docker-compose 2</span>
+            </a>
+            <div class="abstract-content">
+                前期提要上期我们讲到，postal的安装需要高版本的docker-compose。
+大部分情况下，我们直接使用包管理安装即可，但是我在安装过程中遇到了包管理器中没有高版本的情况……所以写下本篇记录一下。
+本篇依然以Ubuntu/Debian为例。
+查看版本1docker-compose -v
+
+
+此时看到我们的版本是1.25.0，是低于2.0的，无法运行3.9及以上的docker-compose.yml
+安装方式（一）
+可以参考官网
+
+这里使用一种比较暴力的安装方式：直接手动下载可执行文件
+
+
+查看最新版本浏览器访问docker-compose的代码仓库（可能需要翻墙）
+
+截至目前，最高...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/08/14">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/05/08</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="docker">docker</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="postal">postal</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="docker-compose">docker-compose</a>
     
 </div>
 
@@ -782,56 +836,6 @@ NEXTCloud个人网盘
             
         
         <article class="index-post">
-            <a class="abstract-title" href="/posts/nextcloud-docker/">
-                
-                <span class="abstract-title-text">Docker搭建NextCloud个人网盘</span>
-            </a>
-            <div class="abstract-content">
-                开端
-百度云非会员太慢了！！！
-One Drive有时候连不上服务器！！！
-正好手头有个4G内存8M带宽的服务器，可以整个活
-手头也有个域名，已经搞了SSL证书，可以满足网盘加密传输的需求
-太长不看版：代码在这里，设置密码、添加证书、修改域名，docker-compose up -d就行
-
-NextCloud简介
-官网
-
-nextcloud是一款开源的、支持多平台的云盘，有服务器的小朋友可以整一个玩玩，可以搭一个自己的One Drive
-
-
-搭建方式官网的搭建过程比较麻烦，需要手动配置服务器再执行相关代码等等。这里懒癌晚期患者直接去dockerhub找了个官方镜像，直接通过容器进行安装。...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/08/13">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/11/09</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="docker">docker</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="nextcloud">nextcloud</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
             <a class="abstract-title" href="/posts/wordpress-docker/">
                 
                 <span class="abstract-title-text">Docker搭建Wordpress个人博客</span>
@@ -879,38 +883,32 @@ nextcloud是一款开源的、支持多平台的云盘，有服务器的小朋�
             
         
         <article class="index-post">
-            <a class="abstract-title" href="/posts/markdown-docker/">
+            <a class="abstract-title" href="/posts/nextcloud-docker/">
                 
-                <span class="abstract-title-text">Docker搭建Markdown共享编辑器</span>
+                <span class="abstract-title-text">Docker搭建NextCloud个人网盘</span>
             </a>
             <div class="abstract-content">
-                服务地址
-https://xiabee.cn:3000
+                开端
+百度云非会员太慢了！！！
+One Drive有时候连不上服务器！！！
+正好手头有个4G内存8M带宽的服务器，可以整个活
+手头也有个域名，已经搞了SSL证书，可以满足网盘加密传输的需求
+太长不看版：代码在这里，设置密码、添加证书、修改域名，docker-compose up -d就行
 
-前情提要
-腾讯云双十一特惠，一次买了个8M带宽、2核4G的云服务器……不拿它整点活可惜了
+NextCloud简介
+官网
 
-目前的想法是搞个markdown共享编辑器、个人网盘啥的
-
-
-搭建动机主流的共享编辑器有很多，这里安利一个我个人比较喜欢的：Hackmd的Codimd
-上述的链接需要翻墙，非常不方便，所以我想在自己的服务器里面也造一个……
-前期准备
-一个VPS
-
-一个SSL证书（可选）
-
-VPS中安装了docker、docker-compose等服务
+nextcloud是一款开源的、支持多平台的云盘，有服务器的小朋友可以整一个玩玩，可以搭一个自己的One Drive
 
 
-12345sudo apt install dockersudo apt install docker...
+搭建方式官网的搭建过程比较麻烦，需要手动配置服务器再执行相关代码等等。这里懒癌晚期患者直接去dockerhub找了个官方镜像，直接通过容器进行安装。...
             </div>
             <!-- read more -->
             
             <div class="abstract-post-meta">
                 <!-- date -->
                 <div class="abstract-date" title="Last updated: 2022/08/13">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/11/07</span>
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/11/09</span>
                 </div>
                 <!-- tags -->
                 
@@ -919,7 +917,7 @@ VPS中安装了docker、docker-compose等服务
     
         <a class="post-tag" href="javascript:void(0);" data-tags="docker">docker</a>
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="markdown">markdown</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="nextcloud">nextcloud</a>
     
 </div>
 
@@ -1199,7 +1197,18 @@ VPS中安装了docker、docker-compose等服务
         
         
         
+        
+        
+        
+        
+        
     
+        
+        
+        
+        
+        
+        
         
         
         
@@ -1434,7 +1443,7 @@ VPS中安装了docker、docker-compose等服务
     
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 31
+        Total : 32
         </div>
         <!-- search  -->
         
@@ -1468,6 +1477,12 @@ VPS中安装了docker、docker-compose等服务
         <li class="archive-post-item">
             <span class="archive-post-date">05/21</span>
             <a class="archive-post-title" href="/posts/hydro-hepler/">Hydro-OJ 使用说明</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/08</span>
+            <a class="archive-post-title" href="/posts/docker-compose-2/">安装 docker-compose 2</a>
         </li>
     
         
@@ -1518,13 +1533,13 @@ VPS中安装了docker、docker-compose等服务
         
         <li class="archive-post-item">
             <span class="archive-post-date">11/09</span>
-            <a class="archive-post-title" href="/posts/nextcloud-docker/">Docker搭建NextCloud个人网盘</a>
+            <a class="archive-post-title" href="/posts/wordpress-docker/">Docker搭建Wordpress个人博客</a>
         </li>
     
         
         <li class="archive-post-item">
             <span class="archive-post-date">11/09</span>
-            <a class="archive-post-title" href="/posts/wordpress-docker/">Docker搭建Wordpress个人博客</a>
+            <a class="archive-post-title" href="/posts/nextcloud-docker/">Docker搭建NextCloud个人网盘</a>
         </li>
     
         
@@ -1635,13 +1650,13 @@ VPS中安装了docker、docker-compose等服务
         
         <li class="archive-post-item">
             <span class="archive-post-date">03/17</span>
-            <a class="archive-post-title" href="/posts/docker-source/">Docker换源</a>
+            <a class="archive-post-title" href="/posts/docker-pupy/">Docker入门</a>
         </li>
     
         
         <li class="archive-post-item">
             <span class="archive-post-date">03/17</span>
-            <a class="archive-post-title" href="/posts/docker-pupy/">Docker入门</a>
+            <a class="archive-post-title" href="/posts/docker-source/">Docker换源</a>
         </li>
     
         
@@ -1661,6 +1676,16 @@ VPS中安装了docker、docker-compose等服务
 
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
+        
+            <span class="sidebar-tag-name" data-tags="tidb">
+                <span class="iconfont-archer">&#xe606;</span>
+                tidb
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="linux">
+                <span class="iconfont-archer">&#xe606;</span>
+                linux
+            </span>
         
             <span class="sidebar-tag-name" data-tags="hexo">
                 <span class="iconfont-archer">&#xe606;</span>
@@ -1687,16 +1712,6 @@ VPS中安装了docker、docker-compose等服务
                 algolia
             </span>
         
-            <span class="sidebar-tag-name" data-tags="tidb">
-                <span class="iconfont-archer">&#xe606;</span>
-                tidb
-            </span>
-        
-            <span class="sidebar-tag-name" data-tags="linux">
-                <span class="iconfont-archer">&#xe606;</span>
-                linux
-            </span>
-        
             <span class="sidebar-tag-name" data-tags="oj">
                 <span class="iconfont-archer">&#xe606;</span>
                 oj
@@ -1707,9 +1722,9 @@ VPS中安装了docker、docker-compose等服务
                 docker
             </span>
         
-            <span class="sidebar-tag-name" data-tags="nextcloud">
+            <span class="sidebar-tag-name" data-tags="wsl">
                 <span class="iconfont-archer">&#xe606;</span>
-                nextcloud
+                wsl
             </span>
         
             <span class="sidebar-tag-name" data-tags="wordpress">
@@ -1717,9 +1732,9 @@ VPS中安装了docker、docker-compose等服务
                 wordpress
             </span>
         
-            <span class="sidebar-tag-name" data-tags="markdown">
+            <span class="sidebar-tag-name" data-tags="nextcloud">
                 <span class="iconfont-archer">&#xe606;</span>
-                markdown
+                nextcloud
             </span>
         
             <span class="sidebar-tag-name" data-tags="utteranc">
@@ -1727,14 +1742,14 @@ VPS中安装了docker、docker-compose等服务
                 utteranc
             </span>
         
+            <span class="sidebar-tag-name" data-tags="markdown">
+                <span class="iconfont-archer">&#xe606;</span>
+                markdown
+            </span>
+        
             <span class="sidebar-tag-name" data-tags="postal">
                 <span class="iconfont-archer">&#xe606;</span>
                 postal
-            </span>
-        
-            <span class="sidebar-tag-name" data-tags="wsl">
-                <span class="iconfont-archer">&#xe606;</span>
-                wsl
             </span>
         
             <span class="sidebar-tag-name" data-tags="ctf">
@@ -1742,9 +1757,19 @@ VPS中安装了docker、docker-compose等服务
                 ctf
             </span>
         
+            <span class="sidebar-tag-name" data-tags="0day">
+                <span class="iconfont-archer">&#xe606;</span>
+                0day
+            </span>
+        
             <span class="sidebar-tag-name" data-tags="vps">
                 <span class="iconfont-archer">&#xe606;</span>
                 vps
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="docker-compose">
+                <span class="iconfont-archer">&#xe606;</span>
+                docker-compose
             </span>
         
             <span class="sidebar-tag-name" data-tags="friends">
@@ -1755,11 +1780,6 @@ VPS中安装了docker、docker-compose等服务
             <span class="sidebar-tag-name" data-tags="碎碎念">
                 <span class="iconfont-archer">&#xe606;</span>
                 碎碎念
-            </span>
-        
-            <span class="sidebar-tag-name" data-tags="0day">
-                <span class="iconfont-archer">&#xe606;</span>
-                0day
             </span>
         
     </div>
@@ -1778,6 +1798,11 @@ VPS中安装了docker、docker-compose等服务
             coding
         </span>
     
+        <span class="sidebar-category-name" data-categories="ctf">
+            <span class="iconfont-archer">&#xe60a;</span>
+            ctf
+        </span>
+    
         <span class="sidebar-category-name" data-categories="friends">
             <span class="iconfont-archer">&#xe60a;</span>
             friends
@@ -1786,11 +1811,6 @@ VPS中安装了docker、docker-compose等服务
         <span class="sidebar-category-name" data-categories="informal essay">
             <span class="iconfont-archer">&#xe60a;</span>
             informal essay
-        </span>
-    
-        <span class="sidebar-category-name" data-categories="ctf">
-            <span class="iconfont-archer">&#xe60a;</span>
-            ctf
         </span>
     
     </div>
