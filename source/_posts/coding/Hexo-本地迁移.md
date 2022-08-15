@@ -95,11 +95,13 @@ npm install
 
 * 折腾了很久，只在一个古老 [issue](https://github.com/hexojs/hexo/issues/1120) 中找到了类似问题，但是并没有合适的解决方案——然后尝试了一下更新 `npm`，就莫名其妙解决了......
 
-* ```bash
-  cd xiabee.github.io
-  # 进入 hexo 根目录
-  npm update
-  ```
+```bash
+cd xiabee.github.io
+# 进入 hexo 根目录
+npm update
+```
+
+
 
 
 
