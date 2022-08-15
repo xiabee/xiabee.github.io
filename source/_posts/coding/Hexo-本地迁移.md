@@ -109,11 +109,9 @@ npm update
 
 
 
+## 最终效果
 
-
-### 最终效果
-
-执行成功：
+页面渲染与推送执行成功：
 
 ![image.png](https://tva1.sinaimg.cn/large/0084b03xgy1h57kiiw6h4j310y0u64qp.jpg)
 
