@@ -20,6 +20,12 @@ abbrlink: hexo-transfer-issue
 
 ## 迁移过程
 
+* 起因：工作电脑换成了 `MacBookPro`，原来写博客的电脑正式退役，只用来打游戏（x）
+* 现状：`GitHub` 上的 `hero_backup` 分支保存了需要的源码文件，本地电脑什么文件都没有
+* 本地电脑已安装 `git`, `homebrew` 等工具
+
+
+
 ### 源码下载
 
 ```bash
