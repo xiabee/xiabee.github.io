@@ -451,16 +451,13 @@
 利用 git 分支进行源码备份：https://blog.xiabee.cn/posts/hexo-git-backup/
 利用 algolia 启用全文搜索：https://blog.xiabee.cn/posts/archer-algolia/
 
-迁移描述（明天来更新）
-问题汇总ERROR Database load failed. Deleting database.读取数据库文件 db.json 失败，删除了  db.json
-
-[Op...
+迁移过程源码下载12345678git clone git@github.com:xiabee/xiabee.github.io.git# 克隆 GitPage 的仓库到本地，此时是展示 Page...
             </div>
             <!-- read more -->
             
             <div class="abstract-post-meta">
                 <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/08/14">
+                <div class="abstract-date" title="Last updated: 2022/08/15">
                     <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/08/14</span>
                 </div>
                 <!-- tags -->
@@ -899,22 +896,25 @@ Last 2 Days！
             
         
         <article class="index-post">
-            <a class="abstract-title" href="/posts/wordpress-docker/">
+            <a class="abstract-title" href="/posts/nextcloud-docker/">
                 
-                <span class="abstract-title-text">Docker搭建Wordpress个人博客</span>
+                <span class="abstract-title-text">Docker搭建NextCloud个人网盘</span>
             </a>
             <div class="abstract-content">
-                Wordpress简介
+                开端
+百度云非会员太慢了！！！
+One Drive有时候连不上服务器！！！
+正好手头有个4G内存8M带宽的服务器，可以整个活
+手头也有个域名，已经搞了SSL证书，可以满足网盘加密传输的需求
+太长不看版：代码在这里，设置密码、添加证书、修改域名，docker-compose up -d就行
+
+NextCloud简介
 官网
-适合新手入门的博客框架，常用于个人博客的搭建，正如其名字一样，通过简单的几个word即可搭建出一个博客
 
-太长不看版
-项目地址：Github
-功能：通过docker-compose，实现了利用容器搭建nginx+mariadb+wordpress的组合，在VPS中搭建个人博客
-运行方式：详情见项目的README.md
-环境依赖：docker
+nextcloud是一款开源的、支持多平台的云盘，有服务器的小朋友可以整一个玩玩，可以搭一个自己的One Drive
 
-123sudo apt install docker docker-composegit clone https://github.com/xiabee/wordpress-dockercd wordpress-doc...
+
+搭建方式官网的搭建过程比较麻烦，需要手动配置服务器再执行相关代码等等。这里懒癌晚期患者直接去dockerhub找了个官方镜像，直接通过容器进行安装。...
             </div>
             <!-- read more -->
             
@@ -930,7 +930,7 @@ Last 2 Days！
     
         <a class="post-tag" href="javascript:void(0);" data-tags="docker">docker</a>
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="wordpress">wordpress</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="nextcloud">nextcloud</a>
     
 </div>
 
@@ -1529,13 +1529,13 @@ Last 2 Days！
         
         <li class="archive-post-item">
             <span class="archive-post-date">11/09</span>
-            <a class="archive-post-title" href="/posts/wordpress-docker/">Docker搭建Wordpress个人博客</a>
+            <a class="archive-post-title" href="/posts/nextcloud-docker/">Docker搭建NextCloud个人网盘</a>
         </li>
     
         
         <li class="archive-post-item">
             <span class="archive-post-date">11/09</span>
-            <a class="archive-post-title" href="/posts/nextcloud-docker/">Docker搭建NextCloud个人网盘</a>
+            <a class="archive-post-title" href="/posts/wordpress-docker/">Docker搭建Wordpress个人博客</a>
         </li>
     
         
@@ -1646,13 +1646,13 @@ Last 2 Days！
         
         <li class="archive-post-item">
             <span class="archive-post-date">03/17</span>
-            <a class="archive-post-title" href="/posts/docker-pupy/">Docker入门</a>
+            <a class="archive-post-title" href="/posts/docker-source/">Docker换源</a>
         </li>
     
         
         <li class="archive-post-item">
             <span class="archive-post-date">03/17</span>
-            <a class="archive-post-title" href="/posts/docker-source/">Docker换源</a>
+            <a class="archive-post-title" href="/posts/docker-pupy/">Docker入门</a>
         </li>
     
         
@@ -1673,6 +1673,11 @@ Last 2 Days！
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
         
+            <span class="sidebar-tag-name" data-tags="hexo">
+                <span class="iconfont-archer">&#xe606;</span>
+                hexo
+            </span>
+        
             <span class="sidebar-tag-name" data-tags="git">
                 <span class="iconfont-archer">&#xe606;</span>
                 git
@@ -1681,11 +1686,6 @@ Last 2 Days！
             <span class="sidebar-tag-name" data-tags="ssh">
                 <span class="iconfont-archer">&#xe606;</span>
                 ssh
-            </span>
-        
-            <span class="sidebar-tag-name" data-tags="hexo">
-                <span class="iconfont-archer">&#xe606;</span>
-                hexo
             </span>
         
             <span class="sidebar-tag-name" data-tags="archer">
@@ -1718,19 +1718,14 @@ Last 2 Days！
                 docker
             </span>
         
-            <span class="sidebar-tag-name" data-tags="wsl">
+            <span class="sidebar-tag-name" data-tags="nextcloud">
                 <span class="iconfont-archer">&#xe606;</span>
-                wsl
+                nextcloud
             </span>
         
             <span class="sidebar-tag-name" data-tags="wordpress">
                 <span class="iconfont-archer">&#xe606;</span>
                 wordpress
-            </span>
-        
-            <span class="sidebar-tag-name" data-tags="nextcloud">
-                <span class="iconfont-archer">&#xe606;</span>
-                nextcloud
             </span>
         
             <span class="sidebar-tag-name" data-tags="markdown">
@@ -1743,14 +1738,14 @@ Last 2 Days！
                 utteranc
             </span>
         
-            <span class="sidebar-tag-name" data-tags="vps">
-                <span class="iconfont-archer">&#xe606;</span>
-                vps
-            </span>
-        
             <span class="sidebar-tag-name" data-tags="postal">
                 <span class="iconfont-archer">&#xe606;</span>
                 postal
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="wsl">
+                <span class="iconfont-archer">&#xe606;</span>
+                wsl
             </span>
         
             <span class="sidebar-tag-name" data-tags="ctf">
@@ -1758,9 +1753,9 @@ Last 2 Days！
                 ctf
             </span>
         
-            <span class="sidebar-tag-name" data-tags="0day">
+            <span class="sidebar-tag-name" data-tags="vps">
                 <span class="iconfont-archer">&#xe606;</span>
-                0day
+                vps
             </span>
         
             <span class="sidebar-tag-name" data-tags="friends">
@@ -1771,6 +1766,11 @@ Last 2 Days！
             <span class="sidebar-tag-name" data-tags="碎碎念">
                 <span class="iconfont-archer">&#xe606;</span>
                 碎碎念
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="0day">
+                <span class="iconfont-archer">&#xe606;</span>
+                0day
             </span>
         
     </div>
@@ -1789,11 +1789,6 @@ Last 2 Days！
             coding
         </span>
     
-        <span class="sidebar-category-name" data-categories="ctf">
-            <span class="iconfont-archer">&#xe60a;</span>
-            ctf
-        </span>
-    
         <span class="sidebar-category-name" data-categories="friends">
             <span class="iconfont-archer">&#xe60a;</span>
             friends
@@ -1802,6 +1797,11 @@ Last 2 Days！
         <span class="sidebar-category-name" data-categories="informal essay">
             <span class="iconfont-archer">&#xe60a;</span>
             informal essay
+        </span>
+    
+        <span class="sidebar-category-name" data-categories="ctf">
+            <span class="iconfont-archer">&#xe60a;</span>
+            ctf
         </span>
     
     </div>

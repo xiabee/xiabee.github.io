@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://blog.xiabee.cn/posts/hexo-transfer-issue/</loc>
-    <lastmod>2022-08-14</lastmod>
+    <lastmod>2022-08-15</lastmod>
   </url>
   <url>
     <loc>https://blog.xiabee.cn/posts/fri/</loc>
@@ -53,11 +53,11 @@
     <lastmod>2022-08-13</lastmod>
   </url>
   <url>
-    <loc>https://blog.xiabee.cn/posts/docker-sudo/</loc>
+    <loc>https://blog.xiabee.cn/posts/postal-mailserver/</loc>
     <lastmod>2022-08-13</lastmod>
   </url>
   <url>
-    <loc>https://blog.xiabee.cn/posts/postal-mailserver/</loc>
+    <loc>https://blog.xiabee.cn/posts/docker-sudo/</loc>
     <lastmod>2022-08-13</lastmod>
   </url>
   <url>
@@ -73,15 +73,15 @@
     <lastmod>2022-08-13</lastmod>
   </url>
   <url>
-    <loc>https://blog.xiabee.cn/posts/docker-commands/</loc>
-    <lastmod>2022-08-13</lastmod>
-  </url>
-  <url>
     <loc>https://blog.xiabee.cn/posts/docker-source/</loc>
     <lastmod>2022-08-13</lastmod>
   </url>
   <url>
     <loc>https://blog.xiabee.cn/posts/wordpress-docker/</loc>
+    <lastmod>2022-08-13</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.xiabee.cn/posts/docker-commands/</loc>
     <lastmod>2022-08-13</lastmod>
   </url>
   <url>
@@ -113,11 +113,11 @@
     <lastmod>2022-08-13</lastmod>
   </url>
   <url>
-    <loc>https://blog.xiabee.cn/posts/hexo-git-backup/</loc>
+    <loc>https://blog.xiabee.cn/posts/hexo-git-setup/</loc>
     <lastmod>2022-08-13</lastmod>
   </url>
   <url>
-    <loc>https://blog.xiabee.cn/posts/hexo-git-setup/</loc>
+    <loc>https://blog.xiabee.cn/posts/hexo-git-backup/</loc>
     <lastmod>2022-08-13</lastmod>
   </url>
   <url>
