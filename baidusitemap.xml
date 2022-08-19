@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://blog.xiabee.cn/posts/mac-init/</loc>
+    <lastmod>2022-08-16</lastmod>
+  </url>
+  <url>
     <loc>https://blog.xiabee.cn/posts/hexo-transfer-issue/</loc>
     <lastmod>2022-08-15</lastmod>
   </url>
