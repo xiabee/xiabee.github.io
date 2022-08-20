@@ -13,7 +13,9 @@ abbrlink: mac-init
 
 ## 环境说明
 
-公司发了新电脑，`M1 Pro` 的 `MacBook Pro`，用了几天体验还不错，这里介绍一下怎么在 `Mac` 里打造一个能让颜狗落泪的漂亮终端（划掉）
+公司发了新电脑，`M1 Pro` 的 `MacBook Pro`，用了几天体验还不错，参考 [makeoptim](https://makeoptim.com/) 配置了一下自己的终端。
+
+这里介绍一下怎么在 `Mac` 里打造一个能让颜狗落泪的漂亮终端（划掉）
 
 <img src="https://tva1.sinaimg.cn/large/0084b03xgy1h58pm1gs0uj30y20iu0za.jpg" alt="image.png" style="zoom:100%;" />
 
@@ -34,7 +36,7 @@ abbrlink: mac-init
 
 ## 准备工作
 
-需要安装一些软件 / 字体等。
+需要安装一些软件 / 字体等
 
 ### 字体
 
@@ -63,6 +65,14 @@ abbrlink: mac-init
 * 系统偏好设置 ➡️ 安全性与隐私 ➡️ 隐私 ➡️ 完全磁盘访问权限 ➡️ iTerm
 
 <img src="https://tva1.sinaimg.cn/large/0084b03xgy1h5cgbwvu3gj31140wm7df.jpg" alt="image.png" style="zoom:100%;" />
+
+
+
+#### 设置背景
+
+* 点击屏幕左上角 `iTerm2` ➡️ `Preferences` ➡️ `Profiles` ➡️ `Profile Name`选中对应配置文件 ➡️ `Window` ➡️ `Background Image` 
+
+![image.png](https://tva1.sinaimg.cn/large/0084b03xgy1h5dbp9dyggj32321cwhdu.jpg)
 
 
 
@@ -165,9 +175,101 @@ source ~/.zshrc
 
 这部分不是必须，但是可以让终端更好看 ✅
 
+部分插件需要用到 `homewbrew`，后续文章会详细介绍 `homebrew`（下次一定写，这次先鸽了x）
+
+### autojump
+
+[autojump](https://github.com/wting/autojump) 可以记录下之前 cd 命令访过的所有目录，下次要去那个目录时不需要输入完整的路径，直接 `j somedir` 即可到达，甚至那个目标目录的名称只输入开头即可，实现了目录的自动补全。
+
+#### 下载与安装
+
+有两种常见的安装方式，包管理器安装和源码安装：
+
+包管理器 `brew` 安装：
+
+```bash
+brew install autojump
+```
 
 
-先写到这里，下次想起来再来更新
+
+源码安装：详情可见[官网](https://github.com/wting/autojump)
+
+```bash
+git clone git://github.com/wting/autojump.git
+cd autojump
+./install.py
+```
+
+
+
+#### 配置
+
+在 zsh 的配置文件 `~/.zshrc` 中的 `plugins` 中加入 `autojump`。
+
+![image.png](https://tva1.sinaimg.cn/large/0084b03xgy1h5db7ybvlzj30sg0ao7by.jpg)
+
+
+
+然后重载 `~/.zshrc` ，启用插件
+
+```bash
+source ~/.zshrc
+```
+
+
+
+### zsh-syntax-highlighting
+
+[zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting) 终端命令语法高亮插件。
+
+执行以下命令，安装 `zsh-syntax-highlighting`
+
+```bash
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+```
+
+安装后，如上述，修改 `~./zshrc` ， 在`plugins` 中加入 `zsh-syntax-highlighting`，并重载 `~./zshrc`。
+
+
+
+### zsh-autosuggestions
+
+[zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions) 终端命令自动推荐插件，会记录之前使用过的命令，当你输入开头时，会暗色提示之前的历史命令供你选择，可直接按右方向键选中该命令。
+
+执行以下命令，安装`zsh-autosuggestions`。
+
+```bash
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions 
+```
+
+安装后，如上述，修改 `~./zshrc` ， 在`plugins` 中加入 `zsh-autosuggestions`，并重载 `~./zshrc`。
+
+
+
+## VSCode 相关
+
+默认情况下，在 `VSCode` 中选择 `zsh` 作为默认 `Shell` 会出现乱码现象。原因是 `Oh My Zsh` 配置完成后，使用了 `MesloLGS NF` 字体。
+
+因此，修复乱码只需要在设置中找到 `terminal font`，设置成 `MesloLGS NF` 即可。
+
+* `command + ,` 打开设置 ➡️ 搜索 `terminal font` ➡️ 修改字体为 `MesloLGS NF` 
+
+![image.png](https://tva1.sinaimg.cn/large/0084b03xgy1h5dbigivcdj31kg0m2n2u.jpg)
+
+
+
+## 最终效果
+
+`iTerm`:
+
+![image.png](https://tva1.sinaimg.cn/large/0084b03xgy1h5dbk152ivj310y0pghaj.jpg)
+
+
+
+`VScode`:
+
+![image.png](https://tva1.sinaimg.cn/large/0084b03xgy1h5dbj91yqsj30ps08q406.jpg)
 
 
 
@@ -175,4 +277,3 @@ source ~/.zshrc
 
 > https://makeoptim.com/tool/terminal
 >
-> 
