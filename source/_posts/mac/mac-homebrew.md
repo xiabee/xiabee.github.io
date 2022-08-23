@@ -1,5 +1,5 @@
 ---
-title: Mac 环境配置(2)——brew
+title: Mac 环境配置(2)——homebrew
 date: 2022-8-23 12:00:23
 tags:
   - mac
