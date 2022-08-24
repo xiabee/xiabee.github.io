@@ -456,6 +456,67 @@
             
         
         <article class="index-post">
+            <a class="abstract-title" href="/posts/vps-toss/">
+                
+                <span class="abstract-title-text">服务器的折腾</span>
+            </a>
+            <div class="abstract-content">
+                准备工作
+一台VPS：腾讯云学生特惠，2核4G内存 8M带宽
+
+一个域名：xiabee.cn
+
+一点点容器使用技巧
+
+
+需求分析服务器里面跑一些WEB应用，包括但不限于个人博客、个人网盘、共享编辑器、邮件系统等，如果有时间的话可以写几个小程序挂着玩。
+如果还有时间的话可以考虑搭一个Cobalt Strike的服务器……
+当前布局
+WordPress个人博客
+
+CodiMD共享编辑器
+
+NEXTCloud个人网盘
+
+
+考虑到多个服务可以共用一个SSL证书，也方便后续的证书更换，我单独设置了一个SSL模块，用于把同一套证书映射到不同的服务中去。
+三个服务共用一套SSL证书：
+
+
+个人博客需求...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/08/13">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/02/03</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="linux">linux</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="docker">docker</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="vps">vps</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
             <a class="abstract-title" href="/posts/diary/">
                 
                 <span class="abstract-title-text">考研日记</span>
@@ -931,54 +992,6 @@ Hexo主题
         </article>
         <div class="index-post-divider"></div>
     
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/posts/hexo-git-backup/">
-                
-                <span class="abstract-title-text">利用git分支进行Hexo备份</span>
-            </a>
-            <div class="abstract-content">
-                hexo博客搭建可以看这里。
-问题描述博客搭建环境：hexo+gitpage，本地编写·markdown文件，通过hexo g -d渲染后上传至github repo。
-相较于wordpress，hexo框架的博客编写基本是在本地完成，在其他机器写博客时需要备份并重新配置环境。但是nodejs环境文件很多，备份起来相当麻烦。
-解决方案大致有两种方案：
-
-创建新仓库，备份源文件
-创建新分支，备份源文件
-
-创建备份这里我们主要介绍github分支的方式：主分支用于渲染github page，分分支用于备份重要源文件。
-
-创建新仓库的方式同理，就不介绍了（x）
-在hexo根目录下创建git最新...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/08/13">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/10/28</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="hexo">hexo</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="git">git</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
     <!-- paginator  -->
     
         <nav class="page-nav">
@@ -1396,7 +1409,24 @@ Hexo主题
         
         
         
+        
+        
+        
+        
+        
     
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         
         
@@ -1667,7 +1697,7 @@ Hexo主题
     
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 34
+        Total : 35
         </div>
         <!-- search  -->
         
@@ -1685,6 +1715,12 @@ Hexo主题
             <div class="archive-year"> 2022 </div>
             <ul class="year-list">
             
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/24</span>
+            <a class="archive-post-title" href="/posts/mac-proxy/">Mac 环境配置(3)——配置代理</a>
+        </li>
+    
         
         <li class="archive-post-item">
             <span class="archive-post-date">08/23</span>

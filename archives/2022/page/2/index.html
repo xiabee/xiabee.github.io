@@ -21,7 +21,7 @@
     <meta name="description" content="">
     <meta property="og:type" content="website">
 <meta property="og:title" content="xiabee-瞎哔哔">
-<meta property="og:url" content="https://blog.xiabee.cn/categories/coding/index.html">
+<meta property="og:url" content="https://blog.xiabee.cn/archives/2022/page/2/index.html">
 <meta property="og:site_name" content="xiabee-瞎哔哔">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:author" content="xiabee">
@@ -441,191 +441,41 @@
             
         
         <article class="index-post">
-            <a class="abstract-title" href="/posts/mac-proxy/">
+            <a class="abstract-title" href="/posts/vps-toss/">
                 
-                <span class="abstract-title-text">Mac 环境配置(3)——配置代理</span>
+                <span class="abstract-title-text">服务器的折腾</span>
             </a>
             <div class="abstract-content">
-                概述本篇不介绍如何搭建 VPN，仅介绍如何让 MacOS 的控制台连接到代理服务器，代理其应用层流量。
+                准备工作
+一台VPS：腾讯云学生特惠，2核4G内存 8M带宽
 
-代理池：Glados
+一个域名：xiabee.cn
 
-代理工具：Clashx
-
-代理服务器：127.0.0.1
-
-代理端口：7890
+一点点容器使用技巧
 
 
+需求分析服务器里面跑一些WEB应用，包括但不限于个人博客、个人网盘、共享编辑器、邮件系统等，如果有时间的话可以写几个小程序挂着玩。
+如果还有时间的话可以考虑搭一个Cobalt Strike的服务器……
+当前布局
+WordPress个人博客
+
+CodiMD共享编辑器
+
+NEXTCloud个人网盘
 
 
+考虑到多个服务可以共用一个SSL证书，也方便后续的证书更换，我单独设置了一个SSL模块，用于把同一套证书映射到不同的服务中去。
+三个服务共用一套SSL证书：
 
 
-终端代理点击图标，可以看到“复制终端代理命令”
-
-复制内容如下：
-1export https_proxy=http://127.0.0.1:7890 http_proxy=http://127.0.0.1:7890 all_proxy=socks5://127.0.0.1:7890
-
-
-
-设置代理把上述命令复制粘贴到终端里就可以了……
-但是作为懒狗，每次输入这么多命令怎...
+个人博客需求...
             </div>
             <!-- read more -->
             
             <div class="abstract-post-meta">
                 <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/08/24">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/08/24</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="mac">mac</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="brew">brew</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/posts/mac-brew/">
-                
-                <span class="abstract-title-text">Mac 环境配置(2)——homebrew</span>
-            </a>
-            <div class="abstract-content">
-                Homebrew 简介
-官网：https://brew.sh/
-
-可以理解为 MacOS 的包管理器，利用 brew 等命令实现一键安装各类软件与依赖。
-
-新款 MacOS 应该已经预装了，如果没有的话可以参考安装部分。
-
-
-安装需要在终端中安装，如果没有配置终端可以参考上篇。
-终端配置完毕后，直接在终端内执行以下命令：
-1/bin/bash -c &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)&quot;
-
-安装不难，如果你能顺利解决一些BUG的话（x）
-常见问...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/08/23">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/08/23</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="mac">mac</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="brew">brew</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/posts/mac-init/">
-                
-                <span class="abstract-title-text">Mac 环境配置(1)——完美终端</span>
-            </a>
-            <div class="abstract-content">
-                环境说明公司发了新电脑，M1 Pro 的 MacBook Pro，用了几天体验还不错，参考 makeoptim 配置了一下自己的终端。
-这里介绍一下怎么在 Mac 里打造一个能让颜狗落泪的漂亮终端（划掉）
-
-
-
-
-“完美”标准
-我是颜狗，终端好看是第一标准
-自动补全应该是一个终端的必备需求
-最好有语法高亮
-最好能通过键盘唤醒
-
-大概长这样：
-
-
-
-
-准备工作需要安装一些软件 / 字体等
-字体后面会用到 p10k 相关字体，前往 https://github.com/romkatv/powerlevel10k#manual-font-installation 下载并安装 MesloLGS ...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/08/20">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/08/16</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="mac">mac</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="brew">brew</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/posts/hexo-transfer-issue/">
-                
-                <span class="abstract-title-text">Hexo 本地迁移</span>
-            </a>
-            <div class="abstract-content">
-                前置知识
-利用 hexo 和 gitpage 搭建博客：https://blog.xiabee.cn/posts/hexo-git-setup/
-利用 git 分支进行源码备份：https://blog.xiabee.cn/posts/hexo-git-backup/
-利用 algolia 启用全文搜索：https://blog.xiabee.cn/posts/archer-algolia/
-
-迁移过程
-起因：工作电脑换成了 MacBookPro，原来写博客的电脑正式退役，只用来打游戏（x）
-现状：GitHub 上的 hero_backup 分支保存了需要的源码文件，本地电脑什么文件都没...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/08/15">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/08/14</span>
+                <div class="abstract-date" title="Last updated: 2022/08/13">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/02/03</span>
                 </div>
                 <!-- tags -->
                 
@@ -634,299 +484,9 @@
     
         <a class="post-tag" href="javascript:void(0);" data-tags="linux">linux</a>
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="hexo">hexo</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="algolia">algolia</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/posts/tidb-build-up/">
-                
-                <span class="abstract-title-text">Build Distributed TiDB System</span>
-            </a>
-            <div class="abstract-content">
-                BackgroudTiDB is an open-source NewSQL database that supports Hybrid Transactional and Analytical Processing (HTAP) workloads. Please refer to the official document to see the details
-Server preparingWe use several ECS to build the real distributed system, instead of distributed service on one se...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/08/14">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/08/08</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="tidb">tidb</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="linux">linux</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/posts/hydro-hepler/">
-                
-                <span class="abstract-title-text">Hydro-OJ 使用说明</span>
-            </a>
-            <div class="abstract-content">
-                本OJ的具体搭建方式：Docker搭建Hydro-OJ系统 · xiabee-瞎哔哔
-以下内容为用户文档
-超级管理员
-超级管理员是OJ系统的最高权限，能够直接控制OJ的全部内容，不建议设置多个
-
-使用要求·
-
-拥有服务器ssh权限，且能够直接控制服务器容器
-
-创建方法
-在OJ右上角注册一个账号，此时账号的UID为2·
-回到服务器的终端，使用 docker oj-backend exec -it hydrooj cli user setSuperAdmin 2 将 UID 为 2 的用户设置为超级管理员。
-使用 docker oj-backend exec -it pm2 restart ...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/08/14">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/05/21</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="oj">oj</a>
-    
         <a class="post-tag" href="javascript:void(0);" data-tags="docker">docker</a>
     
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/posts/docker-compose-2/">
-                
-                <span class="abstract-title-text">安装 docker-compose 2</span>
-            </a>
-            <div class="abstract-content">
-                前期提要上期我们讲到，postal的安装需要高版本的docker-compose。
-大部分情况下，我们直接使用包管理安装即可，但是我在安装过程中遇到了包管理器中没有高版本的情况……所以写下本篇记录一下。
-本篇依然以Ubuntu/Debian为例。
-查看版本1docker-compose -v
-
-
-此时看到我们的版本是1.25.0，是低于2.0的，无法运行3.9及以上的docker-compose.yml
-安装方式（一）
-可以参考官网
-
-这里使用一种比较暴力的安装方式：直接手动下载可执行文件
-
-
-查看最新版本浏览器访问docker-compose的代码仓库（可能需要翻墙）
-
-截至目前，最高...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/08/14">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/05/08</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="docker">docker</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="postal">postal</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="docker-compose">docker-compose</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/posts/postal-mailserver/">
-                
-                <span class="abstract-title-text">Docker 搭建 Postal 邮件系统</span>
-            </a>
-            <div class="abstract-content">
-                前情提要上次搭建了一个Hydro-OJ，注册需要邮箱验证，想着要不一步到位顺带把邮件系统也处理了（x）
-系统选择有很多酷炫且开源的邮件系统，github上能搜到很多，比如mailcow，postal等。本片主要介绍postal的搭建方式。
-
-Postal 简介
-官网：postal
-
-项目地址：GitHub - postalserver/install
-
-
-
-Postal is a complete and fully featured mail server for use by websites &amp; web servers. Think Sendgrid, Mailgun or...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/08/13">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/05/08</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="docker">docker</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="postal">postal</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/posts/hydro-docker/">
-                
-                <span class="abstract-title-text">Docker搭建Hydro-OJ系统</span>
-            </a>
-            <div class="abstract-content">
-                Hydro简介
-Hydro是目前来看比较新的一款开源Online Judge系统
-目前官网有常见的安装方式，但是Docker的支持不是很好，于是我自己在官网架构基础上，重新编写了一下容器部署。
-
-
-项目地址：Hydro-Docker
-
-
-使用方式
-直接使用docker-compose运行容器，在本地构建镜像
-123git clone https://github.com/xiabee/Hydro-Dockercd Hydro-Dockerdocker-compose up -d
-没有报错就是成功（x）：
-1docker-compose ps
-
-
-
-
-聊聊编写过程
-准确的说所有模块的测试完...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/08/13">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/04/29</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="oj">oj</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="docker">docker</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/posts/2022-spring-recruitment/">
-                
-                <span class="abstract-title-text">2022春招安全岗记录</span>
-            </a>
-            <div class="abstract-content">
-                写在前面在经历了保研、考研两轮大白给之后，终于在春招的时候拿到了满意的offer……
-简历内容是考研之后更新的，大致可以参考我的在线简历：https://xiabee.cn/cv，就是详细描述了一下项目内容和个人贡献。
-由于本人对996怨念很深，所以在公司选择上会优先考虑工作时长与作息时间，几乎没有投大厂（虽然顺手投了字节，一面就挂了，我好菜）。一些因为种种原因发了面试邀请但是没能面试的公司就暂时不写了，问就是拒绝996……
-本篇按时间顺序排序，同一公司放在一起写。
-最终去向
-PingCAP上海，Security
-
-
-
-PingCAP（已接受）四面2022.2.28
-大主管+HRBP面，...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/08/13">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/03/08</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="linux">linux</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="ctf">ctf</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="vps">vps</a>
     
 </div>
 
@@ -938,7 +498,7 @@ PingCAP（已接受）四面2022.2.28
     <!-- paginator  -->
     
         <nav class="page-nav">
-            <span class="page-number current">1</span><a class="page-number" href="/categories/coding/page/2/">2</a><a class="page-number" href="/categories/coding/page/3/">3</a><a class="extend next" rel="next" href="/categories/coding/page/2/">NEXT &gt;</a>
+            <a class="extend prev" rel="prev" href="/archives/2022/">&lt; PREV</a><a class="page-number" href="/archives/2022/">1</a><span class="page-number current">2</span>
         </nav>
     
 </main>
