@@ -128,4 +128,3 @@ curl -I https://www.google.com -k
 推荐使用 [Proxy SwitchOmega](https://chrome.google.com/webstore/detail/proxy-switchyomega/padekgcemlokbadohgkifijomclgjgif)，直接设置相应情景即可：
 
 ![image.png](https://tva1.sinaimg.cn/large/0084b03xgy1h5i92owlffj31to0ww7e2.jpg)
-
