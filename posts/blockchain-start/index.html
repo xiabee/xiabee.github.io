@@ -19,32 +19,27 @@
         <meta name="keywords" content="xiabee,hexo-theme,xiabee-blog">
     
     <meta name="description" content="">
-    <meta name="description" content="在Github上提交代码，每次 push 都需要输入一次密码，特别麻烦，所以现在就记录一下用SSH登陆GitHub的过程 先来康康这两个登陆方式有啥区别： 1234https:&#x2F;&#x2F;github.com&#x2F;xiabee&#x2F;fucking-views.git# use httpsgit@github.com:xiabee&#x2F;fucking-views.git# use ssh  第一种直接使用https，可">
+    <meta name="description" content="事件起因我们组的信安作品赛“被迫”加了一项智能合约的部署，某子剑老师：“智能合约三天就够了” 试了一下，三天确实够了。 本文以 Ubuntu-20.04为例，记录一下环境搭建过程。 主要涉及环境： 1234- geth- npm- truffle- ganache      相关概念这里不妨假设大家已经非常熟悉智能合约、区块链、消息认证、非对称密码等概念与算法，就不做过多介绍了。（其实是太鸽了，还">
 <meta property="og:type" content="article">
-<meta property="og:title" content="GitHub配置SSH Key">
-<meta property="og:url" content="https://blog.xiabee.cn/posts/github-ssh/index.html">
+<meta property="og:title" content="三天速成智能合约–DAY1：环境安装">
+<meta property="og:url" content="https://blog.xiabee.cn/posts/blockchain-start/index.html">
 <meta property="og:site_name" content="xiabee-瞎哔哔">
-<meta property="og:description" content="在Github上提交代码，每次 push 都需要输入一次密码，特别麻烦，所以现在就记录一下用SSH登陆GitHub的过程 先来康康这两个登陆方式有啥区别： 1234https:&#x2F;&#x2F;github.com&#x2F;xiabee&#x2F;fucking-views.git# use httpsgit@github.com:xiabee&#x2F;fucking-views.git# use ssh  第一种直接使用https，可">
+<meta property="og:description" content="事件起因我们组的信安作品赛“被迫”加了一项智能合约的部署，某子剑老师：“智能合约三天就够了” 试了一下，三天确实够了。 本文以 Ubuntu-20.04为例，记录一下环境搭建过程。 主要涉及环境： 1234- geth- npm- truffle- ganache      相关概念这里不妨假设大家已经非常熟悉智能合约、区块链、消息认证、非对称密码等概念与算法，就不做过多介绍了。（其实是太鸽了，还">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://tva1.sinaimg.cn/large/0084b03xly1gvsyrgz0a2j30a704bdh9.jpg">
-<meta property="og:image" content="https://tva1.sinaimg.cn/large/0084b03xly1gvsyrxg1n7j30hi06twj1.jpg">
-<meta property="og:image" content="https://tva1.sinaimg.cn/large/0084b03xly1gvsyshwq6hj30b8054q6f.jpg">
-<meta property="og:image" content="https://tva1.sinaimg.cn/large/0084b03xly1gvsyt0t91kj30790h1ta5.jpg">
-<meta property="og:image" content="https://tva1.sinaimg.cn/large/0084b03xly1gvsyte6ds2j30fu0ge424.jpg">
-<meta property="og:image" content="https://tva1.sinaimg.cn/large/0084b03xly1gvsytx02pqj30qj0flq51.jpg">
-<meta property="og:image" content="https://tva1.sinaimg.cn/large/0084b03xly1gvsyumdnt6j30k4031abm.jpg">
-<meta property="article:published_time" content="2020-08-27T11:56:35.000Z">
-<meta property="article:modified_time" content="2022-08-13T15:39:31.406Z">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/0084b03xgy1h5mbmhcnwej30t80dmq6a.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/0084b03xgy1h5mbodo9cyj31i40qw7o1.jpg">
+<meta property="article:published_time" content="2021-08-28T04:00:23.000Z">
+<meta property="article:modified_time" content="2022-08-28T03:32:54.110Z">
 <meta property="article:author" content="xiabee">
-<meta property="article:tag" content="git">
-<meta property="article:tag" content="ssh">
+<meta property="article:tag" content="blockchain">
+<meta property="article:tag" content="smart contract">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://tva1.sinaimg.cn/large/0084b03xly1gvsyrgz0a2j30a704bdh9.jpg">
+<meta name="twitter:image" content="https://tva1.sinaimg.cn/large/0084b03xgy1h5mbmhcnwej30t80dmq6a.jpg">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <link rel="icon" href="https://tva1.sinaimg.cn/thumbnail/0084b03xly1gvsjbyp2w8j30qo0qognu.jpg">
     
-    <title>GitHub配置SSH Key · xiabee-瞎哔哔</title>
+    <title>三天速成智能合约–DAY1：环境安装 · xiabee-瞎哔哔</title>
     <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
 /* This file is meant as a standalone workflow for
 - testing support for link[rel=preload]
@@ -282,7 +277,7 @@
                 <a href="/">XiaBee&#39;s Studio.</a>
             </div>
             <div class="post-title header-element">
-                <a href="#" class="post-name">GitHub配置SSH Key</a>
+                <a href="#" class="post-name">三天速成智能合约–DAY1：环境安装</a>
             </div>
         </div>
     
@@ -328,7 +323,7 @@
         <h1 class="intro-title">
             <!-- 主页  -->
             
-                GitHub配置SSH Key
+                三天速成智能合约–DAY1：环境安装
             <!-- 404 -->
             
         </h1>
@@ -348,22 +343,22 @@
                     <div class= post-intro-tags >
     
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="git">git</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="blockchain">blockchain</a>
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="ssh">ssh</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="smart contract">smart contract</a>
     
 </div>
 
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">430</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">1.4k</span>阅读时长: <span class="post-count reading-time">5 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
                     <!-- 撰写日期 -->
                     <span class="iconfont-archer post-intro-calander">&#xe676;</span>
-                    <span class="post-intro-time">2020/08/27</span>
+                    <span class="post-intro-time">2021/08/28</span>
                     <!-- busuanzi -->
                     
                         <span id="busuanzi_container_page_pv" class="busuanzi-pv">
@@ -518,62 +513,84 @@
             <div class="container container-unloaded">
                 <main class="main post-page">
     <article class="article-entry">
-        <p>在Github上提交代码，每次 <code>push</code> 都需要输入一次密码，特别麻烦，所以现在就记录一下用<code>SSH</code>登陆GitHub的过程</p>
-<p>先来康康这两个登陆方式有啥区别：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">https://github.com/xiabee/fucking-views.git</span><br><span class="line"><span class="comment"># use https</span></span><br><span class="line">git@github.com:xiabee/fucking-views.git</span><br><span class="line"><span class="comment"># use ssh</span></span><br></pre></td></tr></table></figure>
-
-<p>第一种直接使用https，可以直接浏览器访问，方便查阅，但是每次<code>push</code>都要输入密码</p>
-<p>第二种使用ssh，不能直接访问，但是在<code>push</code>的时候可以保留密钥文件</p>
-<p>个人感觉，在开发的时候，还是使用ssh比较方便。</p>
-<p>那就康康如何配置SSH：</p>
-<h2 id="0x00-配置全局信息"><a href="#0x00-配置全局信息" class="headerlink" title="0x00 配置全局信息"></a>0x00 配置全局信息</h2><p>仅第一次使用的时候需要配置，如果已经配置过了直接忽略</p>
-<p>查看配置信息：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --list</span><br></pre></td></tr></table></figure>
-
-<p>添加全局变量：用户名、邮箱</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name <span class="string">&quot;xiabee&quot;</span></span><br><span class="line">git config --global user.email  <span class="string">&quot;xiabee@foxmail.com&quot;</span></span><br></pre></td></tr></table></figure>
+        <h2 id="事件起因"><a href="#事件起因" class="headerlink" title="事件起因"></a>事件起因</h2><p>我们组的信安作品赛“被迫”加了一项智能合约的部署，某子剑老师：“智能合约三天就够了”</p>
+<p>试了一下，三天确实够了。</p>
+<p>本文以 <code>Ubuntu-20.04</code>为例，记录一下环境搭建过程。</p>
+<p>主要涉及环境：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">- geth</span><br><span class="line">- npm</span><br><span class="line">- truffle</span><br><span class="line">- ganache</span><br></pre></td></tr></table></figure>
 
 
 
-<h2 id="0x01-生成SSH密钥对"><a href="#0x01-生成SSH密钥对" class="headerlink" title="0x01 生成SSH密钥对"></a>0x01 生成SSH密钥对</h2><p>先检查一下本地是否存在密钥对</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/.ssh</span><br><span class="line"><span class="built_in">ls</span></span><br></pre></td></tr></table></figure>
-
-<p><img src="https://tva1.sinaimg.cn/large/0084b03xly1gvsyrgz0a2j30a704bdh9.jpg" alt="img"></p>
-<p><code>id_rsa</code> 和 <code>id_rsa.pub</code> 分别是ssh的私钥和公钥 </p>
-<p>如果没有的话就现场生成一个：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">&quot;xiabee@foxmail.com&quot;</span></span><br><span class="line"><span class="comment"># 邮箱填自己的</span></span><br></pre></td></tr></table></figure>
 
 
+<h2 id="相关概念"><a href="#相关概念" class="headerlink" title="相关概念"></a>相关概念</h2><p>这里不妨假设大家已经非常熟悉智能合约、区块链、消息认证、非对称密码等概念与算法，就不做过多介绍了。（其实是太鸽了，还没写，下次一定）</p>
+<h3 id="智能合约"><a href="#智能合约" class="headerlink" title="智能合约"></a>智能合约</h3><blockquote>
+<p>智能合约（Smart contract ）是一种旨在以信息化方式传播、验证或执行合同的计算机协议。智能合约允许在没有第三方的情况下进行可信交易，这些交易可追踪且不可逆转。</p>
+<p><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%8C%BA%E5%9D%97%E9%93%BE/13465666">https://baike.baidu.com/item/%E5%8C%BA%E5%9D%97%E9%93%BE/13465666</a></p>
+</blockquote>
+<h3 id="区块链"><a href="#区块链" class="headerlink" title="区块链"></a>区块链</h3><blockquote>
+<p>区块链是一种按照时间顺序将数据区块以链条的方式组合成特定数据结构， 并以密码学方式保证的不可篡改和不可伪造的去中心化共享总账(Decentralized shared ledger)，能够安全存储简单的、有先后关系的、能在系统内验证的数据。</p>
+<p> 广义的区块链技术则是利用加密链式区块结构来验证与存储数据、利用分布式节点共识算法来生成和更新数据、利用自动化脚本代码(智能合约)来编程和操作数据的一种全新的去中心化基础架构与分布式计算范式。</p>
+<p><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1532748">https://cloud.tencent.com/developer/article/1532748</a></p>
+</blockquote>
+<p>详细概念我们以后再聊（如果我还记得的话）</p>
+<p>这里我们编写的智能合约主要是区块链的智能合约，暂时不考虑物联网的合约；区块链具体的链为<a target="_blank" rel="noopener" href="https://ethereum.org/zh/">以太坊</a>。</p>
+<h2 id="相关环境"><a href="#相关环境" class="headerlink" title="相关环境"></a>相关环境</h2><h3 id="GETH"><a href="#GETH" class="headerlink" title="GETH"></a>GETH</h3><p><a target="_blank" rel="noopener" href="https://github.com/ethereum/go-ethereum">Geth</a>，Go-Ethereum，以太坊<strong>官方客户端软件</strong>，由以太坊基金会提供，用<strong>Go</strong>语言编写的。Geth提供了一个交互式命令控制台，通过命令控制台中包含了以太坊的各种功能（API）。</p>
+<p>这里以Ubuntu系统为例，安装过程如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">sudo add-apt-repository -y ppa:ethereum/ethereum</span><br><span class="line"><span class="comment"># 添加官方源</span></span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install ethereum</span><br><span class="line"><span class="comment"># sudo apt-get install geth 也是可以的</span></span><br><span class="line"><span class="comment"># 安装geth</span></span><br></pre></td></tr></table></figure>
 
-<p><img src="https://tva1.sinaimg.cn/large/0084b03xly1gvsyrxg1n7j30hi06twj1.jpg" alt="注释记得去掉..."></p>
-<h2 id="0x03-配置密钥对"><a href="#0x03-配置密钥对" class="headerlink" title="0x03 配置密钥对"></a>0x03 配置密钥对</h2><p>查看公钥：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cat</span> id_rsa.pub</span><br><span class="line"><span class="comment"># 查看私钥信息</span></span><br></pre></td></tr></table></figure>
+<p>如果不能导入官方源可以考虑源码安装：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install golang</span><br><span class="line"><span class="comment"># 安装go语言编译环境</span></span><br><span class="line">go <span class="built_in">env</span> -w GOPROXY=https://goproxy.cn</span><br><span class="line"><span class="comment"># 更换go语言代理</span></span><br><span class="line">git <span class="built_in">clone</span> https://github.com/ethereum/go-ethereum</span><br><span class="line"><span class="built_in">cd</span> go-ethereum</span><br><span class="line">make all</span><br><span class="line"><span class="comment"># 下载安装以太坊</span></span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:/home/<span class="variable">$USER</span>/go-ethereum/build/bin</span><br><span class="line"><span class="comment"># 设置环境变量</span></span><br></pre></td></tr></table></figure>
 
-<p><img src="https://tva1.sinaimg.cn/large/0084b03xly1gvsyshwq6hj30b8054q6f.jpg" alt="公钥信息"></p>
-<p>配置GitHub公钥信息：</p>
-<h3 id="settings："><a href="#settings：" class="headerlink" title="settings："></a>settings：</h3><img src="https://tva1.sinaimg.cn/large/0084b03xly1gvsyt0t91kj30790h1ta5.jpg" alt="img"  />
+<p>其他安装方式可以参考<a target="_blank" rel="noopener" href="https://geth.ethereum.org/docs/install-and-build/installing-geth">官方文档</a></p>
+<p>一些小问题：</p>
+<ul>
+<li>网上有直接通过snap安装的，但是我在测试的时候发现snap安装的版本有玄学bug，比如初始化的时候读不了外部文件，一直提示Permission denied……然后折腾了一上午不知道为啥，换官方源安装解决了</li>
+<li>源码安装没问题，我的WSL里面用的时源码安装，但是配置GO的环境比较麻烦，WSL每次启动都得改环境变量，非常折腾……要不是WSL用的是kali官方源不支持，谁手动装这玩意</li>
+</ul>
+<h3 id="NPM"><a href="#NPM" class="headerlink" title="NPM"></a>NPM</h3><p>NPM可以简单的理解为 JavaScript的包管理器，用于下载和部署Nodejs等项目。</p>
+<p>安装方式：APT安装npm和nodejs</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update</span><br><span class="line">sudo apt install nodejs npm</span><br></pre></td></tr></table></figure>
 
-<h3 id="SSH-and-GPG-keys"><a href="#SSH-and-GPG-keys" class="headerlink" title="SSH and GPG keys"></a>SSH and GPG keys</h3><img src="https://tva1.sinaimg.cn/large/0084b03xly1gvsyte6ds2j30fu0ge424.jpg" alt="img"  />
+<p>查询版本，出现下图说明安装成功：</p>
+<p><img src="https://tva1.sinaimg.cn/large/0084b03xgy1h5mbmhcnwej30t80dmq6a.jpg" alt="image.png"></p>
+<p>常见问题与解决方案：</p>
+<ul>
+<li>下载速度太慢——换源</li>
+<li>经常需要sudo——换所有者</li>
+</ul>
+<p>npm换源：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">npm config get registry</span><br><span class="line"><span class="comment"># 查看当前地址：</span></span><br><span class="line"><span class="comment"># https://registry.npmjs.org/</span></span><br><span class="line"> </span><br><span class="line">npm config get disturl</span><br><span class="line"><span class="comment"># undefined</span></span><br><span class="line"> </span><br><span class="line">npm --registry https://registry.npm.taobao.org install</span><br><span class="line"><span class="comment"># 临时更换仓库地址</span></span><br><span class="line"></span><br><span class="line">npm config <span class="built_in">set</span> registry http://registry.npm.taobao.org/</span><br><span class="line"><span class="comment"># 换为阿里源</span></span><br><span class="line"> </span><br><span class="line">npm config <span class="built_in">set</span> registry https://registry.npmjs.org/</span><br><span class="line"><span class="comment"># 换回官方源</span></span><br><span class="line"></span><br><span class="line">npx nrm use taobao</span><br><span class="line"><span class="comment"># 使用nrm工具切换淘宝源</span></span><br><span class="line"></span><br><span class="line">npx nrm use npm</span><br><span class="line"><span class="comment"># 如果之后需要切换回官方源可使用</span></span><br></pre></td></tr></table></figure>
 
-<h3 id="new-SSH-key"><a href="#new-SSH-key" class="headerlink" title="new SSH key"></a>new SSH key</h3><p>把公钥拷贝进去即可</p>
-<img src="https://tva1.sinaimg.cn/large/0084b03xly1gvsytx02pqj30qj0flq51.jpg" alt="img" style="zoom: 50%;" />
+<p>切换所有者：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo <span class="built_in">chown</span> -R $(<span class="built_in">whoami</span>) $(npm config get prefix)/&#123;lib/node_modules,bin,share&#125;</span><br><span class="line"><span class="comment"># 这样就不用sudo了</span></span><br></pre></td></tr></table></figure>
 
-<h2 id="0x04-验证"><a href="#0x04-验证" class="headerlink" title="0x04 验证"></a>0x04 验证</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ ssh -T git@github.com</span><br><span class="line">Enter passphrase for key &#x27;/c/Users/14793/.ssh/id_rsa&#x27;:</span><br><span class="line">Hi xiabee! You&#x27;ve successfully authenticated, but GitHub does not provide shell access.</span><br></pre></td></tr></table></figure>
+<p>详细教程可以参考<a target="_blank" rel="noopener" href="https://docs.npmjs.com/">官方文档</a>，如果有时间我们再来细聊</p>
+<h3 id="Truffle-amp-amp-ganache"><a href="#Truffle-amp-amp-ganache" class="headerlink" title="Truffle &amp;&amp; ganache"></a>Truffle &amp;&amp; ganache</h3><p><code>Truffle</code>是针对基于以太坊的<code>Solidity</code>语言的一套开发框架，本身基于<code>Javascript</code>，能够方便的管理智能合约运行的环境，并且提供一套便捷开发智能合约<code>(Smart Contract)</code>的<code>API</code>。</p>
+<p>ganache是以太坊开发的一个常见客户端，测试阶段我们使用ganache，完成开发后使用geth接入。</p>
+<p>详细教程可以参考官方文档<a target="_blank" rel="noopener" href="https://truffle.tryblockchain.org/">中文翻译</a>，但是由于文档比较老，版本基本上为truffle2或者truffle3，现在的truffle版本已经升级到了5.3.7，故部分操作命令会有区别，我们会在后续的文章中讲到。</p>
+<p>安装要求：<code>NodeJS 5.0+</code></p>
+<p>安装方式：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo npm install -g truffle</span><br><span class="line"><span class="comment"># 安装服务端/IDE</span></span><br><span class="line"></span><br><span class="line">sudo npm install -g ganache-cli </span><br><span class="line"><span class="comment"># 安装测试客户端，最终的客户端为GETH，前面已经安装过</span></span><br></pre></td></tr></table></figure>
 
-<p><img src="https://tva1.sinaimg.cn/large/0084b03xly1gvsyumdnt6j30k4031abm.jpg" alt="img"></p>
-<p>出现这个就可以使用<code>ssh</code>了</p>
-<h2 id="0x05-如果已经-git-clone-了-https-怎么办"><a href="#0x05-如果已经-git-clone-了-https-怎么办" class="headerlink" title="0x05 如果已经 git clone 了 https 怎么办"></a>0x05 如果已经 git clone 了 https 怎么办</h2><p>进入 <code>/.git</code> 文件夹，找到 <code>config</code> 文件，修改 <code>url</code> 的值即可</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[remote <span class="string">&quot;origin&quot;</span>]</span><br><span class="line">	url = git@github.com:xiabee/fucking-views.git</span><br><span class="line">	fetch = +refs/heads/*:refs/remotes/origin/*</span><br></pre></td></tr></table></figure>
-
+<p>看到这个说明安装成功：</p>
+<p><img src="https://tva1.sinaimg.cn/large/0084b03xgy1h5mbodo9cyj31i40qw7o1.jpg" alt="image.png"></p>
+<p>常见问题：</p>
+<ul>
+<li>安装到一半卡住，重新安装目录非空——进入该目录，删掉package文件（找不到就删掉所有文件）</li>
+<li>安装到一半堆溢出——这个没啥好办法，历史遗留玄学问题，我已经把内存限制调到16G了依然能溢出……看脸吧</li>
+</ul>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>暂时没想到还需要装啥，就先写到这吧，下一篇：<a target="_blank" rel="noopener" href="https://xiabee.cn/block/3day-smartcontract-2/">GETH从入门到入土</a></p>
+<p>三天速成智能合约的第一天，把环境装好就行，顺利的话还有点时间多，可以预习一下这些工具的基本操作。</p>
 
     </article>
     <!-- license -->
     
         <div class="license-wrapper">
             <p>原文作者：<a href="https://blog.xiabee.cn">xiabee</a>
-            <p>原文链接：<a href="https://blog.xiabee.cn/posts/github-ssh/">https://blog.xiabee.cn/posts/github-ssh/</a>
-            <p>发表日期：<a href="https://blog.xiabee.cn/posts/github-ssh/">八月 27日 2020, 7:56:35 晚上</a>
-            <p>更新日期：<a href="https://blog.xiabee.cn/posts/github-ssh/">August 13th 2022, 11:39:31 pm</a>
+            <p>原文链接：<a href="https://blog.xiabee.cn/posts/blockchain-start/">https://blog.xiabee.cn/posts/blockchain-start/</a>
+            <p>发表日期：<a href="https://blog.xiabee.cn/posts/blockchain-start/">八月 28日 2021, 12:00:23 中午</a>
+            <p>更新日期：<a href="https://blog.xiabee.cn/posts/blockchain-start/">August 28th 2022, 11:32:54 am</a>
             <p>版权声明：本文采用<a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
@@ -582,16 +599,16 @@
         <li class="next">
             
                 <div class="nextSlogan">Next Post</div>
-                <a href="/posts/2020-summer/" title="2020 Summer Review of xiabee">
-                    <div class="nextTitle">2020 Summer Review of xiabee</div>
+                <a href="/posts/fri/" title="FRIENDS">
+                    <div class="nextTitle">FRIENDS</div>
                 </a>
             
         </li>
         <li class="previous">
             
                 <div class="prevSlogan">Previous Post</div>
-                <a href="/posts/wechat-0day/" title="微信RCE 0day复现">
-                    <div class="prevTitle">微信RCE 0day复现</div>
+                <a href="/posts/2021-summer-year3/" title="我的大三">
+                    <div class="prevTitle">我的大三</div>
                 </a>
             
         </li>
@@ -749,7 +766,7 @@
                 <div class="toc-catalog">
                     <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
                 </div>
-                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#0x00-%E9%85%8D%E7%BD%AE%E5%85%A8%E5%B1%80%E4%BF%A1%E6%81%AF"><span class="toc-number">1.</span> <span class="toc-text">0x00 配置全局信息</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0x01-%E7%94%9F%E6%88%90SSH%E5%AF%86%E9%92%A5%E5%AF%B9"><span class="toc-number">2.</span> <span class="toc-text">0x01 生成SSH密钥对</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0x03-%E9%85%8D%E7%BD%AE%E5%AF%86%E9%92%A5%E5%AF%B9"><span class="toc-number">3.</span> <span class="toc-text">0x03 配置密钥对</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#settings%EF%BC%9A"><span class="toc-number">3.1.</span> <span class="toc-text">settings：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SSH-and-GPG-keys"><span class="toc-number">3.2.</span> <span class="toc-text">SSH and GPG keys</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#new-SSH-key"><span class="toc-number">3.3.</span> <span class="toc-text">new SSH key</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0x04-%E9%AA%8C%E8%AF%81"><span class="toc-number">4.</span> <span class="toc-text">0x04 验证</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0x05-%E5%A6%82%E6%9E%9C%E5%B7%B2%E7%BB%8F-git-clone-%E4%BA%86-https-%E6%80%8E%E4%B9%88%E5%8A%9E"><span class="toc-number">5.</span> <span class="toc-text">0x05 如果已经 git clone 了 https 怎么办</span></a></li></ol>
+                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8B%E4%BB%B6%E8%B5%B7%E5%9B%A0"><span class="toc-number">1.</span> <span class="toc-text">事件起因</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%B8%E5%85%B3%E6%A6%82%E5%BF%B5"><span class="toc-number">2.</span> <span class="toc-text">相关概念</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6"><span class="toc-number">2.1.</span> <span class="toc-text">智能合约</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8C%BA%E5%9D%97%E9%93%BE"><span class="toc-number">2.2.</span> <span class="toc-text">区块链</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%B8%E5%85%B3%E7%8E%AF%E5%A2%83"><span class="toc-number">3.</span> <span class="toc-text">相关环境</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#GETH"><span class="toc-number">3.1.</span> <span class="toc-text">GETH</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#NPM"><span class="toc-number">3.2.</span> <span class="toc-text">NPM</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Truffle-amp-amp-ganache"><span class="toc-number">3.3.</span> <span class="toc-text">Truffle &amp;&amp; ganache</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B0%8F%E7%BB%93"><span class="toc-number">4.</span> <span class="toc-text">小结</span></a></li></ol>
             </div>
         
         <!-- sidebar -->

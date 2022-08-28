@@ -598,6 +598,55 @@ mariozzj二中同班同学，南京大学直博
             
         
         <article class="index-post">
+            <a class="abstract-title" href="/posts/blockchain-start/">
+                
+                <span class="abstract-title-text">三天速成智能合约–DAY1：环境安装</span>
+            </a>
+            <div class="abstract-content">
+                事件起因我们组的信安作品赛“被迫”加了一项智能合约的部署，某子剑老师：“智能合约三天就够了”
+试了一下，三天确实够了。
+本文以 Ubuntu-20.04为例，记录一下环境搭建过程。
+主要涉及环境：
+1234- geth- npm- truffle- ganache
+
+
+
+
+
+相关概念这里不妨假设大家已经非常熟悉智能合约、区块链、消息认证、非对称密码等概念与算法，就不做过多介绍了。（其实是太鸽了，还没写，下次一定）
+智能合约
+智能合约（Smart contract ）是一种旨在以信息化方式传播、验证或执行合同的计算机协议。智能合约允许在没有第三方的情况下进行可信交易，这些交易可追踪且不可逆...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/08/28">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/08/28</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="blockchain">blockchain</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="smart contract">smart contract</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
             <a class="abstract-title" href="/posts/2021-summer-year3/">
                 
                 <span class="abstract-title-text">我的大三</span>
@@ -849,49 +898,6 @@ RCE(Remote command/code execute)漏洞，可以让攻击者直接向后台服务
     
     
         <a class="post-tag" href="javascript:void(0);" data-tags="0day">0day</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/posts/docker-sudo/">
-                
-                <span class="abstract-title-text">不输入sudo运行Docker</span>
-            </a>
-            <div class="abstract-content">
-                docker对权限要求较高，需要sudo权限才能运行，但是每次敲命令都加sudo就显得很累赘，这里有个化简办法：将用户加入docker组，实现不加sudo执行docker命令
-查看docker组查看/etc/group,确定是否存在docker组
-1cat /etc/group | grep docker
-
-安装Docker后，docker组已经创建好了，所以上面命令的输出为： docker:x:120:ubuntu 
-
-将当前用户添加到 docker 组1sudo gpasswd -a $&#123;USER&#125; docker
-
-重新登录或切换到docker组12345newg...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/08/13">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/03/19</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="docker">docker</a>
     
 </div>
 
@@ -1191,7 +1197,22 @@ RCE(Remote command/code execute)漏洞，可以让攻击者直接向后台服务
         
         
         
+        
+        
+        
+        
+        
     
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         
         
@@ -1474,7 +1495,7 @@ RCE(Remote command/code execute)漏洞，可以让攻击者直接向后台服务
     
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 35
+        Total : 36
         </div>
         <!-- search  -->
         
@@ -1637,6 +1658,12 @@ RCE(Remote command/code execute)漏洞，可以让攻击者直接向后台服务
         <li class="archive-post-item">
             <span class="archive-post-date">10/01</span>
             <a class="archive-post-title" href="/posts/fri/">FRIENDS</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/28</span>
+            <a class="archive-post-title" href="/posts/blockchain-start/">三天速成智能合约–DAY1：环境安装</a>
         </li>
     
         
@@ -1841,6 +1868,16 @@ RCE(Remote command/code execute)漏洞，可以让攻击者直接向后台服务
                 docker-compose
             </span>
         
+            <span class="sidebar-tag-name" data-tags="blockchain">
+                <span class="iconfont-archer">&#xe606;</span>
+                blockchain
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="smart contract">
+                <span class="iconfont-archer">&#xe606;</span>
+                smart contract
+            </span>
+        
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
     <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
@@ -1870,6 +1907,11 @@ RCE(Remote command/code execute)漏洞，可以让攻击者直接向后台服务
         <span class="sidebar-category-name" data-categories="ctf">
             <span class="iconfont-archer">&#xe60a;</span>
             ctf
+        </span>
+    
+        <span class="sidebar-category-name" data-categories="blockchain">
+            <span class="iconfont-archer">&#xe60a;</span>
+            blockchain
         </span>
     
     </div>
