@@ -5,7 +5,7 @@ tags:
   - mac
   - ctf
 categories:
-  - ctf
+  - coding
 abbrlink: mac-init
 ---
 
