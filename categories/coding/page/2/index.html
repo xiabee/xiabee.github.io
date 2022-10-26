@@ -441,6 +441,61 @@
             
         
         <article class="index-post">
+            <a class="abstract-title" href="/posts/hydro-docker/">
+                
+                <span class="abstract-title-text">Docker搭建Hydro-OJ系统</span>
+            </a>
+            <div class="abstract-content">
+                Hydro简介
+Hydro是目前来看比较新的一款开源Online Judge系统
+目前官网有常见的安装方式，但是Docker的支持不是很好，于是我自己在官网架构基础上，重新编写了一下容器部署。
+
+
+项目地址：Hydro-Docker
+
+
+使用方式
+直接使用docker-compose运行容器，在本地构建镜像
+123git clone https://github.com/xiabee/Hydro-Dockercd Hydro-Dockerdocker-compose up -d
+没有报错就是成功（x）：
+1docker-compose ps
+
+
+
+
+聊聊编写过程
+准确的说所有模块的测试完...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/08/13">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/04/29</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="oj">oj</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="docker">docker</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
             <a class="abstract-title" href="/posts/2022-spring-recruitment/">
                 
                 <span class="abstract-title-text">2022春招安全岗记录</span>
@@ -910,54 +965,6 @@ Hexo主题
         </article>
         <div class="index-post-divider"></div>
     
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/posts/hexo-git-backup/">
-                
-                <span class="abstract-title-text">利用git分支进行Hexo备份</span>
-            </a>
-            <div class="abstract-content">
-                hexo博客搭建可以看这里。
-问题描述博客搭建环境：hexo+gitpage，本地编写·markdown文件，通过hexo g -d渲染后上传至github repo。
-相较于wordpress，hexo框架的博客编写基本是在本地完成，在其他机器写博客时需要备份并重新配置环境。但是nodejs环境文件很多，备份起来相当麻烦。
-解决方案大致有两种方案：
-
-创建新仓库，备份源文件
-创建新分支，备份源文件
-
-创建备份这里我们主要介绍github分支的方式：主分支用于渲染github page，分分支用于备份重要源文件。
-
-创建新仓库的方式同理，就不介绍了（x）
-在hexo根目录下创建git最新...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/08/13">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/10/28</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="hexo">hexo</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="git">git</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
     <!-- paginator  -->
     
         <nav class="page-nav">
@@ -1259,7 +1266,24 @@ Hexo主题
         
         
         
+        
+        
+        
+        
+        
     
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         
         
@@ -1564,7 +1588,7 @@ Hexo主题
     
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 37
+        Total : 38
         </div>
         <!-- search  -->
         
@@ -1582,6 +1606,12 @@ Hexo主题
             <div class="archive-year"> 2022 </div>
             <ul class="year-list">
             
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/20</span>
+            <a class="archive-post-title" href="/posts/glados-intro/">Glados 签到简介</a>
+        </li>
+    
         
         <li class="archive-post-item">
             <span class="archive-post-date">09/30</span>
@@ -1951,6 +1981,11 @@ Hexo主题
             <span class="sidebar-tag-name" data-tags="smart contract">
                 <span class="iconfont-archer">&#xe606;</span>
                 smart contract
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="glados">
+                <span class="iconfont-archer">&#xe606;</span>
+                glados
             </span>
         
     </div>

@@ -21,7 +21,7 @@
     <meta name="description" content="">
     <meta property="og:type" content="website">
 <meta property="og:title" content="xiabee-瞎哔哔">
-<meta property="og:url" content="https://blog.xiabee.cn/tags/docker/index.html">
+<meta property="og:url" content="https://blog.xiabee.cn/tags/glados/index.html">
 <meta property="og:site_name" content="xiabee-瞎哔哔">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:author" content="xiabee">
@@ -441,492 +441,41 @@
             
         
         <article class="index-post">
-            <a class="abstract-title" href="/posts/hydro-hepler/">
+            <a class="abstract-title" href="/posts/glados-intro/">
                 
-                <span class="abstract-title-text">Hydro-OJ 使用说明</span>
+                <span class="abstract-title-text">Glados 签到简介</span>
             </a>
             <div class="abstract-content">
-                本OJ的具体搭建方式：Docker搭建Hydro-OJ系统 · xiabee-瞎哔哔
-以下内容为用户文档
-超级管理员
-超级管理员是OJ系统的最高权限，能够直接控制OJ的全部内容，不建议设置多个
+                GLADOS 是什么简单来说是一个代理池供应商，具体作用为隐藏真实IP、防溯源等，是安全从业者必不可少的工具之一。
 
-使用要求·
-
-拥有服务器ssh权限，且能够直接控制服务器容器
-
-创建方法
-在OJ右上角注册一个账号，此时账号的UID为2·
-回到服务器的终端，使用 docker oj-backend exec -it hydrooj cli user setSuperAdmin 2 将 UID 为 2 的用户设置为超级管理员。
-使用 docker oj-backend exec -it pm2 restart ...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/08/14">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/05/21</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="oj">oj</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="docker">docker</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/posts/docker-compose-2/">
-                
-                <span class="abstract-title-text">安装 docker-compose 2</span>
-            </a>
-            <div class="abstract-content">
-                前期提要上期我们讲到，postal的安装需要高版本的docker-compose。
-大部分情况下，我们直接使用包管理安装即可，但是我在安装过程中遇到了包管理器中没有高版本的情况……所以写下本篇记录一下。
-本篇依然以Ubuntu/Debian为例。
-查看版本1docker-compose -v
-
-
-此时看到我们的版本是1.25.0，是低于2.0的，无法运行3.9及以上的docker-compose.yml
-安装方式（一）
-可以参考官网
-
-这里使用一种比较暴力的安装方式：直接手动下载可执行文件
-
-
-查看最新版本浏览器访问docker-compose的代码仓库（可能需要翻墙）
-
-截至目前，最高...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/08/14">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/05/08</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="docker">docker</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="postal">postal</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="docker-compose">docker-compose</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/posts/postal-mailserver/">
-                
-                <span class="abstract-title-text">Docker 搭建 Postal 邮件系统</span>
-            </a>
-            <div class="abstract-content">
-                前情提要上次搭建了一个Hydro-OJ，注册需要邮箱验证，想着要不一步到位顺带把邮件系统也处理了（x）
-系统选择有很多酷炫且开源的邮件系统，github上能搜到很多，比如mailcow，postal等。本片主要介绍postal的搭建方式。
-
-Postal 简介
-官网：postal
-
-项目地址：GitHub - postalserver/install
-
-
-
-Postal is a complete and fully featured mail server for use by websites &amp; web servers. Think Sendgrid, Mailgun or...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/08/13">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/05/08</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="docker">docker</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="postal">postal</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/posts/hydro-docker/">
-                
-                <span class="abstract-title-text">Docker搭建Hydro-OJ系统</span>
-            </a>
-            <div class="abstract-content">
-                Hydro简介
-Hydro是目前来看比较新的一款开源Online Judge系统
-目前官网有常见的安装方式，但是Docker的支持不是很好，于是我自己在官网架构基础上，重新编写了一下容器部署。
-
-
-项目地址：Hydro-Docker
-
-
-使用方式
-直接使用docker-compose运行容器，在本地构建镜像
-123git clone https://github.com/xiabee/Hydro-Dockercd Hydro-Dockerdocker-compose up -d
-没有报错就是成功（x）：
-1docker-compose ps
-
-
-
-
-聊聊编写过程
-准确的说所有模块的测试完...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/08/13">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/04/29</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="oj">oj</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="docker">docker</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/posts/vps-toss/">
-                
-                <span class="abstract-title-text">服务器的折腾</span>
-            </a>
-            <div class="abstract-content">
-                准备工作
-一台VPS：腾讯云学生特惠，2核4G内存 8M带宽
-
-一个域名：xiabee.cn
-
-一点点容器使用技巧
-
-
-需求分析服务器里面跑一些WEB应用，包括但不限于个人博客、个人网盘、共享编辑器、邮件系统等，如果有时间的话可以写几个小程序挂着玩。
-如果还有时间的话可以考虑搭一个Cobalt Strike的服务器……
-当前布局
-WordPress个人博客
-
-CodiMD共享编辑器
-
-NEXTCloud个人网盘
-
-
-考虑到多个服务可以共用一个SSL证书，也方便后续的证书更换，我单独设置了一个SSL模块，用于把同一套证书映射到不同的服务中去。
-三个服务共用一套SSL证书：
-
-
-个人博客需求...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/08/13">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/02/03</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="linux">linux</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="docker">docker</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="vps">vps</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/posts/nextcloud-docker/">
-                
-                <span class="abstract-title-text">Docker搭建NextCloud个人网盘</span>
-            </a>
-            <div class="abstract-content">
-                开端
-百度云非会员太慢了！！！
-One Drive有时候连不上服务器！！！
-正好手头有个4G内存8M带宽的服务器，可以整个活
-手头也有个域名，已经搞了SSL证书，可以满足网盘加密传输的需求
-太长不看版：代码在这里，设置密码、添加证书、修改域名，docker-compose up -d就行
-
-NextCloud简介
-官网
-
-nextcloud是一款开源的、支持多平台的云盘，有服务器的小朋友可以整一个玩玩，可以搭一个自己的One Drive
-
-
-搭建方式官网的搭建过程比较麻烦，需要手动配置服务器再执行相关代码等等。这里懒癌晚期患者直接去dockerhub找了个官方镜像，直接通过容器进行安装。...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/08/13">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/11/09</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="docker">docker</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="nextcloud">nextcloud</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/posts/wordpress-docker/">
-                
-                <span class="abstract-title-text">Docker搭建Wordpress个人博客</span>
-            </a>
-            <div class="abstract-content">
-                Wordpress简介
-官网
-适合新手入门的博客框架，常用于个人博客的搭建，正如其名字一样，通过简单的几个word即可搭建出一个博客
-
-太长不看版
 项目地址：Github
-功能：通过docker-compose，实现了利用容器搭建nginx+mariadb+wordpress的组合，在VPS中搭建个人博客
-运行方式：详情见项目的README.md
-环境依赖：docker
+注册地址：在项目地址中时时更新
+注册邀请码：EEXLM-SZMDH-NJT3P-9NA4V （你用我的邀请码咱俩都可以多白嫖一天）
 
-123sudo apt install docker docker-composegit clone https://github.com/xiabee/wordpress-dockercd wordpress-doc...
+为什么是 GLADOS因为白嫖很快乐。
+
+GLADOS 有教育计划，如果你还没有毕业，可以用学生邮箱免费试用一年
+如果是付费用户，每日签到可以延长一天会员时间，理论上说坚持签到可以一直免费续杯（划掉）
+
+
+
+
+
+如何进行签到其实本文只是想介绍一下常见 API 的分析方法，并没有摁推的意思。这里我们主要通过 BurpS...
             </div>
             <!-- read more -->
             
             <div class="abstract-post-meta">
                 <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/08/13">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/11/09</span>
+                <div class="abstract-date" title="Last updated: 2022/10/26">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/10/20</span>
                 </div>
                 <!-- tags -->
                 
                     <div class= abstract-tags >
     
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="docker">docker</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="wordpress">wordpress</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/posts/markdown-docker/">
-                
-                <span class="abstract-title-text">Docker搭建Markdown共享编辑器</span>
-            </a>
-            <div class="abstract-content">
-                服务地址
-https://xiabee.cn:3000
-
-前情提要
-腾讯云双十一特惠，一次买了个8M带宽、2核4G的云服务器……不拿它整点活可惜了
-
-目前的想法是搞个markdown共享编辑器、个人网盘啥的
-
-
-搭建动机主流的共享编辑器有很多，这里安利一个我个人比较喜欢的：Hackmd的Codimd
-上述的链接需要翻墙，非常不方便，所以我想在自己的服务器里面也造一个……
-前期准备
-一个VPS
-
-一个SSL证书（可选）
-
-VPS中安装了docker、docker-compose等服务
-
-
-12345sudo apt install dockersudo apt install docker...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/08/13">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/11/07</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="docker">docker</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="markdown">markdown</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/posts/docker-sudo/">
-                
-                <span class="abstract-title-text">不输入sudo运行Docker</span>
-            </a>
-            <div class="abstract-content">
-                docker对权限要求较高，需要sudo权限才能运行，但是每次敲命令都加sudo就显得很累赘，这里有个化简办法：将用户加入docker组，实现不加sudo执行docker命令
-查看docker组查看/etc/group,确定是否存在docker组
-1cat /etc/group | grep docker
-
-安装Docker后，docker组已经创建好了，所以上面命令的输出为： docker:x:120:ubuntu 
-
-将当前用户添加到 docker 组1sudo gpasswd -a $&#123;USER&#125; docker
-
-重新登录或切换到docker组12345newg...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/08/13">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/03/19</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="docker">docker</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/posts/docker-commands/">
-                
-                <span class="abstract-title-text">Docker常用命令</span>
-            </a>
-            <div class="abstract-content">
-                 运行docker时，发现权限不足可以康康这个：不输入sudo运行docker 
-1.查看docker容器信息123docker --help    #查看docker容器帮助docker version   #查看docker容器版本docker info      #查看docker容器信息
-
-
-2.镜像查看1234567docker images     #列出本地imagesdocker images -a  #含中间映像层docker images -q  #只显示镜像IDdocker images -qa #含中间映像层  docker images --digests  #...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/08/13">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/03/18</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="docker">docker</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="glados">glados</a>
     
 </div>
 
@@ -936,10 +485,6 @@ VPS中安装了docker、docker-compose等服务
         <div class="index-post-divider"></div>
     
     <!-- paginator  -->
-    
-        <nav class="page-nav">
-            <span class="page-number current">1</span><a class="page-number" href="/tags/docker/page/2/">2</a><a class="extend next" rel="next" href="/tags/docker/page/2/">NEXT &gt;</a>
-        </nav>
     
 </main>
 
