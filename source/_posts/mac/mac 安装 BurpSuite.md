@@ -6,7 +6,7 @@ tags:
   - ctf
 categories:
   - coding
-abbrlink: mac-init
+abbrlink: mac-bp
 ---
 
 
