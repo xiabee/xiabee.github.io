@@ -441,6 +441,44 @@
             
         
         <article class="index-post">
+            <a class="abstract-title" href="/posts/wechat-bot/">
+                
+                <span class="abstract-title-text">利用企业微信机器人推送消息</span>
+            </a>
+            <div class="abstract-content">
+                背景最近在研究云服务，Serverless 这些，有些程序已经实现完全自动化运行了，但是返回的结果要反复查看云服务日志或者个人邮箱，非常麻烦。于是决定写一个能自动给手机发送消息的东西——毕竟能时刻在线的，害得是手机（x）
+不同的软件有不同的接口，找到对应的接口文档即可。因为我用微信用的最多，这里就先介绍一下如何使用微信进行消息的自动接收。
+PS：为什么是接收不是收发呢……因为腾讯在某天之后限制了自建应用的 IP，必须使用白名单，Serverless 这种连主机都碰不到的玩意就别想固定 IP 了……所以暂时先利用不需要绑定 IP 的企业微信机器人，来实现我们传递云服务反馈的功能。
+准备工作...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/11/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/10/21</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="serverless">serverless</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
             <a class="abstract-title" href="/posts/glados-intro/">
                 
                 <span class="abstract-title-text">Glados 签到简介</span>
@@ -886,53 +924,6 @@ Server preparingWe use several ECS to build the real distributed system, instead
         </article>
         <div class="index-post-divider"></div>
     
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/posts/postal-mailserver/">
-                
-                <span class="abstract-title-text">Docker 搭建 Postal 邮件系统</span>
-            </a>
-            <div class="abstract-content">
-                前情提要上次搭建了一个Hydro-OJ，注册需要邮箱验证，想着要不一步到位顺带把邮件系统也处理了（x）
-系统选择有很多酷炫且开源的邮件系统，github上能搜到很多，比如mailcow，postal等。本片主要介绍postal的搭建方式。
-
-Postal 简介
-官网：postal
-
-项目地址：GitHub - postalserver/install
-
-
-
-Postal is a complete and fully featured mail server for use by websites &amp; web servers. Think Sendgrid, Mailgun or...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/08/13">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/05/08</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="docker">docker</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="postal">postal</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
     <!-- paginator  -->
     
         <nav class="page-nav">
@@ -1239,7 +1230,24 @@ Postal is a complete and fully featured mail server for use by websites &amp; we
         
         
         
+        
+        
+        
+        
+        
     
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         
         
@@ -1556,7 +1564,7 @@ Postal is a complete and fully featured mail server for use by websites &amp; we
     
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 38
+        Total : 39
         </div>
         <!-- search  -->
         
@@ -1574,6 +1582,12 @@ Postal is a complete and fully featured mail server for use by websites &amp; we
             <div class="archive-year"> 2022 </div>
             <ul class="year-list">
             
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/21</span>
+            <a class="archive-post-title" href="/posts/wechat-bot/">利用企业微信机器人推送消息</a>
+        </li>
+    
         
         <li class="archive-post-item">
             <span class="archive-post-date">10/20</span>
@@ -1954,6 +1968,11 @@ Postal is a complete and fully featured mail server for use by websites &amp; we
             <span class="sidebar-tag-name" data-tags="glados">
                 <span class="iconfont-archer">&#xe606;</span>
                 glados
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="serverless">
+                <span class="iconfont-archer">&#xe606;</span>
+                serverless
             </span>
         
     </div>

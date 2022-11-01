@@ -441,6 +441,53 @@
             
         
         <article class="index-post">
+            <a class="abstract-title" href="/posts/git-coding-hexo/">
+                
+                <span class="abstract-title-text">Git Page + Coding Page 实现负载均衡</span>
+            </a>
+            <div class="abstract-content">
+                问题描述Github Page不能被搜索引擎收录Github Page禁止了百度爬虫，导致百度无法收录我的博客；然后其他搜索引擎可能也是类似原因，均无法收录。而且曾经可以通过手动上传和sitemap的方式提交链接，现在连sitemap都读不到了……被迫转战其他平台：使用自定义域名
+Github Page在国内访问速度较慢github.io经常抽风，在国内访问不稳定，考虑增加一个国内的备份。
+初步解决方案
+利用coding创建国内镜像
+搜索引擎收入coding内容
+利用可控域名，通过CNAME解析到不同域名中，通过DNS实现负载均衡
+
+
+
+为什么是coding
+因为gitee实在太慢了，性...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/08/13">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/11/02</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="hexo">hexo</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="git">git</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
             <a class="abstract-title" href="/posts/archer-algolia/">
                 
                 <span class="abstract-title-text">Archer主题启用Algolia全文搜索</span>
@@ -882,49 +929,6 @@ GMP经过精心设计，无论是小型操作数还是大型操作数，都应�
         </article>
         <div class="index-post-divider"></div>
     
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/posts/2020-summer/">
-                
-                <span class="abstract-title-text">2020 Summer Review of xiabee</span>
-            </a>
-            <div class="abstract-content">
-                有人问我最喜欢哪个季节，我觉得大概是夏季——夏季总有一些特殊的回忆：
-
-今年的我度过了一次最长的夏天——准确的来说应该是最长的假期
-0x00 前言这是我读书生涯开始以后，第一个超过六个月的“假期”……疫情宅家，几乎就没干成啥事，flag立了一堆，真正实现的貌似…….妹有吧（划掉
-来莽一眼我5月23日在popi里面的flag：“考完试想干啥”
-
-好多想干的事情呢。
-考完当即大概是吃吃吃，和cc约了吨火锅，（突然发现输入法挺懂我），然后吃完火锅可能会再约几局，把最近少吃的垃圾食品全部补会来(啊巴斯……可能会去探索一下新的吃货打卡地点√
-然后抓紧时间练车车，票圈一个个老司机横空出世，本弟弟才开...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/08/13">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/09/05</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="碎碎念">碎碎念</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
     <!-- paginator  -->
     
         <nav class="page-nav">
@@ -1231,7 +1235,24 @@ GMP经过精心设计，无论是小型操作数还是大型操作数，都应�
         
         
         
+        
+        
+        
+        
+        
     
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         
         
@@ -1548,7 +1569,7 @@ GMP经过精心设计，无论是小型操作数还是大型操作数，都应�
     
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 38
+        Total : 39
         </div>
         <!-- search  -->
         
@@ -1566,6 +1587,12 @@ GMP经过精心设计，无论是小型操作数还是大型操作数，都应�
             <div class="archive-year"> 2022 </div>
             <ul class="year-list">
             
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/21</span>
+            <a class="archive-post-title" href="/posts/wechat-bot/">利用企业微信机器人推送消息</a>
+        </li>
+    
         
         <li class="archive-post-item">
             <span class="archive-post-date">10/20</span>
@@ -1946,6 +1973,11 @@ GMP经过精心设计，无论是小型操作数还是大型操作数，都应�
             <span class="sidebar-tag-name" data-tags="glados">
                 <span class="iconfont-archer">&#xe606;</span>
                 glados
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="serverless">
+                <span class="iconfont-archer">&#xe606;</span>
+                serverless
             </span>
         
     </div>
