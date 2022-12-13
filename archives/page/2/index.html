@@ -441,6 +441,60 @@
             
         
         <article class="index-post">
+            <a class="abstract-title" href="/posts/docker-compose-2/">
+                
+                <span class="abstract-title-text">安装 docker-compose 2</span>
+            </a>
+            <div class="abstract-content">
+                前期提要上期我们讲到，postal的安装需要高版本的docker-compose。
+大部分情况下，我们直接使用包管理安装即可，但是我在安装过程中遇到了包管理器中没有高版本的情况……所以写下本篇记录一下。
+本篇依然以Ubuntu/Debian为例。
+查看版本1docker-compose -v
+
+
+此时看到我们的版本是1.25.0，是低于2.0的，无法运行3.9及以上的docker-compose.yml
+安装方式（一）
+可以参考官网
+
+这里使用一种比较暴力的安装方式：直接手动下载可执行文件
+
+
+查看最新版本浏览器访问docker-compose的代码仓库（可能需要翻墙）
+
+截至目前，最高...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/08/14">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/05/08</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="docker">docker</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="postal">postal</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="docker-compose">docker-compose</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
             <a class="abstract-title" href="/posts/postal-mailserver/">
                 
                 <span class="abstract-title-text">Docker 搭建 Postal 邮件系统</span>
@@ -911,63 +965,6 @@ VPS中安装了docker、docker-compose等服务
         </article>
         <div class="index-post-divider"></div>
     
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/posts/utteranc-hexo/">
-                
-                <span class="abstract-title-text">utteranc 搭建评论系统</span>
-            </a>
-            <div class="abstract-content">
-                简介
-官网
-利用github issue做静态博客的评论系统
-
-
-关于Gitalkgitalk曾经（包括现在）也是很火的博客评论插件，但是它出现过安全事故:v2ex论坛， 黑客派骗star，就不推荐使用。
-这里给不能科学上网的同学简述一下：这个项目要的权限太多了，最坏情况下，恶意的使用者可以直接修改你的项目……黑客派就曾利用你登录评论区的token，偷偷的给自己仓库标star……
-
-
-
-
-
-
-
-关于utteranc
-
-
-仅用于登录Github，如果网页内已经登录了Github则无需重复授权
-只对相关issue有读写权限，没有整个仓库读写权限，不存在直接利用token修改仓库的情况
-
-搭建...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/08/13">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/11/03</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="hexo">hexo</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="utteranc">utteranc</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
     <!-- paginator  -->
     
         <nav class="page-nav">
@@ -1279,7 +1276,24 @@ VPS中安装了docker、docker-compose等服务
         
         
         
+        
+        
+        
+        
+        
     
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         
         
@@ -1608,7 +1622,7 @@ VPS中安装了docker、docker-compose等服务
     
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 39
+        Total : 40
         </div>
         <!-- search  -->
         
@@ -1626,6 +1640,12 @@ VPS中安装了docker、docker-compose等服务
             <div class="archive-year"> 2022 </div>
             <ul class="year-list">
             
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/11</span>
+            <a class="archive-post-title" href="/posts/aws-lambda/">使用 AWS Lambda 进行签到</a>
+        </li>
+    
         
         <li class="archive-post-item">
             <span class="archive-post-date">10/21</span>

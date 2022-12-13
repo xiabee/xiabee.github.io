@@ -441,6 +441,60 @@
             
         
         <article class="index-post">
+            <a class="abstract-title" href="/posts/docker-compose-2/">
+                
+                <span class="abstract-title-text">安装 docker-compose 2</span>
+            </a>
+            <div class="abstract-content">
+                前期提要上期我们讲到，postal的安装需要高版本的docker-compose。
+大部分情况下，我们直接使用包管理安装即可，但是我在安装过程中遇到了包管理器中没有高版本的情况……所以写下本篇记录一下。
+本篇依然以Ubuntu/Debian为例。
+查看版本1docker-compose -v
+
+
+此时看到我们的版本是1.25.0，是低于2.0的，无法运行3.9及以上的docker-compose.yml
+安装方式（一）
+可以参考官网
+
+这里使用一种比较暴力的安装方式：直接手动下载可执行文件
+
+
+查看最新版本浏览器访问docker-compose的代码仓库（可能需要翻墙）
+
+截至目前，最高...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/08/14">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/05/08</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="docker">docker</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="postal">postal</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="docker-compose">docker-compose</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
             <a class="abstract-title" href="/posts/postal-mailserver/">
                 
                 <span class="abstract-title-text">Docker 搭建 Postal 邮件系统</span>
@@ -901,58 +955,6 @@ Github Page在国内访问速度较慢github.io经常抽风，在国内访问不
         </article>
         <div class="index-post-divider"></div>
     
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/posts/archer-algolia/">
-                
-                <span class="abstract-title-text">Archer主题启用Algolia全文搜索</span>
-            </a>
-            <div class="abstract-content">
-                问题描述
-Hexo缺少站内搜索功能
-Hexo自带的tag功能并不能满足搜索需求
-Archer主题自带的搜索模块不能实现全文检索（详情可以参考相关issue）
-
-Hexo本质上是一个静态页面的渲染工具，而我们的博客部署在Github Page上，没有数据库的操作权限，也就不能像Wordpress那样自身实现站内的高级搜索……然而主题自带的第三方搜索插件又无法检索文章内容……
-解决方案
-利用Archer封装的第三方插件Algolia实现搜索
-利用hexo-algoliasearch实现全文检索
-
-
-
-为什么不直接用hexo-algoliasearch做搜索
-因为主题没有封装，裸着搜索很违和，...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/08/13">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/10/31</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="hexo">hexo</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="archer">archer</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="algolia">algolia</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
     <!-- paginator  -->
     
         <nav class="page-nav">
@@ -1264,7 +1266,24 @@ Hexo本质上是一个静态页面的渲染工具，而我们的博客部署在G
         
         
         
+        
+        
+        
+        
+        
     
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         
         
@@ -1593,7 +1612,7 @@ Hexo本质上是一个静态页面的渲染工具，而我们的博客部署在G
     
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 39
+        Total : 40
         </div>
         <!-- search  -->
         
@@ -1611,6 +1630,12 @@ Hexo本质上是一个静态页面的渲染工具，而我们的博客部署在G
             <div class="archive-year"> 2022 </div>
             <ul class="year-list">
             
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/11</span>
+            <a class="archive-post-title" href="/posts/aws-lambda/">使用 AWS Lambda 进行签到</a>
+        </li>
+    
         
         <li class="archive-post-item">
             <span class="archive-post-date">10/21</span>
