@@ -25,7 +25,7 @@ abbrlink: glados-intro
 * `GLADOS` 有[教育计划](https://glados.rocks/console/education)，如果你还没有毕业，可以用学生邮箱免费试用一年
 * 如果是付费用户，每日签到可以延长一天会员时间，理论上说坚持签到可以一直免费续杯（划掉）
 
-<img src="https://tva1.sinaimg.cn/large/0084b03xgy1h7j2sv71fzj31sw0osdmk.jpg" alt="image.png" style="zoom:67%;" />
+<img src="https://s3.xiabee.cn/pic/weibo-backup/0084b03xgy1h7j2sv71fzj31sw0osdmk.jpg" alt="image.png" style="zoom:67%;" />
 
 
 
@@ -39,7 +39,7 @@ abbrlink: glados-intro
 
 进入[主页](https://blog.xiabee.cn/posts/mac-bp/) ➡️ （登录） ➡️ 首页（往下翻） ➡️ 我的会员 ➡️ 会员签到，然后就发现签到成功啦
 
-<img src="https://tva1.sinaimg.cn/large/0084b03xgy1h7j30b0kfcj30z40lqjvr.jpg" alt="image.png" style="zoom:67%;" />
+<img src="https://s3.xiabee.cn/pic/weibo-backup/0084b03xgy1h7j30b0kfcj30z40lqjvr.jpg" alt="image.png" style="zoom:67%;" />
 
 
 
@@ -51,13 +51,13 @@ abbrlink: glados-intro
 
 1. `POST /api/user/checkin`
 
-<img src="https://tva1.sinaimg.cn/large/0084b03xgy1h7j38rnxm8j31am10iqmn.jpg" alt="image.png" style="zoom: 67%;" />
+<img src="https://s3.xiabee.cn/pic/weibo-backup/0084b03xgy1h7j38rnxm8j31am10iqmn.jpg" alt="image.png" style="zoom: 67%;" />
 
 
 
 2. `GET /api/user/status`
 
-<img src="https://tva1.sinaimg.cn/large/0084b03xgy1h7j3b3rb60j31am0ts19u.jpg" alt="image.png" style="zoom: 67%;" />
+<img src="https://s3.xiabee.cn/pic/weibo-backup/0084b03xgy1h7j3b3rb60j31am0ts19u.jpg" alt="image.png" style="zoom: 67%;" />
 
 
 
@@ -67,13 +67,13 @@ abbrlink: glados-intro
 
 可以看出，第一个请求是进行签到的，返回了签到的结果：
 
-<img src="https://tva1.sinaimg.cn/large/0084b03xgy1h7j3fj1tmwj31f00vg4li.jpg" alt="image.png" style="zoom: 67%;" />
+<img src="https://s3.xiabee.cn/pic/weibo-backup/0084b03xgy1h7j3fj1tmwj31f00vg4li.jpg" alt="image.png" style="zoom: 67%;" />
 
 
 
 第二个请求是获取当前会员信息的，主要包括注册邮箱、当前剩余天数等：
 
-<img src="https://tva1.sinaimg.cn/large/0084b03xgy1h7j3i414kdj31fa1a67wh.jpg" alt="image.png" style="zoom: 67%;" />
+<img src="https://s3.xiabee.cn/pic/weibo-backup/0084b03xgy1h7j3i414kdj31fa1a67wh.jpg" alt="image.png" style="zoom: 67%;" />
 
 
 
@@ -85,7 +85,7 @@ abbrlink: glados-intro
 
 返回 `code` 为 `-2`，`message` 为 “没有权限”
 
-<img src="https://tva1.sinaimg.cn/large/0084b03xgy1h7j3lxsbc0j31eq14kh8k.jpg" alt="image.png" style="zoom: 67%;" />
+<img src="https://s3.xiabee.cn/pic/weibo-backup/0084b03xgy1h7j3lxsbc0j31eq14kh8k.jpg" alt="image.png" style="zoom: 67%;" />
 
 
 
@@ -93,7 +93,7 @@ abbrlink: glados-intro
 
 返回 `code` 为 `1 `， `message` 为 `oops, token error`
 
-<img src="https://tva1.sinaimg.cn/large/0084b03xgy1h7j3qr34jtj31eq1aqqts.jpg" alt="image.png" style="zoom: 67%;" />
+<img src="https://s3.xiabee.cn/pic/weibo-backup/0084b03xgy1h7j3qr34jtj31eq1aqqts.jpg" alt="image.png" style="zoom: 67%;" />
 
 
 

@@ -36,7 +36,7 @@ abbrlink: hexo-git-backup
 
 这里我们主要介绍`github`分支的方式：主分支用于渲染`github page`，分分支用于备份重要源文件。
 
-![image.png](https://tva1.sinaimg.cn/large/0084b03xly1gvvhwdb12oj30ay0913zq.jpg)
+![image.png](https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1gvvhwdb12oj30ay0913zq.jpg)
 
 创建新仓库的方式同理，就不介绍了（x）
 
@@ -46,7 +46,7 @@ abbrlink: hexo-git-backup
 
 最新版的`hexo`在初始化之后是没有`.git`目录的，通过`_config.yml`里面的`deploy`参数生成`.deploy_git`目录，并在通过该目录进行`push`操作。因此，我们直接在`hexo`根目录下创建`.git`目录和`.gitignore`并不会冲突。
 
-![image.png](https://tva1.sinaimg.cn/large/0084b03xly1gvvhx5uhi3j30ly0cqdm6.jpg)
+![image.png](https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1gvvhx5uhi3j30ly0cqdm6.jpg)
 
 
 
@@ -140,13 +140,13 @@ git push origin hexo_backup
 
 远程仓库已有两个分支，因此必须指定分支`hexo_backup`，不能直接`git push`。
 
-![image.png](https://tva1.sinaimg.cn/large/0084b03xly1gvvi0lcpq3j30qh08m0zg.jpg)
+![image.png](https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1gvvi0lcpq3j30qh08m0zg.jpg)
 
 此时本地分支和远程分支匹配
 
 
 
-![image.png](https://tva1.sinaimg.cn/large/0084b03xly1gvvi1iy2zmj30w60koqah.jpg)
+![image.png](https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1gvvi1iy2zmj30w60koqah.jpg)
 
 此时已经备份完毕了。
 
@@ -186,4 +186,4 @@ hexo g -d
 
 主分支利用`hexo`自身集成的`git`组件进行推送：
 
-![image.png](https://tva1.sinaimg.cn/large/0084b03xly1gvvi31gsgmj30iq0bhwmp.jpg)
+![image.png](https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1gvvi31gsgmj30iq0bhwmp.jpg)

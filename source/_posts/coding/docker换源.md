@@ -82,7 +82,7 @@ sudo systemctl daemon-reload
 sudo systemctl restart docker
 ```
 
-![image.png](https://tva1.sinaimg.cn/large/0084b03xly1gw7yzp6zkwj30ep0a50ua.jpg)
+![image.png](https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1gw7yzp6zkwj30ep0a50ua.jpg)
 
 
 
@@ -92,7 +92,7 @@ sudo systemctl restart docker
 
 * [官方文档](https://mirrors.tuna.tsinghua.edu.cn/help/docker-ce/)
 
-![image.png](https://tva1.sinaimg.cn/large/0084b03xly1gw7zfr5zwmj315q0ch44i.jpg)
+![image.png](https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1gw7zfr5zwmj315q0ch44i.jpg)
 
 
 

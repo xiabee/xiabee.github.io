@@ -12,7 +12,7 @@ abbrlink: 2020-summer
 
 有人问我最喜欢哪个季节，我觉得大概是夏季——夏季总有一些特殊的回忆：
 
-![img](https://tva1.sinaimg.cn/large/0084b03xly1gvub5mu6xlj30lc0k341k.jpg)
+![img](https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1gvub5mu6xlj30lc0k341k.jpg)
 
 今年的我度过了一次最长的夏天——准确的来说应该是最长的假期
 
@@ -58,7 +58,7 @@ abbrlink: 2020-summer
 
 故事要从2020年5月28号开始说起：
 
-![img](https://tva1.sinaimg.cn/large/0084b03xly1gvub6fnn2uj30e30sgtec.jpg)
+![img](https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1gvub6fnn2uj30e30sgtec.jpg)
 
 [冯大佬](https://blog.fkynjyq.com/)找我聊换届的事情......就，挺秃燃的，还在等待培训的我们突然就要去培训别人了
 
@@ -78,7 +78,7 @@ abbrlink: 2020-summer
 
 这次培训的对象不是我们，但是还是感觉受益良多，尤其是培养了自我学习能力
 
-![img](https://tva1.sinaimg.cn/large/0084b03xly1gvub6nmfytj30ba098dhk.jpg)
+![img](https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1gvub6nmfytj30ba098dhk.jpg)
 
 #### [>:3] 结训赛
 
@@ -100,7 +100,7 @@ abbrlink: 2020-summer
 
 七月立的flag：
 
-![img](https://tva1.sinaimg.cn/large/0084b03xly1gvub6zbr6cj306908caaq.jpg)
+![img](https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1gvub6zbr6cj306908caaq.jpg)
 
 上个月收到一条[popi](https://www.popiapp.cn/answered.html?sharecode=xiabee&dynamicId=d155aeff2a2713d47e6b5fc503cf63b7)提问，问我为啥子练车那么顺的：
 
@@ -123,13 +123,13 @@ popi里面发不出“车”字确实有点迷......
 
 科二的时候被抓去练了一整天的倒车入库，倒到后面就开始乱开了：
 
-![img](https://tva1.sinaimg.cn/large/0084b03xly1gvub7gr3s8j30oa0sggsh.jpg)
+![img](https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1gvub7gr3s8j30oa0sggsh.jpg)
 
 本来小脾气就有点大，还被抓过来练了一天这种对点的应试技巧......然后就开始放飞自我，“劳资不对点啦，盲开入库！”——而且盲开的时候比对点还稍微准一点，可能这就是玄学吧......不过飙车入库的时候被教练抓到了就有点尴尬。
 
 虽然但是，这八个小时的倒车入库确实让我倒车倒起来非常顺手，就算是考试的车子出了问题也能够从容应对：
 
-![img](https://tva1.sinaimg.cn/large/0084b03xly1gvub9d73bnj30lc0l9akd.jpg)
+![img](https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1gvub9d73bnj30lc0l9akd.jpg)
 
 当时那车从倒挡弹回了一档，人都给看傻了......害好俺反应快给它重新摁会去了（确信）
 
@@ -137,7 +137,7 @@ popi里面发不出“车”字确实有点迷......
 
 到科三就真的开始放飞自我了，每天都在百米加减档的跑道上疯狂试探这破车的加速极限：
 
-![img](https://tva1.sinaimg.cn/large/0084b03xly1gvub7uh1psj30lc0bb7a6.jpg)
+![img](https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1gvub7uh1psj30lc0bb7a6.jpg)
 
 虽然但是，俺也就在训练场上体验一下60码的感jio，在大马路上我还是不会乱飙的......毕竟是学了文明驾驶礼仪的人（划掉）
 
@@ -159,7 +159,7 @@ popi里面发不出“车”字确实有点迷......
 
 
 
-![img](https://tva1.sinaimg.cn/large/0084b03xly1gvub9qf8z8j30lc0sgtoq.jpg)
+![img](https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1gvub9qf8z8j30lc0sgtoq.jpg)
 
 
 
@@ -169,29 +169,29 @@ popi里面发不出“车”字确实有点迷......
 
 
 
-![img](https://tva1.sinaimg.cn/large/0084b03xly1gvuba9ig0yj30lc0g0147.jpg)
+![img](https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1gvuba9ig0yj30lc0g0147.jpg)
 
 
 
 
 
-![img](https://tva1.sinaimg.cn/large/0084b03xly1gvubbe84dcj30lc0g010o.jpg)
+![img](https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1gvubbe84dcj30lc0g010o.jpg)
 
 
 
 
 
-![img](https://tva1.sinaimg.cn/large/0084b03xly1gvubbqwqovj30lc0sg17d.jpg)
+![img](https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1gvubbqwqovj30lc0sg17d.jpg)
 
 
 
 
 
-![img](https://tva1.sinaimg.cn/large/0084b03xly1gvubc73elij30lc0a3ju4.jpg)放一个神奇的翻译
+![img](https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1gvubc73elij30lc0a3ju4.jpg)放一个神奇的翻译
 
 
 
-![img](https://tva1.sinaimg.cn/large/0084b03xly1gvubcidyqej308c08cdi4.jpg)
+![img](https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1gvubcidyqej308c08cdi4.jpg)
 
 ### 0x04 结束
 

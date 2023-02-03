@@ -51,7 +51,7 @@ abbrlink: hexo-git-setup
 
 创建一个名为`xxx.github.io`的仓库，且允许公网访问：
 
-![image.png](https://tva1.sinaimg.cn/large/0084b03xly1gvwe3g2y4pj30px0c8ade.jpg)
+![image.png](https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1gvwe3g2y4pj30px0c8ade.jpg)
 
 
 
@@ -61,7 +61,7 @@ abbrlink: hexo-git-setup
 
 然后在`Settings -> Pages`里面设置分支和网站根目录：这里直接设置为`main`和`/(root)`。如果网页上传在其他分支上可以在这里修改。
 
-![image.png](https://tva1.sinaimg.cn/large/0084b03xly1gvwe8mpskbj31720n0wot.jpg)
+![image.png](https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1gvwe8mpskbj31720n0wot.jpg)
 
 
 
@@ -174,7 +174,7 @@ hexo clean
 
 访问[http://localhost:4000](http://localhost:4000)，出现`hexo`页面说明渲染成功
 
-![image.png](https://tva1.sinaimg.cn/large/0084b03xly1gvwdzcr2n8j31hc0n4aw0.jpg)
+![image.png](https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1gvwdzcr2n8j31hc0n4aw0.jpg)
 
 这里我修改过主页，所以可能看起来和初始模板不太一样。
 
@@ -235,7 +235,7 @@ deploy:
 
 
 
-![image.png](https://tva1.sinaimg.cn/large/0084b03xgy1gvwerqrvzfj30is07hmzf.jpg)
+![image.png](https://s3.xiabee.cn/pic/weibo-backup/0084b03xgy1gvwerqrvzfj30is07hmzf.jpg)
 
 这里`GitHub Pages`用的就是`main`分支，不需要修改
 
@@ -257,7 +257,7 @@ hexo d
 
 此时访问公网地址，已经能看到该博客了：
 
-![image.png](https://tva1.sinaimg.cn/large/0084b03xly1gvweyd9xbzj31hl0sv1kx.jpg)
+![image.png](https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1gvweyd9xbzj31hl0sv1kx.jpg)
 
 
 
@@ -267,7 +267,7 @@ hexo d
 
 在`_posts`目录下创建`markdown`文件，仿照`Hello World`写就行：
 
-![image.png](https://tva1.sinaimg.cn/large/0084b03xly1gvwf1noz1nj30mb08tafh.jpg)
+![image.png](https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1gvwf1noz1nj30mb08tafh.jpg)
 
 然后`hexo g -d`，渲染、推送。
 
@@ -285,7 +285,7 @@ hexo d
 
 这里我个人使用的是[微博](https://weibo.com/)图床，配合`Chrome`插件[新浪微博图床](https://chrome.google.com/webstore/detail/%E6%96%B0%E6%B5%AA%E5%BE%AE%E5%8D%9A%E5%9B%BE%E5%BA%8A/fdfdnfpdplfbbnemmmoklbfjbhecpnhf?utm_source=chrome-ntp-icon)使用，可以直接微信截图到剪贴板，然后复制粘贴，灰常方便：
 
-![image.png](https://tva1.sinaimg.cn/large/0084b03xly1gvysn7j1qaj30ra0ivabw.jpg)
+![image.png](https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1gvysn7j1qaj30ra0ivabw.jpg)
 
 
 

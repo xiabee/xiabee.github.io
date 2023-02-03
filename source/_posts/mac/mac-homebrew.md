@@ -59,7 +59,7 @@ More details here: https://curl.se/docs/sslcerts.html
 
 也可以选择一种一劳永逸的忽略校验的方法：创建一个配置文件 `~/.curlrc`， 内容为 `--insecure`
 
-![image.png](https://tva1.sinaimg.cn/large/0084b03xgy1h5gs6w0r1xj307i04gaav.jpg)
+![image.png](https://s3.xiabee.cn/pic/weibo-backup/0084b03xgy1h5gs6w0r1xj307i04gaav.jpg)
 
 
 
@@ -157,7 +157,7 @@ brew update
 
 ## 最终效果
 
-![image.png](https://tva1.sinaimg.cn/large/0084b03xgy1h5gsvqocrtj30nm0pgqei.jpg)
+![image.png](https://s3.xiabee.cn/pic/weibo-backup/0084b03xgy1h5gsvqocrtj30nm0pgqei.jpg)
 
 
 

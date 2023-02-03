@@ -32,23 +32,23 @@ abbrlink: hydro-hepler
 
 * `管理域->管理用户->添加用户`
 
-![image.png](https://tva1.sinaimg.cn/large/0084b03xly1h2fzplb344j319x0o4n6r.jpg)
+![image.png](https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1h2fzplb344j319x0o4n6r.jpg)
 
 * 输入用户`UID`或者用户名，设置其角色
 
-![image.png](https://tva1.sinaimg.cn/large/0084b03xly1h2fzqs7hakj30ht09w3z7.jpg)
+![image.png](https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1h2fzqs7hakj30ht09w3z7.jpg)
 
 #### 
 
 * 目前已设置好的角色为老师和学生：
   
-  ![image.png](https://tva1.sinaimg.cn/large/0084b03xly1h2fzrz7smtj30h009d3za.jpg)
+  ![image.png](https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1h2fzrz7smtj30h009d3za.jpg)
 
 ### 自动加域
 
 * 设置加域链接：注册后点击链接直接加入
 
-![image.png](https://tva1.sinaimg.cn/large/0084b03xly1h2g0rvv90kj318w0nwn5m.jpg)
+![image.png](https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1h2g0rvv90kj318w0nwn5m.jpg)
 
 ### 维护方法
 
@@ -63,17 +63,17 @@ abbrlink: hydro-hepler
 
 * `题库->创建题目`
   
-  ![image.png](https://tva1.sinaimg.cn/large/0084b03xly1h2fzza7irtj318p0dkq7u.jpg)
+  ![image.png](https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1h2fzza7irtj318p0dkq7u.jpg)
 
 * 填写相关信息和描述，并翻到最下方，点击`创建`
   
-  ![image.png](https://tva1.sinaimg.cn/large/0084b03xly1h2g02cjb3aj30ue0f3q8k.jpg)
+  ![image.png](https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1h2g02cjb3aj30ue0f3q8k.jpg)
 
     若未填写分组，则默认分配至当前组
 
 * 添加测试数据和附件
   
-  ![image.png](https://tva1.sinaimg.cn/large/0084b03xly1h2g045qiwjj30vh0kgdjq.jpg)
+  ![image.png](https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1h2g045qiwjj30vh0kgdjq.jpg)
 
 ### 测试数据文件格式（手动）
 
@@ -195,11 +195,11 @@ abbrlink: hydro-hepler
 
 * `作业->创建作业`
 
-![image.png](https://tva1.sinaimg.cn/large/0084b03xly1h2g0fi36mtj316q0oqagl.jpg)
+![image.png](https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1h2g0fi36mtj316q0oqagl.jpg)
 
 * 设置相关字段：
   
-  ![image.png](https://tva1.sinaimg.cn/large/0084b03xly1h2g0gkxy87j30pd0mxq6u.jpg)
+  ![image.png](https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1h2g0gkxy87j30pd0mxq6u.jpg)
 
 ### 创建比赛
 

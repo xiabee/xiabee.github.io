@@ -58,7 +58,7 @@ cd ~/.ssh
 ls
 ```
 
-![img](https://tva1.sinaimg.cn/large/0084b03xly1gvsyrgz0a2j30a704bdh9.jpg)
+![img](https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1gvsyrgz0a2j30a704bdh9.jpg)
 
 `id_rsa` 和 `id_rsa.pub` 分别是ssh的私钥和公钥 
 
@@ -73,7 +73,7 @@ ssh-keygen -t rsa -C "xiabee@foxmail.com"
 
 
 
-![注释记得去掉...](https://tva1.sinaimg.cn/large/0084b03xly1gvsyrxg1n7j30hi06twj1.jpg)
+![注释记得去掉...](https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1gvsyrxg1n7j30hi06twj1.jpg)
 
 
 
@@ -86,23 +86,23 @@ cat id_rsa.pub
 # 查看私钥信息
 ```
 
-![公钥信息](https://tva1.sinaimg.cn/large/0084b03xly1gvsyshwq6hj30b8054q6f.jpg)
+![公钥信息](https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1gvsyshwq6hj30b8054q6f.jpg)
 
 配置GitHub公钥信息：
 
 ### settings：
 
-<img src="https://tva1.sinaimg.cn/large/0084b03xly1gvsyt0t91kj30790h1ta5.jpg" alt="img"  />
+<img src="https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1gvsyt0t91kj30790h1ta5.jpg" alt="img"  />
 
 ### SSH and GPG keys
 
-<img src="https://tva1.sinaimg.cn/large/0084b03xly1gvsyte6ds2j30fu0ge424.jpg" alt="img"  />
+<img src="https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1gvsyte6ds2j30fu0ge424.jpg" alt="img"  />
 
 ### new SSH key
 
 把公钥拷贝进去即可
 
-<img src="https://tva1.sinaimg.cn/large/0084b03xly1gvsytx02pqj30qj0flq51.jpg" alt="img" style="zoom: 50%;" />
+<img src="https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1gvsytx02pqj30qj0flq51.jpg" alt="img" style="zoom: 50%;" />
 
 ## 0x04 验证
 
@@ -112,7 +112,7 @@ Enter passphrase for key '/c/Users/14793/.ssh/id_rsa':
 Hi xiabee! You've successfully authenticated, but GitHub does not provide shell access.
 ```
 
-![img](https://tva1.sinaimg.cn/large/0084b03xly1gvsyumdnt6j30k4031abm.jpg)
+![img](https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1gvsyumdnt6j30k4031abm.jpg)
 
 出现这个就可以使用`ssh`了
 

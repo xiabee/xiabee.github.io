@@ -32,7 +32,7 @@ abbrlink: docker-compose-2
 docker-compose -v
 ```
 
-![image.png](https://tva1.sinaimg.cn/large/0084b03xly1h219bl0sbaj30d202uq3y.jpg)
+![image.png](https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1h219bl0sbaj30d202uq3y.jpg)
 
 此时看到我们的版本是`1.25.0`，是低于`2.0`的，无法运行`3.9`及以上的`docker-compose.yml`
 
@@ -50,13 +50,13 @@ docker-compose -v
 
 浏览器访问`docker-compose`的[代码仓库](https://github.com/docker/compose/releases)（可能需要翻墙）
 
-![image.png](https://tva1.sinaimg.cn/large/0084b03xgy1h219l8awe5j30vs0gv7c4.jpg)
+![image.png](https://s3.xiabee.cn/pic/weibo-backup/0084b03xgy1h219l8awe5j30vs0gv7c4.jpg)
 
 截至目前，最高版本是`2.5.0`。
 
 
 
-![image.png](https://tva1.sinaimg.cn/large/0084b03xgy1h219mrogiqj30fc097gp4.jpg)
+![image.png](https://s3.xiabee.cn/pic/weibo-backup/0084b03xgy1h219mrogiqj30fc097gp4.jpg)
 
 
 
@@ -144,7 +144,7 @@ find / -name docker-compose
 
 一般来说在`/usr/bin/docker-compose`中：
 
-![image.png](https://tva1.sinaimg.cn/large/0084b03xgy1h21a2ndezyj30g9041tbs.jpg)
+![image.png](https://s3.xiabee.cn/pic/weibo-backup/0084b03xgy1h21a2ndezyj30g9041tbs.jpg)
 
 
 
@@ -162,7 +162,7 @@ sudo cp docker-compose /usr/bin/docker-compose
 docker-compose -v
 ```
 
-![image.png](https://tva1.sinaimg.cn/large/0084b03xgy1h21a4o9fazj30ef03fq3x.jpg)
+![image.png](https://s3.xiabee.cn/pic/weibo-backup/0084b03xgy1h21a4o9fazj30ef03fq3x.jpg)
 
 此时已经升级到高版本了。
 

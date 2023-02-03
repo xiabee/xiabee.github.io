@@ -16,7 +16,7 @@ abbrlink: utteranc-hexo
 * [官网](https://utteranc.es/)
 * 利用`github issue`做静态博客的评论系统
 
-![image.png](https://tva1.sinaimg.cn/large/0084b03xly1gw26hn9pp6j30rk0a5dh7.jpg)
+![image.png](https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1gw26hn9pp6j30rk0a5dh7.jpg)
 
 
 
@@ -26,13 +26,13 @@ abbrlink: utteranc-hexo
 
 这里给不能科学上网的同学简述一下：这个项目要的权限太多了，**最坏情况下**，恶意的使用者可以直接修改你的项目......黑客派就曾利用你登录评论区的`token`，偷偷的给自己仓库标`star`......
 
-![image.png](https://tva1.sinaimg.cn/large/0084b03xgy1gw26w6dt86j30p90o412i.jpg)
+![image.png](https://s3.xiabee.cn/pic/weibo-backup/0084b03xgy1gw26w6dt86j30p90o412i.jpg)
 
 
 
 
 
-<img src="https://tva1.sinaimg.cn/large/0084b03xgy1gw26pr4jzuj30ji0g5jv8.jpg" alt="image.png" style="zoom: 80%;" />
+<img src="https://s3.xiabee.cn/pic/weibo-backup/0084b03xgy1gw26pr4jzuj30ji0g5jv8.jpg" alt="image.png" style="zoom: 80%;" />
 
 
 
@@ -40,7 +40,7 @@ abbrlink: utteranc-hexo
 
 ## 关于utteranc
 
-<img src="https://tva1.sinaimg.cn/large/0084b03xly1gw2700msb4j30eo0nhq62.jpg" alt="image.png" style="zoom: 67%;" />
+<img src="https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1gw2700msb4j30eo0nhq62.jpg" alt="image.png" style="zoom: 67%;" />
 
 * 仅用于登录`Github`，如果网页内已经登录了`Github`则无需重复授权
 * 只对相关`issue`有读写权限，没有整个仓库读写权限，不存在直接利用`token`修改仓库的情况
@@ -57,7 +57,7 @@ abbrlink: utteranc-hexo
 * 给仓库安装 [utterances](https://github.com/apps/utterances) APP
 * 配置一下读写权限
 
-<img src="https://tva1.sinaimg.cn/large/0084b03xgy1gw2779my61j30ia0le780.jpg" alt="image.png" style="zoom: 80%;" />
+<img src="https://s3.xiabee.cn/pic/weibo-backup/0084b03xgy1gw2779my61j30ia0le780.jpg" alt="image.png" style="zoom: 80%;" />
 
 * 插入代码中：
 
@@ -110,19 +110,19 @@ categories:
 
 发布评论：
 
-![image.png](https://tva1.sinaimg.cn/large/0084b03xly1gw27jubr7yj30s90df0ul.jpg)
+![image.png](https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1gw27jubr7yj30s90df0ul.jpg)
 
 
 
 邮件提醒：
 
-![image.png](https://tva1.sinaimg.cn/large/0084b03xly1gw27kqwm16j30m80ex7bk.jpg)
+![image.png](https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1gw27kqwm16j30m80ex7bk.jpg)
 
 
 
 `ISSUE`：
 
-![image.png](https://tva1.sinaimg.cn/large/0084b03xgy1gw27lhsg4tj30zs0ljthv.jpg)
+![image.png](https://s3.xiabee.cn/pic/weibo-backup/0084b03xgy1gw27lhsg4tj30zs0ljthv.jpg)
 
 
 
@@ -130,8 +130,8 @@ categories:
 
 如果想修改邮件提醒可以在右上角`Notifications`里面改：
 
-![image.png](https://tva1.sinaimg.cn/large/0084b03xgy1gw27n0sqcaj30e00dx77c.jpg)
+![image.png](https://s3.xiabee.cn/pic/weibo-backup/0084b03xgy1gw27n0sqcaj30e00dx77c.jpg)
 
 
 
-![image.png](https://tva1.sinaimg.cn/large/0084b03xgy1gw27ne3uqdj30e00ckgnj.jpg)
+![image.png](https://s3.xiabee.cn/pic/weibo-backup/0084b03xgy1gw27ne3uqdj30e00ckgnj.jpg)

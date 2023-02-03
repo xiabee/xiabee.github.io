@@ -17,7 +17,7 @@ abbrlink: mac-init
 
 这里介绍一下怎么在 `Mac` 里打造一个能让颜狗落泪的漂亮终端（划掉）
 
-<img src="https://tva1.sinaimg.cn/large/0084b03xgy1h58pm1gs0uj30y20iu0za.jpg" alt="image.png" style="zoom:100%;" />
+<img src="https://s3.xiabee.cn/pic/weibo-backup/0084b03xgy1h58pm1gs0uj30y20iu0za.jpg" alt="image.png" style="zoom:100%;" />
 
 
 
@@ -30,7 +30,7 @@ abbrlink: mac-init
 
 大概长这样：
 
-<img src="https://tva1.sinaimg.cn/large/0084b03xgy1h5cfxyz9ayj310y0pgqn1.jpg" alt="image.png" style="zoom:100%;" />
+<img src="https://s3.xiabee.cn/pic/weibo-backup/0084b03xgy1h5cfxyz9ayj310y0pgqn1.jpg" alt="image.png" style="zoom:100%;" />
 
 
 
@@ -50,7 +50,7 @@ abbrlink: mac-init
 
 在 `Application` 目录下，找不到的话也可以 `command + [space]` 进行查找：
 
-<img src="https://tva1.sinaimg.cn/large/0084b03xgy1h5cg5x52ttj311i05cjs7.jpg" alt="image.png" style="zoom:100%;" />
+<img src="https://s3.xiabee.cn/pic/weibo-backup/0084b03xgy1h5cg5x52ttj311i05cjs7.jpg" alt="image.png" style="zoom:100%;" />
 
 
 
@@ -60,11 +60,11 @@ abbrlink: mac-init
 
 * 左上角苹果图标 ➡️ 系统偏好设置
 
-<img src="https://tva1.sinaimg.cn/large/0084b03xgy1h5cgen3sifj30ds0hcmzx.jpg" alt="image.png" style="zoom:100%;" />
+<img src="https://s3.xiabee.cn/pic/weibo-backup/0084b03xgy1h5cgen3sifj30ds0hcmzx.jpg" alt="image.png" style="zoom:100%;" />
 
 * 系统偏好设置 ➡️ 安全性与隐私 ➡️ 隐私 ➡️ 完全磁盘访问权限 ➡️ iTerm
 
-<img src="https://tva1.sinaimg.cn/large/0084b03xgy1h5cgbwvu3gj31140wm7df.jpg" alt="image.png" style="zoom:100%;" />
+<img src="https://s3.xiabee.cn/pic/weibo-backup/0084b03xgy1h5cgbwvu3gj31140wm7df.jpg" alt="image.png" style="zoom:100%;" />
 
 
 
@@ -72,7 +72,7 @@ abbrlink: mac-init
 
 * 点击屏幕左上角 `iTerm2` ➡️ `Preferences` ➡️ `Profiles` ➡️ `Profile Name`选中对应配置文件 ➡️ `Window` ➡️ `Background Image` 
 
-![image.png](https://tva1.sinaimg.cn/large/0084b03xgy1h5dbp9dyggj32321cwhdu.jpg)
+![image.png](https://s3.xiabee.cn/pic/weibo-backup/0084b03xgy1h5dbp9dyggj32321cwhdu.jpg)
 
 
 
@@ -110,7 +110,7 @@ sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O 
 
 命令执行成功后，不需要配置，直接把 `oh-my-zsh` 安装在 `~/.oh-my-zsh` 目录下，并载入默认配置：
 
-<img src="https://tva1.sinaimg.cn/large/0084b03xgy1h5cgoz16xrj310y0pg1hw.jpg" alt="image.png" style="zoom:100%;" />
+<img src="https://s3.xiabee.cn/pic/weibo-backup/0084b03xgy1h5cgoz16xrj310y0pg1hw.jpg" alt="image.png" style="zoom:100%;" />
 
 
 
@@ -118,7 +118,7 @@ sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O 
 
 修改主题则只需要修改 `~/.zshrc` 中的 `ZSH_THEME=""` 字段，并将相应主题下载到 `~/.oh-my-zsh/themes` 中：
 
-![image.png](https://tva1.sinaimg.cn/large/0084b03xgy1h5cgtc5invj311a0pa7wh.jpg)
+![image.png](https://s3.xiabee.cn/pic/weibo-backup/0084b03xgy1h5cgtc5invj311a0pa7wh.jpg)
 
 
 
@@ -151,7 +151,7 @@ source ~/.zshrc
 
 重载配置文件后，会自动启动 `p10k` 的安装程序：
 
-![image.png](https://tva1.sinaimg.cn/large/0084b03xgy1h5chay2w7vj310y0pg7ov.jpg)
+![image.png](https://s3.xiabee.cn/pic/weibo-backup/0084b03xgy1h5chay2w7vj310y0pg7ov.jpg)
 
 
 
@@ -207,7 +207,7 @@ cd autojump
 
 在 zsh 的配置文件 `~/.zshrc` 中的 `plugins` 中加入 `autojump`。
 
-![image.png](https://tva1.sinaimg.cn/large/0084b03xgy1h5db7ybvlzj30sg0ao7by.jpg)
+![image.png](https://s3.xiabee.cn/pic/weibo-backup/0084b03xgy1h5db7ybvlzj30sg0ao7by.jpg)
 
 
 
@@ -255,7 +255,7 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 
 * `command + ,` 打开设置 ➡️ 搜索 `terminal font` ➡️ 修改字体为 `MesloLGS NF` 
 
-![image.png](https://tva1.sinaimg.cn/large/0084b03xgy1h5dbigivcdj31kg0m2n2u.jpg)
+![image.png](https://s3.xiabee.cn/pic/weibo-backup/0084b03xgy1h5dbigivcdj31kg0m2n2u.jpg)
 
 
 
@@ -263,17 +263,16 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 
 `iTerm`:
 
-![image.png](https://tva1.sinaimg.cn/large/0084b03xgy1h5dbk152ivj310y0pghaj.jpg)
+![image.png](https://s3.xiabee.cn/pic/weibo-backup/0084b03xgy1h5dbk152ivj310y0pghaj.jpg)
 
 
 
 `VScode`:
 
-![image.png](https://tva1.sinaimg.cn/large/0084b03xgy1h5dbj91yqsj30ps08q406.jpg)
+![image.png](https://s3.xiabee.cn/pic/weibo-backup/0084b03xgy1h5dbj91yqsj30ps08q406.jpg)
 
 
 
 ## Reference
 
 > https://makeoptim.com/tool/terminal
->

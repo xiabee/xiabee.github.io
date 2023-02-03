@@ -85,7 +85,7 @@ volumes:
 
 如果看不到的话记得检查一下云服务器厂商的**防火墙**关没关......
 
-![image.png](https://tva1.sinaimg.cn/large/0084b03xly1gw6lwp9v3ij31hc0n4wm3.jpg)
+![image.png](https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1gw6lwp9v3ij31hc0n4wm3.jpg)
 
 当然，这个是最基础的版本，我们可以继续优化一下。
 
@@ -192,7 +192,7 @@ docker-compose up -d
 
 此时我们的`nginx`代理已经开始运行了：
 
-![image.png](https://tva1.sinaimg.cn/large/0084b03xly1gw6mek56brj30ih0bzama.jpg)
+![image.png](https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1gw6mek56brj30ih0bzama.jpg)
 
 ### 启用SSL（可选）
 
@@ -334,7 +334,7 @@ docker-compose restart
 
 此时已经可以`https`访问了：
 
-![image.png](https://tva1.sinaimg.cn/large/0084b03xly1gw6mobzd7jj31h40nk115.jpg)
+![image.png](https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1gw6mobzd7jj31h40nk115.jpg)
 
 ## 一些BUG
 

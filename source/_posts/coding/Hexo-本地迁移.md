@@ -39,7 +39,7 @@ git pull
 # 下载源码
 ```
 
-![image.png](https://tva1.sinaimg.cn/large/0084b03xgy1h57jodmddaj311k0v04qp.jpg)
+![image.png](https://s3.xiabee.cn/pic/weibo-backup/0084b03xgy1h57jodmddaj311k0v04qp.jpg)
 
 
 
@@ -85,7 +85,7 @@ npm install
 
 ​		读取数据库文件 `db.json` 失败，删除了  `db.json`
 
-![image.png](https://tva1.sinaimg.cn/large/0084b03xgy1h56q8ix62pj30tc0a6n64.jpg)
+![image.png](https://s3.xiabee.cn/pic/weibo-backup/0084b03xgy1h56q8ix62pj30tc0a6n64.jpg)
 
 
 
@@ -93,7 +93,7 @@ npm install
 
 ​		找不到数据库文件 `db.json`，导致操作失败
 
-![image.png](https://tva1.sinaimg.cn/large/0084b03xgy1h56qa7jjfxj317y0ls4oa.jpg)
+![image.png](https://s3.xiabee.cn/pic/weibo-backup/0084b03xgy1h56qa7jjfxj317y0ls4oa.jpg)
 
 
 
@@ -113,5 +113,5 @@ npm update
 
 页面渲染与推送执行成功：
 
-![image.png](https://tva1.sinaimg.cn/large/0084b03xgy1h57kiiw6h4j310y0u64qp.jpg)
+![image.png](https://s3.xiabee.cn/pic/weibo-backup/0084b03xgy1h57kiiw6h4j310y0u64qp.jpg)
 

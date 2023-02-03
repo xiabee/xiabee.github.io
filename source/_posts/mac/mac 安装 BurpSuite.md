@@ -38,7 +38,7 @@ abbrlink: mac-bp
 
 * 具体位置：`/Applications/Burp Suite Professional.app/Contents/Resources/app`
 
-<img src="https://tva1.sinaimg.cn/large/0084b03xgy1h7huy5a9qkj31s60um7lh.jpg" alt="image.png" style="zoom:67%;" />
+<img src="https://s3.xiabee.cn/pic/weibo-backup/0084b03xgy1h7huy5a9qkj31s60um7lh.jpg" alt="image.png" style="zoom:67%;" />
 
 
 
@@ -53,7 +53,7 @@ abbrlink: mac-bp
  -Xmx2048m
 ```
 
-<img src="https://tva1.sinaimg.cn/large/0084b03xgy1h7hv0cy0spj312c0o0tye.jpg" alt="image.png" style="zoom:67%;" />
+<img src="https://s3.xiabee.cn/pic/weibo-backup/0084b03xgy1h7hv0cy0spj312c0o0tye.jpg" alt="image.png" style="zoom:67%;" />
 
 
 
@@ -70,7 +70,7 @@ cd "/Applications/Burp Suite Professional.app/Contents/Resources/app"
 
 注册完成后就可以应该直接正常启动了（如果遇到系统信任的问题，进系统设置里面信任即可）
 
-![image.png](https://tva1.sinaimg.cn/large/0084b03xgy1h7hv6v7wdkj312y0ac439.jpg)
+![image.png](https://s3.xiabee.cn/pic/weibo-backup/0084b03xgy1h7hv6v7wdkj312y0ac439.jpg)
 
 
 

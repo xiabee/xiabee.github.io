@@ -22,7 +22,7 @@ abbrlink: mac-proxy
 * 代理服务器：`127.0.0.1`
 * 代理端口：`7890`
 
-<img src="https://tva1.sinaimg.cn/large/0084b03xgy1h5i8yys9jrj31f40w8471.jpg" alt="image.png" style="zoom:100%;" />
+<img src="https://s3.xiabee.cn/pic/weibo-backup/0084b03xgy1h5i8yys9jrj31f40w8471.jpg" alt="image.png" style="zoom:100%;" />
 
 
 
@@ -30,7 +30,7 @@ abbrlink: mac-proxy
 
 点击图标，可以看到“复制终端代理命令”
 
-![image.png](https://tva1.sinaimg.cn/large/0084b03xgy1h5i94dcjdpj30i60twwo6.jpg)
+![image.png](https://s3.xiabee.cn/pic/weibo-backup/0084b03xgy1h5i94dcjdpj30i60twwo6.jpg)
 
 
 
@@ -67,7 +67,7 @@ function unproxy(){
 
 效果如下：
 
-![image.png](https://tva1.sinaimg.cn/large/0084b03xgy1h5i9azt6r7j30km08ydk6.jpg)
+![image.png](https://s3.xiabee.cn/pic/weibo-backup/0084b03xgy1h5i9azt6r7j30km08ydk6.jpg)
 
 
 
@@ -111,7 +111,7 @@ curl -I https://www.google.com -k
 # 再次访问谷歌，很慢甚至直接超时
 ```
 
-![image.png](https://tva1.sinaimg.cn/large/0084b03xgy1h5i9hs5p62j310m07sjz8.jpg)
+![image.png](https://s3.xiabee.cn/pic/weibo-backup/0084b03xgy1h5i9hs5p62j310m07sjz8.jpg)
 
 
 
@@ -127,4 +127,4 @@ curl -I https://www.google.com -k
 
 推荐使用 [Proxy SwitchOmega](https://chrome.google.com/webstore/detail/proxy-switchyomega/padekgcemlokbadohgkifijomclgjgif)，直接设置相应情景即可：
 
-![image.png](https://tva1.sinaimg.cn/large/0084b03xgy1h5i92owlffj31to0ww7e2.jpg)
+![image.png](https://s3.xiabee.cn/pic/weibo-backup/0084b03xgy1h5i92owlffj31to0ww7e2.jpg)

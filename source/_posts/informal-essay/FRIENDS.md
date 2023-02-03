@@ -22,7 +22,7 @@ date: 2021-10-01 00:00:00
 
 <details>
   <summary>Click here to show QR code</summary>
-  <p><img title="" src="https://tva1.sinaimg.cn/large/0084b03xly1h06992qrtzj308g08fdh7.jpg" alt="image.png" width="195"></p>
+  <p><img title="" src="https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1h06992qrtzj308g08fdh7.jpg" alt="image.png" width="195"></p>
   <pre><code>xiabee碎碎念</code></pre>
 </details>
 
@@ -133,3 +133,6 @@ GitHub：https://github.com/HRex39
 后浪学弟，好像也在搞web
 
 个人主页：http://darkstars.cn/
+
+
+

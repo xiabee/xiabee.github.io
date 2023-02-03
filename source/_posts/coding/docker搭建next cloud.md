@@ -409,7 +409,7 @@ server {
 
 先确保容器正常运行：`docker-compose ps`查看容器状态：都是`Up`说明运行成功
 
-![image.png](https://tva1.sinaimg.cn/large/0084b03xly1gw9tsjkc4kj30t306kgq5.jpg)
+![image.png](https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1gw9tsjkc4kj30t306kgq5.jpg)
 
 
 
@@ -419,13 +419,13 @@ server {
 
 如果出现`proxy`一直在重启的情况，可以查看一下日志`docker-compose logs`：大部分时候应该是没放证书或者证书设置错误......
 
-![image.png](https://tva1.sinaimg.cn/large/0084b03xly1gw9tv2mypbj30jr080tdx.jpg)
+![image.png](https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1gw9tv2mypbj30jr080tdx.jpg)
 
 
 
 比如这个就是典型的忘记设置证书了：重新配置证书即可
 
-![image.png](https://tva1.sinaimg.cn/large/0084b03xly1gw9tvonhrrj30xj05q7cg.jpg)
+![image.png](https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1gw9tvonhrrj30xj05q7cg.jpg)
 
 
 
@@ -598,7 +598,7 @@ docker-compose up -d
 
 此时我就部署了一个`http`服务的`nextcloud`：
 
-![image.png](https://tva1.sinaimg.cn/large/0084b03xly1gw9u7dpc1qj31hc0smazp.jpg)
+![image.png](https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1gw9u7dpc1qj31hc0smazp.jpg)
 
 
 
@@ -606,7 +606,7 @@ docker-compose up -d
 
 注册时出现数据库找不到`localhost`的情况：
 
-![image.png](https://tva1.sinaimg.cn/large/0084b03xly1gw9uamxc8ij31hc0q61h0.jpg)
+![image.png](https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1gw9uamxc8ij31hc0q61h0.jpg)
 
 
 
@@ -618,13 +618,13 @@ docker-compose up -d
 
 因该通过容器的`DNS`服务寻找，比如在我们项目中，就应该输入`db:3306`
 
-<img src="https://tva1.sinaimg.cn/large/0084b03xgy1gww6os69z3j30kg0jtjyx.jpg" alt="image-20211110102356732.png" style="zoom:67%;" />
+<img src="https://s3.xiabee.cn/pic/weibo-backup/0084b03xgy1gww6os69z3j30kg0jtjyx.jpg" alt="image-20211110102356732.png" style="zoom:67%;" />
 
 
 
 #### 您的数据目录可被其他用户读取
 
-![image.png](https://tva1.sinaimg.cn/large/0084b03xly1gw9uetq2zqj30or0a10xj.jpg)
+![image.png](https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1gw9uetq2zqj30or0a10xj.jpg)
 
 问题原因：这里用的是`WSL`做演示。`WSL`用的是`Windows`的`NTFS`文件系统，权限是由`Windows`控制的，故所有目录都是`0770`......
 
@@ -644,7 +644,7 @@ docker-compose up -d
 
 最后安装完毕大概长这样啦：这个是没怎么设置的原始`UI`
 
-![image.png](https://tva1.sinaimg.cn/large/0084b03xly1gw9umtuspij31hc0q67c6.jpg)
+![image.png](https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1gw9umtuspij31hc0q67c6.jpg)
 
 
 

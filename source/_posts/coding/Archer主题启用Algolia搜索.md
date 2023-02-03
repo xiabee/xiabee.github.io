@@ -50,13 +50,13 @@ abbrlink: archer-algolia
 * 直接[官网](https://www.algolia.com/)注册即可
 * 注册之后会创建一个应用，并得到一些`API Keys`，记住这些`API Keys`，一会需要用到
 
-![image.png](https://tva1.sinaimg.cn/large/0084b03xly1gvyvkz1s5bj31hc0p2tjh.jpg)
+![image.png](https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1gvyvkz1s5bj31hc0p2tjh.jpg)
 
 在`Applications`中能看到刚刚申请的应用`id`，`API Keys`里面有需要的`API key`
 
 
 
-![image.png](https://tva1.sinaimg.cn/large/0084b03xly1gvyvovwaskj31hc0p2akj.jpg)
+![image.png](https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1gvyvovwaskj31hc0p2akj.jpg)
 
 
 
@@ -182,19 +182,19 @@ hexo algolia
 # 更新 algoia
 ```
 
-![image.png](https://tva1.sinaimg.cn/large/0084b03xly1gvyx08rau1j30ol0dzdpl.jpg)
+![image.png](https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1gvyx08rau1j30ol0dzdpl.jpg)
 
 
 
 此时在`Algolia`管理界面里面已经能看到文章内容了：
 
-![image.png](https://tva1.sinaimg.cn/large/0084b03xly1gvyxan0iqaj31hc0p24bc.jpg)
+![image.png](https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1gvyxan0iqaj31hc0p24bc.jpg)
 
 
 
 ## 搜索效果
 
-![image.png](https://tva1.sinaimg.cn/large/0084b03xly1gvyx4fhdlsj30pa0kt0ve.jpg)
+![image.png](https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1gvyx4fhdlsj30pa0kt0ve.jpg)
 
 
 

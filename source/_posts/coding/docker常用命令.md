@@ -22,7 +22,7 @@ docker version   #查看docker容器版本
 docker info      #查看docker容器信息
 ```
 
-![img](https://tva1.sinaimg.cn/large/0084b03xly1gvuavnv7g2j30ci0fq46o.jpg)
+![img](https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1gvuavnv7g2j30ci0fq46o.jpg)
 
 ### 2.镜像查看
 
@@ -36,7 +36,7 @@ docker images --digests  ##显示镜像摘要信息(DIGEST列)
 docker images --no-trunc ##显示镜像完整信息
 ```
 
-![img](https://tva1.sinaimg.cn/large/0084b03xly1gvuawgzgv5j30jq05yjyn.jpg)
+![img](https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1gvuawgzgv5j30jq05yjyn.jpg)
 
 
 
@@ -50,7 +50,7 @@ docker search --no-trunc wordpress        #显示镜像完整 DESCRIPTION 描述
 docker search  --automated wordpress      #只显示AUTOMATED=OK 的镜像
 ```
 
-![img](https://tva1.sinaimg.cn/large/0084b03xly1gvuawnxjhxj30zs099tpf.jpg)
+![img](https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1gvuawnxjhxj30zs099tpf.jpg)
 
 
 
@@ -65,7 +65,7 @@ docker pull xxxx/wordpress    #下载私人仓库镜像
 
 如果 pull 过慢可以参考这篇博客：[docker下载过慢：换源](https://xiabee.cn/coding/docker下载过慢：换源/)
 
-![img](https://tva1.sinaimg.cn/large/0084b03xly1gvuawyt4t5j30pw0dagyn.jpg)
+![img](https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1gvuawyt4t5j30pw0dagyn.jpg)
 
 
 
@@ -82,7 +82,7 @@ docker rmi -f $(docker images -q)  #本地镜像全部删除
 
 
 
-![img](https://tva1.sinaimg.cn/large/0084b03xly1gvuaxbbjlrj30oc0b6ng1.jpg)
+![img](https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1gvuaxbbjlrj30oc0b6ng1.jpg)
 
 
 
@@ -131,7 +131,7 @@ docker inspect --format='{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}
 
   注意：直接使用名称可能会找不到容器，建议直接使用容器ID进行容器操作  
 
-![img](https://tva1.sinaimg.cn/large/0084b03xly1gvuaxn6yl1j316o054k1i.jpg)
+![img](https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1gvuaxn6yl1j316o054k1i.jpg)
 
 
 
@@ -149,7 +149,7 @@ docker logs --since="2019-05-21" --tail=10 wordpress
 ##查看容器wordpress从2019年05月21日后的最新10条日志。
 ```
 
-![img](https://tva1.sinaimg.cn/large/0084b03xly1gvuaxwgkq5j30mn062do9.jpg)
+![img](https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1gvuaxwgkq5j30mn062do9.jpg)
 
 `docker logs 2968994e3fb2 --since="2019-05-21" --tail=10`，这里直接使用了容器ID
 

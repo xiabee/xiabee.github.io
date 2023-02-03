@@ -22,7 +22,7 @@ abbrlink: docker-pupy
   * `DockerContainer`容器 
 
 
-![image.png](https://tva1.sinaimg.cn/large/0084b03xly1gw7zqqkvyzj31gx0acdw0.jpg)
+![image.png](https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1gw7zqqkvyzj31gx0acdw0.jpg)
 
 
 
@@ -51,7 +51,7 @@ abbrlink: docker-pupy
 
 一张图展示Docker和VM的区别：
 
-![image.png](https://tva1.sinaimg.cn/large/0084b03xly1gw7yf4hkwsj30ou0ajwhn.jpg)
+![image.png](https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1gw7yf4hkwsj30ou0ajwhn.jpg)
 
 左图为`dokcer`，右图为`VM`
 
@@ -93,7 +93,7 @@ docker -v
 
 得到这种显示则说明安装成功：
 
-![image.png](https://tva1.sinaimg.cn/large/0084b03xly1gw7ylhg1axj30g002qdgz.jpg)
+![image.png](https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1gw7ylhg1axj30g002qdgz.jpg)
 
 
 

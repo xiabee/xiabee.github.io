@@ -181,7 +181,7 @@ docker run -d \
 postal status
 ```
 
-![image.png](https://tva1.sinaimg.cn/large/0084b03xly1h218be8ztcj31jk0ss4qp.jpg)
+![image.png](https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1h218be8ztcj31jk0ss4qp.jpg)
 
 ## 注意事项
 
@@ -219,7 +219,7 @@ web:
 
 浏览器访问`http://postal.yourdomain.com:5000`，即可看到以下界面：
 
-<img src="https://tva1.sinaimg.cn/large/0084b03xly1h218lwhhhqj30e10aht9u.jpg" title="" alt="image.png" data-align="center">
+<img src="https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1h218lwhhhqj30e10aht9u.jpg" title="" alt="image.png" data-align="center">
 
 到目前为止，`postal`已经搭建完毕，具体的设置我们下期再写。
 

@@ -64,7 +64,7 @@ abbrlink: git-coding-hexo
 
 * 和`Github`操作几乎一毛一样，创建一个仓库就行
 
-  ![image.png](https://tva1.sinaimg.cn/large/0084b03xly1gw18swxy1kj30qf0fftc8.jpg)
+  ![image.png](https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1gw18swxy1kj30qf0fftc8.jpg)
 
 
 
@@ -73,7 +73,7 @@ abbrlink: git-coding-hexo
 * [添加个人SSH公钥](https://help.coding.net/docs/project-settings/features/ssh.html)
 * 添加项目SSH公钥：代码仓库->仓库设置->部署公钥（同时给该公钥写入权限）
 
-![image.png](https://tva1.sinaimg.cn/large/0084b03xly1gw18vu6zkpj31g80l248m.jpg)
+![image.png](https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1gw18vu6zkpj31g80l248m.jpg)
 
 注意：一定要添加`项目SSH公钥`，即使这俩一毛一样......否则会无法写入仓库。这个设计很奇怪，~被迫设置两遍~
 
@@ -81,7 +81,7 @@ abbrlink: git-coding-hexo
 
 * 添加之后`ssh -T git@e.coding.net`试一下有没有读写权限：
 
-![image.png](https://tva1.sinaimg.cn/large/0084b03xly1gw1901txagj30py06nn2l.jpg)
+![image.png](https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1gw1901txagj30py06nn2l.jpg)
 
 
 
@@ -92,13 +92,13 @@ abbrlink: git-coding-hexo
 
 * 网站部署
 
-![image.png](https://tva1.sinaimg.cn/large/0084b03xly1gw1xk5mfv7j31hc0n41kx.jpg)
+![image.png](https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1gw1xk5mfv7j31hc0n41kx.jpg)
 
 
 
 稍微设置一下，之后部署成功的截图大概长这样：
 
-![image.png](https://tva1.sinaimg.cn/large/0084b03xly1gw18y6sgrrj30ru0mkjwd.jpg)
+![image.png](https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1gw18y6sgrrj30ru0mkjwd.jpg)
 
 此时点击访问按钮应该能访问网站，但是是`404`，因为你啥也没写。
 
@@ -112,7 +112,7 @@ abbrlink: git-coding-hexo
 
 ### Coding自定义域名
 
-![image.png](https://tva1.sinaimg.cn/large/0084b03xly1gw1xleyvztj31hc0n4k4w.jpg)
+![image.png](https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1gw1xleyvztj31hc0n4k4w.jpg)
 
 这里需要在域名供应商那里添加一条解析，以验证你的域名；同时需要为你的域名绑定证书。
 
@@ -120,7 +120,7 @@ abbrlink: git-coding-hexo
 
 ### Github自定义域名
 
-![image.png](https://tva1.sinaimg.cn/large/0084b03xgy1gw2573d49uj31hc0p24cm.jpg)
+![image.png](https://s3.xiabee.cn/pic/weibo-backup/0084b03xgy1gw2573d49uj31hc0p24cm.jpg)
 
 
 
@@ -137,7 +137,7 @@ skip_render:
 
 
 
-![image.png](https://tva1.sinaimg.cn/large/0084b03xgy1gw25bgh2rmj30hb0ergon.jpg)
+![image.png](https://s3.xiabee.cn/pic/weibo-backup/0084b03xgy1gw25bgh2rmj30hb0ergon.jpg)
 
 `CNAME`存于`source`目录下，记录值为自定义域名`blog.xiabee.cn`
 
@@ -151,7 +151,7 @@ skip_render:
 
 本来是准备用[OHTTPS](https://ohttps.com/guide/createcertificate)搞个免费泛域名的，但是很多浏览器不认他的证书......导致我去腾讯云搞了一个新的证书（划掉）。
 
-![image.png](https://tva1.sinaimg.cn/large/0084b03xly1gw1xwuzu72j311e07ltck.jpg)
+![image.png](https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1gw1xwuzu72j311e07ltck.jpg)
 
 想白嫖的同学可以去[OHTTPS](https://ohttps.com/guide/createcertificate)或者[letsencrypt](https://letsencrypt.org/)上面看看。
 
@@ -176,7 +176,7 @@ deploy:
 
 然后`hexo g -d`，渲染，提交。如果你的`SSH`公钥设置正确的话，应该是没有很大问题的。
 
-![image.png](https://tva1.sinaimg.cn/large/0084b03xly1gw1xxmmpa0j30yf0m5dx3.jpg)
+![image.png](https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1gw1xxmmpa0j30yf0m5dx3.jpg)
 
 
 
@@ -184,7 +184,7 @@ deploy:
 
 最后把自定义域名同时解析到两个记录值即可：
 
-![image.png](https://tva1.sinaimg.cn/large/0084b03xly1gw1xz4983aj30kg031jry.jpg)
+![image.png](https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1gw1xz4983aj30kg031jry.jpg)
 
 
 
@@ -192,13 +192,13 @@ deploy:
 
 国内访问指向`coding page`：
 
-![image.png](https://tva1.sinaimg.cn/large/0084b03xly1gw1y9u3pagj30js05i77q.jpg)
+![image.png](https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1gw1y9u3pagj30js05i77q.jpg)
 
 
 
 国外访问指向`Github Page`：
 
-![image.png](https://tva1.sinaimg.cn/large/0084b03xly1gw1y8qwz28j30ib05bn0b.jpg)
+![image.png](https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1gw1y8qwz28j30ib05bn0b.jpg)
 
 
 

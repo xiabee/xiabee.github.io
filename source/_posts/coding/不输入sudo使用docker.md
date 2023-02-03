@@ -20,7 +20,7 @@ abbrlink: docker-sudo
 
 安装Docker后，docker组已经创建好了，所以上面命令的输出为： `docker:x:120:ubuntu `
 
-![image.png](https://tva1.sinaimg.cn/large/0084b03xly1gw7zwhd5yxj30cb031q3t.jpg)
+![image.png](https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1gw7zwhd5yxj30cb031q3t.jpg)
 
 ## 将当前用户添加到 docker 组
 
@@ -42,6 +42,6 @@ sudo service docker restart
 
  不加sudo直接执行docker命令检查效果：`docker images`
 
-![image.png](https://tva1.sinaimg.cn/large/0084b03xgy1h2178op16jj30lp09faha.jpg)
+![image.png](https://s3.xiabee.cn/pic/weibo-backup/0084b03xgy1h2178op16jj30lp09faha.jpg)
 
 ~~执行成功，妈妈再也不用担心我敲 sudo 啦~~

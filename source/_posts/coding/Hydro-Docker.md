@@ -15,7 +15,7 @@ abbrlink: hydro-docker
 - 目前[官网](https://hydro.js.org/)有常见的安装方式，但是`Docker`的支持不是很好，于是我自己在官网架构基础上，重新编写了一下容器部署。
 * 项目地址：[Hydro-Docker](https://github.com/xiabee/Hydro-Docker)
 
-![image.png](https://tva1.sinaimg.cn/large/0084b03xly1h1r032ci9pj31ep0owto6.jpg)
+![image.png](https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1h1r032ci9pj31ep0owto6.jpg)
 
 ## 使用方式
 
@@ -33,7 +33,7 @@ abbrlink: hydro-docker
   docker-compose ps
   ```
   
-  ![image.png](https://tva1.sinaimg.cn/large/0084b03xly1h1r0da6x26j30tl055djc.jpg)
+  ![image.png](https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1h1r0da6x26j30tl055djc.jpg)
 
 ## 聊聊编写过程
 
@@ -158,7 +158,7 @@ oj-judge    |       data: '{"uname":"root","password":"rootroot","rememberme":"o
 
 * 然后重启容器就可以正常测评了：`docker-compose restart`
 
-<img title="" src="https://tva1.sinaimg.cn/large/0084b03xly1h1s1y34q16j30cu06jwfl.jpg" alt="image.png" data-align="center">
+<img title="" src="https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1h1s1y34q16j30cu06jwfl.jpg" alt="image.png" data-align="center">
 
 
 

@@ -290,7 +290,7 @@ server {
 
 * 容器服务没开......开启容器服务，重新运行
 
-  ![image.png](https://tva1.sinaimg.cn/large/0084b03xly1gwdkucofnzj30u207279r.jpg)
+  ![image.png](https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1gwdkucofnzj30u207279r.jpg)
 
 
 
@@ -306,11 +306,11 @@ server {
 
 * 检查一下是不是配置了`https`但是证书没有复制到目录内......
 
-![image.png](https://tva1.sinaimg.cn/large/0084b03xly1gwdkyxpyfsj31150rehdt.jpg)
+![image.png](https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1gwdkyxpyfsj31150rehdt.jpg)
 
 * 如果不想设置`https`，那就直接把`nginx_https.conf`删掉，重启容器就行
 
-![image.png](https://tva1.sinaimg.cn/large/0084b03xly1gwdl0emfwwj314n0d77fp.jpg)
+![image.png](https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1gwdl0emfwwj314n0d77fp.jpg)
 
 
 
@@ -318,7 +318,7 @@ server {
 
 如果所有容器都正常启动了，直接访问你的`IP/域名`应该就能看到安装界面了（`https`服务如果没有做强制跳转，则需访问你域名的`443`端口才能访问）
 
-![image.png](https://tva1.sinaimg.cn/large/0084b03xly1gwdl0zor35j31890ql79w.jpg)
+![image.png](https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1gwdl0zor35j31890ql79w.jpg)
 
 
 
@@ -330,7 +330,7 @@ server {
 
 * [xiabee.cn](https://xiabee.cn/)用的是[樱花庄](https://github.com/mashirozx/Sakura)主题：个人感觉还算好看，就是不够简洁，所以转战`hexo`了哈哈哈（x）
 
-![image.png](https://tva1.sinaimg.cn/large/0084b03xly1gwpgbyy55pj31hc0smkai.jpg)
+![image.png](https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1gwpgbyy55pj31hc0smkai.jpg)
 
 
 

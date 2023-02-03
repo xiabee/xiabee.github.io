@@ -42,7 +42,7 @@ abbrlink: linux-gmp
 
 进入[官网](https://gmplib.org/)下载最新安装包，这里我们以  `gmp-6.2.0.tar.xz`为例
 
-![img](https://xiabee.cn/wp-content/uploads/2020/09/image-8.png)
+![img](https://s3.xiabee.cn/pic/weibo-backup/image-8.png)
 
 然后解压：
 

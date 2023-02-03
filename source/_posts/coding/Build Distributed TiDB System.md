@@ -73,9 +73,9 @@ ssh 10.2.103.43
 
 Attention: if you have problem with copying keys remotely, try to login to the target and write the keys to `~/.ssh/authorized_keys` manually.
 
-![img](https://tva1.sinaimg.cn/large/0084b03xgy1h4zqkyd2tuj31ae0fs1c9.jpg)
+![img](https://s3.xiabee.cn/pic/weibo-backup/0084b03xgy1h4zqkyd2tuj31ae0fs1c9.jpg)
 
-![image.png](https://tva1.sinaimg.cn/large/0084b03xgy1h4zqmzrthwj30rq04sjtb.jpg)
+![image.png](https://s3.xiabee.cn/pic/weibo-backup/0084b03xgy1h4zqmzrthwj30rq04sjtb.jpg)
 
 ### Others
 
@@ -263,11 +263,11 @@ tiup cluster start xiabee --init
 
 Refering to [deploy document](https://docs.pingcap.com/tidb/stable/production-deployment-using-tiup#step-4-run-the-deployment-command) to see the details.
 
-![image.png](https://tva1.sinaimg.cn/large/0084b03xgy1h4zqo0q7gjj31ae0s27wh.jpg)
+![image.png](https://s3.xiabee.cn/pic/weibo-backup/0084b03xgy1h4zqo0q7gjj31ae0s27wh.jpg)
 
 After initiation, you will see the password of root.
 
-![image.png](https://tva1.sinaimg.cn/large/0084b03xgy1h4zqovkuqkj31ae0rq4qp.jpg)
+![image.png](https://s3.xiabee.cn/pic/weibo-backup/0084b03xgy1h4zqovkuqkj31ae0rq4qp.jpg)
 
 
 
@@ -280,11 +280,11 @@ tiup cluster display xiabee
 # to display certain cluster's details
 ```
 
-![image.png](https://tva1.sinaimg.cn/large/0084b03xgy1h4zqpdjrrwj31ai0ryqv5.jpg)
+![image.png](https://s3.xiabee.cn/pic/weibo-backup/0084b03xgy1h4zqpdjrrwj31ai0ryqv5.jpg)
 
 Then check the [dashboard](http://10.2.103.149:2379/dashboard/#/cluster_info/store_topology) to see the topology:
 
-![image.png](https://tva1.sinaimg.cn/large/0084b03xgy1h4zqr0c2saj325k0zuwm2.jpg)
+![image.png](https://s3.xiabee.cn/pic/weibo-backup/0084b03xgy1h4zqr0c2saj325k0zuwm2.jpg)
 
 
 
