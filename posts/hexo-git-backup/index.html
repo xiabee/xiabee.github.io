@@ -26,18 +26,18 @@
 <meta property="og:site_name" content="xiabee-瞎哔哔">
 <meta property="og:description" content="hexo博客搭建可以看这里。 问题描述博客搭建环境：hexo+gitpage，本地编写·markdown文件，通过hexo g -d渲染后上传至github repo。 相较于wordpress，hexo框架的博客编写基本是在本地完成，在其他机器写博客时需要备份并重新配置环境。但是nodejs环境文件很多，备份起来相当麻烦。 解决方案大致有两种方案：  创建新仓库，备份源文件 创建新分支，备份源文">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://tva1.sinaimg.cn/large/0084b03xly1gvvhwdb12oj30ay0913zq.jpg">
-<meta property="og:image" content="https://tva1.sinaimg.cn/large/0084b03xly1gvvhx5uhi3j30ly0cqdm6.jpg">
-<meta property="og:image" content="https://tva1.sinaimg.cn/large/0084b03xly1gvvi0lcpq3j30qh08m0zg.jpg">
-<meta property="og:image" content="https://tva1.sinaimg.cn/large/0084b03xly1gvvi1iy2zmj30w60koqah.jpg">
-<meta property="og:image" content="https://tva1.sinaimg.cn/large/0084b03xly1gvvi31gsgmj30iq0bhwmp.jpg">
+<meta property="og:image" content="https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1gvvhwdb12oj30ay0913zq.jpg">
+<meta property="og:image" content="https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1gvvhx5uhi3j30ly0cqdm6.jpg">
+<meta property="og:image" content="https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1gvvi0lcpq3j30qh08m0zg.jpg">
+<meta property="og:image" content="https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1gvvi1iy2zmj30w60koqah.jpg">
+<meta property="og:image" content="https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1gvvi31gsgmj30iq0bhwmp.jpg">
 <meta property="article:published_time" content="2021-10-28T15:46:18.000Z">
-<meta property="article:modified_time" content="2022-08-13T15:39:31.407Z">
+<meta property="article:modified_time" content="2023-02-03T04:28:32.861Z">
 <meta property="article:author" content="xiabee">
 <meta property="article:tag" content="hexo">
 <meta property="article:tag" content="git">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://tva1.sinaimg.cn/large/0084b03xly1gvvhwdb12oj30ay0913zq.jpg">
+<meta name="twitter:image" content="https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1gvvhwdb12oj30ay0913zq.jpg">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <link rel="icon" href="https://s3.xiabee.cn/pic/icons/favicon.jpg">
@@ -525,10 +525,10 @@
 <li>创建新分支，备份源文件</li>
 </ul>
 <h2 id="创建备份"><a href="#创建备份" class="headerlink" title="创建备份"></a>创建备份</h2><p>这里我们主要介绍<code>github</code>分支的方式：主分支用于渲染<code>github page</code>，分分支用于备份重要源文件。</p>
-<p><img src="https://tva1.sinaimg.cn/large/0084b03xly1gvvhwdb12oj30ay0913zq.jpg" alt="image.png"></p>
+<p><img src="https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1gvvhwdb12oj30ay0913zq.jpg" alt="image.png"></p>
 <p>创建新仓库的方式同理，就不介绍了（x）</p>
 <h3 id="在hexo根目录下创建git"><a href="#在hexo根目录下创建git" class="headerlink" title="在hexo根目录下创建git"></a>在hexo根目录下创建git</h3><p>最新版的<code>hexo</code>在初始化之后是没有<code>.git</code>目录的，通过<code>_config.yml</code>里面的<code>deploy</code>参数生成<code>.deploy_git</code>目录，并在通过该目录进行<code>push</code>操作。因此，我们直接在<code>hexo</code>根目录下创建<code>.git</code>目录和<code>.gitignore</code>并不会冲突。</p>
-<p><img src="https://tva1.sinaimg.cn/large/0084b03xly1gvvhx5uhi3j30ly0cqdm6.jpg" alt="image.png"></p>
+<p><img src="https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1gvvhx5uhi3j30ly0cqdm6.jpg" alt="image.png"></p>
 <p>创建本地<code>git</code>的方式有很多种，只需要将<code>git</code>的指向我们<code>xxx.github.io</code>的<code>repo</code>就行。</p>
 <p>比如可以直接将<code>xxx.github.io</code>的整个<code>repo</code>克隆下来，然后复制其中的<code>.git</code>目录到<code>hexo</code>的根目录下。</p>
 <h3 id="创建-gitignore"><a href="#创建-gitignore" class="headerlink" title="创建.gitignore"></a>创建.gitignore</h3><p>常见的需要备份的文件大致有：</p>
@@ -552,9 +552,9 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br><span class="line"><span class="comment"># 添加当前目录</span></span><br><span class="line"></span><br><span class="line">git commit -m <span class="string">&quot;backup&quot;</span></span><br><span class="line"><span class="comment"># 添加commit，引号内的内容随意</span></span><br><span class="line"></span><br><span class="line">git push origin hexo_backup</span><br><span class="line"><span class="comment"># 将本地数据推送到 hexo_backup 分支中</span></span><br></pre></td></tr></table></figure>
 
 <p>远程仓库已有两个分支，因此必须指定分支<code>hexo_backup</code>，不能直接<code>git push</code>。</p>
-<p><img src="https://tva1.sinaimg.cn/large/0084b03xly1gvvi0lcpq3j30qh08m0zg.jpg" alt="image.png"></p>
+<p><img src="https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1gvvi0lcpq3j30qh08m0zg.jpg" alt="image.png"></p>
 <p>此时本地分支和远程分支匹配</p>
-<p><img src="https://tva1.sinaimg.cn/large/0084b03xly1gvvi1iy2zmj30w60koqah.jpg" alt="image.png"></p>
+<p><img src="https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1gvvi1iy2zmj30w60koqah.jpg" alt="image.png"></p>
 <p>此时已经备份完毕了。</p>
 <h2 id="迁移与复原"><a href="#迁移与复原" class="headerlink" title="迁移与复原"></a>迁移与复原</h2><h3 id="新环境配置"><a href="#新环境配置" class="headerlink" title="新环境配置"></a>新环境配置</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br><span class="line">hexo init</span><br></pre></td></tr></table></figure>
 
@@ -570,7 +570,7 @@
 <h3 id="渲染与推送"><a href="#渲染与推送" class="headerlink" title="渲染与推送"></a>渲染与推送</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g -d</span><br><span class="line"><span class="comment"># 生成新的页面并推送至主分支</span></span><br></pre></td></tr></table></figure>
 
 <p>主分支利用<code>hexo</code>自身集成的<code>git</code>组件进行推送：</p>
-<p><img src="https://tva1.sinaimg.cn/large/0084b03xly1gvvi31gsgmj30iq0bhwmp.jpg" alt="image.png"></p>
+<p><img src="https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1gvvi31gsgmj30iq0bhwmp.jpg" alt="image.png"></p>
 
     </article>
     <!-- license -->
@@ -578,8 +578,8 @@
         <div class="license-wrapper">
             <p>原文作者：<a href="https://blog.xiabee.cn">xiabee</a>
             <p>原文链接：<a href="https://blog.xiabee.cn/posts/hexo-git-backup/">https://blog.xiabee.cn/posts/hexo-git-backup/</a>
-            <p>发表日期：<a href="https://blog.xiabee.cn/posts/hexo-git-backup/">October 28th 2021, 11:46:18 pm</a>
-            <p>更新日期：<a href="https://blog.xiabee.cn/posts/hexo-git-backup/">August 13th 2022, 11:39:31 pm</a>
+            <p>发表日期：<a href="https://blog.xiabee.cn/posts/hexo-git-backup/">十月 28日 2021, 11:46:18 晚上</a>
+            <p>更新日期：<a href="https://blog.xiabee.cn/posts/hexo-git-backup/">February 3rd 2023, 12:28:32 pm</a>
             <p>版权声明：本文采用<a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     

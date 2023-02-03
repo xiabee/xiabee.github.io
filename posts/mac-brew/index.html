@@ -26,15 +26,15 @@
 <meta property="og:site_name" content="xiabee-瞎哔哔">
 <meta property="og:description" content="Homebrew 简介 官网：https:&#x2F;&#x2F;brew.sh&#x2F;  可以理解为 MacOS 的包管理器，利用 brew 等命令实现一键安装各类软件与依赖。  新款 MacOS 应该已经预装了，如果没有的话可以参考安装部分。   安装需要在终端中安装，如果没有配置终端可以参考上篇。 终端配置完毕后，直接在终端内执行以下命令： 1&#x2F;bin&#x2F;bash -c &quot;$(curl -fsSL https">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://tva1.sinaimg.cn/large/0084b03xgy1h5gs6w0r1xj307i04gaav.jpg">
-<meta property="og:image" content="https://tva1.sinaimg.cn/large/0084b03xgy1h5gsvqocrtj30nm0pgqei.jpg">
+<meta property="og:image" content="https://s3.xiabee.cn/pic/weibo-backup/0084b03xgy1h5gs6w0r1xj307i04gaav.jpg">
+<meta property="og:image" content="https://s3.xiabee.cn/pic/weibo-backup/0084b03xgy1h5gsvqocrtj30nm0pgqei.jpg">
 <meta property="article:published_time" content="2022-08-23T04:00:23.000Z">
-<meta property="article:modified_time" content="2022-08-23T09:19:24.735Z">
+<meta property="article:modified_time" content="2023-02-03T04:28:32.861Z">
 <meta property="article:author" content="xiabee">
 <meta property="article:tag" content="mac">
 <meta property="article:tag" content="brew">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://tva1.sinaimg.cn/large/0084b03xgy1h5gs6w0r1xj307i04gaav.jpg">
+<meta name="twitter:image" content="https://s3.xiabee.cn/pic/weibo-backup/0084b03xgy1h5gs6w0r1xj307i04gaav.jpg">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <link rel="icon" href="https://s3.xiabee.cn/pic/icons/favicon.jpg">
@@ -538,7 +538,7 @@
 
 
 <p>也可以选择一种一劳永逸的忽略校验的方法：创建一个配置文件 <code>~/.curlrc</code>， 内容为 <code>--insecure</code></p>
-<p><img src="https://tva1.sinaimg.cn/large/0084b03xgy1h5gs6w0r1xj307i04gaav.jpg" alt="image.png"></p>
+<p><img src="https://s3.xiabee.cn/pic/weibo-backup/0084b03xgy1h5gs6w0r1xj307i04gaav.jpg" alt="image.png"></p>
 <h3 id="网络问题"><a href="#网络问题" class="headerlink" title="网络问题"></a>网络问题</h3><p>由于一些众所周知的原因，<code>GitHub</code> 在没有代理的时候会很难上。</p>
 <h4 id="换源安装"><a href="#换源安装" class="headerlink" title="换源安装"></a>换源安装</h4><p>这里我们直接把他改成清华源，利用国内镜像下载安装。</p>
 <p>官方文档：<a target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/help/homebrew/">https://mirrors.tuna.tsinghua.edu.cn/help/homebrew/</a></p>
@@ -559,7 +559,7 @@
 <h4 id="复原仓库上游"><a href="#复原仓库上游" class="headerlink" title="复原仓库上游"></a>复原仓库上游</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># brew 程序本身，Homebrew / Linuxbrew 相同</span></span><br><span class="line"><span class="built_in">unset</span> HOMEBREW_BREW_GIT_REMOTE</span><br><span class="line">git -C <span class="string">&quot;<span class="subst">$(brew --repo)</span>&quot;</span> remote set-url origin https://github.com/Homebrew/brew</span><br><span class="line"></span><br><span class="line"><span class="comment"># 以下针对 macOS 系统上的 Homebrew</span></span><br><span class="line"><span class="built_in">unset</span> HOMEBREW_CORE_GIT_REMOTE</span><br><span class="line">BREW_TAPS=<span class="string">&quot;<span class="subst">$(BREW_TAPS=<span class="string">&quot;<span class="subst">$(brew tap 2&gt;/dev/null)</span>&quot;</span>; echo -n <span class="string">&quot;<span class="variable">$&#123;BREW_TAPS//$&#x27;\n&#x27;/:&#125;</span>&quot;</span>)</span>&quot;</span></span><br><span class="line"><span class="keyword">for</span> tap <span class="keyword">in</span> core cask&#123;,-fonts,-drivers,-versions&#125; command-not-found; <span class="keyword">do</span></span><br><span class="line">    <span class="keyword">if</span> [[ <span class="string">&quot;:<span class="variable">$&#123;BREW_TAPS&#125;</span>:&quot;</span> == *<span class="string">&quot;:homebrew/<span class="variable">$&#123;tap&#125;</span>:&quot;</span>* ]]; <span class="keyword">then</span>  <span class="comment"># 只复原已安装的 Tap</span></span><br><span class="line">        brew tap --custom-remote <span class="string">&quot;homebrew/<span class="variable">$&#123;tap&#125;</span>&quot;</span> <span class="string">&quot;https://github.com/Homebrew/homebrew-<span class="variable">$&#123;tap&#125;</span>&quot;</span></span><br><span class="line">    <span class="keyword">fi</span></span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"></span><br><span class="line">brew update</span><br></pre></td></tr></table></figure>
 
 <p><strong>注：重置回默认远程后，用户应该删除 shell 的 profile 设置中的环境变量 <code>HOMEBREW_BREW_GIT_REMOTE</code> 和 <code>HOMEBREW_CORE_GIT_REMOTE</code> 以免运行 <code>brew update</code> 时远程再次被更换。</strong></p>
-<h2 id="最终效果"><a href="#最终效果" class="headerlink" title="最终效果"></a>最终效果</h2><p><img src="https://tva1.sinaimg.cn/large/0084b03xgy1h5gsvqocrtj30nm0pgqei.jpg" alt="image.png"></p>
+<h2 id="最终效果"><a href="#最终效果" class="headerlink" title="最终效果"></a>最终效果</h2><p><img src="https://s3.xiabee.cn/pic/weibo-backup/0084b03xgy1h5gsvqocrtj30nm0pgqei.jpg" alt="image.png"></p>
 <h2 id="brew-常见用法"><a href="#brew-常见用法" class="headerlink" title="brew 常见用法"></a>brew 常见用法</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">brew update</span><br><span class="line"><span class="comment"># 更新源</span></span><br><span class="line">brew upgrade</span><br><span class="line"><span class="comment"># 下载更新</span></span><br><span class="line">brew search xxxx</span><br><span class="line"><span class="comment"># 搜索 xxxx</span></span><br><span class="line">brew install xxxx</span><br><span class="line"><span class="comment"># 安装 xxxx</span></span><br><span class="line">brew remove xxxx</span><br><span class="line"><span class="comment"># 卸载 xxxx</span></span><br></pre></td></tr></table></figure>
 
 <ul>
@@ -577,7 +577,7 @@
             <p>原文作者：<a href="https://blog.xiabee.cn">xiabee</a>
             <p>原文链接：<a href="https://blog.xiabee.cn/posts/mac-brew/">https://blog.xiabee.cn/posts/mac-brew/</a>
             <p>发表日期：<a href="https://blog.xiabee.cn/posts/mac-brew/">August 23rd 2022, 12:00:23 pm</a>
-            <p>更新日期：<a href="https://blog.xiabee.cn/posts/mac-brew/">August 23rd 2022, 5:19:24 pm</a>
+            <p>更新日期：<a href="https://blog.xiabee.cn/posts/mac-brew/">February 3rd 2023, 12:28:32 pm</a>
             <p>版权声明：本文采用<a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     

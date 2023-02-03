@@ -26,20 +26,20 @@
 <meta property="og:site_name" content="xiabee-瞎哔哔">
 <meta property="og:description" content="在Github上提交代码，每次 push 都需要输入一次密码，特别麻烦，所以现在就记录一下用SSH登陆GitHub的过程 先来康康这两个登陆方式有啥区别： 1234https:&#x2F;&#x2F;github.com&#x2F;xiabee&#x2F;fucking-views.git# use httpsgit@github.com:xiabee&#x2F;fucking-views.git# use ssh  第一种直接使用https，可">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://tva1.sinaimg.cn/large/0084b03xly1gvsyrgz0a2j30a704bdh9.jpg">
-<meta property="og:image" content="https://tva1.sinaimg.cn/large/0084b03xly1gvsyrxg1n7j30hi06twj1.jpg">
-<meta property="og:image" content="https://tva1.sinaimg.cn/large/0084b03xly1gvsyshwq6hj30b8054q6f.jpg">
-<meta property="og:image" content="https://tva1.sinaimg.cn/large/0084b03xly1gvsyt0t91kj30790h1ta5.jpg">
-<meta property="og:image" content="https://tva1.sinaimg.cn/large/0084b03xly1gvsyte6ds2j30fu0ge424.jpg">
-<meta property="og:image" content="https://tva1.sinaimg.cn/large/0084b03xly1gvsytx02pqj30qj0flq51.jpg">
-<meta property="og:image" content="https://tva1.sinaimg.cn/large/0084b03xly1gvsyumdnt6j30k4031abm.jpg">
+<meta property="og:image" content="https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1gvsyrgz0a2j30a704bdh9.jpg">
+<meta property="og:image" content="https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1gvsyrxg1n7j30hi06twj1.jpg">
+<meta property="og:image" content="https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1gvsyshwq6hj30b8054q6f.jpg">
+<meta property="og:image" content="https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1gvsyt0t91kj30790h1ta5.jpg">
+<meta property="og:image" content="https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1gvsyte6ds2j30fu0ge424.jpg">
+<meta property="og:image" content="https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1gvsytx02pqj30qj0flq51.jpg">
+<meta property="og:image" content="https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1gvsyumdnt6j30k4031abm.jpg">
 <meta property="article:published_time" content="2020-08-27T11:56:35.000Z">
-<meta property="article:modified_time" content="2022-08-13T15:39:31.406Z">
+<meta property="article:modified_time" content="2023-02-03T04:28:32.861Z">
 <meta property="article:author" content="xiabee">
 <meta property="article:tag" content="git">
 <meta property="article:tag" content="ssh">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://tva1.sinaimg.cn/large/0084b03xly1gvsyrgz0a2j30a704bdh9.jpg">
+<meta name="twitter:image" content="https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1gvsyrgz0a2j30a704bdh9.jpg">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <link rel="icon" href="https://s3.xiabee.cn/pic/icons/favicon.jpg">
@@ -538,29 +538,29 @@
 <h2 id="0x01-生成SSH密钥对"><a href="#0x01-生成SSH密钥对" class="headerlink" title="0x01 生成SSH密钥对"></a>0x01 生成SSH密钥对</h2><p>先检查一下本地是否存在密钥对</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/.ssh</span><br><span class="line"><span class="built_in">ls</span></span><br></pre></td></tr></table></figure>
 
-<p><img src="https://tva1.sinaimg.cn/large/0084b03xly1gvsyrgz0a2j30a704bdh9.jpg" alt="img"></p>
+<p><img src="https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1gvsyrgz0a2j30a704bdh9.jpg" alt="img"></p>
 <p><code>id_rsa</code> 和 <code>id_rsa.pub</code> 分别是ssh的私钥和公钥 </p>
 <p>如果没有的话就现场生成一个：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">&quot;xiabee@foxmail.com&quot;</span></span><br><span class="line"><span class="comment"># 邮箱填自己的</span></span><br></pre></td></tr></table></figure>
 
 
 
-<p><img src="https://tva1.sinaimg.cn/large/0084b03xly1gvsyrxg1n7j30hi06twj1.jpg" alt="注释记得去掉..."></p>
+<p><img src="https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1gvsyrxg1n7j30hi06twj1.jpg" alt="注释记得去掉..."></p>
 <h2 id="0x03-配置密钥对"><a href="#0x03-配置密钥对" class="headerlink" title="0x03 配置密钥对"></a>0x03 配置密钥对</h2><p>查看公钥：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cat</span> id_rsa.pub</span><br><span class="line"><span class="comment"># 查看私钥信息</span></span><br></pre></td></tr></table></figure>
 
-<p><img src="https://tva1.sinaimg.cn/large/0084b03xly1gvsyshwq6hj30b8054q6f.jpg" alt="公钥信息"></p>
+<p><img src="https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1gvsyshwq6hj30b8054q6f.jpg" alt="公钥信息"></p>
 <p>配置GitHub公钥信息：</p>
-<h3 id="settings："><a href="#settings：" class="headerlink" title="settings："></a>settings：</h3><img src="https://tva1.sinaimg.cn/large/0084b03xly1gvsyt0t91kj30790h1ta5.jpg" alt="img"  />
+<h3 id="settings："><a href="#settings：" class="headerlink" title="settings："></a>settings：</h3><img src="https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1gvsyt0t91kj30790h1ta5.jpg" alt="img"  />
 
-<h3 id="SSH-and-GPG-keys"><a href="#SSH-and-GPG-keys" class="headerlink" title="SSH and GPG keys"></a>SSH and GPG keys</h3><img src="https://tva1.sinaimg.cn/large/0084b03xly1gvsyte6ds2j30fu0ge424.jpg" alt="img"  />
+<h3 id="SSH-and-GPG-keys"><a href="#SSH-and-GPG-keys" class="headerlink" title="SSH and GPG keys"></a>SSH and GPG keys</h3><img src="https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1gvsyte6ds2j30fu0ge424.jpg" alt="img"  />
 
 <h3 id="new-SSH-key"><a href="#new-SSH-key" class="headerlink" title="new SSH key"></a>new SSH key</h3><p>把公钥拷贝进去即可</p>
-<img src="https://tva1.sinaimg.cn/large/0084b03xly1gvsytx02pqj30qj0flq51.jpg" alt="img" style="zoom: 50%;" />
+<img src="https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1gvsytx02pqj30qj0flq51.jpg" alt="img" style="zoom: 50%;" />
 
 <h2 id="0x04-验证"><a href="#0x04-验证" class="headerlink" title="0x04 验证"></a>0x04 验证</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ ssh -T git@github.com</span><br><span class="line">Enter passphrase for key &#x27;/c/Users/14793/.ssh/id_rsa&#x27;:</span><br><span class="line">Hi xiabee! You&#x27;ve successfully authenticated, but GitHub does not provide shell access.</span><br></pre></td></tr></table></figure>
 
-<p><img src="https://tva1.sinaimg.cn/large/0084b03xly1gvsyumdnt6j30k4031abm.jpg" alt="img"></p>
+<p><img src="https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1gvsyumdnt6j30k4031abm.jpg" alt="img"></p>
 <p>出现这个就可以使用<code>ssh</code>了</p>
 <h2 id="0x05-如果已经-git-clone-了-https-怎么办"><a href="#0x05-如果已经-git-clone-了-https-怎么办" class="headerlink" title="0x05 如果已经 git clone 了 https 怎么办"></a>0x05 如果已经 git clone 了 https 怎么办</h2><p>进入 <code>/.git</code> 文件夹，找到 <code>config</code> 文件，修改 <code>url</code> 的值即可</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[remote <span class="string">&quot;origin&quot;</span>]</span><br><span class="line">	url = git@github.com:xiabee/fucking-views.git</span><br><span class="line">	fetch = +refs/heads/*:refs/remotes/origin/*</span><br></pre></td></tr></table></figure>
@@ -572,8 +572,8 @@
         <div class="license-wrapper">
             <p>原文作者：<a href="https://blog.xiabee.cn">xiabee</a>
             <p>原文链接：<a href="https://blog.xiabee.cn/posts/github-ssh/">https://blog.xiabee.cn/posts/github-ssh/</a>
-            <p>发表日期：<a href="https://blog.xiabee.cn/posts/github-ssh/">August 27th 2020, 7:56:35 pm</a>
-            <p>更新日期：<a href="https://blog.xiabee.cn/posts/github-ssh/">August 13th 2022, 11:39:31 pm</a>
+            <p>发表日期：<a href="https://blog.xiabee.cn/posts/github-ssh/">八月 27日 2020, 7:56:35 晚上</a>
+            <p>更新日期：<a href="https://blog.xiabee.cn/posts/github-ssh/">February 3rd 2023, 12:28:32 pm</a>
             <p>版权声明：本文采用<a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     

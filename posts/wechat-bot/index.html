@@ -26,18 +26,18 @@
 <meta property="og:site_name" content="xiabee-瞎哔哔">
 <meta property="og:description" content="背景最近在研究云服务，Serverless 这些，有些程序已经实现完全自动化运行了，但是返回的结果要反复查看云服务日志或者个人邮箱，非常麻烦。于是决定写一个能自动给手机发送消息的东西——毕竟能时刻在线的，害得是手机（x） 不同的软件有不同的接口，找到对应的接口文档即可。因为我用微信用的最多，这里就先介绍一下如何使用微信进行消息的自动接收。 PS：为什么是接收不是收发呢……因为腾讯在某天之后限制了自">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://tva1.sinaimg.cn/large/0084b03xgy1h7pog2moj4j30z40y2k27.jpg">
-<meta property="og:image" content="https://tva1.sinaimg.cn/large/0084b03xgy1h7poiqnpq6j30xm0aen17.jpg">
-<meta property="og:image" content="https://tva1.sinaimg.cn/large/0084b03xgy1h7pojli7v4j312411oqes.jpg">
-<meta property="og:image" content="https://tva1.sinaimg.cn/large/0084b03xgy1h7polkyq5aj30a204k0sw.jpg">
-<meta property="og:image" content="https://tva1.sinaimg.cn/large/0084b03xgy1h7pop3ogfoj30vi0u67ba.jpg">
-<meta property="og:image" content="https://tva1.sinaimg.cn/large/0084b03xgy1h7porg6irvj30u009jaal.jpg">
+<meta property="og:image" content="https://s3.xiabee.cn/pic/weibo-backup/0084b03xgy1h7pog2moj4j30z40y2k27.jpg">
+<meta property="og:image" content="https://s3.xiabee.cn/pic/weibo-backup/0084b03xgy1h7poiqnpq6j30xm0aen17.jpg">
+<meta property="og:image" content="https://s3.xiabee.cn/pic/weibo-backup/0084b03xgy1h7pojli7v4j312411oqes.jpg">
+<meta property="og:image" content="https://s3.xiabee.cn/pic/weibo-backup/0084b03xgy1h7polkyq5aj30a204k0sw.jpg">
+<meta property="og:image" content="https://s3.xiabee.cn/pic/weibo-backup/0084b03xgy1h7pop3ogfoj30vi0u67ba.jpg">
+<meta property="og:image" content="https://s3.xiabee.cn/pic/weibo-backup/0084b03xgy1h7porg6irvj30u009jaal.jpg">
 <meta property="article:published_time" content="2022-10-21T04:00:23.000Z">
-<meta property="article:modified_time" content="2022-11-01T08:10:04.757Z">
+<meta property="article:modified_time" content="2023-02-03T04:28:32.861Z">
 <meta property="article:author" content="xiabee">
 <meta property="article:tag" content="serverless">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://tva1.sinaimg.cn/large/0084b03xgy1h7pog2moj4j30z40y2k27.jpg">
+<meta name="twitter:image" content="https://s3.xiabee.cn/pic/weibo-backup/0084b03xgy1h7pog2moj4j30z40y2k27.jpg">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <link rel="icon" href="https://s3.xiabee.cn/pic/icons/favicon.jpg">
@@ -525,19 +525,19 @@
 <h1 id="创建群机器人"><a href="#创建群机器人" class="headerlink" title="创建群机器人"></a>创建群机器人</h1><ul>
 <li>企业创建完成后，会自动创建一个全员群，这个时候只有你自己在里面。这也是你加其他人进来之前唯一的可以加机器人的地方（千万不要像我一样傻愣愣的把群删掉，然后加不了机器人……）</li>
 </ul>
-<img src="https://tva1.sinaimg.cn/large/0084b03xgy1h7pog2moj4j30z40y2k27.jpg" alt="image.png" style="zoom:67%;" />
+<img src="https://s3.xiabee.cn/pic/weibo-backup/0084b03xgy1h7pog2moj4j30z40y2k27.jpg" alt="image.png" style="zoom:67%;" />
 
 <ul>
 <li>创建机器人后，会得到一个<code>webhook</code> 地址，我们可以参考官方提供的文档，利用 <code>webhook</code>，让机器人自动在群里推送消息</li>
 </ul>
-<img src="https://tva1.sinaimg.cn/large/0084b03xgy1h7poiqnpq6j30xm0aen17.jpg" alt="image.png" style="zoom:67%;" />
+<img src="https://s3.xiabee.cn/pic/weibo-backup/0084b03xgy1h7poiqnpq6j30xm0aen17.jpg" alt="image.png" style="zoom:67%;" />
 
 
 
 <ul>
 <li>官方文档如下：</li>
 </ul>
-<img src="https://tva1.sinaimg.cn/large/0084b03xgy1h7pojli7v4j312411oqes.jpg" alt="image.png" style="zoom:67%;" />
+<img src="https://s3.xiabee.cn/pic/weibo-backup/0084b03xgy1h7pojli7v4j312411oqes.jpg" alt="image.png" style="zoom:67%;" />
 
 
 
@@ -546,13 +546,13 @@
 <h1 id="验证群机器人"><a href="#验证群机器人" class="headerlink" title="验证群机器人"></a>验证群机器人</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">curl <span class="string">&#x27;https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=693axxx6-7aoc-4bc4-97a0-0ec2sifa5aaa&#x27;</span> \</span><br><span class="line">   -H <span class="string">&#x27;Content-Type: application/json&#x27;</span> \</span><br><span class="line">   -d <span class="string">&#x27;</span></span><br><span class="line"><span class="string">   &#123;</span></span><br><span class="line"><span class="string">        &quot;msgtype&quot;: &quot;text&quot;,</span></span><br><span class="line"><span class="string">        &quot;text&quot;: &#123;</span></span><br><span class="line"><span class="string">            &quot;content&quot;: &quot;hello world&quot;</span></span><br><span class="line"><span class="string">        &#125;</span></span><br><span class="line"><span class="string">   &#125;&#x27;</span></span><br><span class="line"><span class="comment"># 将上面的 key 换成自己的 webhook 里面的 key</span></span><br></pre></td></tr></table></figure>
 
 <p>企业微信的结果如下：执行成功</p>
-<p><img src="https://tva1.sinaimg.cn/large/0084b03xgy1h7polkyq5aj30a204k0sw.jpg" alt="image.png"></p>
+<p><img src="https://s3.xiabee.cn/pic/weibo-backup/0084b03xgy1h7polkyq5aj30a204k0sw.jpg" alt="image.png"></p>
 <p>如果要自定义消息内容，只需要在程序里写好，然后用上面的 <code>json</code> 格式发送 <code>POST</code> 包就行～</p>
 <h1 id="绑定个人微信"><a href="#绑定个人微信" class="headerlink" title="绑定个人微信"></a>绑定个人微信</h1><p>如果不常用企业微信，可以把企业微信的消息同步到个人微信中，具体操作如下：</p>
 <p>在<strong>网页端</strong>进入企业微信管理后台 ➡️ 我的企业 ➡️ 微信插件 ➡️ 邀请关注</p>
-<p><img src="https://tva1.sinaimg.cn/large/0084b03xgy1h7pop3ogfoj30vi0u67ba.jpg" alt="image.png"></p>
+<p><img src="https://s3.xiabee.cn/pic/weibo-backup/0084b03xgy1h7pop3ogfoj30vi0u67ba.jpg" alt="image.png"></p>
 <p>绑定后，个人微信就可以收到企业微信的消息啦——企业微信，卸载！（划掉）</p>
-<p><img src="https://tva1.sinaimg.cn/large/0084b03xgy1h7porg6irvj30u009jaal.jpg" alt="image.png"></p>
+<p><img src="https://s3.xiabee.cn/pic/weibo-backup/0084b03xgy1h7porg6irvj30u009jaal.jpg" alt="image.png"></p>
 <h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><p>如果想尝试自建应用来推送消息的可以参考官方文档：（比较折腾，尤其是 <code>IP</code> 白名单的问题，我放弃这个了）</p>
 <blockquote>
 <p><a target="_blank" rel="noopener" href="https://developer.work.weixin.qq.com/document/path/90372">https://developer.work.weixin.qq.com/document/path/90372</a></p>
@@ -566,7 +566,7 @@
             <p>原文作者：<a href="https://blog.xiabee.cn">xiabee</a>
             <p>原文链接：<a href="https://blog.xiabee.cn/posts/wechat-bot/">https://blog.xiabee.cn/posts/wechat-bot/</a>
             <p>发表日期：<a href="https://blog.xiabee.cn/posts/wechat-bot/">October 21st 2022, 12:00:23 pm</a>
-            <p>更新日期：<a href="https://blog.xiabee.cn/posts/wechat-bot/">November 1st 2022, 4:10:04 pm</a>
+            <p>更新日期：<a href="https://blog.xiabee.cn/posts/wechat-bot/">February 3rd 2023, 12:28:32 pm</a>
             <p>版权声明：本文采用<a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     

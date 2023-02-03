@@ -26,20 +26,20 @@
 <meta property="og:site_name" content="xiabee-瞎哔哔">
 <meta property="og:description" content="前言之前一段时间都是用wordpress做个人博客，后来发现Git Page + hexo可以免费做静态页面……尝试了一下，后面就真香了（x） 关于wordpress和hexo孰优孰劣的问题这里不做详细讨论，只是介绍一下如何用Git Page+hexo搭建一个个人博客。二者具体的比较可以参考知乎的激(you)烈(hao)讨论。 简介What’s GitHub Page 官方文档  简而言之就是 白">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://tva1.sinaimg.cn/large/0084b03xly1gvwe3g2y4pj30px0c8ade.jpg">
-<meta property="og:image" content="https://tva1.sinaimg.cn/large/0084b03xly1gvwe8mpskbj31720n0wot.jpg">
-<meta property="og:image" content="https://tva1.sinaimg.cn/large/0084b03xly1gvwdzcr2n8j31hc0n4aw0.jpg">
-<meta property="og:image" content="https://tva1.sinaimg.cn/large/0084b03xgy1gvwerqrvzfj30is07hmzf.jpg">
-<meta property="og:image" content="https://tva1.sinaimg.cn/large/0084b03xly1gvweyd9xbzj31hl0sv1kx.jpg">
-<meta property="og:image" content="https://tva1.sinaimg.cn/large/0084b03xly1gvwf1noz1nj30mb08tafh.jpg">
-<meta property="og:image" content="https://tva1.sinaimg.cn/large/0084b03xly1gvysn7j1qaj30ra0ivabw.jpg">
+<meta property="og:image" content="https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1gvwe3g2y4pj30px0c8ade.jpg">
+<meta property="og:image" content="https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1gvwe8mpskbj31720n0wot.jpg">
+<meta property="og:image" content="https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1gvwdzcr2n8j31hc0n4aw0.jpg">
+<meta property="og:image" content="https://s3.xiabee.cn/pic/weibo-backup/0084b03xgy1gvwerqrvzfj30is07hmzf.jpg">
+<meta property="og:image" content="https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1gvweyd9xbzj31hl0sv1kx.jpg">
+<meta property="og:image" content="https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1gvwf1noz1nj30mb08tafh.jpg">
+<meta property="og:image" content="https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1gvysn7j1qaj30ra0ivabw.jpg">
 <meta property="article:published_time" content="2021-10-27T15:46:18.000Z">
-<meta property="article:modified_time" content="2022-08-13T15:39:31.407Z">
+<meta property="article:modified_time" content="2023-02-03T04:28:32.861Z">
 <meta property="article:author" content="xiabee">
 <meta property="article:tag" content="hexo">
 <meta property="article:tag" content="git">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://tva1.sinaimg.cn/large/0084b03xly1gvwe3g2y4pj30px0c8ade.jpg">
+<meta name="twitter:image" content="https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1gvwe3g2y4pj30px0c8ade.jpg">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <link rel="icon" href="https://s3.xiabee.cn/pic/icons/favicon.jpg">
@@ -537,10 +537,10 @@
 </ul>
 <h2 id="创建Github-Pages"><a href="#创建Github-Pages" class="headerlink" title="创建Github Pages"></a>创建Github Pages</h2><p>创建一个公网能访问的<code>page</code>，让大家能看到你的博客，这里利用<code>Github page</code></p>
 <h3 id="创建repo"><a href="#创建repo" class="headerlink" title="创建repo"></a>创建repo</h3><p>创建一个名为<code>xxx.github.io</code>的仓库，且允许公网访问：</p>
-<p><img src="https://tva1.sinaimg.cn/large/0084b03xly1gvwe3g2y4pj30px0c8ade.jpg" alt="image.png"></p>
+<p><img src="https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1gvwe3g2y4pj30px0c8ade.jpg" alt="image.png"></p>
 <h3 id="创建Pages"><a href="#创建Pages" class="headerlink" title="创建Pages"></a>创建Pages</h3><p>在里面随便新建一个文件，确保<code>main</code>分支有东西。</p>
 <p>然后在<code>Settings -&gt; Pages</code>里面设置分支和网站根目录：这里直接设置为<code>main</code>和<code>/(root)</code>。如果网页上传在其他分支上可以在这里修改。</p>
-<p><img src="https://tva1.sinaimg.cn/large/0084b03xly1gvwe8mpskbj31720n0wot.jpg" alt="image.png"></p>
+<p><img src="https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1gvwe8mpskbj31720n0wot.jpg" alt="image.png"></p>
 <p>此时访问<code>https://test.github.io</code>应该就能看到刚刚的网页了。<del>（因为我已经开了一个<code>xiabee.github.io</code>，而免费版只能开一个网页，所以<code>test.github.io</code>就暂时无法展示）</del></p>
 <h2 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h2><h3 id="Node-js"><a href="#Node-js" class="headerlink" title="Node.js"></a>Node.js</h3><ul>
 <li><p><code>Linux</code>用户：直接包管理器安装即可</p>
@@ -583,7 +583,7 @@
 
 
 <p>访问<a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000</a>，出现<code>hexo</code>页面说明渲染成功</p>
-<p><img src="https://tva1.sinaimg.cn/large/0084b03xly1gvwdzcr2n8j31hc0n4aw0.jpg" alt="image.png"></p>
+<p><img src="https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1gvwdzcr2n8j31hc0n4aw0.jpg" alt="image.png"></p>
 <p>这里我修改过主页，所以可能看起来和初始模板不太一样。</p>
 <p><strong>Tips：</strong>如果<code>server</code>一直起不来，可能是端口被占用了。<code>Ctrl C</code> 关闭服务器，运行 <code>hexo server -p 5000</code> 更改端口号后重试。</p>
 <h3 id="hexo常见目录结构"><a href="#hexo常见目录结构" class="headerlink" title="hexo常见目录结构"></a>hexo常见目录结构</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">├── _config.yml 	<span class="comment"># 网站配置信息</span></span><br><span class="line">├── node_modules	<span class="comment"># nodejs组件</span></span><br><span class="line">├── package.json</span><br><span class="line">├── package-lock.json</span><br><span class="line">├── public			<span class="comment"># 生成的网站文件</span></span><br><span class="line">├── README.md		</span><br><span class="line">├── scaffolds		<span class="comment"># 模板文件夹</span></span><br><span class="line">├── <span class="built_in">source</span>			<span class="comment"># 写博客的markdown源文件</span></span><br><span class="line">└── themes			<span class="comment"># 主题文件夹</span></span><br></pre></td></tr></table></figure>
@@ -602,21 +602,21 @@
 
 <p>这里是做了<code>Gitee+GitHub</code>双备份，如果不传<code>gitee</code>的话可以只写<code>github</code>的仓库地址。</p>
 <p>此时指定<code>hexo</code>上传的网页文件为<code>main</code>分支，如果刚刚<code>Github Page</code>的分支不是<code>main</code>的可以修改一下……改哪个都可以，一致即可。</p>
-<p><img src="https://tva1.sinaimg.cn/large/0084b03xgy1gvwerqrvzfj30is07hmzf.jpg" alt="image.png"></p>
+<p><img src="https://s3.xiabee.cn/pic/weibo-backup/0084b03xgy1gvwerqrvzfj30is07hmzf.jpg" alt="image.png"></p>
 <p>这里<code>GitHub Pages</code>用的就是<code>main</code>分支，不需要修改</p>
 <h3 id="推送"><a href="#推送" class="headerlink" title="推送"></a>推送</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">hexo g </span><br><span class="line"><span class="comment"># 渲染页面</span></span><br><span class="line"></span><br><span class="line">hexo d</span><br><span class="line"><span class="comment"># 推送至git，部署发布</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 二者结合相当于 hexo g -d</span></span><br></pre></td></tr></table></figure>
 
 
 
 <p>此时访问公网地址，已经能看到该博客了：</p>
-<p><img src="https://tva1.sinaimg.cn/large/0084b03xly1gvweyd9xbzj31hl0sv1kx.jpg" alt="image.png"></p>
+<p><img src="https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1gvweyd9xbzj31hl0sv1kx.jpg" alt="image.png"></p>
 <h2 id="写文章"><a href="#写文章" class="headerlink" title="写文章"></a>写文章</h2><h3 id="编辑源文件"><a href="#编辑源文件" class="headerlink" title="编辑源文件"></a>编辑源文件</h3><p>在<code>_posts</code>目录下创建<code>markdown</code>文件，仿照<code>Hello World</code>写就行：</p>
-<p><img src="https://tva1.sinaimg.cn/large/0084b03xly1gvwf1noz1nj30mb08tafh.jpg" alt="image.png"></p>
+<p><img src="https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1gvwf1noz1nj30mb08tafh.jpg" alt="image.png"></p>
 <p>然后<code>hexo g -d</code>，渲染、推送。</p>
 <h3 id="关于图床"><a href="#关于图床" class="headerlink" title="关于图床"></a>关于图床</h3><p>如果是整个媒体库都上传到<code>Github</code>上的话，相当于是把<code>Github</code>作为图床了……然而众所周知<code>Github</code>在国内的速度非常非常慢。所以建议换一个好用的图床。</p>
 <p>关于图床的推荐可以参考一下<a target="_blank" rel="noopener" href="https://www.zhihu.com/question/21349585">知乎</a>。</p>
 <p>这里我个人使用的是<a target="_blank" rel="noopener" href="https://weibo.com/">微博</a>图床，配合<code>Chrome</code>插件<a target="_blank" rel="noopener" href="https://chrome.google.com/webstore/detail/%E6%96%B0%E6%B5%AA%E5%BE%AE%E5%8D%9A%E5%9B%BE%E5%BA%8A/fdfdnfpdplfbbnemmmoklbfjbhecpnhf?utm_source=chrome-ntp-icon">新浪微博图床</a>使用，可以直接微信截图到剪贴板，然后复制粘贴，灰常方便：</p>
-<p><img src="https://tva1.sinaimg.cn/large/0084b03xly1gvysn7j1qaj30ra0ivabw.jpg" alt="image.png"></p>
+<p><img src="https://s3.xiabee.cn/pic/weibo-backup/0084b03xly1gvysn7j1qaj30ra0ivabw.jpg" alt="image.png"></p>
 <p>当然，用这个图床的前提是你得有一个微博账号（x）</p>
 <h2 id="Hexo备份"><a href="#Hexo备份" class="headerlink" title="Hexo备份"></a>Hexo备份</h2><ul>
 <li>利用<code>Git</code>分支</li>
@@ -629,8 +629,8 @@
         <div class="license-wrapper">
             <p>原文作者：<a href="https://blog.xiabee.cn">xiabee</a>
             <p>原文链接：<a href="https://blog.xiabee.cn/posts/hexo-git-setup/">https://blog.xiabee.cn/posts/hexo-git-setup/</a>
-            <p>发表日期：<a href="https://blog.xiabee.cn/posts/hexo-git-setup/">October 27th 2021, 11:46:18 pm</a>
-            <p>更新日期：<a href="https://blog.xiabee.cn/posts/hexo-git-setup/">August 13th 2022, 11:39:31 pm</a>
+            <p>发表日期：<a href="https://blog.xiabee.cn/posts/hexo-git-setup/">十月 27日 2021, 11:46:18 晚上</a>
+            <p>更新日期：<a href="https://blog.xiabee.cn/posts/hexo-git-setup/">February 3rd 2023, 12:28:32 pm</a>
             <p>版权声明：本文采用<a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
