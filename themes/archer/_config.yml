@@ -1,6 +1,6 @@
 # ========== Profile ========== #
 # avatar
-avatar: https://tva1.sinaimg.cn/large/0084b03xly1gvrt7yrxecj30ku0kuafb.jpg
+avatar: https://avatars.githubusercontent.com/u/44724789
 # author name
 author: xiabee
 # signature
@@ -37,7 +37,7 @@ friends:
   # friendB: //www.google.com
 about:
   enable: true
-  image: https://tva1.sinaimg.cn/large/0084b03xly1gvzwi43dmej30mo0f7wig.jpg
+  image: https://s3.xiabee.cn/pic/wallpaper/23.jpg
 # Search for website
 search:
   enable: true
@@ -75,11 +75,11 @@ main_title: XiaBee's Studio.
 # subtitle
 subtitle: 总有一些更重要的事情，赋予我们打败恐惧的勇气
 # site haeder image
-site_header_image: https://tva1.sinaimg.cn/large/0084b03xly1gvzwkeyixij31gk0scb29.jpg
+site_header_image: https://s3.xiabee.cn/pic/wallpaper/23.jpg
 # post haeder image
-post_header_image: https://tva1.sinaimg.cn/large/0084b03xly1gvzwsehqmmj31380d7wlp.jpg
+post_header_image: https://s3.xiabee.cn/pic/wallpaper/22.jpg
 # 404 image
-_404_image: https://tva1.sinaimg.cn/large/0084b03xly1gvzwt8ltzmj31je0v9gs9.jpg
+_404_image: https://s3.xiabee.cn/pic/wallpaper/4.jpg
 
 
 # ========== Theme ========== #
@@ -169,7 +169,7 @@ CNZZ_analytics:
 
 # ========== Others ========== #
 # Favicon
-favicon: https://tva1.sinaimg.cn/thumbnail/0084b03xly1gvsjbyp2w8j30qo0qognu.jpg
+favicon: https://s3.xiabee.cn/pic/icons/favicon.jpg
 # Post copyright
 copyright:
   enable: true
