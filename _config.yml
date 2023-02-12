@@ -152,3 +152,6 @@ deploy:
   - type: git
     repo: 
       github: git@github.com:xiabee/xiabee.github.io.git,main
+  - type: aws-s3
+    bucket: xiabee-website
+    region: ap-southeast-1
