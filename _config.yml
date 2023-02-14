@@ -39,7 +39,7 @@ abbrlink:
 algolia:
   applicationID: '2BK6PYKX0M' # used for hexo-algolia
   appId: '2BK6PYKX0M'         # used for hexo-algoliasearch
-  apiKey: 'b38ca74b6b5c5ffea6dc73886c041838'
+  apiKey: ALGOLIA_SEARCH_ONLY_KEY
   chunkSize: 5000
   indexName: 'xiabee-search'
   fields:
