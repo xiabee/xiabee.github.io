@@ -441,6 +441,55 @@
             
         
         <article class="index-post">
+            <a class="abstract-title" href="/posts/hydro-hepler/">
+                
+                <span class="abstract-title-text">Hydro-OJ 使用说明</span>
+            </a>
+            <div class="abstract-content">
+                本OJ的具体搭建方式：Docker搭建Hydro-OJ系统 · xiabee-瞎哔哔
+以下内容为用户文档
+超级管理员
+超级管理员是OJ系统的最高权限，能够直接控制OJ的全部内容，不建议设置多个
+
+使用要求·
+
+拥有服务器ssh权限，且能够直接控制服务器容器
+
+创建方法
+在OJ右上角注册一个账号，此时账号的UID为2·
+回到服务器的终端，使用 docker oj-backend exec -it hydrooj cli user setSuperAdmin 2 将 UID 为 2 的用户设置为超级管理员。
+使用 docker oj-backend exec -it pm2 restart ...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2023/02/03">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/05/21</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="oj">oj</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="docker">docker</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
             <a class="abstract-title" href="/posts/docker-compose-2/">
                 
                 <span class="abstract-title-text">安装 docker-compose 2</span>
@@ -909,66 +958,10 @@ nextcloud是一款开源的、支持多平台的云盘，有服务器的小朋�
         </article>
         <div class="index-post-divider"></div>
     
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/posts/markdown-docker/">
-                
-                <span class="abstract-title-text">Docker搭建Markdown共享编辑器</span>
-            </a>
-            <div class="abstract-content">
-                服务地址
-https://xiabee.cn:3000
-
-前情提要
-腾讯云双十一特惠，一次买了个8M带宽、2核4G的云服务器……不拿它整点活可惜了
-
-目前的想法是搞个markdown共享编辑器、个人网盘啥的
-
-
-搭建动机主流的共享编辑器有很多，这里安利一个我个人比较喜欢的：Hackmd的Codimd
-上述的链接需要翻墙，非常不方便，所以我想在自己的服务器里面也造一个……
-前期准备
-一个VPS
-
-一个SSL证书（可选）
-
-VPS中安装了docker、docker-compose等服务
-
-
-12345sudo apt install dockersudo apt install docker...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2023/02/03">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/11/07</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="docker">docker</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="markdown">markdown</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
     <!-- paginator  -->
     
         <nav class="page-nav">
-            <a class="extend prev" rel="prev" href="/archives/">&lt; PREV</a><a class="page-number" href="/archives/">1</a><span class="page-number current">2</span><a class="page-number" href="/archives/page/3/">3</a><a class="page-number" href="/archives/page/4/">4</a><a class="extend next" rel="next" href="/archives/page/3/">NEXT &gt;</a>
+            <a class="extend prev" rel="prev" href="/archives/">&lt; PREV</a><a class="page-number" href="/archives/">1</a><span class="page-number current">2</span><a class="page-number" href="/archives/page/3/">3</a><a class="page-number" href="/archives/page/4/">4</a><a class="page-number" href="/archives/page/5/">5</a><a class="extend next" rel="next" href="/archives/page/3/">NEXT &gt;</a>
         </nav>
     
 </main>
@@ -1289,7 +1282,24 @@ VPS中安装了docker、docker-compose等服务
         
         
         
+        
+        
+        
+        
+        
     
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         
         
@@ -1630,7 +1640,7 @@ VPS中安装了docker、docker-compose等服务
     
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 40
+        Total : 41
         </div>
         <!-- search  -->
         
@@ -1644,6 +1654,21 @@ VPS中安装了docker、docker-compose等服务
     
         
             
+            
+            <div class="archive-year"> 2023 </div>
+            <ul class="year-list">
+            
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/16</span>
+            <a class="archive-post-title" href="/posts/pichost/">图床的折腾</a>
+        </li>
+    
+        
+            
+            
+                
+                </ul>
             
             <div class="archive-year"> 2022 </div>
             <ul class="year-list">

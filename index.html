@@ -456,6 +456,48 @@
             
         
         <article class="index-post">
+            <a class="abstract-title" href="/posts/pichost/">
+                
+                <span class="abstract-title-text">图床的折腾</span>
+            </a>
+            <div class="abstract-content">
+                背景之前博客一直白嫖的微博图床，图它免费，而且 CDN 速度快，而且通过 “微博图床” 插件就可以直接一键上传图片，非常方便。
+然而，不知某天之后，微博对所有的图片进行了外链限制，直接访问图片会返回 403，只有从微博内访问才能正常打开……比如这张图片：xiabee 唱歌，直接点击链接是打不开的，会返回如下提示：
+
+
+然后我的博客在抢救之前，所有的图都变成了上面的亚子……全都403，一张都么得（心态崩溃.jpg）
+当然，作为 CTF 选手，这种限制还是很容易绕过的。我们随便在微博内打开一张图片，能看到请求头中携带了来自微博的 Referer：这个 Referer 用于告诉微博图床，“请求...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2023/02/16">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2023/02/16</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="hexo">hexo</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="serverless">serverless</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
             <a class="abstract-title" href="/posts/aws-lambda/">
                 
                 <span class="abstract-title-text">使用 AWS Lambda 进行签到</span>
@@ -887,59 +929,10 @@ Server preparingWe use several ECS to build the real distributed system, instead
         </article>
         <div class="index-post-divider"></div>
     
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/posts/hydro-hepler/">
-                
-                <span class="abstract-title-text">Hydro-OJ 使用说明</span>
-            </a>
-            <div class="abstract-content">
-                本OJ的具体搭建方式：Docker搭建Hydro-OJ系统 · xiabee-瞎哔哔
-以下内容为用户文档
-超级管理员
-超级管理员是OJ系统的最高权限，能够直接控制OJ的全部内容，不建议设置多个
-
-使用要求·
-
-拥有服务器ssh权限，且能够直接控制服务器容器
-
-创建方法
-在OJ右上角注册一个账号，此时账号的UID为2·
-回到服务器的终端，使用 docker oj-backend exec -it hydrooj cli user setSuperAdmin 2 将 UID 为 2 的用户设置为超级管理员。
-使用 docker oj-backend exec -it pm2 restart ...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2023/02/03">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/05/21</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="oj">oj</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="docker">docker</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
     <!-- paginator  -->
     
         <nav class="page-nav">
-            <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">NEXT &gt;</a>
+            <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/">NEXT &gt;</a>
         </nav>
     
 </main>
@@ -1399,7 +1392,24 @@ Server preparingWe use several ECS to build the real distributed system, instead
         
         
         
+        
+        
+        
+        
+        
     
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         
         
@@ -1740,7 +1750,7 @@ Server preparingWe use several ECS to build the real distributed system, instead
     
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 40
+        Total : 41
         </div>
         <!-- search  -->
         
@@ -1754,6 +1764,21 @@ Server preparingWe use several ECS to build the real distributed system, instead
     
         
             
+            
+            <div class="archive-year"> 2023 </div>
+            <ul class="year-list">
+            
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/16</span>
+            <a class="archive-post-title" href="/posts/pichost/">图床的折腾</a>
+        </li>
+    
+        
+            
+            
+                
+                </ul>
             
             <div class="archive-year"> 2022 </div>
             <ul class="year-list">
