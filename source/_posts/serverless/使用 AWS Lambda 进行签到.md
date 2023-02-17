@@ -54,13 +54,13 @@ abbrlink: aws-lambda
 
 * 在控制台左上角搜索 `Lambda`，找到该功能并进入：
 
-<img src="https://s3.xiabee.cn/pic/weibo-backup/0084b03xgy1h928co6a3mj31o00s4an7.jpg" alt="image.png" style="zoom:50%;" />
+<img src="https://s3.xiabee.cn/pic/weibo-backup/0084b03xgy1h928co6a3mj31o00s4an7.jpg" alt="image.png" style="zoom:100%;" />
 
 
 
 * 找到右上角 创建函数，如图
 
-<img src="https://s3.xiabee.cn/pic/weibo-backup/0084b03xgy1h928e6c6bvj30ti080gms.jpg" alt="image.png" style="zoom:50%;" />
+<img src="https://s3.xiabee.cn/pic/weibo-backup/0084b03xgy1h928e6c6bvj30ti080gms.jpg" alt="image.png" style="zoom:100%;" />
 
 
 
@@ -70,7 +70,7 @@ abbrlink: aws-lambda
 * 由于 `Lambda` 不支持 `Arm` 的 `go` 运行时，所以我们选择 `x86` 架构，在最后编译过程中用 `x86` 进行编译即可
 * 我们代码编译生成的程序是 `main`，所以这里的处理程序也设置为 `main`
 
-<img src="https://s3.xiabee.cn/pic/weibo-backup/0084b03xgy1h928sowu2aj31bq0uc7an.jpg" alt="image.png" style="zoom:50%;" />
+<img src="https://s3.xiabee.cn/pic/weibo-backup/0084b03xgy1h928sowu2aj31bq0uc7an.jpg" alt="image.png" style="zoom:100%;" />
 
 
 
@@ -117,7 +117,7 @@ zip main.zip main
   * 注意，把敏感信息写入环境变量不是 AWS 最佳安全实践的做法，如果有条件的话，最好使用 KMS 进行操作，防止 Lambda 角色账号被拿下后，攻击者能够直接看到更高级别的敏感信息；
   * 但是我们已经是使用 root 账号登录的了......如果这个账号被拿下了基本上没救了（划掉）
 
-<img src="https://s3.xiabee.cn/pic/weibo-backup/0084b03xgy1h92921an2yj31aa0l2wkb.jpg" alt="image.png" style="zoom:50%;" />
+<img src="https://s3.xiabee.cn/pic/weibo-backup/0084b03xgy1h92921an2yj31aa0l2wkb.jpg" alt="image.png" style="zoom:100%;" />
 
 
 
@@ -138,7 +138,7 @@ zip main.zip main
 
 * 直接 添加触发器（这里我已经添加好了，就不重复添加了）
 
-<img src="https://s3.xiabee.cn/pic/weibo-backup/0084b03xgy1h929bjj5f5j317y0ocq6v.jpg" alt="image.png" style="zoom:50%;" />
+<img src="https://s3.xiabee.cn/pic/weibo-backup/0084b03xgy1h929bjj5f5j317y0ocq6v.jpg" alt="image.png" style="zoom:100%;" />
 
 
 
@@ -152,7 +152,7 @@ zip main.zip main
 
 * 计划模式，在特定时间触发。填写完成后会有详细的提示，告诉你 Cron 表达式所表示的具体日期，对 Cron 小白也很友好（划掉）
 
-<img src="https://s3.xiabee.cn/pic/weibo-backup/0084b03xgy1h929ewv9iaj31r2170tng.jpg" alt="image.png" style="zoom:50%;" />
+<img src="https://s3.xiabee.cn/pic/weibo-backup/0084b03xgy1h929ewv9iaj31r2170tng.jpg" alt="image.png" style="zoom:100%;" />
 
 
 
@@ -160,7 +160,7 @@ zip main.zip main
 
 * 将目标设置为刚刚创建的 Lambda 函数
 
-<img src="https://s3.xiabee.cn/pic/weibo-backup/0084b03xgy1h929hnoc0nj31pi16yncf.jpg" alt="image.png" style="zoom:50%;" />
+<img src="https://s3.xiabee.cn/pic/weibo-backup/0084b03xgy1h929hnoc0nj31pi16yncf.jpg" alt="image.png" style="zoom:100%;" />
 
 
 
