@@ -486,57 +486,6 @@
             
         
         <article class="index-post">
-            <a class="abstract-title" href="/posts/aws-lambda/">
-                
-                <span class="abstract-title-text">使用 AWS Lambda 进行签到</span>
-            </a>
-            <div class="abstract-content">
-                
-
-背景
-很久之前做了个基于 AWS Lambda 的 Gladows 的自动签到脚本，一直没有写使用教程，今天来补充一下（不是我鸽，是真的太忙了.jpg）
-
-账号创建啥的太久远了已经忘记怎么操作的了，记忆中不是很难，按照 AWS 官方提示一步一步走就好了
-
-签到架构图：
-
-
-
-
-Glados 签到过程分析如下：https://blog.xiabee.cn/posts/glados-intro/ ，想二创的朋友可以看看这篇
-
-什么是 AWS Lambda
-AWS：Amazon Web Service，中文名叫亚马逊云服务平台，一个做云服务的厂商提供的云服务，类似于国内的阿里云、腾讯云等
-...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2023/02/17">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/12/11</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="serverless">serverless</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
             <a class="abstract-title" href="/posts/wechat-bot/">
                 
                 <span class="abstract-title-text">利用企业微信机器人推送消息</span>
@@ -917,6 +866,55 @@ Server preparingWe use several ECS to build the real distributed system, instead
         </article>
         <div class="index-post-divider"></div>
     
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/posts/hydro-hepler/">
+                
+                <span class="abstract-title-text">Hydro-OJ 使用说明</span>
+            </a>
+            <div class="abstract-content">
+                本OJ的具体搭建方式：Docker搭建Hydro-OJ系统 · xiabee-瞎哔哔
+以下内容为用户文档
+超级管理员
+超级管理员是OJ系统的最高权限，能够直接控制OJ的全部内容，不建议设置多个
+
+使用要求·
+
+拥有服务器ssh权限，且能够直接控制服务器容器
+
+创建方法
+在OJ右上角注册一个账号，此时账号的UID为2·
+回到服务器的终端，使用 docker oj-backend exec -it hydrooj cli user setSuperAdmin 2 将 UID 为 2 的用户设置为超级管理员。
+使用 docker oj-backend exec -it pm2 restart ...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2023/02/03">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/05/21</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="oj">oj</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="docker">docker</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
     <!-- paginator  -->
     
         <nav class="page-nav">
@@ -1246,7 +1244,24 @@ Server preparingWe use several ECS to build the real distributed system, instead
         
         
         
+        
+        
+        
+        
+        
     
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         
         
@@ -1599,7 +1614,7 @@ Server preparingWe use several ECS to build the real distributed system, instead
     
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 41
+        Total : 42
         </div>
         <!-- search  -->
         
@@ -1617,6 +1632,12 @@ Server preparingWe use several ECS to build the real distributed system, instead
             <div class="archive-year"> 2023 </div>
             <ul class="year-list">
             
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/18</span>
+            <a class="archive-post-title" href="/posts/aws-intro/">AWS 入门</a>
+        </li>
+    
         
         <li class="archive-post-item">
             <span class="archive-post-date">02/16</span>
@@ -2036,6 +2057,11 @@ Server preparingWe use several ECS to build the real distributed system, instead
                 was
             </span>
         
+            <span class="sidebar-tag-name" data-tags="aws">
+                <span class="iconfont-archer">&#xe606;</span>
+                aws
+            </span>
+        
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
     <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
@@ -2070,6 +2096,11 @@ Server preparingWe use several ECS to build the real distributed system, instead
         <span class="sidebar-category-name" data-categories="blockchain">
             <span class="iconfont-archer">&#xe60a;</span>
             blockchain
+        </span>
+    
+        <span class="sidebar-category-name" data-categories="aws">
+            <span class="iconfont-archer">&#xe60a;</span>
+            aws
         </span>
     
     </div>
