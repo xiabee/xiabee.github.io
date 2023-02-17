@@ -3,8 +3,9 @@ title: 使用 AWS Lambda 进行签到
 date: 2022-12-11 12:00:23
 tags:
   - serverless
+  - aws
 categories:
-  - coding
+  - aws
 abbrlink: aws-lambda
 ---
 
