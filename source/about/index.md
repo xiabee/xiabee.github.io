@@ -17,6 +17,7 @@ layout: about
 
 * 当前爱好：彩虹六号、Genshin、🏸️、🎤、🎸
 * 喜欢歌手：周杰伦、林俊杰
+* 联系方式：xiabee777@gmail.com
 
 <img src="https://github-readme-stats.vercel.app/api?username=xiabee&count_private=true&show_icons=true&theme=radical&include_all_commits=true" />
 
