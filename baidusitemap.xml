@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://blog.xiabee.cn/posts/fri/</loc>
+    <lastmod>2023-03-05</lastmod>
+  </url>
+  <url>
     <loc>https://blog.xiabee.cn/posts/aws-intro/</loc>
     <lastmod>2023-02-24</lastmod>
   </url>
@@ -114,10 +118,6 @@
   </url>
   <url>
     <loc>https://blog.xiabee.cn/posts/2022-spring-recruitment/</loc>
-    <lastmod>2023-02-03</lastmod>
-  </url>
-  <url>
-    <loc>https://blog.xiabee.cn/posts/fri/</loc>
     <lastmod>2023-02-03</lastmod>
   </url>
   <url>
