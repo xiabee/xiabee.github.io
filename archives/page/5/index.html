@@ -441,6 +441,49 @@
             
         
         <article class="index-post">
+            <a class="abstract-title" href="/posts/docker-sudo/">
+                
+                <span class="abstract-title-text">不输入sudo运行Docker</span>
+            </a>
+            <div class="abstract-content">
+                docker对权限要求较高，需要sudo权限才能运行，但是每次敲命令都加sudo就显得很累赘，这里有个化简办法：将用户加入docker组，实现不加sudo执行docker命令
+查看docker组查看/etc/group,确定是否存在docker组
+1cat /etc/group | grep docker
+
+安装Docker后，docker组已经创建好了，所以上面命令的输出为： docker:x:120:ubuntu 
+
+将当前用户添加到 docker 组1sudo gpasswd -a $&#123;USER&#125; docker
+
+重新登录或切换到docker组12345newg...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2023/02/03">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/03/19</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="docker">docker</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
             <a class="abstract-title" href="/posts/docker-commands/">
                 
                 <span class="abstract-title-text">Docker常用命令</span>
@@ -1044,7 +1087,22 @@ XIAO氏xiabee，性巨皮，好游戏，六艺经传皆...
         
         
         
+        
+        
+        
+        
+        
     
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         
         
@@ -1439,7 +1497,7 @@ XIAO氏xiabee，性巨皮，好游戏，六艺经传皆...
     
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 45
+        Total : 46
         </div>
         <!-- search  -->
         
@@ -1688,6 +1746,12 @@ XIAO氏xiabee，性巨皮，好游戏，六艺经传皆...
             <div class="archive-year"> 2020 </div>
             <ul class="year-list">
             
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/07</span>
+            <a class="archive-post-title" href="/posts/occupation-ctf-wp/">职业杯 2020 选拔赛回顾 & Write UP</a>
+        </li>
+    
         
         <li class="archive-post-item">
             <span class="archive-post-date">10/26</span>
