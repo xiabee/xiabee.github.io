@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://blog.xiabee.cn/posts/sina-pichost/</loc>
+    <loc>https://blog.xiabee.cn/posts/aws-pichost/</loc>
     
     <lastmod>2023-04-09</lastmod>
     
@@ -11,7 +11,16 @@
   </url>
   
   <url>
-    <loc>https://blog.xiabee.cn/posts/aws-pichost/</loc>
+    <loc>https://blog.xiabee.cn/posts/aws-intro/</loc>
+    
+    <lastmod>2023-04-09</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xiabee.cn/posts/sina-pichost/</loc>
     
     <lastmod>2023-04-09</lastmod>
     
@@ -104,15 +113,6 @@
     <loc>https://blog.xiabee.cn/about/index.html</loc>
     
     <lastmod>2023-03-04</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.xiabee.cn/posts/aws-intro/</loc>
-    
-    <lastmod>2023-02-24</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
