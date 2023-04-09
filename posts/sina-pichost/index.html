@@ -19,28 +19,30 @@
         <meta name="keywords" content="xiabee,hexo-theme,xiabee-blog">
     
     <meta name="description" content="">
-    <meta name="description" content="简介 Burp Suite：懂得都懂，不解释了 一款非常流行的应用层抓包工具，做 WEB 安全的人应该都见过，至少都听说过  下载与安装Burp Suite 下载地址：https:&#x2F;&#x2F;portswigger.net&#x2F;burp&#x2F;releases  Windows : 需要下载jar 文件，通过启动器同时启动注册机和主体文件  Mac : 直接官网下载官方安装包进行安装即可，后文介绍如何注入注册机">
+    <meta name="description" content="省流项目地址：https:&#x2F;&#x2F;github.com&#x2F;xiabee&#x2F;SinaDownLoad 背景之前博客一直白嫖的微博图床，图它免费，而且 CDN 速度快，而且通过 “微博图床” 插件就可以直接一键上传图片，非常方便。 然而，不知某天之后，微博对所有的图片进行了外链限制，直接访问图片会返回 403，只有从微博内访问才能正常打开……比如这张图片：xiabee 唱歌，直接点击链接是打不开的，会返回如下">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Mac 环境配置(4)——BurpSuite 破解">
-<meta property="og:url" content="https://blog.xiabee.cn/posts/mac-bp/index.html">
+<meta property="og:title" content="微博图床抢救">
+<meta property="og:url" content="https://blog.xiabee.cn/posts/sina-pichost/index.html">
 <meta property="og:site_name" content="xiabee-瞎哔哔">
-<meta property="og:description" content="简介 Burp Suite：懂得都懂，不解释了 一款非常流行的应用层抓包工具，做 WEB 安全的人应该都见过，至少都听说过  下载与安装Burp Suite 下载地址：https:&#x2F;&#x2F;portswigger.net&#x2F;burp&#x2F;releases  Windows : 需要下载jar 文件，通过启动器同时启动注册机和主体文件  Mac : 直接官网下载官方安装包进行安装即可，后文介绍如何注入注册机">
+<meta property="og:description" content="省流项目地址：https:&#x2F;&#x2F;github.com&#x2F;xiabee&#x2F;SinaDownLoad 背景之前博客一直白嫖的微博图床，图它免费，而且 CDN 速度快，而且通过 “微博图床” 插件就可以直接一键上传图片，非常方便。 然而，不知某天之后，微博对所有的图片进行了外链限制，直接访问图片会返回 403，只有从微博内访问才能正常打开……比如这张图片：xiabee 唱歌，直接点击链接是打不开的，会返回如下">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://s3.xiabee.cn/pic/weibo-backup/0084b03xgy1h7huy5a9qkj31s60um7lh.jpg">
-<meta property="og:image" content="https://s3.xiabee.cn/pic/weibo-backup/0084b03xgy1h7hv0cy0spj312c0o0tye.jpg">
-<meta property="og:image" content="https://s3.xiabee.cn/pic/weibo-backup/0084b03xgy1h7hv6v7wdkj312y0ac439.jpg">
-<meta property="article:published_time" content="2022-09-30T04:00:23.000Z">
-<meta property="article:modified_time" content="2023-02-03T04:28:32.861Z">
+<meta property="og:image" content="https://s3.xiabee.cn/pic/2023/02/214daa16759f7a1c5b380d42dedebe37cd785402730fbb11e3db301168085279.png">
+<meta property="og:image" content="https://s3.xiabee.cn/pic/2023/02/645dced5287dfa84fdc14c98f1abdd1fd129cdd6579832a32b4d841943ae4c2d.png">
+<meta property="og:image" content="https://s3.xiabee.cn/pic/2023/02/7e8b7d4139f4165f717554a0f871523c946ea87731802348c6ddf4156eb2ec6c.png">
+<meta property="og:image" content="https://s3.xiabee.cn/pic/2023/02/93a954b3e7ed4669e61ee82c2caeda025080f092e18d1947e15ae576bb26e464.png">
+<meta property="article:published_time" content="2023-02-16T12:00:23.000Z">
+<meta property="article:modified_time" content="2023-04-09T06:07:51.811Z">
 <meta property="article:author" content="xiabee">
-<meta property="article:tag" content="mac">
-<meta property="article:tag" content="ctf">
+<meta property="article:tag" content="hexo">
+<meta property="article:tag" content="serverless">
+<meta property="article:tag" content="aws">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://s3.xiabee.cn/pic/weibo-backup/0084b03xgy1h7huy5a9qkj31s60um7lh.jpg">
+<meta name="twitter:image" content="https://s3.xiabee.cn/pic/2023/02/214daa16759f7a1c5b380d42dedebe37cd785402730fbb11e3db301168085279.png">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <link rel="icon" href="https://s3.xiabee.cn/pic/icons/favicon.jpg">
     
-    <title>Mac 环境配置(4)——BurpSuite 破解 · xiabee-瞎哔哔</title>
+    <title>微博图床抢救 · xiabee-瞎哔哔</title>
     <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
 /* This file is meant as a standalone workflow for
 - testing support for link[rel=preload]
@@ -278,7 +280,7 @@
                 <a href="/">XiaBee&#39;s Studio.</a>
             </div>
             <div class="post-title header-element">
-                <a href="#" class="post-name">Mac 环境配置(4)——BurpSuite 破解</a>
+                <a href="#" class="post-name">微博图床抢救</a>
             </div>
         </div>
     
@@ -324,7 +326,7 @@
         <h1 class="intro-title">
             <!-- 主页  -->
             
-                Mac 环境配置(4)——BurpSuite 破解
+                微博图床抢救
             <!-- 404 -->
             
         </h1>
@@ -344,22 +346,24 @@
                     <div class= post-intro-tags >
     
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="mac">mac</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="hexo">hexo</a>
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="ctf">ctf</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="serverless">serverless</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="aws">aws</a>
     
 </div>
 
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">336</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">845</span>阅读时长: <span class="post-count reading-time">3 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
                     <!-- 撰写日期 -->
                     <span class="iconfont-archer post-intro-calander">&#xe676;</span>
-                    <span class="post-intro-time">2022/09/30</span>
+                    <span class="post-intro-time">2023/02/16</span>
                     <!-- busuanzi -->
                     
                         <span id="busuanzi_container_page_pv" class="busuanzi-pv">
@@ -514,57 +518,54 @@
             <div class="container container-unloaded">
                 <main class="main post-page">
     <article class="article-entry">
-        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><ul>
-<li><a target="_blank" rel="noopener" href="https://portswigger.net/burp">Burp Suite</a>：<del>懂得都懂，不解释了</del></li>
-<li>一款非常流行的应用层抓包工具，做 <code>WEB</code> 安全的人应该都见过，至少都听说过</li>
-</ul>
-<h2 id="下载与安装"><a href="#下载与安装" class="headerlink" title="下载与安装"></a>下载与安装</h2><p><code>Burp Suite</code> 下载地址：<a target="_blank" rel="noopener" href="https://portswigger.net/burp/releases">https://portswigger.net/burp/releases</a></p>
+        <h2 id="省流"><a href="#省流" class="headerlink" title="省流"></a>省流</h2><p>项目地址：<a target="_blank" rel="noopener" href="https://github.com/xiabee/SinaDownLoad">https://github.com/xiabee/SinaDownLoad</a></p>
+<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>之前博客一直白嫖的微博图床，图它免费，而且 CDN 速度快，而且通过 “微博图床” 插件就可以直接一键上传图片，非常方便。</p>
+<p>然而，不知某天之后，微博对所有的图片进行了外链限制，直接访问图片会返回 403，只有从微博内访问才能正常打开……比如这张图片：<a target="_blank" rel="noopener" href="https://wx4.sinaimg.cn/mw690/0084b03xgy1hajm0n84ezj30yl0ry77u.jpg">xiabee 唱歌</a>，直接点击链接是打不开的，会返回如下提示：</p>
+<img src="https://s3.xiabee.cn/pic/2023/02/214daa16759f7a1c5b380d42dedebe37cd785402730fbb11e3db301168085279.png" style="zoom:67%;" />
+
+<p>然后我的博客在抢救之前，所有的图都变成了上面的亚子……全都403，一张都么得（心态崩溃.jpg）</p>
+<p>当然，作为 CTF 选手，这种限制还是很容易绕过的。我们随便在微博内打开一张图片，能看到请求头中携带了来自微博的 Referer：这个 Referer 用于告诉微博图床，“请求是自己人”，然后图床接受到这个消息，允许通过，就能正常查看图片了。</p>
+<p><img src="https://s3.xiabee.cn/pic/2023/02/645dced5287dfa84fdc14c98f1abdd1fd129cdd6579832a32b4d841943ae4c2d.png"></p>
+<p>按照这个逻辑，我们只要在每次访问图床的时候都带上这个 Referer，就能正常浏览图片了……对于 CTF 老油条来说，这个操作很简单，带个插件就行，但是考虑到我的博客里有一些小白，大概率不会操作，那就只能想办法换个图床了。</p>
+<h2 id="图片抢救"><a href="#图片抢救" class="headerlink" title="图片抢救"></a>图片抢救</h2><p>在换图床之前，我需要把之前存放在微博图床中的图下载下来（因为没有存本地备份）。然而如果每篇博客都得手动翻阅、找到图片链接、手动下载的话，可能现在这篇博客需要再等个几年才能发出来……所以我写了个自动化的程序，批量下载图片。</p>
 <ul>
-<li><p><code>Windows</code> : 需要下载<code>jar</code> 文件，通过启动器同时启动注册机和主体文件</p>
-</li>
-<li><p><code>Mac</code> : 直接官网下载官方安装包进行安装即可，后文介绍如何注入注册机</p>
-</li>
+<li>项目地址：<a target="_blank" rel="noopener" href="https://github.com/xiabee/SinaDownLoad">https://github.com/xiabee/SinaDownLoad</a></li>
+<li>使用方式：下载，编译，放到博客源码的目录里，运行即可</li>
 </ul>
-<p>注册机下载地址：<a target="_blank" rel="noopener" href="https://github.com/h3110w0r1d-y/BurpLoaderKeygen">https://github.com/h3110w0r1d-y/BurpLoaderKeygen</a></p>
-<h2 id="注入注册机"><a href="#注入注册机" class="headerlink" title="注入注册机"></a>注入注册机</h2><h3 id="移动注册机"><a href="#移动注册机" class="headerlink" title="移动注册机"></a>移动注册机</h3><ul>
-<li><p>将下载的注册机 <code>BurpLoaderKeygen.jar  </code>放到 <code>Burp Suite</code> 的<code>app</code> 目录内</p>
-</li>
-<li><p>具体位置：<code>/Applications/Burp Suite Professional.app/Contents/Resources/app</code></p>
-</li>
-</ul>
-<img src="https://s3.xiabee.cn/pic/weibo-backup/0084b03xgy1h7huy5a9qkj31s60um7lh.jpg" alt="image.png" style="zoom:67%;" />
+<p>简单介绍一下核心模块：</p>
+<p><code>downLoad.go</code>：下载图片。在请求头中添加 Referer，使得程序能够正常访问微博图床；利用 os.Create 等在本地写入图片内容</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">unc DownLoad(url <span class="type">string</span>, dir <span class="type">string</span>, outFile <span class="type">string</span>) <span class="type">error</span> &#123;</span><br><span class="line">	...</span><br><span class="line">	request.Header.Set(<span class="string">&quot;Referer&quot;</span>, <span class="string">&quot;https://weibo.com/&quot;</span>)</span><br><span class="line">	...</span><br><span class="line">	out, err := os.Create(pwdProc + dirProc + outFile)</span><br><span class="line">	...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
 
-<h3 id="修改-vmoptions"><a href="#修改-vmoptions" class="headerlink" title="修改 vmoptions"></a>修改 vmoptions</h3><p>添加以下内容：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">-Dfile.encoding=utf-8</span><br><span class="line">-noverify</span><br><span class="line">-javaagent:BurpLoaderKeygen.jar</span><br><span class="line"> -Xmx2048m</span><br></pre></td></tr></table></figure>
-
-<img src="https://s3.xiabee.cn/pic/weibo-backup/0084b03xgy1h7hv0cy0spj312c0o0tye.jpg" alt="image.png" style="zoom:67%;" />
+<p><code>fileProc.go</code>：输入目录路径，遍历其内部文件，返回给 <code>urlProc</code></p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">GetFileName</span><span class="params">(root <span class="type">string</span>)</span></span> ([]<span class="type">string</span>, <span class="type">error</span>) &#123;</span><br><span class="line">	<span class="keyword">var</span> files []<span class="type">string</span></span><br><span class="line"></span><br><span class="line">	err := filepath.Walk(root, <span class="function"><span class="keyword">func</span><span class="params">(path <span class="type">string</span>, info os.FileInfo, err <span class="type">error</span>)</span></span> <span class="type">error</span> &#123;</span><br><span class="line">		<span class="keyword">if</span> !IsDir(path) &#123;</span><br><span class="line">			files = <span class="built_in">append</span>(files, path)</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">nil</span></span><br><span class="line">	&#125;)</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> files, err</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
 
-<h3 id="运行注册机"><a href="#运行注册机" class="headerlink" title="运行注册机"></a>运行注册机</h3><p>添加完成后，打开终端，先使用注册机加载 BP 运行注册一下：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> <span class="string">&quot;/Applications/Burp Suite Professional.app/Contents/Resources/app&quot;</span></span><br><span class="line"><span class="string">&quot;/Applications/Burp Suite Professional.app/Contents/Resources/jre.bundle/Contents/Home/bin/java&quot;</span> -jar BurpLoaderKeygen.jar</span><br></pre></td></tr></table></figure>
+<p><code>urlProc.go</code>：输入文件，遍历文件内容，通过正则匹配找到图片 url，返回给 <code>downLoad.go</code></p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">regImg := <span class="string">&quot;(img|image|imag)&quot;</span></span><br><span class="line">regUrl := <span class="string">&quot;(ht|f)tp(s?)\\:\\/\\/[0-9a-zA-Z]([-.\\w]*[0-9a-zA-Z])*(:(0-9)*)*(\\/?)([a-zA-Z0-9\\-\\.\\?\\,\\&#x27;\\/\\\\+&amp;amp;%$#_]*)?&quot;</span></span><br><span class="line"><span class="comment">// regexp to find image URI and URL</span></span><br></pre></td></tr></table></figure>
 
 
 
-<p>注册完成后就可以应该直接正常启动了（如果遇到系统信任的问题，进系统设置里面信任即可）</p>
-<p><img src="https://s3.xiabee.cn/pic/weibo-backup/0084b03xgy1h7hv6v7wdkj312y0ac439.jpg" alt="image.png"></p>
-<h2 id="其他配置"><a href="#其他配置" class="headerlink" title="其他配置"></a>其他配置</h2><p><code>SSL</code> 证书等问题暂时先不写了，有空再来更新（划掉）</p>
-<p>也可以直接参考<a target="_blank" rel="noopener" href="https://www.sqlsec.com/2019/11/macbp.html#Firefox-Dev">国光大佬</a>的博客（膜）</p>
-<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><blockquote>
-<p><a target="_blank" rel="noopener" href="https://www.sqlsec.com/2019/11/macbp.html">https://www.sqlsec.com/2019/11/macbp.html</a></p>
-<p><a target="_blank" rel="noopener" href="https://github.com/h3110w0r1d-y/BurpLoaderKeygen">https://github.com/h3110w0r1d-y/BurpLoaderKeygen</a></p>
-</blockquote>
+
+
+<p>然后用这个脚本就把我在微博里的全部图片下载下来了：</p>
+<p><img src="https://s3.xiabee.cn/pic/2023/02/7e8b7d4139f4165f717554a0f871523c946ea87731802348c6ddf4156eb2ec6c.png"></p>
+<p>然后就是更换图床的事情辣！</p>
+<h2 id="图床更换"><a href="#图床更换" class="headerlink" title="图床更换"></a>图床更换</h2><p>考虑到免费的图床的很可能跑路这件事，我还是决定花钱买心安，直接上付费云存储。</p>
+<p>再考虑到国内某些云价格太贵，我们直接换到了 <a target="_blank" rel="noopener" href="https://aws.amazon.com/s3/"><code>AWS S3</code></a>，具体的费用情况还可以，乱七八糟的服务加起来一个月几块钱的亚子，如果只考虑存储用的 <a target="_blank" rel="noopener" href="https://aws.amazon.com/s3/">S3</a>，会更便宜</p>
+<p><img src="https://s3.xiabee.cn/pic/2023/02/93a954b3e7ed4669e61ee82c2caeda025080f092e18d1947e15ae576bb26e464.png"></p>
+<p><del>困了，具体使用方法下次再写</del></p>
 
     </article>
     <!-- license -->
     
         <div class="license-wrapper">
             <p>原文作者：<a href="https://blog.xiabee.cn">xiabee</a>
-            <p>原文链接：<a href="https://blog.xiabee.cn/posts/mac-bp/">https://blog.xiabee.cn/posts/mac-bp/</a>
-            <p>发表日期：<a href="https://blog.xiabee.cn/posts/mac-bp/">九月 30日 2022, 12:00:23 中午</a>
-            <p>更新日期：<a href="https://blog.xiabee.cn/posts/mac-bp/">February 3rd 2023, 12:28:32 pm</a>
+            <p>原文链接：<a href="https://blog.xiabee.cn/posts/sina-pichost/">https://blog.xiabee.cn/posts/sina-pichost/</a>
+            <p>发表日期：<a href="https://blog.xiabee.cn/posts/sina-pichost/">二月 16日 2023, 8:00:23 晚上</a>
+            <p>更新日期：<a href="https://blog.xiabee.cn/posts/sina-pichost/">April 9th 2023, 2:07:51 pm</a>
             <p>版权声明：本文采用<a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
@@ -573,16 +574,16 @@
         <li class="next">
             
                 <div class="nextSlogan">Next Post</div>
-                <a href="/posts/glados-intro/" title="Glados 签到简介">
-                    <div class="nextTitle">Glados 签到简介</div>
+                <a href="/posts/aws-intro/" title="AWS 入门">
+                    <div class="nextTitle">AWS 入门</div>
                 </a>
             
         </li>
         <li class="previous">
             
                 <div class="prevSlogan">Previous Post</div>
-                <a href="/posts/mac-proxy/" title="Mac 环境配置(3)——配置代理">
-                    <div class="prevTitle">Mac 环境配置(3)——配置代理</div>
+                <a href="/posts/aws-lambda/" title="使用 AWS Lambda 进行签到">
+                    <div class="prevTitle">使用 AWS Lambda 进行签到</div>
                 </a>
             
         </li>
@@ -748,7 +749,7 @@
                 <div class="toc-catalog">
                     <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
                 </div>
-                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E4%BB%8B"><span class="toc-number">1.</span> <span class="toc-text">简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BD%E4%B8%8E%E5%AE%89%E8%A3%85"><span class="toc-number">2.</span> <span class="toc-text">下载与安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B3%A8%E5%85%A5%E6%B3%A8%E5%86%8C%E6%9C%BA"><span class="toc-number">3.</span> <span class="toc-text">注入注册机</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A7%BB%E5%8A%A8%E6%B3%A8%E5%86%8C%E6%9C%BA"><span class="toc-number">3.1.</span> <span class="toc-text">移动注册机</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9-vmoptions"><span class="toc-number">3.2.</span> <span class="toc-text">修改 vmoptions</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%90%E8%A1%8C%E6%B3%A8%E5%86%8C%E6%9C%BA"><span class="toc-number">3.3.</span> <span class="toc-text">运行注册机</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B6%E4%BB%96%E9%85%8D%E7%BD%AE"><span class="toc-number">4.</span> <span class="toc-text">其他配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Reference"><span class="toc-number">5.</span> <span class="toc-text">Reference</span></a></li></ol>
+                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9C%81%E6%B5%81"><span class="toc-number">1.</span> <span class="toc-text">省流</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%83%8C%E6%99%AF"><span class="toc-number">2.</span> <span class="toc-text">背景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BE%E7%89%87%E6%8A%A2%E6%95%91"><span class="toc-number">3.</span> <span class="toc-text">图片抢救</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BE%E5%BA%8A%E6%9B%B4%E6%8D%A2"><span class="toc-number">4.</span> <span class="toc-text">图床更换</span></a></li></ol>
             </div>
         
         <!-- sidebar -->
