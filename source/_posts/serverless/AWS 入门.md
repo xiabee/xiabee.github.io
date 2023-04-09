@@ -27,7 +27,7 @@ abbrlink: aws-intro
 
 ## 注册
 
-* 打开 AWS 官网（https://aws.amazon.com/）并单击 "创建免费账户" 按钮；
+* 打开 [AWS 官网](https://aws.amazon.com/) 并单击 "创建免费账户" 按钮；
 
 * 在注册页面中，填写电子邮件地址、姓名等信息，并创建一个密码，AWS 还需要您提供信用卡信息，以便验证身份和开启账单；
 
