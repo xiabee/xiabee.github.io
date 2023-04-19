@@ -2,7 +2,7 @@
 title: AWS S3+CloudFront 打造自己的图床
 date: 2023-4-9 10:00:23
 tags:
-  - serverless
+  - cloud
   - aws
   - s3
 categories:

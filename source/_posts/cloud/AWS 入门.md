@@ -2,7 +2,7 @@
 title: AWS 入门
 date: 2023-2-18 23:00:23
 tags:
-  - serverless
+  - cloud
   - aws
 categories:
   - aws
