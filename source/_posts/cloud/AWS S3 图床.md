@@ -192,4 +192,4 @@ Cloudfront 有已分配的域名和备用域名：
 
 关于 Typora 编写 Markdown 快速插图的问题，可以使用 [PicGO](https://github.com/Molunerfinn/PicGo) 等插件。
 
-个人感觉体验还行，支持剪贴板直接上传，下次再来介绍一下（一定不鸽）
+个人感觉体验还行，支持剪贴板直接上传，具体使用看[这里](https://blog.xiabee.cn/posts/pichost-picgo/)
