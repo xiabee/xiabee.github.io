@@ -456,6 +456,144 @@
             
         
         <article class="index-post">
+            <a class="abstract-title" href="/posts/vps-toss/">
+                
+                <span class="abstract-title-text">服务器的折腾</span>
+            </a>
+            <div class="abstract-content">
+                准备工作
+一台VPS：腾讯云学生特惠，2核4G内存 8M带宽
+
+一个域名：xiabee.cn
+
+一点点容器使用技巧
+
+
+需求分析服务器里面跑一些WEB应用，包括但不限于个人博客、个人网盘、共享编辑器、邮件系统等，如果有时间的话可以写几个小程序挂着玩。
+如果还有时间的话可以考虑搭一个Cobalt Strike的服务器……
+当前布局
+WordPress个人博客
+
+CodiMD共享编辑器
+
+NEXTCloud个人网盘
+
+
+考虑到多个服务可以共用一个SSL证书，也方便后续的证书更换，我单独设置了一个SSL模块，用于把同一套证书映射到不同的服务中去。
+三个服务共用一套SSL证书：
+
+
+个人博客需求...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2023/02/03">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/02/03</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="linux">linux</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="docker">docker</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="vps">vps</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/posts/diary/">
+                
+                <span class="abstract-title-text">考研日记</span>
+            </a>
+            <div class="abstract-content">
+                2022.2
+“有些人十二月死了，二月份才埋”
+
+春招了，886
+
+
+2021.122021.12.26
+考的不是很理想，基本上无了
+
+2021.12.24
+明天就要上战场了！
+
+政治英语随缘发挥了，专业课还能抢救一下
+
+清华甲所好高级呜呜呜，一间房间比我整个寝室还大呜呜呜
+
+
+
+
+2021.12.23
+最后一天！
+
+仿佛在补天
+
+
+2021.12.22
+Last 2 Days！
+
+明天要做核酸了，不想被捅.jpg
+
+市教委的表扬信到了，好耶
+
+
+
+
+2021.12.21
+过了一遍数学公式，感觉在虚度光阴
+
+不焦虑是不可能的，但是只有三天了，凑合过吧
+
+
+2021.12.20
+最后四天！...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2023/02/03">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/12/25</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="碎碎念">碎碎念</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
             <a class="abstract-title" href="/posts/11-11/">
                 
                 <span class="abstract-title-text">如何在双十一快速脱单？</span>
@@ -854,109 +992,10 @@ Hexo主题
         </article>
         <div class="index-post-divider"></div>
     
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/posts/hexo-git-backup/">
-                
-                <span class="abstract-title-text">利用git分支进行Hexo备份</span>
-            </a>
-            <div class="abstract-content">
-                hexo博客搭建可以看这里。
-问题描述博客搭建环境：hexo+gitpage，本地编写·markdown文件，通过hexo g -d渲染后上传至github repo。
-相较于wordpress，hexo框架的博客编写基本是在本地完成，在其他机器写博客时需要备份并重新配置环境。但是nodejs环境文件很多，备份起来相当麻烦。
-解决方案大致有两种方案：
-
-创建新仓库，备份源文件
-创建新分支，备份源文件
-
-创建备份这里我们主要介绍github分支的方式：主分支用于渲染github page，分分支用于备份重要源文件。
-
-创建新仓库的方式同理，就不介绍了（x）
-在hexo根目录下创建git最新...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2023/02/03">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/10/28</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="hexo">hexo</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="git">git</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/posts/hexo-git-setup/">
-                
-                <span class="abstract-title-text">Hexo+GitPage搭建个人博客</span>
-            </a>
-            <div class="abstract-content">
-                前言之前一段时间都是用wordpress做个人博客，后来发现Git Page + hexo可以免费做静态页面……尝试了一下，后面就真香了（x）
-关于wordpress和hexo孰优孰劣的问题这里不做详细讨论，只是介绍一下如何用Git Page+hexo搭建一个个人博客。二者具体的比较可以参考知乎的激(you)烈(hao)讨论。
-简介What’s GitHub Page
-官方文档
-
-简而言之就是 白嫖 GitHub的服务器，通过仓库挂一个自己的静态网站。
-
-
-What’s Hexo
-官方文档
-
-一个渲染静态博客的框架，基于Node.js，将markdown文件渲染成html文件
-
-
-Hex...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2023/02/03">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/10/27</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="hexo">hexo</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="git">git</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
     <!-- paginator  -->
     
         <nav class="page-nav">
-            <a class="extend prev" rel="prev" href="/page/2/">&lt; PREV</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/4/">NEXT &gt;</a>
+            <a class="extend prev" rel="prev" href="/page/2/">&lt; PREV</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/4/">NEXT &gt;</a>
         </nav>
     
 </main>
@@ -1466,7 +1505,41 @@ Hex...
         
         
         
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         
         
@@ -1917,7 +1990,7 @@ Hex...
     
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 50
+        Total : 52
         </div>
         <!-- search  -->
         
@@ -1935,6 +2008,18 @@ Hex...
             <div class="archive-year"> 2023 </div>
             <ul class="year-list">
             
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/19</span>
+            <a class="archive-post-title" href="/posts/app-error/">“应用程序”已损坏解决方案</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/19</span>
+            <a class="archive-post-title" href="/posts/pichost-picgo/">PicGO 连接 AWS S3</a>
+        </li>
+    
         
         <li class="archive-post-item">
             <span class="archive-post-date">04/09</span>
@@ -2426,6 +2511,11 @@ Hex...
             <span class="sidebar-tag-name" data-tags="s3">
                 <span class="iconfont-archer">&#xe606;</span>
                 s3
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="cloud">
+                <span class="iconfont-archer">&#xe606;</span>
+                cloud
             </span>
         
     </div>

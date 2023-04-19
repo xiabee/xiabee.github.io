@@ -456,6 +456,116 @@
             
         
         <article class="index-post">
+            <a class="abstract-title" href="/posts/mac-proxy/">
+                
+                <span class="abstract-title-text">Mac 环境配置(3)——配置代理</span>
+            </a>
+            <div class="abstract-content">
+                概述本篇不介绍如何搭建 VPN，仅介绍如何让 MacOS 的控制台连接到代理服务器，代理其应用层流量。
+
+代理池：Glados
+
+代理工具：Clashx
+
+代理服务器：127.0.0.1
+
+代理端口：7890
+
+
+
+
+
+
+终端代理点击图标，可以看到“复制终端代理命令”
+
+复制内容如下：
+1export https_proxy=http://127.0.0.1:7890 http_proxy=http://127.0.0.1:7890 all_proxy=socks5://127.0.0.1:7890
+
+
+
+设置代理把上述命令复制粘贴到终端里就可以了……
+但是作为懒狗，每次输入这么多命令怎...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2023/02/03">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/08/24</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="mac">mac</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="brew">brew</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/posts/mac-brew/">
+                
+                <span class="abstract-title-text">Mac 环境配置(2)——homebrew</span>
+            </a>
+            <div class="abstract-content">
+                Homebrew 简介
+官网：https://brew.sh/
+
+可以理解为 MacOS 的包管理器，利用 brew 等命令实现一键安装各类软件与依赖。
+
+新款 MacOS 应该已经预装了，如果没有的话可以参考安装部分。
+
+
+安装需要在终端中安装，如果没有配置终端可以参考上篇。
+终端配置完毕后，直接在终端内执行以下命令：
+1/bin/bash -c &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)&quot;
+
+安装不难，如果你能顺利解决一些BUG的话（x）
+常见问...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2023/02/03">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/08/23</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="mac">mac</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="brew">brew</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
             <a class="abstract-title" href="/posts/mac-init/">
                 
                 <span class="abstract-title-text">Mac 环境配置(1)——完美终端</span>
@@ -840,148 +950,10 @@ PingCAP（已接受）四面2022.2.28
         </article>
         <div class="index-post-divider"></div>
     
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/posts/vps-toss/">
-                
-                <span class="abstract-title-text">服务器的折腾</span>
-            </a>
-            <div class="abstract-content">
-                准备工作
-一台VPS：腾讯云学生特惠，2核4G内存 8M带宽
-
-一个域名：xiabee.cn
-
-一点点容器使用技巧
-
-
-需求分析服务器里面跑一些WEB应用，包括但不限于个人博客、个人网盘、共享编辑器、邮件系统等，如果有时间的话可以写几个小程序挂着玩。
-如果还有时间的话可以考虑搭一个Cobalt Strike的服务器……
-当前布局
-WordPress个人博客
-
-CodiMD共享编辑器
-
-NEXTCloud个人网盘
-
-
-考虑到多个服务可以共用一个SSL证书，也方便后续的证书更换，我单独设置了一个SSL模块，用于把同一套证书映射到不同的服务中去。
-三个服务共用一套SSL证书：
-
-
-个人博客需求...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2023/02/03">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/02/03</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="linux">linux</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="docker">docker</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="vps">vps</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/posts/diary/">
-                
-                <span class="abstract-title-text">考研日记</span>
-            </a>
-            <div class="abstract-content">
-                2022.2
-“有些人十二月死了，二月份才埋”
-
-春招了，886
-
-
-2021.122021.12.26
-考的不是很理想，基本上无了
-
-2021.12.24
-明天就要上战场了！
-
-政治英语随缘发挥了，专业课还能抢救一下
-
-清华甲所好高级呜呜呜，一间房间比我整个寝室还大呜呜呜
-
-
-
-
-2021.12.23
-最后一天！
-
-仿佛在补天
-
-
-2021.12.22
-Last 2 Days！
-
-明天要做核酸了，不想被捅.jpg
-
-市教委的表扬信到了，好耶
-
-
-
-
-2021.12.21
-过了一遍数学公式，感觉在虚度光阴
-
-不焦虑是不可能的，但是只有三天了，凑合过吧
-
-
-2021.12.20
-最后四天！...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2023/02/03">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/12/25</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="碎碎念">碎碎念</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
     <!-- paginator  -->
     
         <nav class="page-nav">
-            <a class="extend prev" rel="prev" href="/">&lt; PREV</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/3/">NEXT &gt;</a>
+            <a class="extend prev" rel="prev" href="/">&lt; PREV</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/3/">NEXT &gt;</a>
         </nav>
     
 </main>
@@ -1491,7 +1463,41 @@ Last 2 Days！
         
         
         
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         
         
@@ -1942,7 +1948,7 @@ Last 2 Days！
     
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 50
+        Total : 52
         </div>
         <!-- search  -->
         
@@ -1960,6 +1966,18 @@ Last 2 Days！
             <div class="archive-year"> 2023 </div>
             <ul class="year-list">
             
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/19</span>
+            <a class="archive-post-title" href="/posts/app-error/">“应用程序”已损坏解决方案</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/19</span>
+            <a class="archive-post-title" href="/posts/pichost-picgo/">PicGO 连接 AWS S3</a>
+        </li>
+    
         
         <li class="archive-post-item">
             <span class="archive-post-date">04/09</span>
@@ -2451,6 +2469,11 @@ Last 2 Days！
             <span class="sidebar-tag-name" data-tags="s3">
                 <span class="iconfont-archer">&#xe606;</span>
                 s3
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="cloud">
+                <span class="iconfont-archer">&#xe606;</span>
+                cloud
             </span>
         
     </div>

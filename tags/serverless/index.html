@@ -441,196 +441,6 @@
             
         
         <article class="index-post">
-            <a class="abstract-title" href="/posts/aws-pichost/">
-                
-                <span class="abstract-title-text">AWS S3+CloudFront 打造自己的图床</span>
-            </a>
-            <div class="abstract-content">
-                背景图床是一个托管博客图片的地方，常见图床有新浪微博、七牛云、SM.MS 等。
-但是天下没有免费的午餐，免费图床总有各种问题（比如我的微博图床抢救），于是决定自己建一个图床。这里使用的是 AWS 的 S3 和 CloudFront。
-为什么选择 AWS S3
-国内云的带宽费用普遍高于海外云
-相比于国内云，AWS 的合规性更好
-
-为什么不使用 CloudFlare
-目前体量较小，S3 更实惠
-
-
-简介AWS S3
- AWS S3 是一个弹性、高扩展的对象存储服务。它可以存储任何类型的数据，包括图片、音频、视频、文档等等。用户可以在 AWS 控制台中轻松地创建和管理存储桶，上传和下载数据，进...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2023/04/09">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2023/04/09</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="serverless">serverless</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="aws">aws</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="s3">s3</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/posts/aws-intro/">
-                
-                <span class="abstract-title-text">AWS 入门</span>
-            </a>
-            <div class="abstract-content">
-                简介
-官网：https://aws.amazon.com/cn/
-
-
-AWS 是亚马逊旗下的云计算平台，它提供了一系列云计算服务，包括计算、存储、数据库、网络、安全等等。AWS服务可以帮助个人、企业和政府机构构建和扩展他们的IT基础设施。
-AWS的计算服务包括 EC2，ECS，Lambda 等等，它们可以帮助用户在云上运行应用程序和处理数据。存储服务包括S3，EBS等等，用户可以在云中存储和管理数据。AWS还提供了各种数据库服务，包括RDS，DynamoDB，Redshift等等，可以帮助用户管理数据。AWS还提供了各种网络和安全服务，包括VPC，CloudFront，IAM等等，可以保...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2023/04/09">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2023/02/18</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="serverless">serverless</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="aws">aws</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/posts/sina-pichost/">
-                
-                <span class="abstract-title-text">微博图床抢救</span>
-            </a>
-            <div class="abstract-content">
-                省流项目地址：https://github.com/xiabee/SinaDownLoad
-背景之前博客一直白嫖的微博图床，图它免费，而且 CDN 速度快，而且通过 “微博图床” 插件就可以直接一键上传图片，非常方便。
-然而，不知某天之后，微博对所有的图片进行了外链限制，直接访问图片会返回 403，只有从微博内访问才能正常打开……比如这张图片：xiabee 唱歌，直接点击链接是打不开的，会返回如下提示：
-
-
-然后我的博客在抢救之前，所有的图都变成了上面的亚子……全都403，一张都么得（心态崩溃.jpg）
-当然，作为 CTF 选手，这种限制还是很容易绕过的。我们随便在微博内打开一张图片，能...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2023/04/09">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2023/02/16</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="hexo">hexo</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="serverless">serverless</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="aws">aws</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/posts/aws-lambda/">
-                
-                <span class="abstract-title-text">使用 AWS Lambda 进行签到</span>
-            </a>
-            <div class="abstract-content">
-                
-
-背景
-很久之前做了个基于 AWS Lambda 的 Gladows 的自动签到脚本，一直没有写使用教程，今天来补充一下（不是我鸽，是真的太忙了.jpg）
-
-账号创建啥的太久远了已经忘记怎么操作的了，记忆中不是很难，按照 AWS 官方提示一步一步走就好了
-
-签到架构图：
-
-
-
-
-Glados 签到过程分析如下：https://blog.xiabee.cn/posts/glados-intro/ ，想二创的朋友可以看看这篇
-
-什么是 AWS Lambda
-AWS：Amazon Web Service，中文名叫亚马逊云服务平台，一个做云服务的厂商提供的云服务，类似于国内的阿里云、腾讯云等
-...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2023/02/18">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/12/11</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="serverless">serverless</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="aws">aws</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
             <a class="abstract-title" href="/posts/wechat-bot/">
                 
                 <span class="abstract-title-text">利用企业微信机器人推送消息</span>
@@ -1032,7 +842,41 @@ PS：为什么是接收不是收发呢……因为腾讯在某天之后限制了
         
         
         
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         
         
@@ -1483,7 +1327,7 @@ PS：为什么是接收不是收发呢……因为腾讯在某天之后限制了
     
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 50
+        Total : 52
         </div>
         <!-- search  -->
         
@@ -1501,6 +1345,18 @@ PS：为什么是接收不是收发呢……因为腾讯在某天之后限制了
             <div class="archive-year"> 2023 </div>
             <ul class="year-list">
             
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/19</span>
+            <a class="archive-post-title" href="/posts/app-error/">“应用程序”已损坏解决方案</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/19</span>
+            <a class="archive-post-title" href="/posts/pichost-picgo/">PicGO 连接 AWS S3</a>
+        </li>
+    
         
         <li class="archive-post-item">
             <span class="archive-post-date">04/09</span>
@@ -1992,6 +1848,11 @@ PS：为什么是接收不是收发呢……因为腾讯在某天之后限制了
             <span class="sidebar-tag-name" data-tags="s3">
                 <span class="iconfont-archer">&#xe606;</span>
                 s3
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="cloud">
+                <span class="iconfont-archer">&#xe606;</span>
+                cloud
             </span>
         
     </div>

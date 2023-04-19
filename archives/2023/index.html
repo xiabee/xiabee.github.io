@@ -441,6 +441,99 @@
             
         
         <article class="index-post">
+            <a class="abstract-title" href="/posts/pichost-picgo/">
+                
+                <span class="abstract-title-text">PicGO 连接 AWS S3</span>
+            </a>
+            <div class="abstract-content">
+                简介PicGo:  一个用于快速上传图片并获取图片 URL 链接的工具
+在上期 S3 图床 中我们提到了 PicGO，这里我们简单介绍一下如何配置 PicGO 上传图片。
+PicGO 设置GitHub 里面直接找到最新 release 的稳定版本，下载安装即可。
+如果你是比较新的 macOS，可能会遇到 “已损坏，无法打开” 的问题，可以参考之前的博客
+
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2023/04/19">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2023/04/19</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="aws">aws</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="cloud">cloud</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/posts/app-error/">
+                
+                <span class="abstract-title-text">“应用程序”已损坏解决方案</span>
+            </a>
+            <div class="abstract-content">
+                问题如果没有折腾过 mac，可能会在某次更新之后无法打开浏览器下载的可执行文件：
+
+
+这里给几个比较有效的解决方法。
+直接允许 “任何来源” App 运行老版本的 macOS 教程里会提醒你在安全性与隐私里面设置，允许 “任何来源” 的位置下载 APP：
+
+但是新版的 macOS 默认没有这个选项：
+
+此时需要执行以下命令，以显示 “任何来源”：
+1sudo spctl --master-disable
+
+重新打开 “隐私与安全性”，就能看到了：
+
+如需关闭显示任何来源：
+1sudo spctl --master-enable
+
+
+如果对 macOS 终端操作不熟练的话，建议到此为止，下...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2023/04/19">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2023/04/19</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="mac">mac</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
             <a class="abstract-title" href="/posts/aws-pichost/">
                 
                 <span class="abstract-title-text">AWS S3+CloudFront 打造自己的图床</span>
@@ -463,7 +556,7 @@
             
             <div class="abstract-post-meta">
                 <!-- date -->
-                <div class="abstract-date" title="Last updated: 2023/04/09">
+                <div class="abstract-date" title="Last updated: 2023/04/19">
                     <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2023/04/09</span>
                 </div>
                 <!-- tags -->
@@ -471,11 +564,11 @@
                     <div class= abstract-tags >
     
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="serverless">serverless</a>
-    
         <a class="post-tag" href="javascript:void(0);" data-tags="aws">aws</a>
     
         <a class="post-tag" href="javascript:void(0);" data-tags="s3">s3</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="cloud">cloud</a>
     
 </div>
 
@@ -545,7 +638,7 @@ AWS的计算服务包括 EC2，ECS，Lambda 等等，它们可以帮助用户在
             
             <div class="abstract-post-meta">
                 <!-- date -->
-                <div class="abstract-date" title="Last updated: 2023/04/09">
+                <div class="abstract-date" title="Last updated: 2023/04/19">
                     <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2023/02/18</span>
                 </div>
                 <!-- tags -->
@@ -553,9 +646,9 @@ AWS的计算服务包括 EC2，ECS，Lambda 等等，它们可以帮助用户在
                     <div class= abstract-tags >
     
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="serverless">serverless</a>
-    
         <a class="post-tag" href="javascript:void(0);" data-tags="aws">aws</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="cloud">cloud</a>
     
 </div>
 
@@ -588,7 +681,7 @@ AWS的计算服务包括 EC2，ECS，Lambda 等等，它们可以帮助用户在
             
             <div class="abstract-post-meta">
                 <!-- date -->
-                <div class="abstract-date" title="Last updated: 2023/04/09">
+                <div class="abstract-date" title="Last updated: 2023/04/19">
                     <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2023/02/16</span>
                 </div>
                 <!-- tags -->
@@ -598,9 +691,9 @@ AWS的计算服务包括 EC2，ECS，Lambda 等等，它们可以帮助用户在
     
         <a class="post-tag" href="javascript:void(0);" data-tags="hexo">hexo</a>
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="serverless">serverless</a>
-    
         <a class="post-tag" href="javascript:void(0);" data-tags="aws">aws</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="cloud">cloud</a>
     
 </div>
 
@@ -979,7 +1072,41 @@ AWS的计算服务包括 EC2，ECS，Lambda 等等，它们可以帮助用户在
         
         
         
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         
         
@@ -1430,7 +1557,7 @@ AWS的计算服务包括 EC2，ECS，Lambda 等等，它们可以帮助用户在
     
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 50
+        Total : 52
         </div>
         <!-- search  -->
         
@@ -1448,6 +1575,18 @@ AWS的计算服务包括 EC2，ECS，Lambda 等等，它们可以帮助用户在
             <div class="archive-year"> 2023 </div>
             <ul class="year-list">
             
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/19</span>
+            <a class="archive-post-title" href="/posts/app-error/">“应用程序”已损坏解决方案</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/19</span>
+            <a class="archive-post-title" href="/posts/pichost-picgo/">PicGO 连接 AWS S3</a>
+        </li>
+    
         
         <li class="archive-post-item">
             <span class="archive-post-date">04/09</span>
@@ -1939,6 +2078,11 @@ AWS的计算服务包括 EC2，ECS，Lambda 等等，它们可以帮助用户在
             <span class="sidebar-tag-name" data-tags="s3">
                 <span class="iconfont-archer">&#xe606;</span>
                 s3
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="cloud">
+                <span class="iconfont-archer">&#xe606;</span>
+                cloud
             </span>
         
     </div>
