@@ -19,12 +19,12 @@
         <meta name="keywords" content="xiabee,hexo-theme,xiabee-blog">
     
     <meta name="description" content="">
-    <meta name="description" content="背景之前贵司做了一个 OSS Insight ，是一个针对开源软件项目的可视化和分析平台。它提供了对开源项目的全面分析和可视化展示，帮助用户了解项目的活跃度、贡献者、代码质量、依赖关系等信息。 后来又推出了个人的 lite 版，ossinsight-lite，里面教大家如何白嫖 tidbcloud 来搭建自己的 ossinsght。这里我就做个搬运工，顺便记录一下踩坑过程。  准备工作需要">
+    <meta name="description" content="背景之前贵司做了一个 OSS Insight ，是一个针对开源软件项目的可视化和分析平台。它提供了对开源项目的全面分析和可视化展示，帮助用户了解项目的活跃度、贡献者、代码质量、依赖关系等信息。 后来又推出了个人的 lite 版，ossinsight-lite ，有点酷炫，而且里面教了大家如何白嫖 tidbcloud 来搭建自己的 ossinsght。这里我就做个搬运工，顺便记录一下踩坑过程">
 <meta property="og:type" content="article">
 <meta property="og:title" content="10 分钟内搭建自己的 Oss-Insight-lite">
 <meta property="og:url" content="https://blog.xiabee.cn/posts/ossinsight-lite/index.html">
 <meta property="og:site_name" content="xiabee-瞎哔哔">
-<meta property="og:description" content="背景之前贵司做了一个 OSS Insight ，是一个针对开源软件项目的可视化和分析平台。它提供了对开源项目的全面分析和可视化展示，帮助用户了解项目的活跃度、贡献者、代码质量、依赖关系等信息。 后来又推出了个人的 lite 版，ossinsight-lite，里面教大家如何白嫖 tidbcloud 来搭建自己的 ossinsght。这里我就做个搬运工，顺便记录一下踩坑过程。  准备工作需要">
+<meta property="og:description" content="背景之前贵司做了一个 OSS Insight ，是一个针对开源软件项目的可视化和分析平台。它提供了对开源项目的全面分析和可视化展示，帮助用户了解项目的活跃度、贡献者、代码质量、依赖关系等信息。 后来又推出了个人的 lite 版，ossinsight-lite ，有点酷炫，而且里面教了大家如何白嫖 tidbcloud 来搭建自己的 ossinsght。这里我就做个搬运工，顺便记录一下踩坑过程">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://s3.xiabee.cn/pic/2023/06/1f34f76818140376e23db746db88a7c32965c1ef8dc927bf07760de916844579.png">
 <meta property="og:image" content="https://s3.xiabee.cn/pic/2023/06/d07de8d0c9f1a04cd14c2b8f9427a3d0588183966960f00d74677a32f438cdd6.png">
@@ -37,8 +37,17 @@
 <meta property="og:image" content="https://s3.xiabee.cn/pic/2023/06/5b273f77b85d04e866557bb2b381674c15dbf6591983cee57d0d1e26be978b27.png">
 <meta property="og:image" content="https://s3.xiabee.cn/pic/2023/06/d3c48f9a44ce95eeaf7706e8e8b209355bd056cf8f78f0d6854795af4e25fa7a.jpg">
 <meta property="og:image" content="https://s3.xiabee.cn/pic/2023/06/4bfb24abb7e7c3c6e3dc673069d1c54cbaf19cf653cd4cf588f9a977f31bbbb7.png">
+<meta property="og:image" content="https://s3.xiabee.cn/pic/2023/06/2696d0bcefdfbe447f4463edcbcb2cfdd5026c8d28805e838712798b8a892fe1.png">
+<meta property="og:image" content="https://s3.xiabee.cn/pic/2023/06/694bcdcf68b64f3509e9adb57f28ab915b0f7acba6fcebdbac4eea615ad06c00.png">
+<meta property="og:image" content="https://s3.xiabee.cn/pic/2023/06/53f76fd0e02888f7ac65a4ce1a8f637b7ccb2227bd9d9bce28bc7e0301a4fc0d.png">
+<meta property="og:image" content="https://s3.xiabee.cn/pic/2023/06/86a819edb4632fbe2e4eda5a3afe41c27103722e5afb082a8f5b7119cfe13836.png">
+<meta property="og:image" content="https://s3.xiabee.cn/pic/2023/06/cf2c7c59035fb4772033eca6f895dd829282d949978cedc870376e5f047753bd.png">
+<meta property="og:image" content="https://s3.xiabee.cn/pic/2023/06/df42e543761848c9159217bfae7b65dc9efe3eaa1dd54935dd28086dbf439465.png">
+<meta property="og:image" content="https://s3.xiabee.cn/pic/2023/06/14af16ea3b39ba78a37dcf1d928c7a48f7765d519ed60b78aaa0e9373a410c08.png">
+<meta property="og:image" content="https://s3.xiabee.cn/pic/2023/06/84eb2520771b39d5fdb501ec5852e2d2ecc2195c4e0bf8074351b39dc5408542.png">
+<meta property="og:image" content="https://s3.xiabee.cn/pic/2023/06/e4ba111802304cc9917d91db59f8d4a3b777aaa02e7411e53f8edc6c41badfee.png">
 <meta property="article:published_time" content="2023-06-30T04:00:23.000Z">
-<meta property="article:modified_time" content="2023-06-30T15:15:34.752Z">
+<meta property="article:modified_time" content="2023-06-30T15:37:34.746Z">
 <meta property="article:author" content="xiabee">
 <meta property="article:tag" content="cloud">
 <meta name="twitter:card" content="summary">
@@ -358,7 +367,7 @@
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">935</span>阅读时长: <span class="post-count reading-time">3 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">1.1k</span>阅读时长: <span class="post-count reading-time">4 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -524,7 +533,8 @@
 
 
 <h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>之前<a target="_blank" rel="noopener" href="https://www.pingcap.com/?from=en">贵司</a>做了一个 <a target="_blank" rel="noopener" href="https://ossinsight.io/">OSS Insight</a> ，是一个针对开源软件项目的可视化和分析平台。它提供了对开源项目的全面分析和可视化展示，帮助用户了解项目的活跃度、贡献者、代码质量、依赖关系等信息。</p>
-<p>后来又推出了个人的 lite 版，<a target="_blank" rel="noopener" href="https://github.com/pingcap/ossinsight-lite">ossinsight-lite</a>，里面教大家如何白嫖 tidbcloud 来搭建自己的 ossinsght。这里我就做个搬运工，顺便记录一下踩坑过程。</p>
+<p>后来又推出了个人的 lite 版，<a target="_blank" rel="noopener" href="https://github.com/pingcap/ossinsight-lite">ossinsight-lite</a> ，有点酷炫，而且里面教了大家如何白嫖 tidbcloud 来搭建自己的 ossinsght。这里我就做个搬运工，顺便记录一下踩坑过程。</p>
+<p><a id="ex"></a></p>
 <p><img src="https://s3.xiabee.cn/pic/2023/06/1f34f76818140376e23db746db88a7c32965c1ef8dc927bf07760de916844579.png" alt="image-20230630165118505"></p>
 <h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>需要有一下三个服务的账户：</p>
 <ol>
@@ -606,6 +616,26 @@
 <li>可以参考官方仓库的<a target="_blank" rel="noopener" href="https://github.com/pingcap/ossinsight-lite/blob/main/README.md#troubleshooting">文档</a></li>
 <li>大部分问题应该是我前面提到的 <a href="#pass-id">密码设置</a> 和 <a href="#grant-id">用户授权</a></li>
 </ul>
+<h1 id="部署-Vecel"><a href="#部署-Vecel" class="headerlink" title="部署 Vecel"></a>部署 Vecel</h1><p>通过 <a target="_blank" rel="noopener" href="https://vercel.com/dashboard">Vecel</a> 部署我们的前端 dashboard</p>
+<h2 id="导入项目"><a href="#导入项目" class="headerlink" title="导入项目"></a>导入项目</h2><p>进入 Vecel 控制台，创建项目</p>
+<p><img src="https://s3.xiabee.cn/pic/2023/06/2696d0bcefdfbe447f4463edcbcb2cfdd5026c8d28805e838712798b8a892fe1.png" alt="image-20230630231733963"></p>
+<p>部署刚刚 Fork 的那个仓库：<code>ossinsight-lite</code></p>
+<p><img src="https://s3.xiabee.cn/pic/2023/06/694bcdcf68b64f3509e9adb57f28ab915b0f7acba6fcebdbac4eea615ad06c00.png" alt="image-20230630232010050"></p>
+<p>直接 Deploy，项目会在几秒内失败，因为我们还没有配置凭证信息。但是没有关系，继续往后走</p>
+<p><img src="https://s3.xiabee.cn/pic/2023/06/53f76fd0e02888f7ac65a4ce1a8f637b7ccb2227bd9d9bce28bc7e0301a4fc0d.png" alt="image-20230630232141642"></p>
+<h2 id="创建-TiDBCloud-集成"><a href="#创建-TiDBCloud-集成" class="headerlink" title="创建 TiDBCloud 集成"></a>创建 TiDBCloud 集成</h2><p>进入 <a target="_blank" rel="noopener" href="https://vercel.com/integrations/tidb-cloud">TiDBCloud 集成主页</a>，选择项目之后一路 continue 即可</p>
+<p><img src="https://s3.xiabee.cn/pic/2023/06/86a819edb4632fbe2e4eda5a3afe41c27103722e5afb082a8f5b7119cfe13836.png" alt="image-20230630232414840"></p>
+<p>集成后如下：</p>
+<p><img src="https://s3.xiabee.cn/pic/2023/06/cf2c7c59035fb4772033eca6f895dd829282d949978cedc870376e5f047753bd.png" alt="image-20230630232715305"></p>
+<h2 id="重新部署-Vecel"><a href="#重新部署-Vecel" class="headerlink" title="重新部署 Vecel"></a>重新部署 Vecel</h2><p><img src="https://s3.xiabee.cn/pic/2023/06/df42e543761848c9159217bfae7b65dc9efe3eaa1dd54935dd28086dbf439465.png" alt="image-20230630232804146"></p>
+<p>等待几分钟，待其运行完毕。</p>
+<p><img src="https://s3.xiabee.cn/pic/2023/06/14af16ea3b39ba78a37dcf1d928c7a48f7765d519ed60b78aaa0e9373a410c08.png" alt="image-20230630233238615"></p>
+<h2 id="设置自定义域名"><a href="#设置自定义域名" class="headerlink" title="设置自定义域名"></a>设置自定义域名</h2><p><img src="https://s3.xiabee.cn/pic/2023/06/84eb2520771b39d5fdb501ec5852e2d2ecc2195c4e0bf8074351b39dc5408542.png" alt="image-20230630233431061"></p>
+<h1 id="最终效果"><a href="#最终效果" class="headerlink" title="最终效果"></a>最终效果</h1><ul>
+<li>完整效果如 <a href="#ex">背景</a> 所示</li>
+<li>当然也可以直接引用进 markdown 里面</li>
+</ul>
+<p><img src="https://s3.xiabee.cn/pic/2023/06/e4ba111802304cc9917d91db59f8d4a3b777aaa02e7411e53f8edc6c41badfee.png" alt="image-20230630233505413"></p>
 <h1 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h1><blockquote>
 <p><a target="_blank" rel="noopener" href="https://github.com/pingcap/ossinsight-lite">https://github.com/pingcap/ossinsight-lite</a></p>
 </blockquote>
@@ -617,7 +647,7 @@
             <p>原文作者：<a href="https://blog.xiabee.cn">xiabee</a>
             <p>原文链接：<a href="https://blog.xiabee.cn/posts/ossinsight-lite/">https://blog.xiabee.cn/posts/ossinsight-lite/</a>
             <p>发表日期：<a href="https://blog.xiabee.cn/posts/ossinsight-lite/">June 30th 2023, 12:00:23 pm</a>
-            <p>更新日期：<a href="https://blog.xiabee.cn/posts/ossinsight-lite/">June 30th 2023, 11:15:34 pm</a>
+            <p>更新日期：<a href="https://blog.xiabee.cn/posts/ossinsight-lite/">June 30th 2023, 11:37:34 pm</a>
             <p>版权声明：本文采用<a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
@@ -796,7 +826,7 @@
                 <div class="toc-catalog">
                     <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
                 </div>
-                <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%83%8C%E6%99%AF"><span class="toc-number">1.</span> <span class="toc-text">背景</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="toc-number">1.1.</span> <span class="toc-text">准备工作</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E4%BA%91%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-number">2.</span> <span class="toc-text">创建云数据库</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA-Serverless-%E9%9B%86%E7%BE%A4"><span class="toc-number">2.1.</span> <span class="toc-text">创建 Serverless 集群</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%B0%E5%BD%95%E7%99%BB%E5%BD%95%E4%BF%A1%E6%81%AF"><span class="toc-number">2.2.</span> <span class="toc-text">记录登录信息</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E7%94%A8%E6%88%B7%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="toc-number">2.3.</span> <span class="toc-text">创建用户注意事项</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8%E6%88%B7%E5%90%8D%E5%89%8D%E7%BC%80%E5%9B%BA%E5%AE%9A"><span class="toc-number">2.3.1.</span> <span class="toc-text">用户名前缀固定</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%86%E7%A0%81%E8%AE%BE%E7%BD%AE"><span class="toc-number">2.3.2.</span> <span class="toc-text">密码设置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8%E6%88%B7%E6%8E%88%E6%9D%83"><span class="toc-number">2.3.3.</span> <span class="toc-text">用户授权</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE-Github-Action"><span class="toc-number">3.</span> <span class="toc-text">设置 Github Action</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Fork-%E4%BB%93%E5%BA%93"><span class="toc-number">3.1.</span> <span class="toc-text">Fork 仓库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE-Action-Secrets"><span class="toc-number">3.2.</span> <span class="toc-text">设置 Action Secrets</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%80%E5%90%AF-workflow"><span class="toc-number">3.3.</span> <span class="toc-text">开启 workflow</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%97%AE%E9%A2%98%E5%A4%84%E7%90%86"><span class="toc-number">3.4.</span> <span class="toc-text">问题处理</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E6%A1%A3"><span class="toc-number">4.</span> <span class="toc-text">参考文档</span></a></li></ol>
+                <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%83%8C%E6%99%AF"><span class="toc-number">1.</span> <span class="toc-text">背景</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="toc-number">1.1.</span> <span class="toc-text">准备工作</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E4%BA%91%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-number">2.</span> <span class="toc-text">创建云数据库</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA-Serverless-%E9%9B%86%E7%BE%A4"><span class="toc-number">2.1.</span> <span class="toc-text">创建 Serverless 集群</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%B0%E5%BD%95%E7%99%BB%E5%BD%95%E4%BF%A1%E6%81%AF"><span class="toc-number">2.2.</span> <span class="toc-text">记录登录信息</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E7%94%A8%E6%88%B7%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="toc-number">2.3.</span> <span class="toc-text">创建用户注意事项</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8%E6%88%B7%E5%90%8D%E5%89%8D%E7%BC%80%E5%9B%BA%E5%AE%9A"><span class="toc-number">2.3.1.</span> <span class="toc-text">用户名前缀固定</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%86%E7%A0%81%E8%AE%BE%E7%BD%AE"><span class="toc-number">2.3.2.</span> <span class="toc-text">密码设置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8%E6%88%B7%E6%8E%88%E6%9D%83"><span class="toc-number">2.3.3.</span> <span class="toc-text">用户授权</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE-Github-Action"><span class="toc-number">3.</span> <span class="toc-text">设置 Github Action</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Fork-%E4%BB%93%E5%BA%93"><span class="toc-number">3.1.</span> <span class="toc-text">Fork 仓库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE-Action-Secrets"><span class="toc-number">3.2.</span> <span class="toc-text">设置 Action Secrets</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%80%E5%90%AF-workflow"><span class="toc-number">3.3.</span> <span class="toc-text">开启 workflow</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%97%AE%E9%A2%98%E5%A4%84%E7%90%86"><span class="toc-number">3.4.</span> <span class="toc-text">问题处理</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%83%A8%E7%BD%B2-Vecel"><span class="toc-number">4.</span> <span class="toc-text">部署 Vecel</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%BC%E5%85%A5%E9%A1%B9%E7%9B%AE"><span class="toc-number">4.1.</span> <span class="toc-text">导入项目</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA-TiDBCloud-%E9%9B%86%E6%88%90"><span class="toc-number">4.2.</span> <span class="toc-text">创建 TiDBCloud 集成</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%87%8D%E6%96%B0%E9%83%A8%E7%BD%B2-Vecel"><span class="toc-number">4.3.</span> <span class="toc-text">重新部署 Vecel</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D"><span class="toc-number">4.4.</span> <span class="toc-text">设置自定义域名</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9C%80%E7%BB%88%E6%95%88%E6%9E%9C"><span class="toc-number">5.</span> <span class="toc-text">最终效果</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E6%A1%A3"><span class="toc-number">6.</span> <span class="toc-text">参考文档</span></a></li></ol>
             </div>
         
         <!-- sidebar -->
