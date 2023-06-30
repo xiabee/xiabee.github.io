@@ -5,7 +5,7 @@ tags:
   - cloud
   - aws
 categories:
-  - aws
+  - cloud
 abbrlink: aws-intro
 ---
 
