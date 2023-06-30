@@ -38,7 +38,7 @@
 <meta property="og:image" content="https://s3.xiabee.cn/pic/2023/06/d3c48f9a44ce95eeaf7706e8e8b209355bd056cf8f78f0d6854795af4e25fa7a.jpg">
 <meta property="og:image" content="https://s3.xiabee.cn/pic/2023/06/4bfb24abb7e7c3c6e3dc673069d1c54cbaf19cf653cd4cf588f9a977f31bbbb7.png">
 <meta property="article:published_time" content="2023-06-30T04:00:23.000Z">
-<meta property="article:modified_time" content="2023-06-30T15:14:34.419Z">
+<meta property="article:modified_time" content="2023-06-30T15:15:34.752Z">
 <meta property="article:author" content="xiabee">
 <meta property="article:tag" content="cloud">
 <meta name="twitter:card" content="summary">
@@ -565,7 +565,7 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">GRANT ALL ON github_personal.* TO &#x27;44Kz3Lonut9UUp2.xiabee&#x27;@&#x27;%&#x27;;</span><br><span class="line">GRANT ALL ON github_repos.* TO &#x27;44Kz3Lonut9UUp2.xiabee&#x27;@&#x27;%&#x27;;</span><br></pre></td></tr></table></figure>
 
 <p>接下来应该可以顺利运行 <code>Github Action</code> 了</p>
-<h2 id="设置-Github-Action"><a href="#设置-Github-Action" class="headerlink" title="设置 Github Action"></a>设置 Github Action</h2><blockquote>
+<h1 id="设置-Github-Action"><a href="#设置-Github-Action" class="headerlink" title="设置 Github Action"></a>设置 Github Action</h1><blockquote>
 <p>Reference: <a target="_blank" rel="noopener" href="https://github.com/pingcap/ossinsight-lite/blob/main/docs/setup/repo-and-action.md">https://github.com/pingcap/ossinsight-lite/blob/main/docs/setup/repo-and-action.md</a></p>
 </blockquote>
 <p>设置 Action 分为三步：</p>
@@ -574,8 +574,8 @@
 <li><a target="_blank" rel="noopener" href="https://github.com/pingcap/ossinsight-lite/blob/main/docs/setup/repo-and-action.md#setup-github-action-secrets">Setup GitHub Action secrets</a></li>
 <li><a target="_blank" rel="noopener" href="https://github.com/pingcap/ossinsight-lite/blob/main/docs/setup/repo-and-action.md#enable-and-run-workflow">Enable and run workflow</a></li>
 </ol>
-<h3 id="Fork-仓库"><a href="#Fork-仓库" class="headerlink" title="Fork 仓库"></a>Fork 仓库</h3><p><img src="https://s3.xiabee.cn/pic/2023/06/a6428ac47379a540857898b83caa058bbfc30fe90589beed60e43373bdab2dbc.png" alt="image-20230630225059011"></p>
-<h3 id="设置-Action-Secrets"><a href="#设置-Action-Secrets" class="headerlink" title="设置 Action Secrets"></a>设置 Action Secrets</h3><p>Settings :arrow_right: Secrets and variables :arrow_right: Action</p>
+<h2 id="Fork-仓库"><a href="#Fork-仓库" class="headerlink" title="Fork 仓库"></a>Fork 仓库</h2><p><img src="https://s3.xiabee.cn/pic/2023/06/a6428ac47379a540857898b83caa058bbfc30fe90589beed60e43373bdab2dbc.png" alt="image-20230630225059011"></p>
+<h2 id="设置-Action-Secrets"><a href="#设置-Action-Secrets" class="headerlink" title="设置 Action Secrets"></a>设置 Action Secrets</h2><p>Settings :arrow_right: Secrets and variables :arrow_right: Action</p>
 <p><img src="https://s3.xiabee.cn/pic/2023/06/5b273f77b85d04e866557bb2b381674c15dbf6591983cee57d0d1e26be978b27.png" alt="image-20230630225803899"></p>
 <p>设置一个名为 <code>DATABASE_URL</code> 的环境变量，其值为</p>
 <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql:<span class="comment">//&lt;user&gt;:&lt;password&gt;@&lt;host&gt;:&lt;port&gt;</span></span><br></pre></td></tr></table></figure>
@@ -598,11 +598,11 @@
 
 
 
-<h3 id="开启-workflow"><a href="#开启-workflow" class="headerlink" title="开启 workflow"></a>开启 workflow</h3><p>允许 workflow 运行</p>
+<h2 id="开启-workflow"><a href="#开启-workflow" class="headerlink" title="开启 workflow"></a>开启 workflow</h2><p>允许 workflow 运行</p>
 <p><img src="https://s3.xiabee.cn/pic/2023/06/d3c48f9a44ce95eeaf7706e8e8b209355bd056cf8f78f0d6854795af4e25fa7a.jpg" alt="WeChat1d9b20fbc06b9243273dc8fb51967a1e"></p>
 <p>第一次开启时需要手动运行</p>
 <p><img src="https://s3.xiabee.cn/pic/2023/06/4bfb24abb7e7c3c6e3dc673069d1c54cbaf19cf653cd4cf588f9a977f31bbbb7.png" alt="image-20230630230909496"></p>
-<h3 id="问题处理"><a href="#问题处理" class="headerlink" title="问题处理"></a>问题处理</h3><ul>
+<h2 id="问题处理"><a href="#问题处理" class="headerlink" title="问题处理"></a>问题处理</h2><ul>
 <li>可以参考官方仓库的<a target="_blank" rel="noopener" href="https://github.com/pingcap/ossinsight-lite/blob/main/README.md#troubleshooting">文档</a></li>
 <li>大部分问题应该是我前面提到的 <a href="#pass-id">密码设置</a> 和 <a href="#grant-id">用户授权</a></li>
 </ul>
@@ -616,8 +616,8 @@
         <div class="license-wrapper">
             <p>原文作者：<a href="https://blog.xiabee.cn">xiabee</a>
             <p>原文链接：<a href="https://blog.xiabee.cn/posts/ossinsight-lite/">https://blog.xiabee.cn/posts/ossinsight-lite/</a>
-            <p>发表日期：<a href="https://blog.xiabee.cn/posts/ossinsight-lite/">六月 30日 2023, 12:00:23 中午</a>
-            <p>更新日期：<a href="https://blog.xiabee.cn/posts/ossinsight-lite/">June 30th 2023, 11:14:34 pm</a>
+            <p>发表日期：<a href="https://blog.xiabee.cn/posts/ossinsight-lite/">June 30th 2023, 12:00:23 pm</a>
+            <p>更新日期：<a href="https://blog.xiabee.cn/posts/ossinsight-lite/">June 30th 2023, 11:15:34 pm</a>
             <p>版权声明：本文采用<a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
@@ -796,7 +796,7 @@
                 <div class="toc-catalog">
                     <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
                 </div>
-                <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%83%8C%E6%99%AF"><span class="toc-number">1.</span> <span class="toc-text">背景</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="toc-number">1.1.</span> <span class="toc-text">准备工作</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E4%BA%91%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-number">2.</span> <span class="toc-text">创建云数据库</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA-Serverless-%E9%9B%86%E7%BE%A4"><span class="toc-number">2.1.</span> <span class="toc-text">创建 Serverless 集群</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%B0%E5%BD%95%E7%99%BB%E5%BD%95%E4%BF%A1%E6%81%AF"><span class="toc-number">2.2.</span> <span class="toc-text">记录登录信息</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E7%94%A8%E6%88%B7%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="toc-number">2.3.</span> <span class="toc-text">创建用户注意事项</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8%E6%88%B7%E5%90%8D%E5%89%8D%E7%BC%80%E5%9B%BA%E5%AE%9A"><span class="toc-number">2.3.1.</span> <span class="toc-text">用户名前缀固定</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%86%E7%A0%81%E8%AE%BE%E7%BD%AE"><span class="toc-number">2.3.2.</span> <span class="toc-text">密码设置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8%E6%88%B7%E6%8E%88%E6%9D%83"><span class="toc-number">2.3.3.</span> <span class="toc-text">用户授权</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE-Github-Action"><span class="toc-number">2.4.</span> <span class="toc-text">设置 Github Action</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Fork-%E4%BB%93%E5%BA%93"><span class="toc-number">2.4.1.</span> <span class="toc-text">Fork 仓库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE-Action-Secrets"><span class="toc-number">2.4.2.</span> <span class="toc-text">设置 Action Secrets</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%80%E5%90%AF-workflow"><span class="toc-number">2.4.3.</span> <span class="toc-text">开启 workflow</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%97%AE%E9%A2%98%E5%A4%84%E7%90%86"><span class="toc-number">2.4.4.</span> <span class="toc-text">问题处理</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E6%A1%A3"><span class="toc-number">3.</span> <span class="toc-text">参考文档</span></a></li></ol>
+                <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%83%8C%E6%99%AF"><span class="toc-number">1.</span> <span class="toc-text">背景</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="toc-number">1.1.</span> <span class="toc-text">准备工作</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E4%BA%91%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-number">2.</span> <span class="toc-text">创建云数据库</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA-Serverless-%E9%9B%86%E7%BE%A4"><span class="toc-number">2.1.</span> <span class="toc-text">创建 Serverless 集群</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%B0%E5%BD%95%E7%99%BB%E5%BD%95%E4%BF%A1%E6%81%AF"><span class="toc-number">2.2.</span> <span class="toc-text">记录登录信息</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E7%94%A8%E6%88%B7%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="toc-number">2.3.</span> <span class="toc-text">创建用户注意事项</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8%E6%88%B7%E5%90%8D%E5%89%8D%E7%BC%80%E5%9B%BA%E5%AE%9A"><span class="toc-number">2.3.1.</span> <span class="toc-text">用户名前缀固定</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%86%E7%A0%81%E8%AE%BE%E7%BD%AE"><span class="toc-number">2.3.2.</span> <span class="toc-text">密码设置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8%E6%88%B7%E6%8E%88%E6%9D%83"><span class="toc-number">2.3.3.</span> <span class="toc-text">用户授权</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE-Github-Action"><span class="toc-number">3.</span> <span class="toc-text">设置 Github Action</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Fork-%E4%BB%93%E5%BA%93"><span class="toc-number">3.1.</span> <span class="toc-text">Fork 仓库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE-Action-Secrets"><span class="toc-number">3.2.</span> <span class="toc-text">设置 Action Secrets</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%80%E5%90%AF-workflow"><span class="toc-number">3.3.</span> <span class="toc-text">开启 workflow</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%97%AE%E9%A2%98%E5%A4%84%E7%90%86"><span class="toc-number">3.4.</span> <span class="toc-text">问题处理</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E6%A1%A3"><span class="toc-number">4.</span> <span class="toc-text">参考文档</span></a></li></ol>
             </div>
         
         <!-- sidebar -->
