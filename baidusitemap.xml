@@ -1,23 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://blog.xiabee.cn/posts/ossinsight-lite/</loc>
+    <lastmod>2023-06-30</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.xiabee.cn/posts/aws-lambda/</loc>
+    <lastmod>2023-06-30</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.xiabee.cn/posts/aws-intro/</loc>
+    <lastmod>2023-06-30</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.xiabee.cn/posts/pichost-picgo/</loc>
+    <lastmod>2023-06-30</lastmod>
+  </url>
+  <url>
     <loc>https://blog.xiabee.cn/posts/aws-pichost/</loc>
     <lastmod>2023-04-19</lastmod>
   </url>
   <url>
-    <loc>https://blog.xiabee.cn/posts/pichost-picgo/</loc>
-    <lastmod>2023-04-19</lastmod>
-  </url>
-  <url>
     <loc>https://blog.xiabee.cn/posts/app-error/</loc>
-    <lastmod>2023-04-19</lastmod>
-  </url>
-  <url>
-    <loc>https://blog.xiabee.cn/posts/aws-intro/</loc>
-    <lastmod>2023-04-19</lastmod>
-  </url>
-  <url>
-    <loc>https://blog.xiabee.cn/posts/aws-lambda/</loc>
     <lastmod>2023-04-19</lastmod>
   </url>
   <url>

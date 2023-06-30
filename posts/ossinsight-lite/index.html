@@ -19,35 +19,27 @@
         <meta name="keywords" content="xiabee,hexo-theme,xiabee-blog">
     
     <meta name="description" content="">
-    <meta name="description" content="0xFF 免责声明由于传播、利用此文提供的信息而造成的任何直接或间接的后果，均有使用者承担，本站不为此承担任何责任。 0x00 简介shodan 是一个比较 dangerous 的搜索引擎，用于查看联网的智能设备——通常作为渗透测试的信息收集工具；  MSF，Metasploit-Framework，一款开源的渗透工具，用于检测漏洞、生成 payload、制造后门文件等。    Shodan 是一">
+    <meta name="description" content="背景之前贵司做了一个 OSS Insight ，是一个针对开源软件项目的可视化和分析平台。它提供了对开源项目的全面分析和可视化展示，帮助用户了解项目的活跃度、贡献者、代码质量、依赖关系等信息。 后来又推出了个人的 lite 版，ossinsight-lite，里面教大家如何白嫖 tidbcloud 来搭建自己的 ossinsght。这里我就做个搬运工，顺便记录一下踩坑过程。  准备工作需要">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Shodan + MSF 入侵智能摄像头">
-<meta property="og:url" content="https://blog.xiabee.cn/posts/shodan-cam/index.html">
+<meta property="og:title" content="10 分钟内搭建自己的 Oss-Insight-lite">
+<meta property="og:url" content="https://blog.xiabee.cn/posts/ossinsight-lite/index.html">
 <meta property="og:site_name" content="xiabee-瞎哔哔">
-<meta property="og:description" content="0xFF 免责声明由于传播、利用此文提供的信息而造成的任何直接或间接的后果，均有使用者承担，本站不为此承担任何责任。 0x00 简介shodan 是一个比较 dangerous 的搜索引擎，用于查看联网的智能设备——通常作为渗透测试的信息收集工具；  MSF，Metasploit-Framework，一款开源的渗透工具，用于检测漏洞、生成 payload、制造后门文件等。    Shodan 是一">
+<meta property="og:description" content="背景之前贵司做了一个 OSS Insight ，是一个针对开源软件项目的可视化和分析平台。它提供了对开源项目的全面分析和可视化展示，帮助用户了解项目的活跃度、贡献者、代码质量、依赖关系等信息。 后来又推出了个人的 lite 版，ossinsight-lite，里面教大家如何白嫖 tidbcloud 来搭建自己的 ossinsght。这里我就做个搬运工，顺便记录一下踩坑过程。  准备工作需要">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://s3.xiabee.cn/pic/2023/03/514f0d8b43aa77dd10b70660c9acf77dfa4cb8e5a0fda741a68207843925c38c.png">
-<meta property="og:image" content="https://s3.xiabee.cn/pic/2023/03/c55da476153d89febc88d4d58cb83fa83353099960285e6443836a3b2ecf4d25.png">
-<meta property="og:image" content="https://s3.xiabee.cn/pic/2023/03/b9e1551b850015c423ee0e35ab209881500ada97377adc82a51885fbfca8ef03.png">
-<meta property="og:image" content="https://s3.xiabee.cn/pic/2023/03/248e35c4b09cda750173b59ec6fb77a3e69131b15a69628b4a97b5619fb35da1.png">
-<meta property="og:image" content="https://s3.xiabee.cn/pic/2023/03/655588e98f4a93aa737b37e29e72167f857424683653cc9c8f28818eb1726921.png">
-<meta property="og:image" content="https://s3.xiabee.cn/pic/2023/03/dde521030fa35d70a58ba6ea08635605405c53d7c1dea15af2b844bc95ebba6b.png">
-<meta property="og:image" content="https://s3.xiabee.cn/pic/2023/03/04e01a43ba09753feeff0a7f62b147c0cecfb996b9e59d71798b50c485452dac.png">
-<meta property="og:image" content="https://s3.xiabee.cn/pic/2023/03/5bbfe267a7c4b11e4eeb72cd745d14dacb21dd8642362181eadab8f2b89d251c.png">
-<meta property="og:image" content="https://s3.xiabee.cn/pic/2023/03/1b860ddda53df29bae1f6ded4dec5c1884e975102d513c254f29b499fae014dd.png">
-<meta property="og:image" content="https://s3.xiabee.cn/pic/2023/03/c3a8090986a3fa69c9dd468b776db80e2a67adc783685c2d58d03db2f72877fc.png">
-<meta property="og:image" content="https://s3.xiabee.cn/pic/2023/03/d6742285853c8d78ca67b3f9a6413d357cdaf0a0196a31c2a9fb7da93751581d.png">
-<meta property="article:published_time" content="2021-03-10T12:00:23.000Z">
-<meta property="article:modified_time" content="2023-03-09T12:43:14.561Z">
+<meta property="og:image" content="https://s3.xiabee.cn/pic/2023/06/1f34f76818140376e23db746db88a7c32965c1ef8dc927bf07760de916844579.png">
+<meta property="og:image" content="https://s3.xiabee.cn/pic/2023/06/fa24f9da8f43ba159fab0b220d839d416b469d10b0be69cc5fa0a04672461078.png">
+<meta property="og:image" content="https://s3.xiabee.cn/pic/2023/06/b5af5f6e5922cc518803ea408192c68f41f0f8acdde4d7cf88b0c8d49c628346.png">
+<meta property="article:published_time" content="2023-06-30T04:00:23.000Z">
+<meta property="article:modified_time" content="2023-06-30T09:45:24.988Z">
 <meta property="article:author" content="xiabee">
-<meta property="article:tag" content="ctf">
+<meta property="article:tag" content="cloud">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://s3.xiabee.cn/pic/2023/03/514f0d8b43aa77dd10b70660c9acf77dfa4cb8e5a0fda741a68207843925c38c.png">
+<meta name="twitter:image" content="https://s3.xiabee.cn/pic/2023/06/1f34f76818140376e23db746db88a7c32965c1ef8dc927bf07760de916844579.png">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <link rel="icon" href="https://s3.xiabee.cn/pic/icons/favicon.jpg">
     
-    <title>Shodan + MSF 入侵智能摄像头 · xiabee-瞎哔哔</title>
+    <title>10 分钟内搭建自己的 Oss-Insight-lite · xiabee-瞎哔哔</title>
     <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
 /* This file is meant as a standalone workflow for
 - testing support for link[rel=preload]
@@ -285,7 +277,7 @@
                 <a href="/">XiaBee&#39;s Studio.</a>
             </div>
             <div class="post-title header-element">
-                <a href="#" class="post-name">Shodan + MSF 入侵智能摄像头</a>
+                <a href="#" class="post-name">10 分钟内搭建自己的 Oss-Insight-lite</a>
             </div>
         </div>
     
@@ -331,7 +323,7 @@
         <h1 class="intro-title">
             <!-- 主页  -->
             
-                Shodan + MSF 入侵智能摄像头
+                10 分钟内搭建自己的 Oss-Insight-lite
             <!-- 404 -->
             
         </h1>
@@ -351,20 +343,20 @@
                     <div class= post-intro-tags >
     
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="ctf">ctf</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="cloud">cloud</a>
     
 </div>
 
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">744</span>阅读时长: <span class="post-count reading-time">2 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">436</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
                     <!-- 撰写日期 -->
                     <span class="iconfont-archer post-intro-calander">&#xe676;</span>
-                    <span class="post-intro-time">2021/03/10</span>
+                    <span class="post-intro-time">2023/06/30</span>
                     <!-- busuanzi -->
                     
                         <span id="busuanzi_container_page_pv" class="busuanzi-pv">
@@ -519,71 +511,43 @@
             <div class="container container-unloaded">
                 <main class="main post-page">
     <article class="article-entry">
-        <h2 id="0xFF-免责声明"><a href="#0xFF-免责声明" class="headerlink" title="0xFF 免责声明"></a>0xFF 免责声明</h2><p>由于传播、利用此文提供的信息而造成的任何直接或间接的后果，均有使用者承担，本站不为此承担任何责任。</p>
-<h2 id="0x00-简介"><a href="#0x00-简介" class="headerlink" title="0x00 简介"></a>0x00 简介</h2><p><a target="_blank" rel="noopener" href="https://www.shodan.io/">shodan</a> 是一个比较 dangerous 的搜索引擎，用于查看联网的智能设备——通常作为渗透测试的信息收集工具； </p>
-<p><a target="_blank" rel="noopener" href="https://www.metasploit.com/">MSF</a>，Metasploit-Framework，一款开源的渗透工具，用于检测漏洞、生成 payload、制造后门文件等。 </p>
-<blockquote>
-<p> Shodan 是一个开放式搜索引擎，它专注于搜索互联网上的设备，而不是网页。Shodan 可以搜索各种类型的设备，包括服务器、路由器、摄像头、智能家居设备等。</p>
-<p>Shodan 提供了一个简单的搜索界面，您可以输入关键字查询，Shodan 会返回匹配的设备列表。您可以通过 Shodan 搜索设备的位置、操作系统、IP 地址、开放的端口等信息。</p>
-<p>Shodan 可以用于安全研究和测试，它可以帮助您识别暴露在互联网上的设备，以便您可以评估这些设备的安全性。此外，Shodan 还可以帮助您识别潜在的漏洞和安全问题，并提供相关的建议和修复方案。</p>
-<p>请注意，使用 Shodan 可能存在安全风险，因为您可能会暴露自己的私人信息或敏感信息。因此，在使用 Shodan 之前，请仔细考虑您的目的和风险，并遵循所有相关的法律和道德规范。</p>
+        <meta name="referrer" content="no-referrer">
+
+
+
+<h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>之前<a target="_blank" rel="noopener" href="https://www.pingcap.com/?from=en">贵司</a>做了一个 <a target="_blank" rel="noopener" href="https://ossinsight.io/">OSS Insight</a> ，是一个针对开源软件项目的可视化和分析平台。它提供了对开源项目的全面分析和可视化展示，帮助用户了解项目的活跃度、贡献者、代码质量、依赖关系等信息。</p>
+<p>后来又推出了个人的 lite 版，<a target="_blank" rel="noopener" href="https://github.com/pingcap/ossinsight-lite">ossinsight-lite</a>，里面教大家如何白嫖 tidbcloud 来搭建自己的 ossinsght。这里我就做个搬运工，顺便记录一下踩坑过程。</p>
+<p><img src="https://s3.xiabee.cn/pic/2023/06/1f34f76818140376e23db746db88a7c32965c1ef8dc927bf07760de916844579.png" alt="image-20230630165118505"></p>
+<h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><p>需要有一下三个服务的账户：</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://github.com/">Github</a> 账户：用于fork并运行您自己的数据流水线，以获取您在GitHub上的活动记录；</li>
+<li><a target="_blank" rel="noopener" href="https://tidbcloud.com/">TiDB Serverless</a> 账户：免费的云数据库，用于免费存储个人数据；</li>
+<li><a target="_blank" rel="noopener" href="https://vercel.com/">Vercel</a> 账户：用于部署前端看板</li>
+</ol>
+<h1 id="部署过程"><a href="#部署过程" class="headerlink" title="部署过程"></a>部署过程</h1><h2 id="创建云数据库"><a href="#创建云数据库" class="headerlink" title="创建云数据库"></a>创建云数据库</h2><h3 id="创建-Serverless-集群"><a href="#创建-Serverless-集群" class="headerlink" title="创建 Serverless 集群"></a>创建 Serverless 集群</h3><p>进入 <a target="_blank" rel="noopener" href="https://tidbcloud.com/console/clusters/create-cluster?utm_source=ossinsight&utm_medium=lite">tidbcloud</a>，创建一个 Serverless 集群（富哥想创建付费集群当我没说）</p>
+<p><img src="https://s3.xiabee.cn/pic/2023/06/fa24f9da8f43ba159fab0b220d839d416b469d10b0be69cc5fa0a04672461078.png" alt="image-20230630172831319"></p>
+<h3 id="记录登录信息"><a href="#记录登录信息" class="headerlink" title="记录登录信息"></a>记录登录信息</h3><p>点击右上角 <code>Connect</code> 按钮，找到云数据库的端点、端口、用户名、密码等信息</p>
+<p><img src="https://s3.xiabee.cn/pic/2023/06/b5af5f6e5922cc518803ea408192c68f41f0f8acdde4d7cf88b0c8d49c628346.png" alt="image-20230630173209367"></p>
+<h3 id="创建用户注意事项"><a href="#创建用户注意事项" class="headerlink" title="创建用户注意事项"></a>创建用户注意事项</h3><p>如果你不想想<a target="_blank" rel="noopener" href="https://github.com/pingcap/ossinsight-lite/blob/main/docs/setup/database.md">官方文档</a>一样使用 root 用户登录，而是创建一个专属的数据库用户的话，需要注意以下事项：</p>
+<h4 id="用户名前缀固定"><a href="#用户名前缀固定" class="headerlink" title="用户名前缀固定"></a>用户名前缀固定</h4><p>TiDBCloud Serverless 共享存储卷，不通租户用户名前缀实现空间隔离，因此我们不能完全自定义用户名，需要有特定的用户名前缀。</p>
+<p>比如我的 root 用户名为<code>44Kz3Lonut9UUp2.root</code>，我想创建一个 <code>xiabee</code> 用户，就应该创建为 <code>44Kz3Lonut9UUp2.xiabee</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">create user <span class="string">&#x27;44Kz3Lonut9UUp2.xiabee&#x27;</span>@<span class="string">&#x27;%&#x27;</span> identified by <span class="string">&#x27;password&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>(未完待续)</p>
+<h1 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h1><blockquote>
+<p><a target="_blank" rel="noopener" href="https://github.com/pingcap/ossinsight-lite">https://github.com/pingcap/ossinsight-lite</a></p>
 </blockquote>
-<p><img src="https://s3.xiabee.cn/pic/2023/03/514f0d8b43aa77dd10b70660c9acf77dfa4cb8e5a0fda741a68207843925c38c.png" alt="shodan主页 "></p>
-<img src="https://s3.xiabee.cn/pic/2023/03/c55da476153d89febc88d4d58cb83fa83353099960285e6443836a3b2ecf4d25.png" alt="MSF控制台" style="zoom:67%;" />
-
- 
-
-<h2 id="0x01-Shodan直接测试"><a href="#0x01-Shodan直接测试" class="headerlink" title="0x01 Shodan直接测试"></a>0x01 Shodan直接测试</h2><ul>
-<li>注册账号 </li>
-<li>搜索框直接搜索 </li>
-<li>进入查看 </li>
-</ul>
-<p>例如直接搜索默认密码：</p>
-<p><img src="https://s3.xiabee.cn/pic/2023/03/b9e1551b850015c423ee0e35ab209881500ada97377adc82a51885fbfca8ef03.png" alt="image-20230309203608224"></p>
-<p>搜索结果：</p>
-<p><img src="https://s3.xiabee.cn/pic/2023/03/248e35c4b09cda750173b59ec6fb77a3e69131b15a69628b4a97b5619fb35da1.png" alt="image-20230309203623351"></p>
-<h2 id="0x02-结合-MSF-测试"><a href="#0x02-结合-MSF-测试" class="headerlink" title="0x02 结合 MSF 测试"></a>0x02 结合 MSF 测试</h2><h3 id="启动-console"><a href="#启动-console" class="headerlink" title="启动 console"></a>启动 console</h3><ul>
-<li>进入 msfconsole </li>
-<li>搜索 shodan 相关模块 </li>
-<li>选择模块 </li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">msfconsole </span><br><span class="line">search shodan </span><br><span class="line">use auxiliary/gather/shodan_search </span><br></pre></td></tr></table></figure>
-
-<p><img src="https://s3.xiabee.cn/pic/2023/03/655588e98f4a93aa737b37e29e72167f857424683653cc9c8f28818eb1726921.png" alt="img"></p>
-<p>切换模块</p>
-<h3 id="查看选项"><a href="#查看选项" class="headerlink" title="查看选项"></a>查看选项</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show options</span><br></pre></td></tr></table></figure>
-
-<p> <img src="https://s3.xiabee.cn/pic/2023/03/dde521030fa35d70a58ba6ea08635605405c53d7c1dea15af2b844bc95ebba6b.png" alt="img"></p>
-<p>查看options </p>
-<p>必须填写的参数是 <code>SHODAN_APIKEY</code> 和 <code>QUERY</code>，<code>APIKEY</code> 在 <code>shodan</code> 官网注册即可获得，<code>QUERY</code> 为查询关键字，自行设置即可。</p>
-<p><img src="https://s3.xiabee.cn/pic/2023/03/04e01a43ba09753feeff0a7f62b147c0cecfb996b9e59d71798b50c485452dac.png" alt="img"></p>
-<h3 id="设置参数"><a href="#设置参数" class="headerlink" title="设置参数"></a>设置参数</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">set</span> ShODAN_APIKEY xxxx</span><br><span class="line"><span class="comment"># 直接复制刚才的APIKEY</span></span><br><span class="line"><span class="built_in">set</span> QUERY netcam</span><br><span class="line"><span class="comment"># 这里以网络摄像头为例，也可以设置为其他的</span></span><br></pre></td></tr></table></figure>
-
-<p><img src="https://s3.xiabee.cn/pic/2023/03/5bbfe267a7c4b11e4eeb72cd745d14dacb21dd8642362181eadab8f2b89d251c.png" alt="img"></p>
-<h3 id="Exploit"><a href="#Exploit" class="headerlink" title="Exploit"></a>Exploit</h3><p><img src="https://s3.xiabee.cn/pic/2023/03/1b860ddda53df29bae1f6ded4dec5c1884e975102d513c254f29b499fae014dd.png" alt="img"></p>
-<p>MSF运行结果</p>
-<h2 id="0x03-渗透"><a href="#0x03-渗透" class="headerlink" title="0x03 渗透"></a>0x03 渗透</h2><p>由于本次行动没有任何授权，我们点到为止，随机测一个弱口令（x </p>
-<p>随便抓了一个站点，浏览器访问：  </p>
-<p><img src="https://s3.xiabee.cn/pic/2023/03/c3a8090986a3fa69c9dd468b776db80e2a67adc783685c2d58d03db2f72877fc.png" alt="img"></p>
-<p>网络监控管理界面 默认密码跑一遍，秒出结果——这家伙居然没设密码…… </p>
-<p>直接Login点进去： </p>
-<p><img src="https://s3.xiabee.cn/pic/2023/03/d6742285853c8d78ca67b3f9a6413d357cdaf0a0196a31c2a9fb7da93751581d.png" alt="img"></p>
-<p> 管理员界面 懒癌晚期，不想装Flash了，就没继续了(x) </p>
-<h2 id="0x04-小结"><a href="#0x04-小结" class="headerlink" title="0x04 小结"></a>0x04 小结</h2><ul>
-<li>作为针对智能设备的搜索引擎，是一个很好的信息收集工具；</li>
-<li>但为渗透测试提供便利的同时，也为真正的攻击者创造了工具，使针对智能设备的攻击更加容易； </li>
-<li>简单点，生活的方式简单点，不需要联网的设备就别联网…… </li>
-<li>默认密码记得改一下啊铁汁们</li>
-</ul>
 
     </article>
     <!-- license -->
     
         <div class="license-wrapper">
             <p>原文作者：<a href="https://blog.xiabee.cn">xiabee</a>
-            <p>原文链接：<a href="https://blog.xiabee.cn/posts/shodan-cam/">https://blog.xiabee.cn/posts/shodan-cam/</a>
-            <p>发表日期：<a href="https://blog.xiabee.cn/posts/shodan-cam/">三月 10日 2021, 8:00:23 晚上</a>
-            <p>更新日期：<a href="https://blog.xiabee.cn/posts/shodan-cam/">March 9th 2023, 8:43:14 pm</a>
+            <p>原文链接：<a href="https://blog.xiabee.cn/posts/ossinsight-lite/">https://blog.xiabee.cn/posts/ossinsight-lite/</a>
+            <p>发表日期：<a href="https://blog.xiabee.cn/posts/ossinsight-lite/">June 30th 2023, 12:00:23 pm</a>
+            <p>更新日期：<a href="https://blog.xiabee.cn/posts/ossinsight-lite/">June 30th 2023, 5:45:24 pm</a>
             <p>版权声明：本文采用<a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
@@ -591,17 +555,12 @@
     <ul class="post-paginator">
         <li class="next">
             
-                <div class="nextSlogan">Next Post</div>
-                <a href="/posts/2021-summer-year3/" title="我的大三">
-                    <div class="nextTitle">我的大三</div>
-                </a>
-            
         </li>
         <li class="previous">
             
                 <div class="prevSlogan">Previous Post</div>
-                <a href="/posts/occupation-ctf-wp/" title="职业杯 2020 选拔赛回顾 & Write UP">
-                    <div class="prevTitle">职业杯 2020 选拔赛回顾 & Write UP</div>
+                <a href="/posts/pichost-picgo/" title="PicGO 连接 AWS S3">
+                    <div class="prevTitle">PicGO 连接 AWS S3</div>
                 </a>
             
         </li>
@@ -767,7 +726,7 @@
                 <div class="toc-catalog">
                     <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
                 </div>
-                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#0xFF-%E5%85%8D%E8%B4%A3%E5%A3%B0%E6%98%8E"><span class="toc-number">1.</span> <span class="toc-text">0xFF 免责声明</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0x00-%E7%AE%80%E4%BB%8B"><span class="toc-number">2.</span> <span class="toc-text">0x00 简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0x01-Shodan%E7%9B%B4%E6%8E%A5%E6%B5%8B%E8%AF%95"><span class="toc-number">3.</span> <span class="toc-text">0x01 Shodan直接测试</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0x02-%E7%BB%93%E5%90%88-MSF-%E6%B5%8B%E8%AF%95"><span class="toc-number">4.</span> <span class="toc-text">0x02 结合 MSF 测试</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%AF%E5%8A%A8-console"><span class="toc-number">4.1.</span> <span class="toc-text">启动 console</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E9%80%89%E9%A1%B9"><span class="toc-number">4.2.</span> <span class="toc-text">查看选项</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE%E5%8F%82%E6%95%B0"><span class="toc-number">4.3.</span> <span class="toc-text">设置参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Exploit"><span class="toc-number">4.4.</span> <span class="toc-text">Exploit</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0x03-%E6%B8%97%E9%80%8F"><span class="toc-number">5.</span> <span class="toc-text">0x03 渗透</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0x04-%E5%B0%8F%E7%BB%93"><span class="toc-number">6.</span> <span class="toc-text">0x04 小结</span></a></li></ol>
+                <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%83%8C%E6%99%AF"><span class="toc-number">1.</span> <span class="toc-text">背景</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="toc-number">2.</span> <span class="toc-text">准备工作</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%83%A8%E7%BD%B2%E8%BF%87%E7%A8%8B"><span class="toc-number">3.</span> <span class="toc-text">部署过程</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E4%BA%91%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-number">3.1.</span> <span class="toc-text">创建云数据库</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA-Serverless-%E9%9B%86%E7%BE%A4"><span class="toc-number">3.1.1.</span> <span class="toc-text">创建 Serverless 集群</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%B0%E5%BD%95%E7%99%BB%E5%BD%95%E4%BF%A1%E6%81%AF"><span class="toc-number">3.1.2.</span> <span class="toc-text">记录登录信息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E7%94%A8%E6%88%B7%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="toc-number">3.1.3.</span> <span class="toc-text">创建用户注意事项</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%94%A8%E6%88%B7%E5%90%8D%E5%89%8D%E7%BC%80%E5%9B%BA%E5%AE%9A"><span class="toc-number">3.1.3.1.</span> <span class="toc-text">用户名前缀固定</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E6%A1%A3"><span class="toc-number">4.</span> <span class="toc-text">参考文档</span></a></li></ol>
             </div>
         
         <!-- sidebar -->
