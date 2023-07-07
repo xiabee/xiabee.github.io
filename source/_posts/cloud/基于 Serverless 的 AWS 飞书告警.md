@@ -304,6 +304,16 @@ zip main.zip main
 
 
 
+## 设置 Lambda 环境变量
+
+需要设置一个名为 `WEBHOOK_KEY` 的环境变量，其值为自己的飞书机器人 `webhook url` 的最后哈希串。
+
+例如某个机器人 webhook 为：`https://open.feishu.cn/open-apis/bot/v2/hook/abcdabcd-aaaa-bbbb-cccc-c4a8aa6ed91c`，那么需要设置一个值为 `abcdabcd-aaaa-bbbb-cccc-c4a8aa6ed91c` 的环境变量 `WEBHOOK_KEY`
+
+![image-20230708000531921](https://s3.xiabee.cn/pic/2023/07/db49cd58ada56e8f5187c902d5cd767f46dafd2be25323559a3cd5b83c711ff5.png)
+
+
+
 ## 添加 SNS 触发器
 
 找到需要设置的 SNS Topic，然后选择即可：
