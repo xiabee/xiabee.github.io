@@ -1,5 +1,5 @@
 ---
-title: 基于 Serverless 的飞书告警系统（1）
+title: 基于 Serverless 的 SNS 飞书告警系统
 date: 2023-7-7 12:00:00
 tags:
   - cloud
@@ -28,6 +28,8 @@ abbrlink: aws-sns-lark
 
 * 如图所示，详细代码见仓库：[AWS-Lark-Bot](https://github.com/xiabee/AWS-Lark-Bot)
 
+* 具体配置方法见[附录](#appendix)，本期我们仅介绍 SNS 集成相关，CloudWatch 集成相关内容我们下期再讲（x）
+
 ![image-20230707143754035](https://s3.xiabee.cn/pic/2023/07/79327e8a698b68e02a90af1f12c015bb14c1e29ae85d6e0a492812c84abb10c1.png)
 
 
@@ -48,9 +50,7 @@ AWS CloudWatch 是一个由 Amazon Web Services 提供的监控服务，用于�
 
 CloudWatch 是一个强大的监控工具，无论是对于 AWS 资源的监控还是对运行在 AWS 上的应用程序的监控都十分重要，能帮助你及时发现并处理问题，优化应用性能，同时满足一些特定的业务需求，如合规性报告等。
 
-### SNS
-
-<a name="sns"></a>
+### SNS<a name="sns"></a>
 
 Amazon Simple Notification Service (SNS) 是 Amazon Web Services (AWS) 提供的一个完全托管的发布/订阅（Pub/Sub）消息服务，它使得系统和用户之间，或者系统和系统之间的消息传递变得容易且可靠。
 
@@ -185,6 +185,16 @@ curl -X POST -H "Content-Type: application/json" \
 
 
 
+## SNS 相关
+
+直接在 SNS 中创建 topic 即可，后续绑定 Subscriptions 可以在 Lambda 控制台进行。
+
+![image-20230707235648688](https://s3.xiabee.cn/pic/2023/07/f2275558be6dae165e4b3bad9dd42b6ce77a69c402b1d64e57cbe586046e4781.png)
+
+SNS 可以理解为一个消息中转站，他发送的消息来源于其他服务，消息来源的对接配置需要视具体情况而定。
+
+
+
 # 代码简介
 
 本篇介绍的 SNS 交互功能存放在 [SNS-Integration](https://github.com/xiabee/AWS-Lark-Bot/tree/main/SNS-Integration) 目录中。
@@ -255,9 +265,128 @@ func ProcCard(event Event, data *CardMessage) {
 
 
 
-# 附录：Lambda 使用方法
+# 附录：Lambda程序配置方法<a name="appendix"></a>
 
-（未完待续）
+## 编译 Lambda 代码
+
+在 AWS Lambda 中，对 golang 只支持 x86 架构，所以需要以 x86/amd64（非 arm）架构编译二进制文件：
+
+```bash
+git clone https://github.com/xiabee/AWS-Lark-Bot
+cd AWS-Lark-Bot/SNS-Integration
+# 克隆并进入 SNS 目录
+
+GOOS=linux GOARCH=amd64 go build -o main main.go
+# 以 amd64 架构编译二进制文件
+zip main.zip main
+# 打包二进制文件
+```
+
+
+
+## 创建 Lambda 函数
+
+进入 AWS 控制台，创建新函数：
+
+![image-20230707234101886](https://s3.xiabee.cn/pic/2023/07/448d63f19a53a457193b79ce46bd4065f4095d31435758fcd9cc5c44f81f3a22.png)
+
+
+
+![image-20230707234139808](https://s3.xiabee.cn/pic/2023/07/424d00ac20bf3f49fef344f52fdb3f9ad98515a424671b25dc00bb808f5a4733.png)
+
+
+
+创建时，运行环境选择 `GO 1.x` ，`Handler` 设置为 `main`（因为刚刚编译出的二进制文件名为 `main`）
+
+创建时忘记了也没关系，后面也可以改（x）
+
+![image-20230707234343220](https://s3.xiabee.cn/pic/2023/07/1ba777b8d077241fc1c8837ff1267af86e9a98038f3c33ed58cc4077d04ee73d.png)
+
+
+
+## 添加 SNS 触发器
+
+找到需要设置的 SNS Topic，然后选择即可：
+
+![image-20230707234528896](https://s3.xiabee.cn/pic/2023/07/e4a73e31180ac86151f666a289139afaea514843dc773fbec462ae4039bac70a.png)
+
+
+
+![image-20230707234617331](https://s3.xiabee.cn/pic/2023/07/6afc5c3a5b6b23d3e72bb77303a63c0111c6f59460e14a6549b7b43fe1c11c89.png)
+
+
+
+## 测试 Lambda
+
+在 SNS 中找到对应的 Topic，发送正确格式的 Json 消息。
+
+![image-20230707235022245](https://s3.xiabee.cn/pic/2023/07/5d654a88ac08322092c85f77bba3df70563d9c3b5f4c3d1c350a494fae0e47fa.png)
+
+
+
+此时飞书 bot 收到 SNS 消息并发送卡片至飞书群：
+
+![image-20230707235124986](https://s3.xiabee.cn/pic/2023/07/43ab7cf3ce3e2635290bb5e0c0c6bf4bc5a205d706afa039e448fd0a9d4ecd5d.png)
+
+
+
+## 未知格式
+
+不知道 Topic 的 Json 格式的话，可以把 Lambda 函数的代码改成直接发送 SNS 原始消息。参考代码如下：
+
+```go
+package main
+
+import (
+	"bytes"
+	"encoding/json"
+	"fmt"
+	"net/http"
+	"os"
+
+	"github.com/aws/aws-lambda-go/events"
+	"github.com/aws/aws-lambda-go/lambda"
+)
+
+type LarkMessage struct {
+	MsgType string `json:"msg_type"`
+	Content struct {
+		Text string `json:"text"`
+	} `json:"content"`
+}
+
+func HandleRequest(snsEvent events.SNSEvent) error {
+	// get the SNS message
+	message := snsEvent.Records[0].SNS.Message
+
+	// Lark bot webhook URL
+	secret := os.Getenv("WEBHOOK_KEY")
+	webhookURL := "https://open.feishu.cn/open-apis/bot/v2/hook/" + secret
+
+	larkMsg := LarkMessage{
+		MsgType: "text",
+	}
+	larkMsg.Content.Text = message
+
+	msgBytes, err := json.Marshal(larkMsg)
+	if err != nil {
+		return fmt.Errorf("could not marshal message to JSON: %v", err)
+	}
+
+	_, err = http.Post(webhookURL, "application/json", bytes.NewBuffer(msgBytes))
+	if err != nil {
+		return fmt.Errorf("could not send message to Lark bot: %v", err)
+	}
+
+	return nil
+}
+
+func main() {
+	lambda.Start(HandleRequest)
+}
+```
+
+
 
 # Reference
 
