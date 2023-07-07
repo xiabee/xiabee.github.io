@@ -441,6 +441,59 @@
             
         
         <article class="index-post">
+            <a class="abstract-title" href="/posts/aws-sns-lark/">
+                
+                <span class="abstract-title-text">基于 Serverless 的飞书告警系统（1）</span>
+            </a>
+            <div class="abstract-content">
+                
+
+
+背景贵司的告警系统迁移，再加上一些新增需求，我需要做一个能从 AWS 获取告警信息并发送给飞书（Lark）客户端的系统。
+本篇主要介绍如何通过 Lambda 代码进行 AWS SNS（Simple Notification Service）消息转发，应用场景主要为已有 AWS 消息，但需要集成至第三方平台。
+架构
+通过 AWS 相关组件，把需要发送的消息发送给 AWS Lambda（无主机函数），再通过 Lambda 程序把消息发送给飞书机器人（Lark bot）
+
+如图所示，详细代码见仓库：AWS-Lark-Bot
+
+
+
+名词解释CloudWatchAWS CloudWatch ...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2023/07/07">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2023/07/07</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="cloud">cloud</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="lark">lark</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="lambda">lambda</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="sns">sns</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
             <a class="abstract-title" href="/posts/ossinsight-lite/">
                 
                 <span class="abstract-title-text">10 分钟内搭建自己的 Oss-Insight-lite</span>
@@ -841,56 +894,6 @@ PS：为什么是接收不是收发呢……因为腾讯在某天之后限制了
         </article>
         <div class="index-post-divider"></div>
     
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/posts/glados-intro/">
-                
-                <span class="abstract-title-text">Glados 签到简介</span>
-            </a>
-            <div class="abstract-content">
-                GLADOS 是什么简单来说是一个代理池供应商，具体作用为隐藏真实IP、防溯源等，是安全从业者必不可少的工具之一。
-
-项目地址：Github
-注册地址：在项目地址中时时更新
-注册邀请码：EEXLM-SZMDH-NJT3P-9NA4V （你用我的邀请码咱俩都可以多白嫖一天）
-
-为什么是 GLADOS因为白嫖很快乐。
-
-GLADOS 有教育计划，如果你还没有毕业，可以用学生邮箱免费试用一年
-如果是付费用户，每日签到可以延长一天会员时间，理论上说坚持签到可以一直免费续杯（划掉）
-
-
-
-
-
-如何进行签到其实本文只是想介绍一下常见 API 的分析方法，并没有摁推的意思。这里我们主要通过 BurpS...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2023/02/03">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/10/20</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="glados">glados</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
     <!-- paginator  -->
     
         <nav class="page-nav">
@@ -1280,7 +1283,24 @@ GLADOS 有教育计划，如果你还没有毕业，可以用学生邮箱免费�
         
         
         
+        
+        
+        
+        
+        
     
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         
         
@@ -1769,7 +1789,7 @@ GLADOS 有教育计划，如果你还没有毕业，可以用学生邮箱免费�
     
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 53
+        Total : 54
         </div>
         <!-- search  -->
         
@@ -1787,6 +1807,12 @@ GLADOS 有教育计划，如果你还没有毕业，可以用学生邮箱免费�
             <div class="archive-year"> 2023 </div>
             <ul class="year-list">
             
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/07</span>
+            <a class="archive-post-title" href="/posts/aws-sns-lark/">基于 Serverless 的飞书告警系统（1）</a>
+        </li>
+    
         
         <li class="archive-post-item">
             <span class="archive-post-date">06/30</span>
@@ -2301,6 +2327,21 @@ GLADOS 有教育计划，如果你还没有毕业，可以用学生邮箱免费�
             <span class="sidebar-tag-name" data-tags="cloud">
                 <span class="iconfont-archer">&#xe606;</span>
                 cloud
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="lark">
+                <span class="iconfont-archer">&#xe606;</span>
+                lark
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="lambda">
+                <span class="iconfont-archer">&#xe606;</span>
+                lambda
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="sns">
+                <span class="iconfont-archer">&#xe606;</span>
+                sns
             </span>
         
     </div>

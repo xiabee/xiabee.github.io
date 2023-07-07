@@ -456,6 +456,61 @@
             
         
         <article class="index-post">
+            <a class="abstract-title" href="/posts/hydro-docker/">
+                
+                <span class="abstract-title-text">Docker搭建Hydro-OJ系统</span>
+            </a>
+            <div class="abstract-content">
+                Hydro简介
+Hydro是目前来看比较新的一款开源Online Judge系统
+目前官网有常见的安装方式，但是Docker的支持不是很好，于是我自己在官网架构基础上，重新编写了一下容器部署。
+
+
+项目地址：Hydro-Docker
+
+
+使用方式
+直接使用docker-compose运行容器，在本地构建镜像
+123git clone https://github.com/xiabee/Hydro-Dockercd Hydro-Dockerdocker-compose up -d
+没有报错就是成功（x）：
+1docker-compose ps
+
+
+
+
+聊聊编写过程
+准确的说所有模块的测试完...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2023/02/03">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/04/29</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="oj">oj</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="docker">docker</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
             <a class="abstract-title" href="/posts/2022-spring-recruitment/">
                 
                 <span class="abstract-title-text">2022春招安全岗记录</span>
@@ -920,58 +975,6 @@ Github Page在国内访问速度较慢github.io经常抽风，在国内访问不
         <a class="post-tag" href="javascript:void(0);" data-tags="hexo">hexo</a>
     
         <a class="post-tag" href="javascript:void(0);" data-tags="git">git</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/posts/archer-algolia/">
-                
-                <span class="abstract-title-text">Archer主题启用Algolia全文搜索</span>
-            </a>
-            <div class="abstract-content">
-                问题描述
-Hexo缺少站内搜索功能
-Hexo自带的tag功能并不能满足搜索需求
-Archer主题自带的搜索模块不能实现全文检索（详情可以参考相关issue）
-
-Hexo本质上是一个静态页面的渲染工具，而我们的博客部署在Github Page上，没有数据库的操作权限，也就不能像Wordpress那样自身实现站内的高级搜索……然而主题自带的第三方搜索插件又无法检索文章内容……
-解决方案
-利用Archer封装的第三方插件Algolia实现搜索
-利用hexo-algoliasearch实现全文检索
-
-
-
-为什么不直接用hexo-algoliasearch做搜索
-因为主题没有封装，裸着搜索很违和，...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2023/02/03">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/10/31</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="hexo">hexo</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="archer">archer</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="algolia">algolia</a>
     
 </div>
 
@@ -1508,7 +1511,24 @@ Hexo本质上是一个静态页面的渲染工具，而我们的博客部署在G
         
         
         
+        
+        
+        
+        
+        
     
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         
         
@@ -1997,7 +2017,7 @@ Hexo本质上是一个静态页面的渲染工具，而我们的博客部署在G
     
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 53
+        Total : 54
         </div>
         <!-- search  -->
         
@@ -2015,6 +2035,12 @@ Hexo本质上是一个静态页面的渲染工具，而我们的博客部署在G
             <div class="archive-year"> 2023 </div>
             <ul class="year-list">
             
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/07</span>
+            <a class="archive-post-title" href="/posts/aws-sns-lark/">基于 Serverless 的飞书告警系统（1）</a>
+        </li>
+    
         
         <li class="archive-post-item">
             <span class="archive-post-date">06/30</span>
@@ -2529,6 +2555,21 @@ Hexo本质上是一个静态页面的渲染工具，而我们的博客部署在G
             <span class="sidebar-tag-name" data-tags="cloud">
                 <span class="iconfont-archer">&#xe606;</span>
                 cloud
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="lark">
+                <span class="iconfont-archer">&#xe606;</span>
+                lark
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="lambda">
+                <span class="iconfont-archer">&#xe606;</span>
+                lambda
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="sns">
+                <span class="iconfont-archer">&#xe606;</span>
+                sns
             </span>
         
     </div>
