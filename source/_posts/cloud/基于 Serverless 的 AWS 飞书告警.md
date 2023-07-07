@@ -3,6 +3,7 @@ title: 基于 Serverless 的 SNS 飞书告警系统
 date: 2023-7-7 12:00:00
 tags:
   - cloud
+  - aws
   - lark
   - lambda
   - sns
