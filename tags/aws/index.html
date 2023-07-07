@@ -441,6 +441,59 @@
             
         
         <article class="index-post">
+            <a class="abstract-title" href="/posts/aws-sns-lark/">
+                
+                <span class="abstract-title-text">基于 Serverless 的 SNS 飞书告警系统</span>
+            </a>
+            <div class="abstract-content">
+                
+
+
+背景贵司的告警系统迁移，再加上一些新增需求，我需要做一个能从 AWS 获取告警信息并发送给飞书（Lark）客户端的系统。
+本篇主要介绍如何通过 Lambda 代码进行 AWS SNS（Simple Notification Service）消息转发，应用场景主要为已有 AWS 消息，但需要集成至第三方平台。
+架构
+通过 AWS 相关组件，把需要发送的消息发送给 AWS Lambda（无主机函数），再通过 Lambda 程序把消息发送给飞书机器人（Lark bot）
+
+如图所示，详细代码见仓库：AWS-Lark-Bot
+
+具体配置方法见附录，本期我们仅介绍 SNS 集成相关，Clou...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2023/07/08">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2023/07/07</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="aws">aws</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="cloud">cloud</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="lark">lark</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="lambda">lambda</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="sns">sns</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
             <a class="abstract-title" href="/posts/pichost-picgo/">
                 
                 <span class="abstract-title-text">PicGO 连接 AWS S3</span>
