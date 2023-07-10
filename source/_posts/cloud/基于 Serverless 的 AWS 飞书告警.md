@@ -319,7 +319,7 @@ zip main.zip main
 
 找到需要设置的 SNS Topic，然后选择即可：
 
-![image-20230707234528896](https://s3.xiabee.cn/pic/2023/07/e4a73e31180ac86151f666a289139afaea514843dc773fbec462ae4039bac70a.png)
+![image-20230710133248348](https://s3.xiabee.cn/pic/2023/07/0a8a8fdbee4ad9d64e21ce5110eba0a1ee5df7e454ec7e969791dd437b9b25e1.png)
 
 
 
@@ -331,13 +331,13 @@ zip main.zip main
 
 在 SNS 中找到对应的 Topic，发送正确格式的 Json 消息。
 
-![image-20230707235022245](https://s3.xiabee.cn/pic/2023/07/5d654a88ac08322092c85f77bba3df70563d9c3b5f4c3d1c350a494fae0e47fa.png)
+![image-20230710133408862](https://s3.xiabee.cn/pic/2023/07/5f2ffc8411d768acae99176646f1a90ba78a851546270385c713dac93634af74.png)
 
 
 
 此时飞书 bot 收到 SNS 消息并发送卡片至飞书群：
 
-![image-20230707235124986](https://s3.xiabee.cn/pic/2023/07/43ab7cf3ce3e2635290bb5e0c0c6bf4bc5a205d706afa039e448fd0a9d4ecd5d.png)
+![image-20230710133520628](https://s3.xiabee.cn/pic/2023/07/f33f2f5d6864f439647601ca7411afd03c1605112094b6f97106d3e5e3a6efbc.png)
 
 
 
