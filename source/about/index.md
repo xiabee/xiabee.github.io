@@ -11,7 +11,7 @@ layout: about
 
 * 当前工作：[PingCAP](https://pingcap.com/), 安全工程师
 
-* 研究方向: 渗透测试,  Web / Cloud 安全, SaaS 安全, PaaS 安全, 开发安全等
+* 研究方向: 渗透测试,  Web / Cloud 安全, SaaS 安全, PaaS 安全, 开发安全,  隐私安全, 区块链 / 智能合约安全 等
 
 * GitHub 主页：[https://github.com/xiabee](https://github.com/xiabee)
 
@@ -25,12 +25,12 @@ layout: about
 
 ## ABOUT PAST
 
-| KEY      | VALUE                       |
-| -------- | --------------------------- |
-| 毕业院校 | 北京理工大学                |
-| 曾属战队 | 北理工的恶龙 / 北理工的饿龙 |
-| CTF 方向 | WEB                         |
-| 研究方向 | 隐私安全、计算安全          |
+| KEY      | VALUE                            |
+| -------- | -------------------------------- |
+| 毕业院校 | 北京理工大学                     |
+| 曾属战队 | 北理工的恶龙 / 北理工的饿龙      |
+| CTF 方向 | WEB                              |
+| 研究方向 | 隐私安全、计算安全、可信联邦学习 |
 
 
 
