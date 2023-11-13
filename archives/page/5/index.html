@@ -441,6 +441,74 @@
             
         
         <article class="index-post">
+            <a class="abstract-title" href="/posts/occupation-ctf-wp/">
+                
+                <span class="abstract-title-text">职业杯 2020 选拔赛回顾 &amp; Write UP</span>
+            </a>
+            <div class="abstract-content">
+                简介
+
+
+队伍名称
+北理工的恶龙
+
+
+
+答对题数
+4
+
+
+最终得分
+1738.1
+
+
+最终排名
+18
+
+
+
+这波是 WEB 和二进制一起白给(x)，然后被唐老板带飞 
+看到两道sql注入题的时候，我的第一反应是： “这一血我稳了” ，然后把题目看错了拖了两个小时…… 不过还好把WEB签到给他签上了（我好白给啊）
+回顾一下比赛过程.jpg
+WEB就做了两个签到题…
+easy sql
+这一看就是签到题啊，直接上sqlmap一把梭：
+1sqlmap -u &quot;http://124.71.148.26:30022/&quot; --form
+
+
+
+有时间盲注，那就先梭着：
+
+然后直接爆表...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2023/03/09">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/11/07</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="ctf">ctf</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
             <a class="abstract-title" href="/posts/wsl2-about/">
                 
                 <span class="abstract-title-text">WSL2踩坑分享</span>
@@ -849,47 +917,6 @@ Docker与VM可能很多朋友都用过虚拟机，而对容器这个概念比较
         </article>
         <div class="index-post-divider"></div>
     
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/posts/linux-sources/">
-                
-                <span class="abstract-title-text">Ubuntu/kali 国内各大更新源</span>
-            </a>
-            <div class="abstract-content">
-                修改sources.list: vim /etc/apt/sources.list 
-改完记得 apt update 一下
-kali：官方源12deb http://http.kali.org/kali kali-rolling main non-free contribdeb-src http://http.kali.org/kali kali-rolling main non-free contrib
-
-
-
-中科大123# 中科大deb http://mirrors.ustc.edu.cn/kali kali-rolling main non-free contribdeb-src ...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/08/13">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/03/14</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="linux">linux</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
     <!-- paginator  -->
     
         <nav class="page-nav">
@@ -1279,7 +1306,24 @@ kali：官方源12deb http://http.kali.org/kali kali-rolling main non-free contr
         
         
         
+        
+        
+        
+        
+        
     
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         
         
@@ -1766,7 +1810,7 @@ kali：官方源12deb http://http.kali.org/kali kali-rolling main non-free contr
     
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 53
+        Total : 54
         </div>
         <!-- search  -->
         
@@ -1784,6 +1828,12 @@ kali：官方源12deb http://http.kali.org/kali kali-rolling main non-free contr
             <div class="archive-year"> 2023 </div>
             <ul class="year-list">
             
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/13</span>
+            <a class="archive-post-title" href="/posts/ax6000-openwrt/">红米AX6000路由器刷机</a>
+        </li>
+    
         
         <li class="archive-post-item">
             <span class="archive-post-date">07/07</span>
@@ -2303,6 +2353,11 @@ kali：官方源12deb http://http.kali.org/kali kali-rolling main non-free contr
             <span class="sidebar-tag-name" data-tags="sns">
                 <span class="iconfont-archer">&#xe606;</span>
                 sns
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="ax6000">
+                <span class="iconfont-archer">&#xe606;</span>
+                ax6000
             </span>
         
     </div>
