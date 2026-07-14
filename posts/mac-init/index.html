@@ -1,0 +1,1236 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <!-- title -->
+<!-- keywords -->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="author" content="xiabee">
+    <meta name="renderer" content="webkit">
+    <meta name="copyright" content="xiabee">
+        <meta name="keywords" content="xiabee,hexo-theme,xiabee-blog">
+    <meta name="description" content="">
+    <meta name="description" content="环境说明公司发了新电脑，M1 Pro 的 MacBook Pro，用了几天体验还不错，参考 makeoptim 配置了一下自己的终端。 这里介绍一下怎么在 Mac 里打造一个能让颜狗落泪的漂亮终端（划掉）     “完美”标准 我是颜狗，终端好看是第一标准 自动补全应该是一个终端的必备需求 最好有语法高亮 最好能通过键盘唤醒  大概长这样：     准备工作需要安装一些软件 &#x2F; 字体等 字体后面会">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mac 环境配置(1)——完美终端">
+<meta property="og:url" content="https://blog.xiabee.cn/posts/mac-init/index.html">
+<meta property="og:site_name" content="xiabee-瞎哔哔">
+<meta property="og:description" content="环境说明公司发了新电脑，M1 Pro 的 MacBook Pro，用了几天体验还不错，参考 makeoptim 配置了一下自己的终端。 这里介绍一下怎么在 Mac 里打造一个能让颜狗落泪的漂亮终端（划掉）     “完美”标准 我是颜狗，终端好看是第一标准 自动补全应该是一个终端的必备需求 最好有语法高亮 最好能通过键盘唤醒  大概长这样：     准备工作需要安装一些软件 &#x2F; 字体等 字体后面会">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s3.xiabee.cn/pic/weibo-backup/0084b03xgy1h58pm1gs0uj30y20iu0za.jpg">
+<meta property="og:image" content="https://s3.xiabee.cn/pic/weibo-backup/0084b03xgy1h5cfxyz9ayj310y0pgqn1.jpg">
+<meta property="og:image" content="https://s3.xiabee.cn/pic/weibo-backup/0084b03xgy1h5cg5x52ttj311i05cjs7.jpg">
+<meta property="og:image" content="https://s3.xiabee.cn/pic/weibo-backup/0084b03xgy1h5cgen3sifj30ds0hcmzx.jpg">
+<meta property="og:image" content="https://s3.xiabee.cn/pic/weibo-backup/0084b03xgy1h5cgbwvu3gj31140wm7df.jpg">
+<meta property="og:image" content="https://s3.xiabee.cn/pic/weibo-backup/0084b03xgy1h5dbp9dyggj32321cwhdu.jpg">
+<meta property="og:image" content="https://s3.xiabee.cn/pic/weibo-backup/0084b03xgy1h5cgoz16xrj310y0pg1hw.jpg">
+<meta property="og:image" content="https://s3.xiabee.cn/pic/weibo-backup/0084b03xgy1h5cgtc5invj311a0pa7wh.jpg">
+<meta property="og:image" content="https://s3.xiabee.cn/pic/weibo-backup/0084b03xgy1h5chay2w7vj310y0pg7ov.jpg">
+<meta property="og:image" content="https://s3.xiabee.cn/pic/weibo-backup/0084b03xgy1h5db7ybvlzj30sg0ao7by.jpg">
+<meta property="og:image" content="https://s3.xiabee.cn/pic/weibo-backup/0084b03xgy1h5dbigivcdj31kg0m2n2u.jpg">
+<meta property="og:image" content="https://s3.xiabee.cn/pic/weibo-backup/0084b03xgy1h5dbk152ivj310y0pghaj.jpg">
+<meta property="og:image" content="https://s3.xiabee.cn/pic/weibo-backup/0084b03xgy1h5dbj91yqsj30ps08q406.jpg">
+<meta property="article:published_time" content="2022-08-16T04:00:23.000Z">
+<meta property="article:modified_time" content="2026-07-14T10:18:06.874Z">
+<meta property="article:author" content="xiabee">
+<meta property="article:tag" content="mac">
+<meta property="article:tag" content="brew">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s3.xiabee.cn/pic/weibo-backup/0084b03xgy1h58pm1gs0uj30y20iu0za.jpg">
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link rel="icon" href="https://s3.xiabee.cn/pic/icons/favicon.jpg">
+    <title>Mac 环境配置(1)——完美终端 · xiabee-瞎哔哔</title>
+    <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+/* This file is meant as a standalone workflow for
+- testing support for link[rel=preload]
+- enabling async CSS loading in browsers that do not support rel=preload
+- applying rel preload css once loaded, whether supported or not.
+*/ -->
+<script>
+    (function (w) {
+        'use strict'
+        // rel=preload support test
+        if (!w.loadCSS) {
+            w.loadCSS = function () {}
+        }
+        // define on the loadCSS obj
+        var rp = (loadCSS.relpreload = {})
+        // rel=preload feature support test
+        // runs once and returns a function for compat purposes
+        rp.support = (function () {
+            var ret
+            try {
+                ret = w.document.createElement('link').relList.supports('preload')
+            } catch (e) {
+                ret = false
+            }
+            return function () {
+                return ret
+            }
+        })()
+
+        // if preload isn't supported, get an asynchronous load by using a non-matching media attribute
+        // then change that media back to its intended value on load
+        rp.bindMediaToggle = function (link) {
+            // remember existing media attr for ultimate state, or default to 'all'
+            var finalMedia = link.media || 'all'
+
+            function enableStylesheet() {
+                link.media = finalMedia
+            }
+
+            // bind load handlers to enable media
+            if (link.addEventListener) {
+                link.addEventListener('load', enableStylesheet)
+            } else if (link.attachEvent) {
+                link.attachEvent('onload', enableStylesheet)
+            }
+
+            // Set rel and non-applicable media type to start an async request
+            // note: timeout allows this to happen async to let rendering continue in IE
+            setTimeout(function () {
+                link.rel = 'stylesheet'
+                link.media = 'only x'
+            })
+            // also enable media after 3 seconds,
+            // which will catch very old browsers (android 2.x, old firefox) that don't support onload on link
+            setTimeout(enableStylesheet, 3000)
+        }
+
+        // loop through link elements in DOM
+        rp.poly = function () {
+            // double check this to prevent external calls from running
+            if (rp.support()) {
+                return
+            }
+            var links = w.document.getElementsByTagName('link')
+            for (var i = 0; i < links.length; i++) {
+                var link = links[i]
+                // qualify links to those with rel=preload and as=style attrs
+                if (
+                    link.rel === 'preload' &&
+                    link.getAttribute('as') === 'style' &&
+                    !link.getAttribute('data-loadcss')
+                ) {
+                    // prevent rerunning on link
+                    link.setAttribute('data-loadcss', true)
+                    // bind listeners to toggle media back
+                    rp.bindMediaToggle(link)
+                }
+            }
+        }
+
+        // if unsupported, run the polyfill
+        if (!rp.support()) {
+            // run once at least
+            rp.poly()
+
+            // rerun poly on an interval until onload
+            var run = w.setInterval(rp.poly, 500)
+            if (w.addEventListener) {
+                w.addEventListener('load', function () {
+                    rp.poly()
+                    w.clearInterval(run)
+                })
+            } else if (w.attachEvent) {
+                w.attachEvent('onload', function () {
+                    rp.poly()
+                    w.clearInterval(run)
+                })
+            }
+        }
+
+        // commonjs
+        if (typeof exports !== 'undefined') {
+            exports.loadCSS = loadCSS
+        } else {
+            w.loadCSS = loadCSS
+        }
+    })(typeof global !== 'undefined' ? global : this)
+</script>
+
+    <style type="text/css">
+    @font-face {
+        font-family: 'Oswald-Regular';
+        src: url("/font/Oswald-Regular.ttf");
+    }
+
+    body {
+        margin: 0;
+    }
+
+    header,
+    footer,
+    .footer-fixed-btn,
+    .sidebar,
+    .container,
+    .site-intro-meta,
+    .toc-wrapper {
+        display: none;
+    }
+
+    .site-intro {
+        position: relative;
+        z-index: 3;
+        width: 100%;
+        /* height: 50vh; */
+        overflow: hidden;
+    }
+
+    .site-intro-placeholder {
+        position: absolute;
+        z-index: -2;
+        top: 0;
+        left: 0;
+        width: calc(100% + 300px);
+        height: 100%;
+        background: repeating-linear-gradient(
+            -45deg,
+            #444 0,
+            #444 80px,
+            #333 80px,
+            #333 160px
+        );
+        background-position: center center;
+        transform: translate3d(-226px, 0, 0);
+        animation: gradient-move 2.5s ease-out 0s infinite;
+    }
+
+    @keyframes gradient-move {
+        0% {
+            transform: translate3d(-226px, 0, 0);
+        }
+        100% {
+            transform: translate3d(0, 0, 0);
+        }
+    }
+</style>
+
+    <link id="stylesheet-fancybox" rel="preload" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.36/dist/fancybox/fancybox.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link id="stylesheet-base" rel="preload" href="/css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link id="stylesheet-mobile" rel="preload" href="/css/mobile.css" as="style" onload="this.onload=null;this.rel='stylesheet';this.media='screen and (max-width: 960px)'">
+    <link id="stylesheet-theme-dark" rel="preload" href="/css/dark.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" as="script">
+    <link rel="preload" href="/scripts/main.js" as="script">
+    <link rel="preload" href="/font/Oswald-Regular.ttf" as="font" crossorigin>
+    <link rel="preload" href="https://at.alicdn.com/t/font_327081_1dta1rlogw17zaor.woff" as="font" crossorigin>
+    <!-- algolia -->
+        <script>
+            var hits = JSON.parse('{"per_page":10}')
+            var labels = JSON.parse('{"input_placeholder":"Search for Posts","hits_empty":"We did not find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}')
+
+            var algolia = {
+                applicationID: '2BK6PYKX0M',
+                apiKey: 'a66bcd276348975224eb517894049525',
+                indexName: 'xiabee-search',
+                hits: hits,
+                labels: labels
+            }
+        </script>
+    <!-- 百度统计  -->
+    <!-- 谷歌统计  -->
+    <!-- Google tag (gtag.js) -->
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <script type="text/javascript">
+        if (typeof window.$ == undefined) {
+            console.warn('jquery load from jsdelivr failed, will load local script')
+            document.write('<script src="/lib/jquery.min.js" />')
+        }
+    </script>
+        <body class="post-body">
+        <!-- header -->
+        <header class="header header-mobile">
+    <!-- top read progress line -->
+    <div class="header-element">
+        <div class="read-progress"></div>
+    </div>
+    <!-- sidebar menu button -->
+    <div class="header-element">
+        <div class="header-sidebar-menu">
+            <div style="padding-left: 1px;">&#xe775;</div>
+        </div>
+    </div>
+    <!-- header actions -->
+    <div class="header-actions">
+        <!-- theme mode switch button -->
+        <span class="header-theme-btn header-element">
+            <i class="fas fa-adjust"></i>
+        </span>
+        <!-- back to home page text -->
+        <span class="home-link header-element">
+            <a href="/">XiaBee's Studio.</a>
+        </span>
+    </div>
+    <!-- toggle banner -->
+    <div class="banner">
+        <div class="blog-title header-element">
+            <a href="/">XiaBee&#39;s Studio.</a>
+        </div>
+        <div class="post-title header-element">
+            <a href="#" class="post-name">Mac 环境配置(1)——完美终端</a>
+        </div>
+    </div>
+</header>
+
+        <!-- fixed footer -->
+        <footer class="footer-fixed">
+    <!-- donate button -->
+
+    <!-- back to top button -->
+    <div class="footer-fixed-btn footer-fixed-btn--hidden back-top">
+        <div>&#xe639;</div>
+    </div>
+</footer>
+
+        <!-- wrapper -->
+        <div class="wrapper">
+            <div class="site-intro" style="    height:50vh;
+">
+    <!-- 主页  -->
+    <!-- 404页  -->
+    <div class="site-intro-placeholder"></div>
+    <div class="site-intro-img" style="background-image: url(https://s3.xiabee.cn/pic/wallpaper/22.jpg)"></div>
+    <div class="site-intro-meta">
+        <!-- 标题  -->
+        <h1 class="intro-title">
+            <!-- 主页  -->
+                Mac 环境配置(1)——完美终端
+            <!-- 404 -->
+        </h1>
+        <!-- 副标题 -->
+        <p class="intro-subtitle">
+            <!-- 主页副标题  -->
+            <!-- 404 -->
+        </p>
+        <!-- 文章页 meta -->
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                    <div class="post-intro-tags" >
+        <a class="post-tag" href="javascript:void(0);" data-tags="mac">mac</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="brew">brew</a>
+</div>
+
+                <!-- 文章字数统计 -->
+                    <div class="post-intro-read">
+                        <span>字数统计: <span class="post-count word-count">1.3k</span>阅读时长: <span class="post-count reading-time">5 min</span></span>
+                    </div>
+                <div class="post-intro-meta">
+                    <!-- 撰写日期 -->
+                    <span class="iconfont-archer post-intro-calander">&#xe676;</span>
+                    <span class="post-intro-time">2022/08/16</span>
+                    <!-- busuanzi -->
+                        <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                            <span class="iconfont-archer post-intro-busuanzi">&#xe602;</span>
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    <!-- 文章分享 -->
+                    <span class="share-wrapper">
+                        <span class="iconfont-archer share-icon">&#xe71d;</span>
+                        <span class="share-text">Share</span>
+                        <ul class="share-list">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
+    </div>
+</div>
+
+            <script>
+  // get user agent
+  function getBrowserVersions() {
+    var u = window.navigator.userAgent
+    return {
+      userAgent: u,
+      trident: u.indexOf('Trident') > -1, //IE内核
+      presto: u.indexOf('Presto') > -1, //opera内核
+      webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+      gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
+      mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+      ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+      android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
+      iPhone: u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1, //是否为iPhone或者安卓QQ浏览器
+      iPad: u.indexOf('iPad') > -1, //是否为iPad
+      webApp: u.indexOf('Safari') == -1, //是否为web应用程序，没有头部与底部
+      weixin: u.indexOf('MicroMessenger') == -1, //是否为微信浏览器
+      uc: u.indexOf('UCBrowser') > -1, //是否为android下的UC浏览器
+    }
+  }
+  var browser = {
+    versions: getBrowserVersions(),
+  }
+  console.log('userAgent: ' + browser.versions.userAgent)
+
+  // callback
+  function fontLoaded() {
+    console.log('font loaded')
+    if (document.getElementsByClassName('site-intro-meta')) {
+      document
+        .getElementsByClassName('intro-title')[0]
+        .classList.add('intro-fade-in')
+      document
+        .getElementsByClassName('intro-subtitle')[0]
+        .classList.add('intro-fade-in')
+      var postIntros = document.getElementsByClassName('post-intros')[0]
+      if (postIntros) {
+        postIntros.classList.add('post-fade-in')
+      }
+    }
+  }
+
+  // UC不支持跨域，所以直接显示
+  function asyncCb() {
+    if (browser.versions.uc) {
+      console.log('UCBrowser')
+      fontLoaded()
+    } else {
+      WebFont.load({
+        custom: {
+          families: ['Oswald-Regular'],
+        },
+        loading: function () {
+          // 所有字体开始加载
+          // console.log('font loading');
+        },
+        active: function () {
+          // 所有字体已渲染
+          fontLoaded()
+        },
+        inactive: function () {
+          // 字体预加载失败，无效字体或浏览器不支持加载
+          console.log('inactive: timeout')
+          fontLoaded()
+        },
+        timeout: 5000, // Set the timeout to two seconds
+      })
+    }
+  }
+
+  function asyncErr() {
+    console.warn('script load from CDN failed, will load local script')
+  }
+
+  // load webfont-loader async, and add callback function
+  function async(u, cb, err) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0]
+    o.src = u
+    if (cb) {
+      o.addEventListener(
+        'load',
+        function (e) {
+          cb(null, e)
+        },
+        false
+      )
+    }
+    if (err) {
+      o.addEventListener(
+        'error',
+        function (e) {
+          err(null, e)
+        },
+        false
+      )
+    }
+    s.parentNode.insertBefore(o, s)
+  }
+
+  var asyncLoadWithFallBack = function (arr, success, reject) {
+    var currReject = function () {
+      reject()
+      arr.shift()
+      if (arr.length) async(arr[0], success, currReject)
+    }
+
+    async(arr[0], success, currReject)
+  }
+
+  asyncLoadWithFallBack(
+    [
+      'https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js',
+      'https://cdn.bootcss.com/webfont/1.6.28/webfontloader.js',
+      "/lib/webfontloader.min.js",
+    ],
+    asyncCb,
+    asyncErr
+  )
+</script>
+
+            <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" alt="loading">
+            <div class="container container-unloaded">
+                <main class="main post-page">
+    <article class="article-entry">
+        <h2 id="环境说明"><a href="#环境说明" class="headerlink" title="环境说明"></a>环境说明</h2><p>公司发了新电脑，<code>M1 Pro</code> 的 <code>MacBook Pro</code>，用了几天体验还不错，参考 <a target="_blank" rel="noopener" href="https://makeoptim.com/">makeoptim</a> 配置了一下自己的终端。</p>
+<p>这里介绍一下怎么在 <code>Mac</code> 里打造一个能让颜狗落泪的漂亮终端（划掉）</p>
+<img src="https://s3.xiabee.cn/pic/weibo-backup/0084b03xgy1h58pm1gs0uj30y20iu0za.jpg" alt="image.png" style="zoom:100%;" />
+
+
+
+<h2 id="“完美”标准"><a href="#“完美”标准" class="headerlink" title="“完美”标准"></a>“完美”标准</h2><ul>
+<li>我是颜狗，终端好看是第一标准</li>
+<li>自动补全应该是一个终端的必备需求</li>
+<li>最好有语法高亮</li>
+<li>最好能通过键盘唤醒</li>
+</ul>
+<p>大概长这样：</p>
+<img src="https://s3.xiabee.cn/pic/weibo-backup/0084b03xgy1h5cfxyz9ayj310y0pgqn1.jpg" alt="image.png" style="zoom:100%;" />
+
+
+
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>需要安装一些软件 / 字体等</p>
+<h3 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h3><p>后面会用到 <code>p10k</code> 相关字体，前往 <a target="_blank" rel="noopener" href="https://github.com/romkatv/powerlevel10k#manual-font-installation">https://github.com/romkatv/powerlevel10k#manual-font-installation</a> 下载并安装 <code>MesloLGS NF Regular.ttf</code> 即可。</p>
+<h3 id="iTerm2"><a href="#iTerm2" class="headerlink" title="iTerm2"></a>iTerm2</h3><h4 id="下载与安装"><a href="#下载与安装" class="headerlink" title="下载与安装"></a>下载与安装</h4><p>一个终端工具，新款的 Mac 应该有预装，如果没有的话可以去<a target="_blank" rel="noopener" href="https://iterm2.com/">官网</a>下载安装一个。</p>
+<p>在 <code>Application</code> 目录下，找不到的话也可以 <code>command + [space]</code> 进行查找：</p>
+<img src="https://s3.xiabee.cn/pic/weibo-backup/0084b03xgy1h5cg5x52ttj311i05cjs7.jpg" alt="image.png" style="zoom:100%;" />
+
+
+
+<h4 id="完全磁盘访问权限"><a href="#完全磁盘访问权限" class="headerlink" title="完全磁盘访问权限"></a>完全磁盘访问权限</h4><blockquote>
+<p> 注：建议为 iTerm2 打开完全磁盘访问权限，避免出现默认 Terminal 能够执行正确，iTerm2 因为权限问题导致执行有误的情况。</p>
+</blockquote>
+<ul>
+<li>左上角苹果图标 ➡️ 系统偏好设置</li>
+</ul>
+<img src="https://s3.xiabee.cn/pic/weibo-backup/0084b03xgy1h5cgen3sifj30ds0hcmzx.jpg" alt="image.png" style="zoom:100%;" />
+
+<ul>
+<li>系统偏好设置 ➡️ 安全性与隐私 ➡️ 隐私 ➡️ 完全磁盘访问权限 ➡️ iTerm</li>
+</ul>
+<img src="https://s3.xiabee.cn/pic/weibo-backup/0084b03xgy1h5cgbwvu3gj31140wm7df.jpg" alt="image.png" style="zoom:100%;" />
+
+
+
+<h4 id="设置背景"><a href="#设置背景" class="headerlink" title="设置背景"></a>设置背景</h4><ul>
+<li>点击屏幕左上角 <code>iTerm2</code> ➡️ <code>Preferences</code> ➡️ <code>Profiles</code> ➡️ <code>Profile Name</code>选中对应配置文件 ➡️ <code>Window</code> ➡️ <code>Background Image</code> </li>
+</ul>
+<p><img src="https://s3.xiabee.cn/pic/weibo-backup/0084b03xgy1h5dbp9dyggj32321cwhdu.jpg" alt="image.png"></p>
+<h3 id="zsh"><a href="#zsh" class="headerlink" title="zsh"></a>zsh</h3><p>Mac 系统默认安装了 <code>zsh</code> ，用以下命令把默认 <code>Shell</code> 改成 <code>zsh</code> 就行：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chsh -s /bin/zsh</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="oh-my-zsh"><a href="#oh-my-zsh" class="headerlink" title="oh-my-zsh"></a>oh-my-zsh</h3><blockquote>
+<p>Oh My Zsh is a delightful, open source, community-driven framework for managing your Zsh configuration. It comes bundled with thousands of helpful functions, helpers, plugins, themes, and a few things that make you shout…</p>
+<p><a target="_blank" rel="noopener" href="https://ohmyz.sh/">ohmyzs.sh</a></p>
+</blockquote>
+<h4 id="下载与安装-1"><a href="#下载与安装-1" class="headerlink" title="下载与安装"></a>下载与安装</h4><p>Oh-my-zsh 官方支持 <code>curl</code> 和 <code>wget</code> 两种方式安装，看 Mac 里面安装了哪个工具就用哪个</p>
+<p><del>后续再来介绍如何配置 <code>homebrew</code> 并利用 <code>brew</code> 来安装软件</del></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sh -c <span class="string">&quot;<span class="subst">$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)</span>&quot;</span></span><br><span class="line"><span class="comment"># 用 curl 安装</span></span><br><span class="line"></span><br><span class="line">sh -c <span class="string">&quot;<span class="subst">$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)</span>&quot;</span></span><br><span class="line"><span class="comment"># 用 wget 安装</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>命令执行成功后，不需要配置，直接把 <code>oh-my-zsh</code> 安装在 <code>~/.oh-my-zsh</code> 目录下，并载入默认配置：</p>
+<img src="https://s3.xiabee.cn/pic/weibo-backup/0084b03xgy1h5cgoz16xrj310y0pg1hw.jpg" alt="image.png" style="zoom:100%;" />
+
+
+
+<h4 id="切换主题"><a href="#切换主题" class="headerlink" title="切换主题"></a>切换主题</h4><p>修改主题则只需要修改 <code>~/.zshrc</code> 中的 <code>ZSH_THEME=&quot;&quot;</code> 字段，并将相应主题下载到 <code>~/.oh-my-zsh/themes</code> 中：</p>
+<p><img src="https://s3.xiabee.cn/pic/weibo-backup/0084b03xgy1h5cgtc5invj311a0pa7wh.jpg" alt="image.png"></p>
+<h3 id="Powerlevel10k"><a href="#Powerlevel10k" class="headerlink" title="Powerlevel10k"></a>Powerlevel10k</h3><p>俗称 <code>p10k</code>，是目前 <code>Oh-my-zsh</code> 里面最流行的主题之一，也是我最喜欢的一个主题</p>
+<p><del>因为懒癌晚期，不喜欢自己定制配置文件，直接跑别人写好的定制脚本就行</del></p>
+<h4 id="下载与安装-2"><a href="#下载与安装-2" class="headerlink" title="下载与安装"></a>下载与安装</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> --depth=1 https://gitee.com/romkatv/powerlevel10k.git <span class="variable">$&#123;ZSH_CUSTOM:-~/.oh-my-zsh/custom&#125;</span>/themes/powerlevel10k</span><br><span class="line"><span class="comment"># git 一键安装</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="修改-zsh-配置文件"><a href="#修改-zsh-配置文件" class="headerlink" title="修改 zsh 配置文件"></a>修改 zsh 配置文件</h4><p>修改之前最好提前安装前述的 <code>MesloLGS NF Regular.ttf</code>  字体。</p>
+<p>如上述，修改 <code>~/.zshrc</code> 文件，将主题字段改为 <code>ZSH_THEME=&quot;powerlevel10k/powerlevel10k&quot;</code></p>
+<p>然后保存退出，重新载入配置文件：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/.zshrc</span><br></pre></td></tr></table></figure>
+
+<p>重载配置文件后，会自动启动 <code>p10k</code> 的安装程序：</p>
+<p><img src="https://s3.xiabee.cn/pic/weibo-backup/0084b03xgy1h5chay2w7vj310y0pg7ov.jpg" alt="image.png"></p>
+<h4 id="重置-p10k"><a href="#重置-p10k" class="headerlink" title="重置 p10k"></a>重置 p10k</h4><p>如果上一次写入配置文件成功，直接执行以下命令，重新配置主题：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p10k configure</span><br></pre></td></tr></table></figure>
+
+<p>如果写入配置文件不成功，重载 <code>zsh</code> 配置文件，重新启动 <code>p10k</code> 的安装程序：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/.zshrc</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="插件配置"><a href="#插件配置" class="headerlink" title="插件配置"></a>插件配置</h2><p>这部分不是必须，但是可以让终端更好看 ✅</p>
+<p>部分插件需要用到 <code>homewbrew</code>，后续文章会详细介绍 <code>homebrew</code>（下次一定写，这次先鸽了x）</p>
+<h3 id="autojump"><a href="#autojump" class="headerlink" title="autojump"></a>autojump</h3><p><a target="_blank" rel="noopener" href="https://github.com/wting/autojump">autojump</a> 可以记录下之前 cd 命令访过的所有目录，下次要去那个目录时不需要输入完整的路径，直接 <code>j somedir</code> 即可到达，甚至那个目标目录的名称只输入开头即可，实现了目录的自动补全。</p>
+<h4 id="下载与安装-3"><a href="#下载与安装-3" class="headerlink" title="下载与安装"></a>下载与安装</h4><p>有两种常见的安装方式，包管理器安装和源码安装：</p>
+<p>包管理器 <code>brew</code> 安装：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install autojump</span><br></pre></td></tr></table></figure>
+
+
+
+<p>源码安装：详情可见<a target="_blank" rel="noopener" href="https://github.com/wting/autojump">官网</a></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> git://github.com/wting/autojump.git</span><br><span class="line"><span class="built_in">cd</span> autojump</span><br><span class="line">./install.py</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h4><p>在 zsh 的配置文件 <code>~/.zshrc</code> 中的 <code>plugins</code> 中加入 <code>autojump</code>。</p>
+<p><img src="https://s3.xiabee.cn/pic/weibo-backup/0084b03xgy1h5db7ybvlzj30sg0ao7by.jpg" alt="image.png"></p>
+<p>然后重载 <code>~/.zshrc</code> ，启用插件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/.zshrc</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="zsh-syntax-highlighting"><a href="#zsh-syntax-highlighting" class="headerlink" title="zsh-syntax-highlighting"></a>zsh-syntax-highlighting</h3><p><a target="_blank" rel="noopener" href="https://github.com/zsh-users/zsh-syntax-highlighting">zsh-syntax-highlighting</a> 终端命令语法高亮插件。</p>
+<p>执行以下命令，安装 <code>zsh-syntax-highlighting</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/zsh-users/zsh-syntax-highlighting.git <span class="variable">$&#123;ZSH_CUSTOM:-~/.oh-my-zsh/custom&#125;</span>/plugins/zsh-syntax-highlighting</span><br></pre></td></tr></table></figure>
+
+<p>安装后，如上述，修改 <code>~./zshrc</code> ， 在<code>plugins</code> 中加入 <code>zsh-syntax-highlighting</code>，并重载 <code>~./zshrc</code>。</p>
+<h3 id="zsh-autosuggestions"><a href="#zsh-autosuggestions" class="headerlink" title="zsh-autosuggestions"></a>zsh-autosuggestions</h3><p><a target="_blank" rel="noopener" href="https://github.com/zsh-users/zsh-autosuggestions">zsh-autosuggestions</a> 终端命令自动推荐插件，会记录之前使用过的命令，当你输入开头时，会暗色提示之前的历史命令供你选择，可直接按右方向键选中该命令。</p>
+<p>执行以下命令，安装<code>zsh-autosuggestions</code>。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/zsh-users/zsh-autosuggestions <span class="variable">$&#123;ZSH_CUSTOM:-~/.oh-my-zsh/custom&#125;</span>/plugins/zsh-autosuggestions </span><br></pre></td></tr></table></figure>
+
+<p>安装后，如上述，修改 <code>~./zshrc</code> ， 在<code>plugins</code> 中加入 <code>zsh-autosuggestions</code>，并重载 <code>~./zshrc</code>。</p>
+<h2 id="VSCode-相关"><a href="#VSCode-相关" class="headerlink" title="VSCode 相关"></a>VSCode 相关</h2><p>默认情况下，在 <code>VSCode</code> 中选择 <code>zsh</code> 作为默认 <code>Shell</code> 会出现乱码现象。原因是 <code>Oh My Zsh</code> 配置完成后，使用了 <code>MesloLGS NF</code> 字体。</p>
+<p>因此，修复乱码只需要在设置中找到 <code>terminal font</code>，设置成 <code>MesloLGS NF</code> 即可。</p>
+<ul>
+<li><code>command + ,</code> 打开设置 ➡️ 搜索 <code>terminal font</code> ➡️ 修改字体为 <code>MesloLGS NF</code> </li>
+</ul>
+<p><img src="https://s3.xiabee.cn/pic/weibo-backup/0084b03xgy1h5dbigivcdj31kg0m2n2u.jpg" alt="image.png"></p>
+<h2 id="最终效果"><a href="#最终效果" class="headerlink" title="最终效果"></a>最终效果</h2><p><code>iTerm</code>:</p>
+<p><img src="https://s3.xiabee.cn/pic/weibo-backup/0084b03xgy1h5dbk152ivj310y0pghaj.jpg" alt="image.png"></p>
+<p><code>VScode</code>:</p>
+<p><img src="https://s3.xiabee.cn/pic/weibo-backup/0084b03xgy1h5dbj91yqsj30ps08q406.jpg" alt="image.png"></p>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><blockquote>
+<p><a target="_blank" rel="noopener" href="https://makeoptim.com/tool/terminal">https://makeoptim.com/tool/terminal</a></p>
+</blockquote>
+
+    </article>
+    <!-- license -->
+        <div class="license-wrapper">
+            <p>原文作者：<a href="https://blog.xiabee.cn">xiabee</a>
+            <p>原文链接：<a href="https://blog.xiabee.cn/posts/mac-init/">https://blog.xiabee.cn/posts/mac-init/</a>
+            <p>发表日期：<a href="https://blog.xiabee.cn/posts/mac-init/">August 16th 2022, 12:00:23 pm</a>
+            <p>更新日期：<a href="https://blog.xiabee.cn/posts/mac-init/">July 14th 2026, 6:18:06 pm</a>
+            <p>版权声明：本文采用<a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
+        </div>
+    <!-- paginator -->
+    <ul class="post-paginator">
+        <li class="next">
+                <div class="nextSlogan">Next Post</div>
+                <a href="/posts/mac-brew/" title="Mac 环境配置(2)——homebrew">
+                    <div class="nextTitle">Mac 环境配置(2)——homebrew</div>
+                </a>
+        </li>
+        <li class="previous">
+                <div class="prevSlogan">Previous Post</div>
+                <a href="/posts/hexo-transfer-issue/" title="Hexo 本地迁移">
+                    <div class="prevTitle">Hexo 本地迁移</div>
+                </a>
+        </li>
+    </ul>
+    <!-- comment -->
+        <div class="post-comment">
+            <!-- 来必力 City 版安装代码 -->
+
+            
+            
+            
+            <!-- utteranc评论 -->
+    <script src='https://utteranc.es/client.js'
+        repo='xiabee/xiabee.github.io'
+        issue-term='title'
+        label='Comment'
+        theme='github-light'
+        crossorigin='anonymous'
+        async>
+    </script>
+
+            <!-- partial('_partial/comment/changyan') -->
+            <!--PC版-->
+
+            
+            
+            
+        </div>
+    <!-- timeliness note -->
+    <!-- idea from: https://hexo.fluid-dev.com/posts/hexo-injector/#%E6%96%87%E7%AB%A0%E6%97%B6%E6%95%88%E6%80%A7%E6%8F%90%E7%A4%BA -->
+    <!-- Mathjax -->
+</main>
+
+                <!-- profile -->
+            </div>
+            <footer class="footer footer-unloaded">
+    <!-- social  -->
+        <div class="social">
+                            <a href="mailto:xiabee@foxmail.com" class="iconfont-archer email" title="email" ></a>
+                <a href="https://github.com/xiabee" class="iconfont-archer github" target="_blank" title="github"></a>
+                <a href="https://weibo.com/u/7390789827" class="iconfont-archer weibo" target="_blank" title="weibo"></a>
+                <a href="https://www.zhihu.com/people/xiao-53-1" class="iconfont-archer zhihu" target="_blank" title="zhihu"></a>
+                <a href="https://twitter.com/xiabeeSec" class="iconfont-archer twitter" target="_blank" title="twitter"></a>
+                <a href="https://space.bilibili.com/43789348" class="iconfont-archer bilibili" target="_blank" title="bilibili"></a>
+                <a href="https://www.linkedin.com/in/yunjie-xiao-559502253/" class="iconfont-archer linkedin" target="_blank" title="linkedin"></a>
+                <a href="https://steamcommunity.com/id/xiabee/" class="iconfont-archer steam" target="_blank" title="steam"></a>
+
+        </div>
+    <!-- powered by Hexo  -->
+    <div class="copyright">
+        <span id="hexo-power">Powered by <a href="https://hexo.io/" target="_blank">Hexo</a></span><span class="iconfont-archer power">&#xe635;</span><span id="theme-info">theme <a href="https://github.com/fi3ework/hexo-theme-archer" target="_blank">Archer</a></span>
+    </div>
+    <!-- website approve for Chinese user -->
+    <!-- 不蒜子  -->
+        <div class="busuanzi-container">
+                <span id="busuanzi_container_site_pv">PV: <span id="busuanzi_value_site_pv"></span> :)</span>
+        </div>
+</footer>
+
+        </div>
+        <!-- toc -->
+            <div class="toc-wrapper toc-wrapper-loding" style=    top:50vh;
+>
+                <div class="toc-catalog">
+                    <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+                </div>
+                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%8E%AF%E5%A2%83%E8%AF%B4%E6%98%8E"><span class="toc-number">1.</span> <span class="toc-text">环境说明</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E2%80%9C%E5%AE%8C%E7%BE%8E%E2%80%9D%E6%A0%87%E5%87%86"><span class="toc-number">2.</span> <span class="toc-text">“完美”标准</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="toc-number">3.</span> <span class="toc-text">准备工作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%97%E4%BD%93"><span class="toc-number">3.1.</span> <span class="toc-text">字体</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#iTerm2"><span class="toc-number">3.2.</span> <span class="toc-text">iTerm2</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BD%E4%B8%8E%E5%AE%89%E8%A3%85"><span class="toc-number">3.2.1.</span> <span class="toc-text">下载与安装</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%8C%E5%85%A8%E7%A3%81%E7%9B%98%E8%AE%BF%E9%97%AE%E6%9D%83%E9%99%90"><span class="toc-number">3.2.2.</span> <span class="toc-text">完全磁盘访问权限</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE%E8%83%8C%E6%99%AF"><span class="toc-number">3.2.3.</span> <span class="toc-text">设置背景</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#zsh"><span class="toc-number">3.3.</span> <span class="toc-text">zsh</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#oh-my-zsh"><span class="toc-number">3.4.</span> <span class="toc-text">oh-my-zsh</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BD%E4%B8%8E%E5%AE%89%E8%A3%85-1"><span class="toc-number">3.4.1.</span> <span class="toc-text">下载与安装</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%87%E6%8D%A2%E4%B8%BB%E9%A2%98"><span class="toc-number">3.4.2.</span> <span class="toc-text">切换主题</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Powerlevel10k"><span class="toc-number">3.5.</span> <span class="toc-text">Powerlevel10k</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BD%E4%B8%8E%E5%AE%89%E8%A3%85-2"><span class="toc-number">3.5.1.</span> <span class="toc-text">下载与安装</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9-zsh-%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="toc-number">3.5.2.</span> <span class="toc-text">修改 zsh 配置文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%87%8D%E7%BD%AE-p10k"><span class="toc-number">3.5.3.</span> <span class="toc-text">重置 p10k</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8F%92%E4%BB%B6%E9%85%8D%E7%BD%AE"><span class="toc-number">4.</span> <span class="toc-text">插件配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#autojump"><span class="toc-number">4.1.</span> <span class="toc-text">autojump</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BD%E4%B8%8E%E5%AE%89%E8%A3%85-3"><span class="toc-number">4.1.1.</span> <span class="toc-text">下载与安装</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE"><span class="toc-number">4.1.2.</span> <span class="toc-text">配置</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#zsh-syntax-highlighting"><span class="toc-number">4.2.</span> <span class="toc-text">zsh-syntax-highlighting</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#zsh-autosuggestions"><span class="toc-number">4.3.</span> <span class="toc-text">zsh-autosuggestions</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#VSCode-%E7%9B%B8%E5%85%B3"><span class="toc-number">5.</span> <span class="toc-text">VSCode 相关</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%80%E7%BB%88%E6%95%88%E6%9E%9C"><span class="toc-number">6.</span> <span class="toc-text">最终效果</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Reference"><span class="toc-number">7.</span> <span class="toc-text">Reference</span></a></li></ol>
+            </div>
+        <!-- sidebar -->
+        <div class="sidebar sidebar-hide">
+    <ul class="sidebar-tabs sidebar-tabs-active-0">
+        <li class="sidebar-tab-archives"><span class="iconfont-archer">&#xe67d;</span><span class="tab-name">Archive</span></li>
+        <li class="sidebar-tab-tags"><span class="iconfont-archer">&#xe61b;</span><span class="tab-name">Tag</span></li>
+        <li class="sidebar-tab-categories"><span class="iconfont-archer">&#xe666;</span><span class="tab-name">Cate</span></li>
+    </ul>
+    <div class="sidebar-content sidebar-content-show-archive">
+        <div class="sidebar-panel-archives">
+    <!-- 在 ejs 中将 archive 按照时间排序 -->
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    <div class="total-and-search">
+        <div class="total-archive">
+        Total : 54
+        </div>
+        <!-- search  -->
+            <div class="site-search site-search-loading popup-trigger">
+                <span class="iconfont-archer search-icon">&#xe627;</span>
+            </div>
+    </div>
+    <div class="post-archive">
+            <div class="archive-year"> 2023 </div>
+            <ul class="year-list">
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/13</span>
+            <a class="archive-post-title" href="/posts/ax6000-openwrt/">红米AX6000路由器刷机</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/07</span>
+            <a class="archive-post-title" href="/posts/aws-sns-lark/">基于 Serverless 的 SNS 飞书告警系统</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/30</span>
+            <a class="archive-post-title" href="/posts/ossinsight-lite/">10 分钟内搭建自己的 Oss-Insight-lite</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/19</span>
+            <a class="archive-post-title" href="/posts/pichost-picgo/">PicGO 连接 AWS S3</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/19</span>
+            <a class="archive-post-title" href="/posts/app-error/">“应用程序”已损坏解决方案</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/09</span>
+            <a class="archive-post-title" href="/posts/aws-pichost/">AWS S3+CloudFront 打造自己的图床</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/18</span>
+            <a class="archive-post-title" href="/posts/aws-intro/">AWS 入门</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/16</span>
+            <a class="archive-post-title" href="/posts/sina-pichost/">微博图床抢救</a>
+        </li>
+                </ul>
+            <div class="archive-year"> 2022 </div>
+            <ul class="year-list">
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/11</span>
+            <a class="archive-post-title" href="/posts/aws-lambda/">使用 AWS Lambda 进行签到</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/21</span>
+            <a class="archive-post-title" href="/posts/wechat-bot/">利用企业微信机器人推送消息</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/20</span>
+            <a class="archive-post-title" href="/posts/glados-intro/">Glados 签到简介</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/30</span>
+            <a class="archive-post-title" href="/posts/mac-bp/">Mac 环境配置(4)——BurpSuite 破解</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/24</span>
+            <a class="archive-post-title" href="/posts/mac-proxy/">Mac 环境配置(3)——配置代理</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/23</span>
+            <a class="archive-post-title" href="/posts/mac-brew/">Mac 环境配置(2)——homebrew</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/16</span>
+            <a class="archive-post-title" href="/posts/mac-init/">Mac 环境配置(1)——完美终端</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/14</span>
+            <a class="archive-post-title" href="/posts/hexo-transfer-issue/">Hexo 本地迁移</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/08</span>
+            <a class="archive-post-title" href="/posts/tidb-build-up/">Build Distributed TiDB System</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/21</span>
+            <a class="archive-post-title" href="/posts/hydro-hepler/">Hydro-OJ 使用说明</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/08</span>
+            <a class="archive-post-title" href="/posts/docker-compose-2/">安装 docker-compose 2</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/08</span>
+            <a class="archive-post-title" href="/posts/postal-mailserver/">Docker 搭建 Postal 邮件系统</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/29</span>
+            <a class="archive-post-title" href="/posts/hydro-docker/">Docker搭建Hydro-OJ系统</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/08</span>
+            <a class="archive-post-title" href="/posts/2022-spring-recruitment/">2022春招安全岗记录</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/03</span>
+            <a class="archive-post-title" href="/posts/vps-toss/">服务器的折腾</a>
+        </li>
+                </ul>
+            <div class="archive-year"> 2021 </div>
+            <ul class="year-list">
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/25</span>
+            <a class="archive-post-title" href="/posts/diary/">考研日记</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/11</span>
+            <a class="archive-post-title" href="/posts/11-11/">如何在双十一快速脱单？</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/09</span>
+            <a class="archive-post-title" href="/posts/wordpress-docker/">Docker搭建Wordpress个人博客</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/09</span>
+            <a class="archive-post-title" href="/posts/nextcloud-docker/">Docker搭建NextCloud个人网盘</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/07</span>
+            <a class="archive-post-title" href="/posts/markdown-docker/">Docker搭建Markdown共享编辑器</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/03</span>
+            <a class="archive-post-title" href="/posts/utteranc-hexo/">utteranc 搭建评论系统</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/02</span>
+            <a class="archive-post-title" href="/posts/git-coding-hexo/">Git Page + Coding Page 实现负载均衡</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/31</span>
+            <a class="archive-post-title" href="/posts/archer-algolia/">Archer主题启用Algolia全文搜索</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/31</span>
+            <a class="archive-post-title" href="/posts/hexo-archer/">Hexo更换主题</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/28</span>
+            <a class="archive-post-title" href="/posts/hexo-git-backup/">利用git分支进行Hexo备份</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/27</span>
+            <a class="archive-post-title" href="/posts/hexo-git-setup/">Hexo+GitPage搭建个人博客</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/01</span>
+            <a class="archive-post-title" href="/posts/fri/">FRIENDS</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/30</span>
+            <a class="archive-post-title" href="/posts/blockchain-truffle/">三天速成智能合约–DAY3：truffle 从放手到放弃</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/29</span>
+            <a class="archive-post-title" href="/posts/blockchain-geth/">三天速成智能合约–DAY2：GETH 从入门到入土</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/28</span>
+            <a class="archive-post-title" href="/posts/blockchain-start/">三天速成智能合约–DAY1：环境安装</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/15</span>
+            <a class="archive-post-title" href="/posts/2021-summer-year3/">我的大三</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/10</span>
+            <a class="archive-post-title" href="/posts/shodan-cam/">Shodan + MSF 入侵智能摄像头</a>
+        </li>
+                </ul>
+            <div class="archive-year"> 2020 </div>
+            <ul class="year-list">
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/07</span>
+            <a class="archive-post-title" href="/posts/occupation-ctf-wp/">职业杯 2020 选拔赛回顾 & Write UP</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/26</span>
+            <a class="archive-post-title" href="/posts/wsl2-about/">WSL2踩坑分享</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/14</span>
+            <a class="archive-post-title" href="/posts/linux-gmp/">Linux安装GMP依赖</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/05</span>
+            <a class="archive-post-title" href="/posts/2020-summer/">2020 Summer Review of xiabee</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/27</span>
+            <a class="archive-post-title" href="/posts/github-ssh/">GitHub配置SSH Key</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/18</span>
+            <a class="archive-post-title" href="/posts/wechat-0day/">微信RCE 0day复现</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/19</span>
+            <a class="archive-post-title" href="/posts/docker-sudo/">不输入sudo运行Docker</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/18</span>
+            <a class="archive-post-title" href="/posts/docker-commands/">Docker常用命令</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/17</span>
+            <a class="archive-post-title" href="/posts/docker-pupy/">Docker入门</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/17</span>
+            <a class="archive-post-title" href="/posts/docker-source/">Docker换源</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/14</span>
+            <a class="archive-post-title" href="/posts/linux-sources/">Ubuntu/kali 国内各大更新源</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/10</span>
+            <a class="archive-post-title" href="/posts/ababa/">碎碎念</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/09</span>
+            <a class="archive-post-title" href="/posts/vulnhub-dc-2/">VulnHub DC2 通关纪实</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/09</span>
+            <a class="archive-post-title" href="/posts/vulnhub-dc-1/">VulnHub DC1 通关纪实</a>
+        </li>
+            </ul>
+    </div>
+</div>
+
+        <div class="sidebar-panel-tags">
+    <div class="sidebar-tags-name">
+            <span class="sidebar-tag-name" data-tags="blockchain">
+                <span class="iconfont-archer">&#xe606;</span>
+                blockchain
+            </span>
+            <span class="sidebar-tag-name" data-tags="smart contract">
+                <span class="iconfont-archer">&#xe606;</span>
+                smart contract
+            </span>
+            <span class="sidebar-tag-name" data-tags="ax6000">
+                <span class="iconfont-archer">&#xe606;</span>
+                ax6000
+            </span>
+            <span class="sidebar-tag-name" data-tags="linux">
+                <span class="iconfont-archer">&#xe606;</span>
+                linux
+            </span>
+            <span class="sidebar-tag-name" data-tags="tidb">
+                <span class="iconfont-archer">&#xe606;</span>
+                tidb
+            </span>
+            <span class="sidebar-tag-name" data-tags="hexo">
+                <span class="iconfont-archer">&#xe606;</span>
+                hexo
+            </span>
+            <span class="sidebar-tag-name" data-tags="archer">
+                <span class="iconfont-archer">&#xe606;</span>
+                archer
+            </span>
+            <span class="sidebar-tag-name" data-tags="algolia">
+                <span class="iconfont-archer">&#xe606;</span>
+                algolia
+            </span>
+            <span class="sidebar-tag-name" data-tags="git">
+                <span class="iconfont-archer">&#xe606;</span>
+                git
+            </span>
+            <span class="sidebar-tag-name" data-tags="ssh">
+                <span class="iconfont-archer">&#xe606;</span>
+                ssh
+            </span>
+            <span class="sidebar-tag-name" data-tags="oj">
+                <span class="iconfont-archer">&#xe606;</span>
+                oj
+            </span>
+            <span class="sidebar-tag-name" data-tags="docker">
+                <span class="iconfont-archer">&#xe606;</span>
+                docker
+            </span>
+            <span class="sidebar-tag-name" data-tags="wsl">
+                <span class="iconfont-archer">&#xe606;</span>
+                wsl
+            </span>
+            <span class="sidebar-tag-name" data-tags="wordpress">
+                <span class="iconfont-archer">&#xe606;</span>
+                wordpress
+            </span>
+            <span class="sidebar-tag-name" data-tags="nextcloud">
+                <span class="iconfont-archer">&#xe606;</span>
+                nextcloud
+            </span>
+            <span class="sidebar-tag-name" data-tags="markdown">
+                <span class="iconfont-archer">&#xe606;</span>
+                markdown
+            </span>
+            <span class="sidebar-tag-name" data-tags="glados">
+                <span class="iconfont-archer">&#xe606;</span>
+                glados
+            </span>
+            <span class="sidebar-tag-name" data-tags="utteranc">
+                <span class="iconfont-archer">&#xe606;</span>
+                utteranc
+            </span>
+            <span class="sidebar-tag-name" data-tags="serverless">
+                <span class="iconfont-archer">&#xe606;</span>
+                serverless
+            </span>
+            <span class="sidebar-tag-name" data-tags="postal">
+                <span class="iconfont-archer">&#xe606;</span>
+                postal
+            </span>
+            <span class="sidebar-tag-name" data-tags="docker-compose">
+                <span class="iconfont-archer">&#xe606;</span>
+                docker-compose
+            </span>
+            <span class="sidebar-tag-name" data-tags="vps">
+                <span class="iconfont-archer">&#xe606;</span>
+                vps
+            </span>
+            <span class="sidebar-tag-name" data-tags="ctf">
+                <span class="iconfont-archer">&#xe606;</span>
+                ctf
+            </span>
+            <span class="sidebar-tag-name" data-tags="vulnhub">
+                <span class="iconfont-archer">&#xe606;</span>
+                vulnhub
+            </span>
+            <span class="sidebar-tag-name" data-tags="0day">
+                <span class="iconfont-archer">&#xe606;</span>
+                0day
+            </span>
+            <span class="sidebar-tag-name" data-tags="cloud">
+                <span class="iconfont-archer">&#xe606;</span>
+                cloud
+            </span>
+            <span class="sidebar-tag-name" data-tags="aws">
+                <span class="iconfont-archer">&#xe606;</span>
+                aws
+            </span>
+            <span class="sidebar-tag-name" data-tags="s3">
+                <span class="iconfont-archer">&#xe606;</span>
+                s3
+            </span>
+            <span class="sidebar-tag-name" data-tags="lark">
+                <span class="iconfont-archer">&#xe606;</span>
+                lark
+            </span>
+            <span class="sidebar-tag-name" data-tags="lambda">
+                <span class="iconfont-archer">&#xe606;</span>
+                lambda
+            </span>
+            <span class="sidebar-tag-name" data-tags="sns">
+                <span class="iconfont-archer">&#xe606;</span>
+                sns
+            </span>
+            <span class="sidebar-tag-name" data-tags="碎碎念">
+                <span class="iconfont-archer">&#xe606;</span>
+                碎碎念
+            </span>
+            <span class="sidebar-tag-name" data-tags="friends">
+                <span class="iconfont-archer">&#xe606;</span>
+                friends
+            </span>
+            <span class="sidebar-tag-name" data-tags="mac">
+                <span class="iconfont-archer">&#xe606;</span>
+                mac
+            </span>
+            <span class="sidebar-tag-name" data-tags="brew">
+                <span class="iconfont-archer">&#xe606;</span>
+                brew
+            </span>
+    </div>
+    <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
+    <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
+        缺失模块，请参考主题文档进行安装配置：https://github.com/fi3ework/hexo-theme-archer#%E5%AE%89%E8%A3%85%E4%B8%BB%E9%A2%98
+    </div> 
+    <div class="sidebar-tags-list"></div>
+</div>
+
+        <div class="sidebar-panel-categories">
+    <div class="sidebar-categories-name">
+        <span class="sidebar-category-name" data-categories="blockchain">
+            <span class="iconfont-archer">&#xe60a;</span>
+            blockchain
+        </span>
+        <span class="sidebar-category-name" data-categories="coding">
+            <span class="iconfont-archer">&#xe60a;</span>
+            coding
+        </span>
+        <span class="sidebar-category-name" data-categories="ctf">
+            <span class="iconfont-archer">&#xe60a;</span>
+            ctf
+        </span>
+        <span class="sidebar-category-name" data-categories="aws">
+            <span class="iconfont-archer">&#xe60a;</span>
+            aws
+        </span>
+        <span class="sidebar-category-name" data-categories="cloud">
+            <span class="iconfont-archer">&#xe60a;</span>
+            cloud
+        </span>
+        <span class="sidebar-category-name" data-categories="informal essay">
+            <span class="iconfont-archer">&#xe60a;</span>
+            informal essay
+        </span>
+        <span class="sidebar-category-name" data-categories="friends">
+            <span class="iconfont-archer">&#xe60a;</span>
+            friends
+        </span>
+    </div>
+    <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
+    <div class="sidebar-categories-list"></div>
+</div>
+
+    </div>
+</div>
+
+        <!-- site-meta -->
+        <script>
+    var siteMetaRoot = "/"
+    if (siteMetaRoot === "undefined") {
+        siteMetaRoot = '/'
+    }
+    var siteMeta = {
+        url: "https://blog.xiabee.cn",
+        root: siteMetaRoot,
+        author: "xiabee"
+    }
+</script>
+
+        <!-- import experimental options here -->
+        <!-- Custom Font -->
+
+        <!-- main func -->
+        <script src="/scripts/main.js"></script>
+        <!-- fancybox -->
+        <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.36/dist/fancybox/fancybox.umd.js" onload="window.Fancybox.bind('[data-fancybox]')" defer></script>
+        <!-- algolia -->
+            <div class="site-search site-search-loading">
+    <div class="algolia-popup popup">
+        <div class="algolia-search">
+            <div class="algolia-search-input-icon">
+                <i class="fa fa-search"></i>
+            </div>
+            <div class="algolia-search-input" id="algolia-search-input"></div>
+            <div class="popup-btn-close">
+                <i class="iconfont-archer">&#xe609;</i>
+            </div>
+        </div>
+
+        <div class="algolia-results">
+            <div id="algolia-stats" class="algolia-stats"></div>
+            <div id="algolia-hits"></div>
+            <div id="algolia-pagination" class="algolia-pagination"></div>
+        </div>
+    </div>
+</div>
+
+            <script src="/scripts/search.js" async></script>
+        <!-- busuanzi -->
+            <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+        <!-- async load share.js -->
+            <script src="/scripts/share.js" async></script>
+        <!-- mermaid -->
+    </body>
+</html>

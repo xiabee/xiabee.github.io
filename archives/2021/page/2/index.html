@@ -1,0 +1,1210 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <!-- title -->
+<!-- keywords -->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="author" content="xiabee">
+    <meta name="renderer" content="webkit">
+    <meta name="copyright" content="xiabee">
+        <meta name="keywords" content="xiabee,hexo-theme,xiabee-blog">
+    <meta name="description" content="">
+    <meta property="og:type" content="website">
+<meta property="og:title" content="xiabee-瞎哔哔">
+<meta property="og:url" content="https://blog.xiabee.cn/archives/2021/page/2/index.html">
+<meta property="og:site_name" content="xiabee-瞎哔哔">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="xiabee">
+<meta name="twitter:card" content="summary">
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link rel="icon" href="https://s3.xiabee.cn/pic/icons/favicon.jpg">
+    <title>xiabee-瞎哔哔</title>
+    <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+/* This file is meant as a standalone workflow for
+- testing support for link[rel=preload]
+- enabling async CSS loading in browsers that do not support rel=preload
+- applying rel preload css once loaded, whether supported or not.
+*/ -->
+<script>
+    (function (w) {
+        'use strict'
+        // rel=preload support test
+        if (!w.loadCSS) {
+            w.loadCSS = function () {}
+        }
+        // define on the loadCSS obj
+        var rp = (loadCSS.relpreload = {})
+        // rel=preload feature support test
+        // runs once and returns a function for compat purposes
+        rp.support = (function () {
+            var ret
+            try {
+                ret = w.document.createElement('link').relList.supports('preload')
+            } catch (e) {
+                ret = false
+            }
+            return function () {
+                return ret
+            }
+        })()
+
+        // if preload isn't supported, get an asynchronous load by using a non-matching media attribute
+        // then change that media back to its intended value on load
+        rp.bindMediaToggle = function (link) {
+            // remember existing media attr for ultimate state, or default to 'all'
+            var finalMedia = link.media || 'all'
+
+            function enableStylesheet() {
+                link.media = finalMedia
+            }
+
+            // bind load handlers to enable media
+            if (link.addEventListener) {
+                link.addEventListener('load', enableStylesheet)
+            } else if (link.attachEvent) {
+                link.attachEvent('onload', enableStylesheet)
+            }
+
+            // Set rel and non-applicable media type to start an async request
+            // note: timeout allows this to happen async to let rendering continue in IE
+            setTimeout(function () {
+                link.rel = 'stylesheet'
+                link.media = 'only x'
+            })
+            // also enable media after 3 seconds,
+            // which will catch very old browsers (android 2.x, old firefox) that don't support onload on link
+            setTimeout(enableStylesheet, 3000)
+        }
+
+        // loop through link elements in DOM
+        rp.poly = function () {
+            // double check this to prevent external calls from running
+            if (rp.support()) {
+                return
+            }
+            var links = w.document.getElementsByTagName('link')
+            for (var i = 0; i < links.length; i++) {
+                var link = links[i]
+                // qualify links to those with rel=preload and as=style attrs
+                if (
+                    link.rel === 'preload' &&
+                    link.getAttribute('as') === 'style' &&
+                    !link.getAttribute('data-loadcss')
+                ) {
+                    // prevent rerunning on link
+                    link.setAttribute('data-loadcss', true)
+                    // bind listeners to toggle media back
+                    rp.bindMediaToggle(link)
+                }
+            }
+        }
+
+        // if unsupported, run the polyfill
+        if (!rp.support()) {
+            // run once at least
+            rp.poly()
+
+            // rerun poly on an interval until onload
+            var run = w.setInterval(rp.poly, 500)
+            if (w.addEventListener) {
+                w.addEventListener('load', function () {
+                    rp.poly()
+                    w.clearInterval(run)
+                })
+            } else if (w.attachEvent) {
+                w.attachEvent('onload', function () {
+                    rp.poly()
+                    w.clearInterval(run)
+                })
+            }
+        }
+
+        // commonjs
+        if (typeof exports !== 'undefined') {
+            exports.loadCSS = loadCSS
+        } else {
+            w.loadCSS = loadCSS
+        }
+    })(typeof global !== 'undefined' ? global : this)
+</script>
+
+    <style type="text/css">
+    @font-face {
+        font-family: 'Oswald-Regular';
+        src: url("/font/Oswald-Regular.ttf");
+    }
+
+    body {
+        margin: 0;
+    }
+
+    header,
+    footer,
+    .footer-fixed-btn,
+    .sidebar,
+    .container,
+    .site-intro-meta,
+    .toc-wrapper {
+        display: none;
+    }
+
+    .site-intro {
+        position: relative;
+        z-index: 3;
+        width: 100%;
+        /* height: 50vh; */
+        overflow: hidden;
+    }
+
+    .site-intro-placeholder {
+        position: absolute;
+        z-index: -2;
+        top: 0;
+        left: 0;
+        width: calc(100% + 300px);
+        height: 100%;
+        background: repeating-linear-gradient(
+            -45deg,
+            #444 0,
+            #444 80px,
+            #333 80px,
+            #333 160px
+        );
+        background-position: center center;
+        transform: translate3d(-226px, 0, 0);
+        animation: gradient-move 2.5s ease-out 0s infinite;
+    }
+
+    @keyframes gradient-move {
+        0% {
+            transform: translate3d(-226px, 0, 0);
+        }
+        100% {
+            transform: translate3d(0, 0, 0);
+        }
+    }
+</style>
+
+    <link id="stylesheet-fancybox" rel="preload" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.36/dist/fancybox/fancybox.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link id="stylesheet-base" rel="preload" href="/css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link id="stylesheet-mobile" rel="preload" href="/css/mobile.css" as="style" onload="this.onload=null;this.rel='stylesheet';this.media='screen and (max-width: 960px)'">
+    <link id="stylesheet-theme-dark" rel="preload" href="/css/dark.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" as="script">
+    <link rel="preload" href="/scripts/main.js" as="script">
+    <link rel="preload" href="/font/Oswald-Regular.ttf" as="font" crossorigin>
+    <link rel="preload" href="https://at.alicdn.com/t/font_327081_1dta1rlogw17zaor.woff" as="font" crossorigin>
+    <!-- algolia -->
+        <script>
+            var hits = JSON.parse('{"per_page":10}')
+            var labels = JSON.parse('{"input_placeholder":"Search for Posts","hits_empty":"We did not find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}')
+
+            var algolia = {
+                applicationID: '2BK6PYKX0M',
+                apiKey: 'a66bcd276348975224eb517894049525',
+                indexName: 'xiabee-search',
+                hits: hits,
+                labels: labels
+            }
+        </script>
+    <!-- 百度统计  -->
+    <!-- 谷歌统计  -->
+    <!-- Google tag (gtag.js) -->
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <script type="text/javascript">
+        if (typeof window.$ == undefined) {
+            console.warn('jquery load from jsdelivr failed, will load local script')
+            document.write('<script src="/lib/jquery.min.js" />')
+        }
+    </script>
+        <!-- header -->
+        <header class="header header-mobile">
+    <!-- top read progress line -->
+    <div class="header-element">
+        <div class="read-progress"></div>
+    </div>
+    <!-- sidebar menu button -->
+    <div class="header-element">
+        <div class="header-sidebar-menu">
+            <div style="padding-left: 1px;">&#xe775;</div>
+        </div>
+    </div>
+    <!-- header actions -->
+    <div class="header-actions">
+        <!-- theme mode switch button -->
+        <span class="header-theme-btn header-element">
+            <i class="fas fa-adjust"></i>
+        </span>
+        <!-- back to home page text -->
+        <span class="home-link header-element">
+            <a href="/">XiaBee's Studio.</a>
+        </span>
+    </div>
+    <!-- toggle banner -->
+    <div class="banner">
+        <div class="blog-title header-element">
+            <a href="/">XiaBee&#39;s Studio.</a>
+        </div>
+        <div class="post-title header-element">
+            <a href="#" class="post-name"></a>
+        </div>
+    </div>
+</header>
+
+        <!-- fixed footer -->
+        <footer class="footer-fixed">
+    <!-- donate button -->
+
+    <!-- back to top button -->
+    <div class="footer-fixed-btn footer-fixed-btn--hidden back-top">
+        <div>&#xe639;</div>
+    </div>
+</footer>
+
+        <!-- wrapper -->
+        <div class="wrapper">
+            <div class="site-intro" style="">
+    <!-- 主页  -->
+    <div class="site-intro-placeholder"></div>
+    <div class="site-intro-img" style="background-image: url(/)"></div>
+    <div class="site-intro-meta">
+        <!-- 标题  -->
+        <h1 class="intro-title">
+            <!-- 主页  -->
+        </h1>
+        <!-- 副标题 -->
+        <p class="intro-subtitle">
+            <!-- 主页副标题  -->
+        </p>
+        <!-- 文章页 meta -->
+    </div>
+</div>
+
+            <script>
+  // get user agent
+  function getBrowserVersions() {
+    var u = window.navigator.userAgent
+    return {
+      userAgent: u,
+      trident: u.indexOf('Trident') > -1, //IE内核
+      presto: u.indexOf('Presto') > -1, //opera内核
+      webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+      gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
+      mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+      ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+      android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
+      iPhone: u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1, //是否为iPhone或者安卓QQ浏览器
+      iPad: u.indexOf('iPad') > -1, //是否为iPad
+      webApp: u.indexOf('Safari') == -1, //是否为web应用程序，没有头部与底部
+      weixin: u.indexOf('MicroMessenger') == -1, //是否为微信浏览器
+      uc: u.indexOf('UCBrowser') > -1, //是否为android下的UC浏览器
+    }
+  }
+  var browser = {
+    versions: getBrowserVersions(),
+  }
+  console.log('userAgent: ' + browser.versions.userAgent)
+
+  // callback
+  function fontLoaded() {
+    console.log('font loaded')
+    if (document.getElementsByClassName('site-intro-meta')) {
+      document
+        .getElementsByClassName('intro-title')[0]
+        .classList.add('intro-fade-in')
+      document
+        .getElementsByClassName('intro-subtitle')[0]
+        .classList.add('intro-fade-in')
+      var postIntros = document.getElementsByClassName('post-intros')[0]
+      if (postIntros) {
+        postIntros.classList.add('post-fade-in')
+      }
+    }
+  }
+
+  // UC不支持跨域，所以直接显示
+  function asyncCb() {
+    if (browser.versions.uc) {
+      console.log('UCBrowser')
+      fontLoaded()
+    } else {
+      WebFont.load({
+        custom: {
+          families: ['Oswald-Regular'],
+        },
+        loading: function () {
+          // 所有字体开始加载
+          // console.log('font loading');
+        },
+        active: function () {
+          // 所有字体已渲染
+          fontLoaded()
+        },
+        inactive: function () {
+          // 字体预加载失败，无效字体或浏览器不支持加载
+          console.log('inactive: timeout')
+          fontLoaded()
+        },
+        timeout: 5000, // Set the timeout to two seconds
+      })
+    }
+  }
+
+  function asyncErr() {
+    console.warn('script load from CDN failed, will load local script')
+  }
+
+  // load webfont-loader async, and add callback function
+  function async(u, cb, err) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0]
+    o.src = u
+    if (cb) {
+      o.addEventListener(
+        'load',
+        function (e) {
+          cb(null, e)
+        },
+        false
+      )
+    }
+    if (err) {
+      o.addEventListener(
+        'error',
+        function (e) {
+          err(null, e)
+        },
+        false
+      )
+    }
+    s.parentNode.insertBefore(o, s)
+  }
+
+  var asyncLoadWithFallBack = function (arr, success, reject) {
+    var currReject = function () {
+      reject()
+      arr.shift()
+      if (arr.length) async(arr[0], success, currReject)
+    }
+
+    async(arr[0], success, currReject)
+  }
+
+  asyncLoadWithFallBack(
+    [
+      'https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js',
+      'https://cdn.bootcss.com/webfont/1.6.28/webfontloader.js',
+      "/lib/webfontloader.min.js",
+    ],
+    asyncCb,
+    asyncErr
+  )
+</script>
+
+            <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" alt="loading">
+            <div class="container container-unloaded">
+                <main class="main index-page">
+            
+        <article class="index-post">
+            <a class="abstract-title" href="/posts/hexo-git-setup/">
+                <span class="abstract-title-text">Hexo+GitPage搭建个人博客</span>
+            </a>
+            <div class="abstract-content">
+                前言之前一段时间都是用wordpress做个人博客，后来发现Git Page + hexo可以免费做静态页面……尝试了一下，后面就真香了（x）
+关于wordpress和hexo孰优孰劣的问题这里不做详细讨论，只是介绍一下如何用Git Page+hexo搭建一个个人博客。二者具体的比较可以参考知乎的激(you)烈(hao)讨论。
+简介What’s GitHub Page
+官方文档
+
+简而言之就是 白嫖 GitHub的服务器，通过仓库挂一个自己的静态网站。
+
+
+What’s Hexo
+官方文档
+
+一个渲染静态博客的框架，基于Node.js，将markdown文件渲染成html文件
+
+
+Hex...
+            </div>
+            <!-- read more -->
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2026/07/14">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/10/27</span>
+                </div>
+                <!-- tags -->
+                    <div class="abstract-tags" >
+        <a class="post-tag" href="javascript:void(0);" data-tags="hexo">hexo</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="git">git</a>
+</div>
+
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+            
+        <article class="index-post">
+            <a class="abstract-title" href="/posts/fri/">
+                <span class="abstract-title-text">FRIENDS</span>
+            </a>
+            <div class="abstract-content">
+                姓李名唐朝二中校友，同级，剑桥博士，研究方向：HCI
+个人主页：https://dynasty-li.github.io
+xiabee碎碎念自己的公众号，随缘更新
+
+  Click here to show QR code
+  
+  xiabee碎碎念
+
+
+
+
+IZAYOI前浪学长，二进制方向，入职360，做IoT安全
+个人主页：cerr.cc
+layfolk同级大佬，（前）科技创新基地移动政务实验室主任，睿信书院技术保障中心部长，乐于帮助同学解决学业困难
+
+个人主页：计算机专业资料分享
+公众号：俊霖说IT
+
+mariozzj二中同班同学，南京大学直博
+个人主页：https://blog...
+            </div>
+            <!-- read more -->
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2026/07/14">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/10/01</span>
+                </div>
+                <!-- tags -->
+                    <div class="abstract-tags" >
+        <a class="post-tag" href="javascript:void(0);" data-tags="friends">friends</a>
+</div>
+
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+            
+        <article class="index-post">
+            <a class="abstract-title" href="/posts/blockchain-truffle/">
+                <span class="abstract-title-text">三天速成智能合约–DAY3：truffle 从放手到放弃</span>
+            </a>
+            <div class="abstract-content">
+                如果环境已经比较熟悉了，想直接看hello world实战（踩坑），可以翻到第二页
+往期回顾如果还没装好环境或者GETH不会用的话，可以回去看看DAY1与DAY2，部分truffle相关的内容可以直接看翻译文档 
+这里不妨假设大家已经装好了 truffle、ganache 和geth
+写在前面由于 truffle 近期有重大更新，目前网上大部分的博客已经官方文档翻译是基于 truffle2/3/4的版本，而我在测试是 truffle 已经更新到了 5.3，所以很多内容会与网上操作不太相同……大家查阅资料是注意自己的版本。
+学习Truffle前要知道什么：
+
+总的来说不需要什么特别的。 由...
+            </div>
+            <!-- read more -->
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2026/07/14">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/08/30</span>
+                </div>
+                <!-- tags -->
+                    <div class="abstract-tags" >
+        <a class="post-tag" href="javascript:void(0);" data-tags="blockchain">blockchain</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="smart contract">smart contract</a>
+</div>
+
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+            
+        <article class="index-post">
+            <a class="abstract-title" href="/posts/blockchain-geth/">
+                <span class="abstract-title-text">三天速成智能合约–DAY2：GETH 从入门到入土</span>
+            </a>
+            <div class="abstract-content">
+                上期回顾上期我们介绍了一下主要工具，和一点点的概念，这期我们大概聊聊 GETH。 
+Geth 又名 Go Ethereum 是以太坊协议的三种实现之一，由 Go 语言开发，完全开源的项目。Geth 可以安装在多个平台上，包括Windows、Linux、Mac 的 OSX、Android 或者 IOS 系统。
+Geth 的作用：Geth是以太坊协议的具体落地实现，通过 Geth，你可以实现以太坊的各种功能，如账户的新建编辑删除，开启挖矿，ether 币的转移，智能合约的部署和执行等等。
+启动还没装GETH的同学建议先看看上一篇：环境安装（用Windows的同学官网下载安装包就行，傻瓜式安装...
+            </div>
+            <!-- read more -->
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2026/07/14">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/08/29</span>
+                </div>
+                <!-- tags -->
+                    <div class="abstract-tags" >
+        <a class="post-tag" href="javascript:void(0);" data-tags="blockchain">blockchain</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="smart contract">smart contract</a>
+</div>
+
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+            
+        <article class="index-post">
+            <a class="abstract-title" href="/posts/blockchain-start/">
+                <span class="abstract-title-text">三天速成智能合约–DAY1：环境安装</span>
+            </a>
+            <div class="abstract-content">
+                事件起因我们组的信安作品赛“被迫”加了一项智能合约的部署，某子剑老师：“智能合约三天就够了”
+试了一下，三天确实够了。
+本文以 Ubuntu-20.04为例，记录一下环境搭建过程。
+主要涉及环境：
+1234- geth- npm- truffle- ganache
+
+
+
+
+
+相关概念这里不妨假设大家已经非常熟悉智能合约、区块链、消息认证、非对称密码等概念与算法，就不做过多介绍了。（其实是太鸽了，还没写，下次一定）
+智能合约
+智能合约（Smart contract ）是一种旨在以信息化方式传播、验证或执行合同的计算机协议。智能合约允许在没有第三方的情况下进行可信交易，这些交易可追踪且不可逆...
+            </div>
+            <!-- read more -->
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2026/07/14">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/08/28</span>
+                </div>
+                <!-- tags -->
+                    <div class="abstract-tags" >
+        <a class="post-tag" href="javascript:void(0);" data-tags="blockchain">blockchain</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="smart contract">smart contract</a>
+</div>
+
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+            
+        <article class="index-post">
+            <a class="abstract-title" href="/posts/2021-summer-year3/">
+                <span class="abstract-title-text">我的大三</span>
+            </a>
+            <div class="abstract-content">
+                一篇碎碎念——2020很魔幻，2021也是。
+
+北理圣水
+关于课程相较于大三下，大三上的几门必修课感觉也没有难么难顶。
+计算机组成原理计组老师（MZM）讲课比较催眠，所以计组大部分内容还是靠课后自学。
+操作系统内容比较多，主要还是靠记忆，技巧性的东西不多，加上作业题比较简单，所以选择在考试周突击复习（不过感觉平时也没那么放纵的亚子）。感觉MB老师上课还算有意思，但是给分好像没有其他老师那么仁慈……
+操作系统课设比较肝，编写的程序需要大量调用底层接口，可能会遇到意想不到的BUG，虽然大部分实验都是面向GitHub编程，或者面向学长学姐编程。
+软件工程基础当时最令人头疼的一门课，GYJ老师（...
+            </div>
+            <!-- read more -->
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2026/07/14">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/07/15</span>
+                </div>
+                <!-- tags -->
+                    <div class="abstract-tags" >
+        <a class="post-tag" href="javascript:void(0);" data-tags="碎碎念">碎碎念</a>
+</div>
+
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+            
+        <article class="index-post">
+            <a class="abstract-title" href="/posts/shodan-cam/">
+                <span class="abstract-title-text">Shodan + MSF 入侵智能摄像头</span>
+            </a>
+            <div class="abstract-content">
+                0xFF 免责声明由于传播、利用此文提供的信息而造成的任何直接或间接的后果，均有使用者承担，本站不为此承担任何责任。
+0x00 简介shodan 是一个比较 dangerous 的搜索引擎，用于查看联网的智能设备——通常作为渗透测试的信息收集工具； 
+MSF，Metasploit-Framework，一款开源的渗透工具，用于检测漏洞、生成 payload、制造后门文件等。 
+
+ Shodan 是一个开放式搜索引擎，它专注于搜索互联网上的设备，而不是网页。Shodan 可以搜索各种类型的设备，包括服务器、路由器、摄像头、智能家居设备等。
+Shodan 提供了一个简单的搜索界面，您可以输入关...
+            </div>
+            <!-- read more -->
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2026/07/14">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/03/10</span>
+                </div>
+                <!-- tags -->
+                    <div class="abstract-tags" >
+        <a class="post-tag" href="javascript:void(0);" data-tags="ctf">ctf</a>
+</div>
+
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    <!-- paginator  -->
+        <nav class="page-nav">
+            <a class="extend prev" rel="prev" href="/archives/2021/">&lt; PREV</a><a class="page-number" href="/archives/2021/">1</a><span class="page-number current">2</span>
+        </nav>
+</main>
+
+                <!-- profile -->
+            </div>
+            <footer class="footer footer-unloaded">
+    <!-- social  -->
+        <div class="social">
+                            <a href="mailto:xiabee@foxmail.com" class="iconfont-archer email" title="email" ></a>
+                <a href="https://github.com/xiabee" class="iconfont-archer github" target="_blank" title="github"></a>
+                <a href="https://weibo.com/u/7390789827" class="iconfont-archer weibo" target="_blank" title="weibo"></a>
+                <a href="https://www.zhihu.com/people/xiao-53-1" class="iconfont-archer zhihu" target="_blank" title="zhihu"></a>
+                <a href="https://twitter.com/xiabeeSec" class="iconfont-archer twitter" target="_blank" title="twitter"></a>
+                <a href="https://space.bilibili.com/43789348" class="iconfont-archer bilibili" target="_blank" title="bilibili"></a>
+                <a href="https://www.linkedin.com/in/yunjie-xiao-559502253/" class="iconfont-archer linkedin" target="_blank" title="linkedin"></a>
+                <a href="https://steamcommunity.com/id/xiabee/" class="iconfont-archer steam" target="_blank" title="steam"></a>
+
+        </div>
+    <!-- powered by Hexo  -->
+    <div class="copyright">
+        <span id="hexo-power">Powered by <a href="https://hexo.io/" target="_blank">Hexo</a></span><span class="iconfont-archer power">&#xe635;</span><span id="theme-info">theme <a href="https://github.com/fi3ework/hexo-theme-archer" target="_blank">Archer</a></span>
+    </div>
+    <!-- website approve for Chinese user -->
+    <!-- 不蒜子  -->
+        <div class="busuanzi-container">
+                <span id="busuanzi_container_site_pv">PV: <span id="busuanzi_value_site_pv"></span> :)</span>
+        </div>
+</footer>
+
+        </div>
+        <!-- toc -->
+        <!-- sidebar -->
+        <div class="sidebar sidebar-hide">
+    <ul class="sidebar-tabs sidebar-tabs-active-0">
+        <li class="sidebar-tab-archives"><span class="iconfont-archer">&#xe67d;</span><span class="tab-name">Archive</span></li>
+        <li class="sidebar-tab-tags"><span class="iconfont-archer">&#xe61b;</span><span class="tab-name">Tag</span></li>
+        <li class="sidebar-tab-categories"><span class="iconfont-archer">&#xe666;</span><span class="tab-name">Cate</span></li>
+    </ul>
+    <div class="sidebar-content sidebar-content-show-archive">
+        <div class="sidebar-panel-archives">
+    <!-- 在 ejs 中将 archive 按照时间排序 -->
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    <div class="total-and-search">
+        <div class="total-archive">
+        Total : 54
+        </div>
+        <!-- search  -->
+            <div class="site-search site-search-loading popup-trigger">
+                <span class="iconfont-archer search-icon">&#xe627;</span>
+            </div>
+    </div>
+    <div class="post-archive">
+            <div class="archive-year"> 2023 </div>
+            <ul class="year-list">
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/13</span>
+            <a class="archive-post-title" href="/posts/ax6000-openwrt/">红米AX6000路由器刷机</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/07</span>
+            <a class="archive-post-title" href="/posts/aws-sns-lark/">基于 Serverless 的 SNS 飞书告警系统</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/30</span>
+            <a class="archive-post-title" href="/posts/ossinsight-lite/">10 分钟内搭建自己的 Oss-Insight-lite</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/19</span>
+            <a class="archive-post-title" href="/posts/pichost-picgo/">PicGO 连接 AWS S3</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/19</span>
+            <a class="archive-post-title" href="/posts/app-error/">“应用程序”已损坏解决方案</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/09</span>
+            <a class="archive-post-title" href="/posts/aws-pichost/">AWS S3+CloudFront 打造自己的图床</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/18</span>
+            <a class="archive-post-title" href="/posts/aws-intro/">AWS 入门</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/16</span>
+            <a class="archive-post-title" href="/posts/sina-pichost/">微博图床抢救</a>
+        </li>
+                </ul>
+            <div class="archive-year"> 2022 </div>
+            <ul class="year-list">
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/11</span>
+            <a class="archive-post-title" href="/posts/aws-lambda/">使用 AWS Lambda 进行签到</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/21</span>
+            <a class="archive-post-title" href="/posts/wechat-bot/">利用企业微信机器人推送消息</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/20</span>
+            <a class="archive-post-title" href="/posts/glados-intro/">Glados 签到简介</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/30</span>
+            <a class="archive-post-title" href="/posts/mac-bp/">Mac 环境配置(4)——BurpSuite 破解</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/24</span>
+            <a class="archive-post-title" href="/posts/mac-proxy/">Mac 环境配置(3)——配置代理</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/23</span>
+            <a class="archive-post-title" href="/posts/mac-brew/">Mac 环境配置(2)——homebrew</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/16</span>
+            <a class="archive-post-title" href="/posts/mac-init/">Mac 环境配置(1)——完美终端</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/14</span>
+            <a class="archive-post-title" href="/posts/hexo-transfer-issue/">Hexo 本地迁移</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/08</span>
+            <a class="archive-post-title" href="/posts/tidb-build-up/">Build Distributed TiDB System</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/21</span>
+            <a class="archive-post-title" href="/posts/hydro-hepler/">Hydro-OJ 使用说明</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/08</span>
+            <a class="archive-post-title" href="/posts/docker-compose-2/">安装 docker-compose 2</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/08</span>
+            <a class="archive-post-title" href="/posts/postal-mailserver/">Docker 搭建 Postal 邮件系统</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/29</span>
+            <a class="archive-post-title" href="/posts/hydro-docker/">Docker搭建Hydro-OJ系统</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/08</span>
+            <a class="archive-post-title" href="/posts/2022-spring-recruitment/">2022春招安全岗记录</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/03</span>
+            <a class="archive-post-title" href="/posts/vps-toss/">服务器的折腾</a>
+        </li>
+                </ul>
+            <div class="archive-year"> 2021 </div>
+            <ul class="year-list">
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/25</span>
+            <a class="archive-post-title" href="/posts/diary/">考研日记</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/11</span>
+            <a class="archive-post-title" href="/posts/11-11/">如何在双十一快速脱单？</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/09</span>
+            <a class="archive-post-title" href="/posts/wordpress-docker/">Docker搭建Wordpress个人博客</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/09</span>
+            <a class="archive-post-title" href="/posts/nextcloud-docker/">Docker搭建NextCloud个人网盘</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/07</span>
+            <a class="archive-post-title" href="/posts/markdown-docker/">Docker搭建Markdown共享编辑器</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/03</span>
+            <a class="archive-post-title" href="/posts/utteranc-hexo/">utteranc 搭建评论系统</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/02</span>
+            <a class="archive-post-title" href="/posts/git-coding-hexo/">Git Page + Coding Page 实现负载均衡</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/31</span>
+            <a class="archive-post-title" href="/posts/archer-algolia/">Archer主题启用Algolia全文搜索</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/31</span>
+            <a class="archive-post-title" href="/posts/hexo-archer/">Hexo更换主题</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/28</span>
+            <a class="archive-post-title" href="/posts/hexo-git-backup/">利用git分支进行Hexo备份</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/27</span>
+            <a class="archive-post-title" href="/posts/hexo-git-setup/">Hexo+GitPage搭建个人博客</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/01</span>
+            <a class="archive-post-title" href="/posts/fri/">FRIENDS</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/30</span>
+            <a class="archive-post-title" href="/posts/blockchain-truffle/">三天速成智能合约–DAY3：truffle 从放手到放弃</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/29</span>
+            <a class="archive-post-title" href="/posts/blockchain-geth/">三天速成智能合约–DAY2：GETH 从入门到入土</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/28</span>
+            <a class="archive-post-title" href="/posts/blockchain-start/">三天速成智能合约–DAY1：环境安装</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/15</span>
+            <a class="archive-post-title" href="/posts/2021-summer-year3/">我的大三</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/10</span>
+            <a class="archive-post-title" href="/posts/shodan-cam/">Shodan + MSF 入侵智能摄像头</a>
+        </li>
+                </ul>
+            <div class="archive-year"> 2020 </div>
+            <ul class="year-list">
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/07</span>
+            <a class="archive-post-title" href="/posts/occupation-ctf-wp/">职业杯 2020 选拔赛回顾 & Write UP</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/26</span>
+            <a class="archive-post-title" href="/posts/wsl2-about/">WSL2踩坑分享</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/14</span>
+            <a class="archive-post-title" href="/posts/linux-gmp/">Linux安装GMP依赖</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/05</span>
+            <a class="archive-post-title" href="/posts/2020-summer/">2020 Summer Review of xiabee</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/27</span>
+            <a class="archive-post-title" href="/posts/github-ssh/">GitHub配置SSH Key</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/18</span>
+            <a class="archive-post-title" href="/posts/wechat-0day/">微信RCE 0day复现</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/19</span>
+            <a class="archive-post-title" href="/posts/docker-sudo/">不输入sudo运行Docker</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/18</span>
+            <a class="archive-post-title" href="/posts/docker-commands/">Docker常用命令</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/17</span>
+            <a class="archive-post-title" href="/posts/docker-pupy/">Docker入门</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/17</span>
+            <a class="archive-post-title" href="/posts/docker-source/">Docker换源</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/14</span>
+            <a class="archive-post-title" href="/posts/linux-sources/">Ubuntu/kali 国内各大更新源</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/10</span>
+            <a class="archive-post-title" href="/posts/ababa/">碎碎念</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/09</span>
+            <a class="archive-post-title" href="/posts/vulnhub-dc-2/">VulnHub DC2 通关纪实</a>
+        </li>
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/09</span>
+            <a class="archive-post-title" href="/posts/vulnhub-dc-1/">VulnHub DC1 通关纪实</a>
+        </li>
+            </ul>
+    </div>
+</div>
+
+        <div class="sidebar-panel-tags">
+    <div class="sidebar-tags-name">
+            <span class="sidebar-tag-name" data-tags="blockchain">
+                <span class="iconfont-archer">&#xe606;</span>
+                blockchain
+            </span>
+            <span class="sidebar-tag-name" data-tags="smart contract">
+                <span class="iconfont-archer">&#xe606;</span>
+                smart contract
+            </span>
+            <span class="sidebar-tag-name" data-tags="ax6000">
+                <span class="iconfont-archer">&#xe606;</span>
+                ax6000
+            </span>
+            <span class="sidebar-tag-name" data-tags="linux">
+                <span class="iconfont-archer">&#xe606;</span>
+                linux
+            </span>
+            <span class="sidebar-tag-name" data-tags="tidb">
+                <span class="iconfont-archer">&#xe606;</span>
+                tidb
+            </span>
+            <span class="sidebar-tag-name" data-tags="hexo">
+                <span class="iconfont-archer">&#xe606;</span>
+                hexo
+            </span>
+            <span class="sidebar-tag-name" data-tags="archer">
+                <span class="iconfont-archer">&#xe606;</span>
+                archer
+            </span>
+            <span class="sidebar-tag-name" data-tags="algolia">
+                <span class="iconfont-archer">&#xe606;</span>
+                algolia
+            </span>
+            <span class="sidebar-tag-name" data-tags="git">
+                <span class="iconfont-archer">&#xe606;</span>
+                git
+            </span>
+            <span class="sidebar-tag-name" data-tags="ssh">
+                <span class="iconfont-archer">&#xe606;</span>
+                ssh
+            </span>
+            <span class="sidebar-tag-name" data-tags="oj">
+                <span class="iconfont-archer">&#xe606;</span>
+                oj
+            </span>
+            <span class="sidebar-tag-name" data-tags="docker">
+                <span class="iconfont-archer">&#xe606;</span>
+                docker
+            </span>
+            <span class="sidebar-tag-name" data-tags="wsl">
+                <span class="iconfont-archer">&#xe606;</span>
+                wsl
+            </span>
+            <span class="sidebar-tag-name" data-tags="wordpress">
+                <span class="iconfont-archer">&#xe606;</span>
+                wordpress
+            </span>
+            <span class="sidebar-tag-name" data-tags="nextcloud">
+                <span class="iconfont-archer">&#xe606;</span>
+                nextcloud
+            </span>
+            <span class="sidebar-tag-name" data-tags="markdown">
+                <span class="iconfont-archer">&#xe606;</span>
+                markdown
+            </span>
+            <span class="sidebar-tag-name" data-tags="glados">
+                <span class="iconfont-archer">&#xe606;</span>
+                glados
+            </span>
+            <span class="sidebar-tag-name" data-tags="utteranc">
+                <span class="iconfont-archer">&#xe606;</span>
+                utteranc
+            </span>
+            <span class="sidebar-tag-name" data-tags="serverless">
+                <span class="iconfont-archer">&#xe606;</span>
+                serverless
+            </span>
+            <span class="sidebar-tag-name" data-tags="postal">
+                <span class="iconfont-archer">&#xe606;</span>
+                postal
+            </span>
+            <span class="sidebar-tag-name" data-tags="docker-compose">
+                <span class="iconfont-archer">&#xe606;</span>
+                docker-compose
+            </span>
+            <span class="sidebar-tag-name" data-tags="vps">
+                <span class="iconfont-archer">&#xe606;</span>
+                vps
+            </span>
+            <span class="sidebar-tag-name" data-tags="ctf">
+                <span class="iconfont-archer">&#xe606;</span>
+                ctf
+            </span>
+            <span class="sidebar-tag-name" data-tags="vulnhub">
+                <span class="iconfont-archer">&#xe606;</span>
+                vulnhub
+            </span>
+            <span class="sidebar-tag-name" data-tags="0day">
+                <span class="iconfont-archer">&#xe606;</span>
+                0day
+            </span>
+            <span class="sidebar-tag-name" data-tags="cloud">
+                <span class="iconfont-archer">&#xe606;</span>
+                cloud
+            </span>
+            <span class="sidebar-tag-name" data-tags="aws">
+                <span class="iconfont-archer">&#xe606;</span>
+                aws
+            </span>
+            <span class="sidebar-tag-name" data-tags="s3">
+                <span class="iconfont-archer">&#xe606;</span>
+                s3
+            </span>
+            <span class="sidebar-tag-name" data-tags="lark">
+                <span class="iconfont-archer">&#xe606;</span>
+                lark
+            </span>
+            <span class="sidebar-tag-name" data-tags="lambda">
+                <span class="iconfont-archer">&#xe606;</span>
+                lambda
+            </span>
+            <span class="sidebar-tag-name" data-tags="sns">
+                <span class="iconfont-archer">&#xe606;</span>
+                sns
+            </span>
+            <span class="sidebar-tag-name" data-tags="碎碎念">
+                <span class="iconfont-archer">&#xe606;</span>
+                碎碎念
+            </span>
+            <span class="sidebar-tag-name" data-tags="friends">
+                <span class="iconfont-archer">&#xe606;</span>
+                friends
+            </span>
+            <span class="sidebar-tag-name" data-tags="mac">
+                <span class="iconfont-archer">&#xe606;</span>
+                mac
+            </span>
+            <span class="sidebar-tag-name" data-tags="brew">
+                <span class="iconfont-archer">&#xe606;</span>
+                brew
+            </span>
+    </div>
+    <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
+    <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
+        缺失模块，请参考主题文档进行安装配置：https://github.com/fi3ework/hexo-theme-archer#%E5%AE%89%E8%A3%85%E4%B8%BB%E9%A2%98
+    </div> 
+    <div class="sidebar-tags-list"></div>
+</div>
+
+        <div class="sidebar-panel-categories">
+    <div class="sidebar-categories-name">
+        <span class="sidebar-category-name" data-categories="blockchain">
+            <span class="iconfont-archer">&#xe60a;</span>
+            blockchain
+        </span>
+        <span class="sidebar-category-name" data-categories="coding">
+            <span class="iconfont-archer">&#xe60a;</span>
+            coding
+        </span>
+        <span class="sidebar-category-name" data-categories="ctf">
+            <span class="iconfont-archer">&#xe60a;</span>
+            ctf
+        </span>
+        <span class="sidebar-category-name" data-categories="aws">
+            <span class="iconfont-archer">&#xe60a;</span>
+            aws
+        </span>
+        <span class="sidebar-category-name" data-categories="cloud">
+            <span class="iconfont-archer">&#xe60a;</span>
+            cloud
+        </span>
+        <span class="sidebar-category-name" data-categories="informal essay">
+            <span class="iconfont-archer">&#xe60a;</span>
+            informal essay
+        </span>
+        <span class="sidebar-category-name" data-categories="friends">
+            <span class="iconfont-archer">&#xe60a;</span>
+            friends
+        </span>
+    </div>
+    <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
+    <div class="sidebar-categories-list"></div>
+</div>
+
+    </div>
+</div>
+
+        <!-- site-meta -->
+        <script>
+    var siteMetaRoot = "/"
+    if (siteMetaRoot === "undefined") {
+        siteMetaRoot = '/'
+    }
+    var siteMeta = {
+        url: "https://blog.xiabee.cn",
+        root: siteMetaRoot,
+        author: "xiabee"
+    }
+</script>
+
+        <!-- import experimental options here -->
+        <!-- Custom Font -->
+
+        <!-- main func -->
+        <script src="/scripts/main.js"></script>
+        <!-- fancybox -->
+        <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.36/dist/fancybox/fancybox.umd.js" onload="window.Fancybox.bind('[data-fancybox]')" defer></script>
+        <!-- algolia -->
+            <div class="site-search site-search-loading">
+    <div class="algolia-popup popup">
+        <div class="algolia-search">
+            <div class="algolia-search-input-icon">
+                <i class="fa fa-search"></i>
+            </div>
+            <div class="algolia-search-input" id="algolia-search-input"></div>
+            <div class="popup-btn-close">
+                <i class="iconfont-archer">&#xe609;</i>
+            </div>
+        </div>
+
+        <div class="algolia-results">
+            <div id="algolia-stats" class="algolia-stats"></div>
+            <div id="algolia-hits"></div>
+            <div id="algolia-pagination" class="algolia-pagination"></div>
+        </div>
+    </div>
+</div>
+
+            <script src="/scripts/search.js" async></script>
+        <!-- busuanzi -->
+            <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+        <!-- async load share.js -->
+        <!-- mermaid -->
+    </body>
+</html>
